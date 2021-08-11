@@ -1,0 +1,81 @@
+---
+title: "cox_reg_survival_lgg.Rmd"
+author: "Run Jin"
+date: "8/11/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+ coxph.train <- survival::coxph(formula = surv.formula,
+                       data = train.dt, 
+                       cluster = kids_first_participant_id )
+  
+  cox.train.sum <- as.data.table(summary(coxph.train)$coefficients, keep.rownames = T) %>%
+    setnames(.,'rn','covariate')
+  
+  # save output to txt file
+  message("Writing training CoxPH coefficient output to file")
+  fwrite(cox.train.sum, file = file.path(stats_dir, 'coxPH_training_res.txt'), sep = "\t")
+  
+  train.risk <- predict(coxph.train, type = "risk")
+  med.risk <- median(train.risk)
+  
+  ### Compute predictive risk scores based on coxph model
+  
+  test.risk <- predict(coxph.train, newdata = test.dt, type = "risk")
+  test.dt[,'RiskScore' := test.risk]
+  
+  coxph.test <- coxph(formula = Surv(os_days, os_status) ~ RiskScore,
+                      data = test.dt)
+  
+  cox.test.sum <- as.data.table(summary(coxph.test)$coefficients, keep.rownames = T) %>%
+    setnames(.,'rn','covariate')
+  # save output to txt file
+  message("Writing training CoxPH coefficient output to file")
+  fwrite(cox.test.sum, file = file.path(stats_dir, 'coxPH_test_res.txt'), sep = "\t")
+  
+  #Compute Somers' Dxy Rank coefficient based on os_days and risk score
+  s.stat = DescTools::SomersDelta(test.dt$RiskScore, test.dt$os_days)
+
+  ### Separate test data into low and high risk groups based on the training median risk score
+  test.dt[,'RiskGroup' := ifelse(RiskScore > med.risk, 'High', 'Low')]
+  coxph.test2 <- survival::coxph(formula = Surv(os_days, os_status) ~  RiskGroup,
+                       data = test.dt)
+  
+  cox.test.sum2 <- as.data.table(summary(coxph.test2)$coefficients, keep.rownames = T) %>%
+    setnames(.,'rn','covariate')
+  
+  fwrite(cox.test.sum2, file = file.path(stats_dir, 'coxPH_test_riskgroup_res.txt'), sep = "\t")
+  
+  #Plot risk group effect in test set.
+  fit <- survfit(Surv(os_days, os_status) ~ RiskGroup, data = test.dt)
+  pl.risk <- survminer::ggsurvplot(fit,
+             pval = TRUE, conf.int = TRUE,
+             risk.table = TRUE, # Add risk table
+             risk.table.col = "strata", # Change risk table color by groups
+             linetype = "strata", # Change line type by groups
+             surv.median.line = "hv", # Specify median survival
+             ggtheme = theme_bw(), # Change ggplot2 theme
+             palette = c("#E7B800", "#2E9FDF"))
+  
+  filename.risk <- file.path(paste0(plot_dir,"/", 
+                                    msigdb.name,"_cox_risk_group", ".pdf"))
+  
+  ggsave(filename = filename.risk, plot = pl.risk)
+  
+  #Test significance of Somers' Dxy Coefficient with simulation testing
+                     
+  out.s.stat = purrr::rerun(500, get.s.stats(train.set = train.dt,
+                                             test.set = test.dt,
+                                             surv.form = surv.formula,
+                                             model = model,
+                                             binary.stat = F))
+  out.s.stat.unlist = unlist(out.s.stat)
+  p.val.calc = length(which(abs(out.s.stat.unlist) > abs(s.stat)))/500
+  
+  somers.dt = data.table('Somers Dxy' = s.stat, 'p.value' = p.val.calc)
+  fwrite(somers.dt, file = file.path(stats_dir, 'weibull_Somers_stats.txt'), sep = "\t")
+  

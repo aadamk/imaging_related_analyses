@@ -1,0 +1,189 @@
+---
+title: "lgg_cns_gtex.Rmd"
+author: "Run Jin"
+date: "8/11/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(car)
+library(multcomp)
+library(kableExtra)
+```
+
+## Import Relevant Data
+```{r import data}
+histology_df <- read_tsv("../data/histologies.tsv")
+expression_data <- readRDS("../data/gene-expression-rsem-tpm-collapsed.rds")
+```
+
+## Select cohort of interest and relevant clincial info + GTEx normal data
+First select cohort of interest 
+```{r cohort selection}
+cohort_df <- histology_df %>% dplyr::filter(tumor_descriptor == "Initial CNS Tumor") %>%
+  dplyr::filter(experimental_strategy=="RNA-Seq") %>% 
+  dplyr::filter(cancer_group %in% c("LGG", "Low-grade glioma/astrocytoma")) %>%
+  dplyr::select(Kids_First_Biospecimen_ID, CNS_region) %>%
+  dplyr::mutate(region_of_interest = paste0("lgg_cohort_", CNS_region)) %>%
+  dplyr::select(Kids_First_Biospecimen_ID, region_of_interest)
+
+nrow(cohort_df)
+```
+
+Then select GTEx normal
+```{r gtex normal selection}
+gtex_df <- histology_df %>% dplyr::filter(gtex_subgroup %in% c(
+  'Brain - Cerebellar Hemisphere',
+  'Brain - Cerebellum',
+  'Brain - Cortex',
+  'Brain - Frontal Cortex (BA9)',
+  'Brain - Hippocampus',
+  'Brain - Hypothalamus',
+  'Brain - Nucleus accumbens (basal ganglia)',
+  'Brain - Putamen (basal ganglia)',
+  'Brain - Spinal cord (cervical c-1)',
+  'Brain - Substantia nigra'
+)) %>%
+  dplyr::select(Kids_First_Biospecimen_ID, gtex_subgroup) %>%
+  dplyr::mutate(region_of_interest = paste0("GTEx", gtex_subgroup)) %>%
+  dplyr::select(Kids_First_Biospecimen_ID, region_of_interest)
+
+nrow(gtex_df)
+```
+
+Combining two dataframes
+```{r combine}
+# Combine cohort + GTEx normal into one df
+combined_df<- rbind(cohort_df, gtex_df)
+```
+
+## Subset gene expression data to cohort of interest and genes of interest
+```{r}
+combined_bsid <- combined_df %>% pull(Kids_First_Biospecimen_ID) %>% unique()
+expression_of_interest <- expression_data %>% dplyr::select(all_of(combined_bsid)) %>% 
+  rownames_to_column("GeneSymbol") %>% 
+  dplyr::filter(GeneSymbol %in% c("SLC7A5", "FOLH1")) %>% 
+  column_to_rownames("GeneSymbol") %>%
+  t() %>% as.data.frame() %>%
+  rownames_to_column("Kids_First_Biospecimen_ID")
+
+#annotate relevant clinical information to the expression data frame
+combined <- expression_of_interest %>% dplyr::left_join(combined_df) 
+```
+
+
+## Generate violin plot per regions of interest
+First for SLC7A5
+```{r}
+n_sample_cns <- combined %>% group_by(region_of_interest) %>% summarize(n=n())
+p<-combined %>%
+  left_join(n_sample_cns) %>%
+  mutate(myaxis = paste0(region_of_interest, "\n", "n=", n)) %>%
+  ggplot( aes(x=myaxis, y=SLC7A5, fill=region_of_interest)) +
+    geom_violin(width=1.4, trim=FALSE, show.legend = F) +
+    geom_boxplot(width=0.1, color="black", show.legend = F) +
+    labs(title="SLC7A5 TPM per Region of Interest",x="CNS Region", y = "SLC7A5 TPM Value") +
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+print(p)
+ggsave("plots/slc7a5_cns_region_violin.png", p)
+
+```
+
+And then for FOLH1
+```{r}
+p<-combined %>%
+  left_join(n_sample_cns) %>%
+  mutate(myaxis = paste0(region_of_interest, "\n", "n=", n)) %>%
+  ggplot( aes(x=myaxis, y=FOLH1, fill=region_of_interest)) +
+    geom_violin(width=1.4, trim=FALSE, show.legend = F) +
+    geom_boxplot(width=0.1, color="black", show.legend = F) +
+    labs(title="FOLH1 TPM per Region of Interest",x="CNS Region", y = "FOLH1 TPM Value") +
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+print(p)
+ggsave("plots/folh1_cns_region_violin.png", p)
+```
+
+## Calculate ANOVA+Tukey's PostHoc per CNS region
+
+First for SLC7A5
+```{r}
+res_aov <- aov(combined$SLC7A5 ~ combined$region_of_interest,
+  data = combined)
+
+# testing the normality of the data using histology
+hist(res_aov$residuals)
+```
+
+```{r}
+# testing the normality of the data using qqplot
+qqPlot(res_aov$residuals,
+  id = FALSE # id = FALSE to remove point identification
+)
+```
+
+Showing the summary of statistics
+```{r}
+summary(res_aov)
+anova_result <- summary(res_aov)[[1]] %>% rownames_to_column()
+write_tsv(anova_result, "results/anova_result_slc7A5_cns_region.tsv")
+```
+
+Performing Tukey's Post Hoc analysis
+```{r}
+tukey.test<-TukeyHSD(res_aov)[1] %>% as.data.frame() %>% rownames_to_column() 
+colnames(tukey.test) <- c("Pair Compared", "DIFF", "LWR", "UPR", "P.adj")
+tukey.test <- tukey.test %>% arrange(P.adj, descending = TRUE)
+
+tukey.test %>%
+  kbl(caption = "Turkey results for SLC7A5 for each CNS region") %>%
+  kable_classic(full_width = F, html_font = "Cambria")
+write_tsv(tukey.test, "results/tukey_result_slc7A5_cns_region.tsv")
+```
+Plotting the 95% interval
+```{r}
+plot(TukeyHSD(res_aov), las=1, cex.axis=0.4)
+```
+
+
+Next for FOLH1
+```{r}
+res_aov <- aov(combined$FOLH1 ~ combined$region_of_interest,
+  data = combined)
+
+# testing the normality of the data using histology
+hist(res_aov$residuals)
+```
+
+```{r}
+# testing the normality of the data using qqplot
+qqPlot(res_aov$residuals,
+  id = FALSE # id = FALSE to remove point identification
+)
+```
+
+Showing the summary of statistics
+```{r}
+summary(res_aov)
+anova_result <- summary(res_aov)[[1]] %>% rownames_to_column()
+write_tsv(anova_result, "results/anova_result_folh1_cns_region.tsv")
+```
+
+Performing Tukey's Post Hoc analysis
+```{r}
+tukey.test<-TukeyHSD(res_aov)[1] %>% as.data.frame() %>% rownames_to_column()
+colnames(tukey.test) <- c("Pair Compared", "DIFF", "LWR", "UPR", "P.adj")
+
+tukey.test <- tukey.test %>% arrange(P.adj, descending = TRUE)
+
+tukey.test %>%
+  kbl(caption = "Turkey results for FOLH1 for each CNS region") %>%
+  kable_classic(full_width = F, html_font = "Cambria")
+write_tsv(tukey.test, "results/tukey_result_folh1_cns_region.tsv")
+```
+Plotting the 95% interval
+```{r}
+plot(TukeyHSD(res_aov), las=1, cex.axis=0.4)
+```

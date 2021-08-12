@@ -1,5 +1,5 @@
 ---
-title: "lgg_harmonized_diagnosis.Rmd"
+title: "TPM Plots of LGG Samples per Harmonized Diagnosis"
 author: "Run Jin"
 date: "8/11/2021"
 output: html_document

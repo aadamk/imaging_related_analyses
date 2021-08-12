@@ -1,5 +1,5 @@
 ---
-title: "lgg_cns_gtex.Rmd"
+title: "TPM Plots of LGG Samples and GTEx Normal Samples per CNS Region"
 author: "Run Jin"
 date: "8/11/2021"
 output: html_document

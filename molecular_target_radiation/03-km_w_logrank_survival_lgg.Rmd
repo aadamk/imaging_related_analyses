@@ -71,8 +71,8 @@ combined_annotated <- left_join(combined_SLC7A5, combined_FOLH1)
 ```{r os status leveling}
 combined_annotated <- combined_annotated %>% dplyr::filter(!is.na(OS_status)) %>%
   dplyr::mutate(os_status_level = case_when(
-    OS_status == "LIVING" ~ 1,
-    OS_status == "DECEASED" ~ 0
+    OS_status == "LIVING" ~ 0,
+    OS_status == "DECEASED" ~ 1
   )) 
 
 #the number of samples that HAVE OS_status is:

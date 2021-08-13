@@ -47,8 +47,8 @@ combined <- expression_of_interest %>% dplyr::left_join(cohort_df)
 ```{r os status leveling}
 combined_annotated <- combined %>% dplyr::filter(!is.na(OS_status)) %>%
   dplyr::mutate(os_status_level = case_when(
-    OS_status == "LIVING" ~ 1,
-    OS_status == "DECEASED" ~ 0
+    OS_status == "LIVING" ~ 0,
+    OS_status == "DECEASED" ~ 1
   )) 
 
 # change the columns to desired type 

@@ -14,13 +14,17 @@ library(survival)
 
 ## Import relevant data & select cohort of interest
 ```{r import data}
-histology_df <- read_tsv("../data/histologies.tsv")
+histology_df <- readr::read_tsv("../data/histologies.tsv")
 expression_data <- readRDS("../data/gene-expression-rsem-tpm-collapsed.rds")
 
 cohort_df <- histology_df %>% dplyr::filter(tumor_descriptor == "Initial CNS Tumor") %>%
   dplyr::filter(experimental_strategy=="RNA-Seq") %>% 
-  dplyr::filter(cancer_group %in% c("LGG", "Low-grade glioma/astrocytoma")) %>%
-  dplyr::select(Kids_First_Biospecimen_ID, OS_status, OS_days)
+  dplyr::filter(cancer_group %in% c("LGG", "Low-grade glioma/astrocytoma")) 
+
+cohort_df$PFS_days <- as.numeric(cohort_df$PFS_days)
+cohort_df <- cohort_df %>%
+  dplyr::mutate(PFS_status = if_else(PFS_days < OS_days, 1, 0)) %>%
+  dplyr::select(Kids_First_Biospecimen_ID, OS_status, OS_days, PFS_status,PFS_days) 
 
 nrow(cohort_df)
 cohort_df
@@ -206,4 +210,135 @@ Save the plot to a file.
 # We can save the plot like a normal ggplot
 cowplot::save_plot(filename = "plots/kaplan_meier_survival_folh1.png", plot = surv_plot)
 ```
+
+# Due to the fact that we do not have events for OS_days and OS_status, PFS_status and PFS_days were used to see the results 
+## Build up the model formula for both statistical testing below 
+```{r generating models PFS}
+model_slc7a5_pfs <- "survival::Surv(PFS_days, PFS_status) ~ expression_group_SLC7A5"
+model_folh1_pfs <- "survival::Surv(PFS_days, PFS_status) ~ expression_group_FOLH1"
+
+combined_annotated <- combined_annotated %>% filter(!is.na(PFS_status))
+```
+
+## Running Log-Rank Analyses 
+
+For testing whether two survival curves are different, we can use Log-Rank which
+can be implemented using `survival::survdiff` function. 
+In this example, we will test for survival curve differences between for 
+`expression_level_SLC7A5` or `expression_level_FOLH1` categories. 
+Use the `survdiff` function to test the differences between the `High` and `Low` 
+curves.
+
+```{r Do log rank test PFS}
+fit_slc7a5_pfs <- survival::survdiff(
+      as.formula(model_slc7a5_pfs),
+      data = combined_annotated
+    )
+
+fit_folh1_pfs <- survival::survdiff(
+      as.formula(model_folh1_pfs),
+      data = combined_annotated
+    )
+
+# Obtain p value for Chi-Squared stat
+fit_slc7a5_pfs$p.value <- pchisq(fit_slc7a5_pfs$chisq, df = 1, lower = FALSE)
+fit_folh1_pfs$p.value <- pchisq(fit_folh1_pfs$chisq, df = 1, lower = FALSE)
+```
+
+## Printing table of Log-Rank Results
+
+First print out SLC7A5 results
+```{r Make log rank table 1 PFS}
+# Print out the table here
+fit_slc7a5_pfs_df <- as.data.frame(fit_slc7a5_pfs[c("n", "obs", "exp", "chisq", "p.value")])
+fit_slc7a5_pfs_df %>% knitr::kable()
+```
+
+Second print out FOLH1 results
+```{r Make log rank table 2 PFS}
+# Print out the table here
+fit_folh1_pfs_df <- as.data.frame(fit_folh1_pfs[c("n", "obs", "exp", "chisq", "p.value")])
+fit_folh1_pfs_df %>% knitr::kable()
+```
+
+Now save the results as tables
+```{r Write log rank to table PFS}
+# Save the table data in a TSV
+readr::write_tsv(fit_slc7a5_pfs_df, "results/log_rank_survival_pfs_slc7a5.tsv")
+readr::write_tsv(fit_folh1_pfs_df, "results/log_rank_survival_pfs_folh1.tsv")
+```
+
+## Running Kaplan-Meier Fit
+
+The [Kaplan-Meier](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3059453/) 
+survival curve shows the probability of survival over time.
+
+```{r Kaplan Meier PFS}
+kap_fit_slc7a5_pfs <- survival::survfit(
+      as.formula(model_slc7a5_pfs),
+      data = combined_annotated
+    )
+
+kap_fit_folh1_pfs <- survival::survfit(
+      as.formula(model_folh1_pfs),
+      data = combined_annotated
+    )
+```
+
+`survminer` package comes with a convenient plotting function which uses `ggplot2`
+arguments. 
+It requires the original Kaplain-Meier `survfit` object. In here, 
+
+First let's plot for SLC7A5:
+```{r Make survival plot 1 PFS}
+surv_plot_pfs <- survminer::ggsurvplot(kap_fit_slc7a5_pfs,
+  pval = fit_slc7a5_pfs$p.value, # use the computed pval from log rank analyses 
+  data = combined_annotated,
+  risk.table = TRUE,
+  xlim = c(0, 2000),
+  break.time.by = 500,
+  ggtheme = theme_minimal(),
+  risk.table.y.text.col = TRUE,
+  risk.table.y.text = FALSE
+)
+# Make this plot a combined plot
+surv_plot_pfs <- cowplot::plot_grid(surv_plot_pfs[[1]], surv_plot_pfs[[2]], nrow = 2, 
+                                rel_heights = c(2.5, 1))
+# Print it out here
+surv_plot_pfs
+```
+
+Save the plot to a file. 
+
+```{r Save survival plot 1 PFS}
+# We can save the plot like a normal ggplot
+cowplot::save_plot(filename = "plots/kaplan_meier_survival_pfs_slc7a5.png", plot = surv_plot_pfs)
+```
+
+Second let's plot for FOLH1:
+```{r Make survival plot 2 PFS}
+surv_plot_pfs <- survminer::ggsurvplot(kap_fit_folh1_pfs,
+  pval = fit_folh1_pfs$p.value, # use the computed pval from log rank analyses 
+  data = combined_annotated,
+  risk.table = TRUE,
+  xlim = c(0, 2000),
+  break.time.by = 500,
+  ggtheme = theme_minimal(),
+  risk.table.y.text.col = TRUE,
+  risk.table.y.text = FALSE
+)
+# Make this plot a combined plot
+surv_plot_pfs<- cowplot::plot_grid(surv_plot_pfs[[1]], surv_plot_pfs[[2]], nrow = 2, 
+                                rel_heights = c(2.5, 1))
+# Print it out here
+surv_plot_pfs
+```
+
+Save the plot to a file. 
+
+```{r Save survival plot 2 PFS}
+# We can save the plot like a normal ggplot
+cowplot::save_plot(filename = "plots/kaplan_meier_survival_pfs_folh1.png", plot = surv_plot)
+```
+
 

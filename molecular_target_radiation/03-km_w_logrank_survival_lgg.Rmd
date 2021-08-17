@@ -338,7 +338,7 @@ Save the plot to a file.
 
 ```{r Save survival plot 2 PFS}
 # We can save the plot like a normal ggplot
-cowplot::save_plot(filename = "plots/kaplan_meier_survival_pfs_folh1.png", plot = surv_plot)
+cowplot::save_plot(filename = "plots/kaplan_meier_survival_pfs_folh1.png", plot = surv_plot_pfs)
 ```
 
 

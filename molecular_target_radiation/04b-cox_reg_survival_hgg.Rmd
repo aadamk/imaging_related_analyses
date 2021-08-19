@@ -1,0 +1,496 @@
+---
+title: "Cox Survival Analysis for HGG Samples"
+author: "Run Jin"
+date: "8/18/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(survival)
+library(caret)
+library(cowplot)
+```
+
+## Import relevant data & select cohort of interest
+```{r import data}
+histology_df <- read_tsv("../data/histologies.tsv")
+expression_data <- readRDS("../data/gene-expression-rsem-tpm-collapsed.rds")
+
+cohort_df <- histology_df %>% dplyr::filter(tumor_descriptor == "Initial CNS Tumor") %>%
+  dplyr::filter(experimental_strategy=="RNA-Seq") %>% 
+  dplyr::filter(cancer_group %in% c("High-grade glioma/astrocytoma")) 
+
+cohort_df$PFS_days <- as.numeric(cohort_df$PFS_days)
+cohort_df <- cohort_df %>%
+  dplyr::mutate(PFS_status = if_else(PFS_days < OS_days, 1, 0)) %>%
+  dplyr::select(Kids_First_Biospecimen_ID, OS_status, OS_days, PFS_status, PFS_days, harmonized_diagnosis, CNS_region) 
+
+nrow(cohort_df)
+cohort_df
+```
+
+Define directory
+```{r define directory}
+# create directory 
+root_dir <- rprojroot::find_root(rprojroot::has_dir(".git"))
+
+coxph_train_results_dir <- file.path(root_dir, "molecular_target_radiation", "results", "HGG", "coxph_survival_train")
+
+coxph_test_results_dir <- file.path(root_dir, "molecular_target_radiation", "results","HGG", "coxph_survival_test")
+
+cox_survival_plots_dir <- file.path(root_dir, "molecular_target_radiation", "plots","HGG", "CoxPH_survival")
+
+if (!dir.exists(coxph_train_results_dir )) {
+  dir.create(coxph_train_results_dir , recursive = TRUE)
+}
+
+if (!dir.exists(coxph_test_results_dir )) {
+  dir.create(coxph_test_results_dir , recursive = TRUE)
+}
+
+if (!dir.exists(cox_survival_plots_dir )) {
+  dir.create(cox_survival_plots_dir , recursive = TRUE)
+}
+
+```
+
+
+## Merge expression data to histology file
+```{r sample grouping}
+# get biospecimen ID's for samples 
+cohort_bsid <- cohort_df %>% pull(Kids_First_Biospecimen_ID) %>% unique()
+
+# subset to gene and sample of interest          
+expression_of_interest <- expression_data %>% dplyr::select(all_of(cohort_bsid)) %>% 
+  rownames_to_column("GeneSymbol") %>% 
+  dplyr::filter(GeneSymbol %in% c("SLC7A5", "FOLH1")) %>% 
+  column_to_rownames("GeneSymbol") %>%
+  t() %>% as.data.frame() %>%
+  rownames_to_column("Kids_First_Biospecimen_ID")
+
+#annotate relevant clinical information to the expression data frame
+combined <- expression_of_interest %>% dplyr::left_join(cohort_df) 
+```
+
+## Modify histology file to mark living as 0 and deceased as 1
+```{r os status leveling}
+combined_annotated <- combined %>% dplyr::filter(!is.na(OS_status)) %>%
+  dplyr::mutate(os_status_level = case_when(
+    OS_status == "LIVING" ~ 0,
+    OS_status == "DECEASED" ~ 1
+  )) 
+
+# change the columns to desired type 
+combined_annotated$harmonized_diagnosis <- as.factor(combined_annotated$harmonized_diagnosis)
+combined_annotated$CNS_region <- as.factor(combined_annotated$CNS_region)
+
+#the number of samples that HAVE OS_status is:
+nrow(combined_annotated)
+```
+
+## Build up the model for cox analysis below 
+```{r generating models}
+model_slc7a5 <- as.formula(survival::Surv(OS_days, os_status_level) ~ harmonized_diagnosis + CNS_region + SLC7A5)
+model_folh1 <- as.formula(survival::Surv(OS_days, os_status_level) ~ harmonized_diagnosis + CNS_region + FOLH1)
+```
+
+## Create train test partition
+```{r train test partition}
+set.seed(236)
+trainIndex <- createDataPartition(combined_annotated$OS_status, p = 0.6, 
+                                      list = FALSE, 
+                                      times = 1)
+data_train <- combined_annotated[trainIndex, ]
+data_test <- combined_annotated[-trainIndex, ]
+```
+
+## Run Cox Analysis on training set
+
+First run it for SLC7A5
+```{r coxph training 1}
+coxph_train_slc7a5 <- survival::coxph(model_slc7a5,
+                     data = data_train)
+
+coxph_train_slc7a5_sum <- as.data.frame(summary(coxph_train_slc7a5)$coefficients, keep.rownames = T) %>% 
+  tibble::rownames_to_column()
+coxph_train_slc7a5_sum %>% knitr::kable()
+
+coxph_train_results_os_dir <- file.path(coxph_train_results_dir, "OS")
+
+if (!dir.exists(coxph_train_results_os_dir )) {
+  dir.create(coxph_train_results_os_dir , recursive = TRUE)
+}
+
+write_tsv(coxph_train_slc7a5_sum , file.path(coxph_train_results_os_dir, "coxph_train_slc7a5_sum.tsv"))
+```
+
+Then run it for FOLH1
+```{r coxph training 2}
+coxph_train_folh1 <- survival::coxph(model_folh1,
+                     data = data_train)
+
+coxph_train_folh1_sum <- as.data.frame(summary(coxph_train_folh1)$coefficients, keep.rownames = T) %>% 
+  tibble::rownames_to_column()
+coxph_train_folh1_sum %>% knitr::kable()
+write_tsv(coxph_train_folh1_sum , file.path(coxph_train_results_os_dir,"coxph_train_folh1_sum.tsv"))
+```
+
+## Calculate risk score for training set and predict for test set 
+
+First calculate for SLC7A5
+```{r risk score calculation 1}
+train_risk_slc7a5 <- predict(coxph_train_slc7a5, type = "risk")
+med_risk_slc7a5 <- median(train_risk_slc7a5)
+med_risk_slc7a5
+
+test_risk_slc7a5 <- predict(coxph_train_slc7a5, newdata = data_test, type = "risk") %>% 
+  as.data.frame() %>% cbind(data_test) %>%
+  dplyr::rename("RiskScore" = ".") %>% 
+  dplyr::mutate(RiskGroup = case_when(
+    RiskScore > med_risk_slc7a5 ~ "High", 
+    RiskScore <= med_risk_slc7a5 ~ "Low"
+  ))
+
+test_risk_slc7a5$RiskGroup <- as.factor(test_risk_slc7a5$RiskGroup)
+```
+
+Then calculate for FOLH1
+```{r risk score calculation 2}
+train_risk_folh1 <- predict(coxph_train_folh1, type = "risk")
+med_risk_folh1 <- median(train_risk_folh1)
+med_risk_folh1
+
+test_risk_folh1 <- predict(coxph_train_folh1, newdata = data_test, type = "risk") %>% 
+  as.data.frame() %>% cbind(data_test) %>%
+  dplyr::rename("RiskScore" = ".") %>% 
+  dplyr::mutate(RiskGroup = case_when(
+    RiskScore > med_risk_folh1 ~ "High", 
+    RiskScore <= med_risk_folh1 ~ "Low"
+  ))
+
+test_risk_folh1$RiskGroup <- as.factor(test_risk_folh1$RiskGroup)
+```
+
+## Now run Cox analyses per gene for RiskScore and RiskGroup
+
+First calculate per risk group for SLC7A5
+```{r Cox analyses with riskgroup 1}
+coxph_riskgroup_slc7a5 <- survival::coxph(formula = Surv(OS_days, os_status_level) ~  RiskGroup,
+                     data = test_risk_slc7a5)
+coxph_riskgroup_slc7a5_sum <- as.data.frame(summary(coxph_riskgroup_slc7a5)$coefficients) %>% 
+  rownames_to_column()
+coxph_riskgroup_slc7a5_sum %>% knitr::kable()
+```
+
+Calculate per risk score for SLC7A5
+```{r Cox analyses with riskscore 1}
+coxph_riskscore_slc7a5 <- survival::coxph(formula = Surv(OS_days, os_status_level) ~  RiskScore,
+                     data = test_risk_slc7a5)
+coxph_riskscore_slc7a5_sum <- as.data.frame(summary(coxph_riskscore_slc7a5)$coefficients) %>% 
+  rownames_to_column()
+coxph_riskscore_slc7a5_sum %>% knitr::kable()
+```
+
+Saving results for SLC7A5 results:
+```{r save results 1}
+coxph_test_results_os_dir <- file.path(coxph_test_results_dir, "OS")
+
+if (!dir.exists(coxph_test_results_os_dir )) {
+  dir.create(coxph_test_results_os_dir , recursive = TRUE)
+}
+
+write_tsv(coxph_riskgroup_slc7a5_sum, file.path(coxph_test_results_os_dir, "coxph_test_riskgroup_slc7a5_sum.tsv"))
+write_tsv(coxph_riskscore_slc7a5_sum, file.path(coxph_test_results_os_dir, "coxph_test_riskscore_slc7a5_sum.tsv"))
+```
+
+Then calculate per risk group for FOLH1
+```{r Cox analyses with riskgroup 2}
+coxph_riskgroup_folh1 <- survival::coxph(formula = Surv(OS_days, os_status_level) ~  RiskGroup,
+                     data = test_risk_folh1)
+coxph_riskgroup_folh1_sum <- as.data.frame(summary(coxph_riskgroup_folh1)$coefficients) %>% 
+  rownames_to_column()
+coxph_riskgroup_folh1_sum %>% knitr::kable()
+```
+
+Calculate per risk score for FOLH1
+```{r Cox analyses with riskscore 2}
+coxph_riskscore_folh1 <- survival::coxph(formula = Surv(OS_days, os_status_level) ~  RiskScore,
+                     data = test_risk_folh1)
+coxph_riskscore_folh1_sum <- as.data.frame(summary(coxph_riskscore_folh1)$coefficients) %>% 
+  rownames_to_column()
+coxph_riskscore_folh1_sum %>% knitr::kable()
+```
+
+Saving results for FOLH1 results:
+```{r save results 2}
+
+write_tsv(coxph_riskgroup_folh1_sum, file.path(coxph_test_results_os_dir, "coxph_test_riskgroup_folh1_sum.tsv"))
+write_tsv(coxph_riskscore_folh1_sum, file.path(coxph_test_results_os_dir, "coxph_test_riskscore_folh1_sum.tsv"))
+```
+
+## Finally plot the survival for each gene per risk group
+
+First generate plot for SLC7A5
+```{r plotting slc7c5 risk group survival}
+fit_slc7c5 <- survfit(Surv(OS_days, os_status_level) ~ RiskGroup, data = test_risk_slc7a5)
+plot_coxph_riskgroup_slc7a5 <- survminer::ggsurvplot(fit_slc7c5,
+           data=test_risk_slc7a5,                                
+           pval = TRUE, 
+           conf.int = TRUE,
+           risk.table = TRUE, # Add risk table
+           risk.table.col = "strata", # Change risk table color by groups
+           linetype = "strata", # Change line type by groups
+           surv.median.line = "hv", # Specify median survival
+           ggtheme = theme_bw(), # Change ggplot2 theme
+           palette = c("#E7B800", "#2E9FDF"))
+
+# Make this plot a combined plot
+surv_plot_slc7a5 <- cowplot::plot_grid(plot_coxph_riskgroup_slc7a5[[1]], 
+                                       plot_coxph_riskgroup_slc7a5[[2]], 
+                                       nrow = 2, 
+                                       rel_heights = c(2.5, 1))
+# Print it out here
+surv_plot_slc7a5
+
+cox_survival_plots_os_dir <- file.path(cox_survival_plots_dir, "OS")
+if (!dir.exists(cox_survival_plots_os_dir )) {
+  dir.create(cox_survival_plots_os_dir , recursive = TRUE)
+}
+
+# Save the plot
+cowplot::save_plot(filename = file.path(cox_survival_plots_os_dir, "coxph_riskgroup_slc7a5_survival.png"), plot = surv_plot_slc7a5)
+```
+
+Second generate plot for FOLH1
+```{r plotting folh1 risk group survival}
+fit_folh1 <- survfit(Surv(OS_days, os_status_level) ~ RiskGroup, data = test_risk_folh1)
+plot_coxph_riskgroup_folh1 <- survminer::ggsurvplot(fit_folh1,
+           data=test_risk_folh1,                                
+           pval = TRUE, 
+           conf.int = TRUE,
+           risk.table = TRUE, # Add risk table
+           risk.table.col = "strata", # Change risk table color by groups
+           linetype = "strata", # Change line type by groups
+           surv.median.line = "hv", # Specify median survival
+           ggtheme = theme_bw(), # Change ggplot2 theme
+           palette = c("#E7B800", "#2E9FDF"))
+
+# Make this plot a combined plot
+surv_plot_folh1 <- cowplot::plot_grid(plot_coxph_riskgroup_folh1[[1]], 
+                                      plot_coxph_riskgroup_folh1[[2]], 
+                                      nrow = 2, 
+                                      rel_heights = c(2.5, 1))
+# Print it out here
+surv_plot_folh1
+
+# Save the plot
+cowplot::save_plot(filename = file.path(cox_survival_plots_os_dir, "coxph_riskgroup_folh1_survival.png"), plot = surv_plot_folh1)
+```
+
+# Since using OS_days and OS_status does not give enough events, we instead look at PFS_status and PFS_days for analyses 
+## Build up the model for cox analysis below 
+```{r generating models PFS}
+model_slc7a5_pfs <- as.formula(survival::Surv(PFS_days, PFS_status) ~ harmonized_diagnosis + CNS_region + SLC7A5)
+model_folh1_pfs<- as.formula(survival::Surv(PFS_days, PFS_status) ~ harmonized_diagnosis + CNS_region + FOLH1)
+```
+
+## Create train test partition
+```{r train test partition PFS}
+
+set.seed(236)
+# if we remove NA for PFS status - 183 samples remains
+combined_annotated <- combined_annotated %>% filter(!is.na(PFS_status))
+trainIndex <- createDataPartition(combined_annotated$PFS_status, p = 0.6, 
+                                      list = FALSE, 
+                                      times = 1)
+data_train <- combined_annotated[trainIndex, ]
+data_test <- combined_annotated[-trainIndex, ]
+```
+
+## Run Cox Analysis on training set
+
+First run it for SLC7A5
+```{r coxph training 1 PFS}
+coxph_train_slc7a5_pfs <- survival::coxph(model_slc7a5_pfs,
+                                          data = data_train)
+
+coxph_train_slc7a5_pfs_sum <- as.data.frame(summary(coxph_train_slc7a5_pfs)$coefficients, keep.rownames = T) %>% 
+  tibble::rownames_to_column()
+coxph_train_slc7a5_pfs_sum %>% knitr::kable()
+
+coxph_train_results_pfs_dir <- file.path(coxph_train_results_dir, "PFS")
+
+if (!dir.exists(coxph_train_results_pfs_dir )) {
+  dir.create(coxph_train_results_pfs_dir , recursive = TRUE)
+}
+
+write_tsv(coxph_train_slc7a5_pfs_sum , file.path(coxph_train_results_pfs_dir, "coxph_train_slc7a5_pfs_sum.tsv"))
+```
+
+Then run it for FOLH1
+```{r coxph training 2 PFS}
+coxph_train_folh1_pfs <- survival::coxph(model_folh1_pfs,
+                                         data = data_train)
+
+coxph_train_folh1_pfs_sum <- as.data.frame(summary(coxph_train_folh1_pfs)$coefficients, keep.rownames = T) %>% 
+  tibble::rownames_to_column()
+coxph_train_folh1_pfs_sum 
+write_tsv(coxph_train_folh1_pfs_sum , file.path(coxph_train_results_pfs_dir, "coxph_train_folh1_pfs_sum.tsv"))
+```
+
+## Calculate risk score for training set and predict for test set 
+
+First calculate for SLC7A5
+```{r risk score calculation 1 PFS}
+train_risk_slc7a5_pfs <- predict(coxph_train_slc7a5_pfs, type = "risk")
+med_risk_slc7a5_pfs <- median(train_risk_slc7a5_pfs)
+med_risk_slc7a5_pfs
+
+test_risk_slc7a5_pfs <- predict(coxph_train_slc7a5_pfs, newdata = data_test, type = "risk") %>% 
+  as.data.frame() %>% cbind(data_test) %>%
+  dplyr::rename("RiskScore" = ".") %>% 
+  dplyr::mutate(RiskGroup = case_when(
+    RiskScore > med_risk_slc7a5_pfs ~ "High", 
+    RiskScore <= med_risk_slc7a5_pfs ~ "Low"
+  ))
+
+test_risk_slc7a5_pfs$RiskGroup <- as.factor(test_risk_slc7a5_pfs$RiskGroup)
+```
+
+Then calculate for FOLH1
+```{r risk score calculation 2 PFS}
+train_risk_folh1_pfs <- predict(coxph_train_folh1_pfs, type = "risk")
+med_risk_folh1_pfs <- median(train_risk_folh1_pfs)
+med_risk_folh1_pfs
+
+test_risk_folh1_pfs <- predict(coxph_train_folh1_pfs, newdata = data_test, type = "risk") %>% 
+  as.data.frame() %>% cbind(data_test) %>%
+  dplyr::rename("RiskScore" = ".") %>% 
+  dplyr::mutate(RiskGroup = case_when(
+    RiskScore > med_risk_folh1_pfs ~ "High", 
+    RiskScore <= med_risk_folh1_pfs ~ "Low"
+  ))
+
+test_risk_folh1_pfs$RiskGroup <- as.factor(test_risk_folh1_pfs$RiskGroup)
+```
+
+## Now run Cox analyses per gene for RiskScore and RiskGroup
+
+First calculate per risk group for SLC7A5
+```{r Cox analyses with riskgroup 1 PFS}
+coxph_riskgroup_slc7a5_pfs <- survival::coxph(formula = Surv(PFS_days, PFS_status) ~  RiskGroup,
+                                              data = test_risk_slc7a5_pfs)
+coxph_riskgroup_slc7a5_pfs_sum <- as.data.frame(summary(coxph_riskgroup_slc7a5_pfs)$coefficients) %>% 
+  rownames_to_column()
+coxph_riskgroup_slc7a5_pfs_sum %>% knitr::kable()
+```
+
+Calculate per risk score for SLC7A5
+```{r Cox analyses with riskscore 1 PFS}
+coxph_riskscore_slc7a5_pfs <- survival::coxph(formula = Surv(PFS_days, PFS_status) ~  RiskScore,
+                                              data = test_risk_slc7a5_pfs)
+coxph_riskscore_slc7a5_pfs_sum <- as.data.frame(summary(coxph_riskscore_slc7a5_pfs)$coefficients) %>% 
+  rownames_to_column()
+coxph_riskscore_slc7a5_pfs_sum %>% knitr::kable()
+```
+
+Saving results for SLC7A5 results:
+```{r save results 1 PFS}
+
+coxph_test_results_pfs_dir <- file.path(coxph_test_results_dir, "PFS")
+
+if (!dir.exists(coxph_test_results_pfs_dir )) {
+  dir.create(coxph_test_results_pfs_dir , recursive = TRUE)
+}
+
+write_tsv(coxph_riskgroup_slc7a5_pfs_sum, file.path(coxph_test_results_pfs_dir, "coxph_test_riskgroup_slc7a5_pfs_sum.tsv"))
+write_tsv(coxph_riskscore_slc7a5_pfs_sum,  file.path(coxph_test_results_pfs_dir, "coxph_test_riskscore_slc7a5_pfs_sum.tsv"))
+```
+
+Then calculate per risk group for FOLH1
+```{r Cox analyses with riskgroup 2 PFS}
+coxph_riskgroup_folh1_pfs <- survival::coxph(formula = Surv(PFS_days, PFS_status) ~  RiskGroup,
+                                             data = test_risk_folh1_pfs)
+coxph_riskgroup_folh1_pfs_sum <- as.data.frame(summary(coxph_riskgroup_folh1_pfs)$coefficients) %>% 
+  rownames_to_column()
+coxph_riskgroup_folh1_pfs_sum %>% knitr::kable()
+```
+
+Calculate per risk score for FOLH1
+```{r Cox analyses with riskscore 2 PFS}
+coxph_riskscore_folh1_pfs <- survival::coxph(formula = Surv(PFS_days, PFS_status) ~  RiskScore,
+                                             data = test_risk_folh1_pfs)
+coxph_riskscore_folh1_pfs_sum <- as.data.frame(summary(coxph_riskscore_folh1_pfs)$coefficients) %>% 
+  rownames_to_column()
+coxph_riskscore_folh1_pfs_sum %>% knitr::kable()
+```
+
+Saving results for FOLH1 results:
+```{r save results 2 PFS}
+write_tsv(coxph_riskgroup_folh1_pfs_sum,  file.path(coxph_test_results_pfs_dir, "coxph_test_riskgroup_folh1_pfs_sum.tsv"))
+write_tsv(coxph_riskscore_folh1_pfs_sum,  file.path(coxph_test_results_pfs_dir, "coxph_test_riskscore_folh1_pfs_sum.tsv"))
+```
+
+## Finally plot the survival for each gene per risk group
+
+First generate plot for SLC7A5
+```{r plotting slc7c5 risk group survival PFS}
+fit_slc7c5_pfs <- survfit(Surv(PFS_days, PFS_status) ~ RiskGroup, data = test_risk_slc7a5_pfs)
+plot_coxph_riskgroup_slc7a5_pfs <- survminer::ggsurvplot(fit_slc7c5_pfs,
+           data=test_risk_slc7a5_pfs,                                
+           pval = TRUE, 
+           conf.int = TRUE,
+           risk.table = TRUE, # Add risk table
+           risk.table.col = "strata", # Change risk table color by groups
+           linetype = "strata", # Change line type by groups
+           surv.median.line = "hv", # Specify median survival
+           ggtheme = theme_bw(), # Change ggplot2 theme
+           palette = c("#E7B800", "#2E9FDF"))
+
+# Make this plot a combined plot
+surv_plot_slc7a5_pfs<- cowplot::plot_grid(plot_coxph_riskgroup_slc7a5_pfs[[1]], 
+                                       plot_coxph_riskgroup_slc7a5_pfs[[2]], 
+                                       nrow = 2, 
+                                       rel_heights = c(2.5, 1))
+# Print it out here
+surv_plot_slc7a5_pfs
+
+cox_survival_plots_pfs_dir <- file.path(cox_survival_plots_dir, "PFS")
+if (!dir.exists(cox_survival_plots_pfs_dir )) {
+  dir.create(cox_survival_plots_pfs_dir , recursive = TRUE)
+}
+
+# Save the plot
+cowplot::save_plot(filename = file.path(cox_survival_plots_pfs_dir, "coxph_riskgroup_slc7a5_pfs_survival.png"), plot = surv_plot_slc7a5_pfs)
+```
+
+Second generate plot for FOLH1
+```{r plotting folh1 risk group survival PFS}
+fit_folh1_pfs <- survfit(Surv(PFS_days, PFS_status) ~ RiskGroup, data = test_risk_folh1_pfs)
+plot_coxph_riskgroup_folh1_pfs <- survminer::ggsurvplot(fit_folh1_pfs,
+           data=test_risk_folh1_pfs,                                
+           pval = TRUE, 
+           conf.int = TRUE,
+           risk.table = TRUE, # Add risk table
+           risk.table.col = "strata", # Change risk table color by groups
+           linetype = "strata", # Change line type by groups
+           surv.median.line = "hv", # Specify median survival
+           ggtheme = theme_bw(), # Change ggplot2 theme
+           palette = c("#E7B800", "#2E9FDF"))
+
+# Make this plot a combined plot
+surv_plot_folh1_pfs <- cowplot::plot_grid(plot_coxph_riskgroup_folh1_pfs[[1]], 
+                                          plot_coxph_riskgroup_folh1_pfs[[2]], 
+                                          nrow = 2, 
+                                          rel_heights = c(2.5, 1))
+# Print it out here
+surv_plot_folh1_pfs
+
+# Save the plot
+cowplot::save_plot(filename = file.path(cox_survival_plots_pfs_dir, "coxph_riskgroup_folh1_pfs_survival.png"), plot = surv_plot_folh1_pfs)
+```
+
+
+
+

@@ -1,0 +1,3 @@
+rowname	Df	Sum Sq	Mean Sq	F value	Pr(>F)
+combined$harmonized_diagnosis	24	1145.2119622596463	47.71716509415193	4.076668558206014	1.6838360919888354e-9
+Residuals                    	384	4494.697357544752	11.70494103527279	NA	NA

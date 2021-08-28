@@ -31,12 +31,6 @@ Rscript --vanilla 03-km_w_logrank_survival.R \
 --gene_list "SLC7A5,FOLH1" \
 --short_long_match $short_long_match
 
-
-
-# Rscript -e "rmarkdown::render('03a-km_w_logrank_survival_lgg.Rmd', clean = TRUE)"
-# Rscript -e "rmarkdown::render('03b-km_w_logrank_survival_hgg.Rmd', clean = TRUE)"
-# Rscript -e "rmarkdown::render('03c-km_w_logrank_survival_medullo.Rmd', clean = TRUE)"
-# 
 # Rscript -e "rmarkdown::render('04a-cox_reg_survival_lgg.Rmd', clean = TRUE)"
 # Rscript -e "rmarkdown::render('04b-cox_reg_survival_hgg.Rmd', clean = TRUE)"
 # Rscript -e "rmarkdown::render('04c-cox_reg_survival_medullo.Rmd', clean = TRUE)"

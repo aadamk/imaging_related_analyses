@@ -54,11 +54,6 @@ histology_df <- histology_df %>%
     OS_status == "DECEASED" ~ 1
   )) 
 
-#### Define formula for the model -----------------------------------------------------
-model_list <- c("survival::Surv(OS_days, os_status_level) ~ expression_level", 
-                 "survival::Surv(PFS_days, PFS_status) ~ expression_level")
-condition_list <-c("OS", "PFS")
-model_df <- data.frame(condition_list, model_list)
 
 #### Do the analysis for all the cohort of interest -----------------------------------
 lapply(cancer_group_list, function(x){
@@ -110,64 +105,95 @@ lapply(cancer_group_list, function(x){
         gene_of_interest<median_exp ~ "low"
     ))
     
-    ########################################## survival analysis
+    ########################################## survival analysis OS
     # generate the log-rank model 
+    fit_gene <- survival::survdiff(
+      as.formula("survival::Surv(OS_days, os_status_level) ~ expression_level"),
+      data = combined_annotated
+    )
+    # get the p.values and all statistics for the model 
+    fit_gene$p.value <- pchisq(fit_gene$chisq, df = 1, lower = FALSE)
+    fit_gene_df <- as.data.frame(fit_gene[c("n", "obs", "exp", "chisq", "p.value")])
     
-    for(i in 1:nrow(model_df)){
-      model_gene <- model_df[i,2] %>% as.formula()
-      fit_gene <- survival::survdiff(
-        model_gene,
-        data = combined_annotated
-      )
-      # get the p.values and all statistics for the model 
-      fit_gene$p.value <- pchisq(fit_gene$chisq, df = 1, lower = FALSE)
-      fit_gene_df <- as.data.frame(fit_gene[c("n", "obs", "exp", "chisq", "p.value")])
-      
-      survival_condition <- model_df[i,1] 
-      if(grepl("OS", survival_condition)){
-        lr_sub_result_dir <- file.path(lr_survival_results_dir, "OS",y)
-      } else{
-        lr_sub_result_dir <- file.path(lr_survival_results_dir, "PFS",y)
-      }
-      
-      if (!dir.exists(lr_sub_result_dir )) {
-        dir.create(lr_sub_result_dir , recursive = TRUE)
-      }
-      
-      readr::write_tsv(fit_gene_df, file.path(lr_sub_result_dir, "log_rank_survival.tsv"))
-      
-      # generate the kaplan-meier model 
-      kap_fit_gene <- survival::survfit(
-        model_gene,
-        data = combined_annotated
-      )
-      
-      # generate and save the survival plot 
-      surv_plot <- survminer::ggsurvplot(kap_fit_gene,
-                                         pval = fit_gene$p.value, # use the computed pval from log rank analyses 
-                                         data = combined_annotated,
-                                         risk.table = TRUE,
-                                         xlim = c(0, 2000),
-                                         break.time.by = 500,
-                                         ggtheme = theme_minimal(),
-                                         risk.table.y.text.col = TRUE,
-                                         risk.table.y.text = FALSE
-      )
-      # Make this plot a combined plot
-      surv_plot <- cowplot::plot_grid(surv_plot[[1]], surv_plot[[2]], nrow = 2, 
-                                      rel_heights = c(2.5, 1))
-      
-      if(grepl("OS", survival_condition)){
-        km_survival_plot_sub_dir <- file.path(km_survival_plots_dir, "OS",y)
-      } else{
-        km_survival_plot_sub_dir <- file.path(km_survival_plots_dir, "PFS",y)
-      }
-      
-      if (!dir.exists(km_survival_plot_sub_dir )) {
-        dir.create(km_survival_plot_sub_dir , recursive = TRUE)
-      }
-      cowplot::save_plot(filename = file.path(km_survival_plot_sub_dir,"kaplan_meier_survival.png"), plot = surv_plot)
+    lr_sub_result_dir <- file.path(lr_survival_results_dir, "OS",y)
+    if (!dir.exists(lr_sub_result_dir )) {
+      dir.create(lr_sub_result_dir , recursive = TRUE)
     }
+    
+    readr::write_tsv(fit_gene_df, file.path(lr_sub_result_dir, "log_rank_survival.tsv"))
+    
+    # generate the kaplan-meier model 
+    kap_fit_gene <- survival::survfit(
+      as.formula("survival::Surv(OS_days, os_status_level) ~ expression_level"),
+      data = combined_annotated
+    )
+    
+    # generate and save the survival plot 
+    surv_plot <- survminer::ggsurvplot(kap_fit_gene,
+                                       pval = fit_gene$p.value, # use the computed pval from log rank analyses 
+                                       data = combined_annotated,
+                                       risk.table = TRUE,
+                                       xlim = c(0, 2000),
+                                       break.time.by = 500,
+                                       ggtheme = theme_minimal(),
+                                       risk.table.y.text.col = TRUE,
+                                       risk.table.y.text = FALSE
+    )
+    # Make this plot a combined plot
+    surv_plot <- cowplot::plot_grid(surv_plot[[1]], surv_plot[[2]], nrow = 2, 
+                                    rel_heights = c(2.5, 1))
+    
+    km_survival_plot_sub_dir <- file.path(km_survival_plots_dir, "OS",y)
+    if (!dir.exists(km_survival_plot_sub_dir )) {
+      dir.create(km_survival_plot_sub_dir , recursive = TRUE)
+    }
+    cowplot::save_plot(filename = file.path(km_survival_plot_sub_dir,"kaplan_meier_survival.png"), plot = surv_plot)
+    
+    
+    ########################################## survival analysis PFS
+    # generate the log-rank model 
+    fit_gene <- survival::survdiff(
+      as.formula("survival::Surv(PFS_days, PFS_status) ~ expression_level"),
+      data = combined_annotated
+    )
+    # get the p.values and all statistics for the model 
+    fit_gene$p.value <- pchisq(fit_gene$chisq, df = 1, lower = FALSE)
+    fit_gene_df <- as.data.frame(fit_gene[c("n", "obs", "exp", "chisq", "p.value")])
+    
+    lr_sub_result_dir <- file.path(lr_survival_results_dir, "PFS",y)
+    if (!dir.exists(lr_sub_result_dir )) {
+      dir.create(lr_sub_result_dir , recursive = TRUE)
+    }
+    
+    readr::write_tsv(fit_gene_df, file.path(lr_sub_result_dir, "log_rank_survival.tsv"))
+    
+    # generate the kaplan-meier model 
+    kap_fit_gene <- survival::survfit(
+      as.formula("survival::Surv(PFS_days, PFS_status) ~ expression_level"),
+      data = combined_annotated
+    )
+    
+    # generate and save the survival plot 
+    surv_plot <- survminer::ggsurvplot(kap_fit_gene,
+                                       pval = fit_gene$p.value, # use the computed pval from log rank analyses 
+                                       data = combined_annotated,
+                                       risk.table = TRUE,
+                                       xlim = c(0, 2000),
+                                       break.time.by = 500,
+                                       ggtheme = theme_minimal(),
+                                       risk.table.y.text.col = TRUE,
+                                       risk.table.y.text = FALSE
+    )
+    # Make this plot a combined plot
+    surv_plot <- cowplot::plot_grid(surv_plot[[1]], surv_plot[[2]], nrow = 2, 
+                                    rel_heights = c(2.5, 1))
+    
+    km_survival_plot_sub_dir <- file.path(km_survival_plots_dir, "PFS",y)
+    if (!dir.exists(km_survival_plot_sub_dir )) {
+      dir.create(km_survival_plot_sub_dir , recursive = TRUE)
+    }
+    cowplot::save_plot(filename = file.path(km_survival_plot_sub_dir,"kaplan_meier_survival.png"), plot = surv_plot)
+    
   })
 })
 

@@ -177,7 +177,7 @@ pre code {
 <h2>Import Relevant Data</h2>
 <pre class="r"><code>histology_df &lt;- read_tsv(&quot;../data/histologies.tsv&quot;)</code></pre>
 <pre><code>## Rows: 35827 Columns: 46</code></pre>
-<pre><code>## ── Column specification ────────────────────────────────────────────────────────────────────────────────
+<pre><code>## ── Column specification ─────────────────────────────────────────────────────────────────────────────────────────────────
 ## Delimiter: &quot;\t&quot;
 ## chr (40): Kids_First_Biospecimen_ID, sample_id, aliquot_id, Kids_First_Parti...
 ## dbl  (6): age_at_diagnosis_days, OS_days, age_last_update_days, normal_fract...</code></pre>
@@ -185,6 +185,7 @@ pre code {
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 <pre class="r"><code>expression_data &lt;- readRDS(&quot;../data/gene-expression-rsem-tpm-collapsed.rds&quot;)</code></pre>
+<p>Define directory</p>
 <pre class="r"><code># create directory 
 root_dir &lt;- rprojroot::find_root(rprojroot::has_dir(&quot;.git&quot;))
 

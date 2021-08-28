@@ -17,7 +17,9 @@ expression_file="${data_dir}/gene-expression-rsem-tpm-collapsed.rds"
 short_long_match="${data_dir}/short_long_match.tsv"
 
 ref_dir="../../references"
-
+stat_dir="results"
+stat_outfile="${stat_dir}/km_stats_combined.tsv"
+stat_outfile_cox="${stat_dir}/coxph_test_stats_combined.tsv"
 
 # Rscript -e "rmarkdown::render('01-TPM_vs_harmonized_diagnosis.Rmd', clean = TRUE)"
 #  
@@ -29,8 +31,15 @@ Rscript --vanilla 03-km_w_logrank_survival.R \
 --expression $expression_file \
 --cancer_groups "LGG,HGG,Medullo" \
 --gene_list "SLC7A5,FOLH1" \
---short_long_match $short_long_match
+--short_long_match $short_long_match \
+--stat_outfile $stat_outfile
 
-# Rscript -e "rmarkdown::render('04a-cox_reg_survival_lgg.Rmd', clean = TRUE)"
-# Rscript -e "rmarkdown::render('04b-cox_reg_survival_hgg.Rmd', clean = TRUE)"
-# Rscript -e "rmarkdown::render('04c-cox_reg_survival_medullo.Rmd', clean = TRUE)"
+Rscript --vanilla 04-coxph_reg_survival.R \
+--histology $histology_file \
+--expression $expression_file \
+--cancer_groups "LGG,HGG,Medullo" \
+--gene_list "SLC7A5,FOLH1" \
+--short_long_match $short_long_match \
+--stat_outfile $stat_outfile_cox 
+
+

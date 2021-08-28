@@ -1,9 +1,6 @@
 # Author: Run Jin
 #
-# Obtain Gene Drug Mapping for Subnetworks of Patients of Interest
-
-# BiocManager::install("drugTargetInteractions")
-# BiocManager::install("biomaRt")
+# Obtain Kaplan-Meier Survival Statistic Results and Plots
 
 suppressPackageStartupMessages(library("optparse"))
 suppressPackageStartupMessages(library("tidyverse"))
@@ -11,8 +8,6 @@ suppressPackageStartupMessages(library("readr"))
 suppressPackageStartupMessages(library("survminer"))
 suppressPackageStartupMessages(library("cowplot"))
 suppressPackageStartupMessages(library("survival"))
-
-
 
 #### Parse command line options ------------------------------------------------
 
@@ -26,7 +21,9 @@ option_list <- list(
   make_option(c("-m","--short_long_match"),type="character",
               help="match between long and short names"),
   make_option(c("-g","--gene_list"),type="character",
-              help="list of genes that we are interested in analyzing")
+              help="list of genes that we are interested in analyzing"),
+  make_option(c("-s","--stat_outfile"),type="character",
+              help="path and file name for the stat output (.TSV)")
   
 )
 
@@ -54,24 +51,14 @@ histology_df <- histology_df %>%
     OS_status == "DECEASED" ~ 1
   )) 
 
-
 #### Do the analysis for all the cohort of interest -----------------------------------
-lapply(cancer_group_list, function(x){
+stat_list <- lapply(cancer_group_list, function(x){
   
   # match the long name to the short name
   long_name <- short_long_match %>% filter(short_name == x) %>%
     pull(long_name) 
   # make directory for results and plots
-  lr_survival_results_dir <- file.path(root_dir, "molecular_target_radiation", "results", x, "log_rank_survival")
   km_survival_plots_dir <- file.path(root_dir, "molecular_target_radiation", "plots",x, "KM_survival")
-  
-  if (!dir.exists(lr_survival_results_dir )) {
-    dir.create(lr_survival_results_dir , recursive = TRUE)
-  }
-  
-  if (!dir.exists(km_survival_plots_dir )) {
-    dir.create(km_survival_plots_dir , recursive = TRUE)
-  }
   
   # filter to the cohort of interest
   cohort_df <- histology_df %>% dplyr::filter(cancer_group == long_name) %>%
@@ -115,13 +102,10 @@ lapply(cancer_group_list, function(x){
     fit_gene$p.value <- pchisq(fit_gene$chisq, df = 1, lower = FALSE)
     fit_gene_df <- as.data.frame(fit_gene[c("n", "obs", "exp", "chisq", "p.value")])
     
-    lr_sub_result_dir <- file.path(lr_survival_results_dir, "OS",y)
-    if (!dir.exists(lr_sub_result_dir )) {
-      dir.create(lr_sub_result_dir , recursive = TRUE)
-    }
-    
-    readr::write_tsv(fit_gene_df, file.path(lr_sub_result_dir, "log_rank_survival.tsv"))
-    
+    fit_gene_df <- fit_gene_df %>% mutate(cancer_group = x,
+                           gene_interest = y, 
+                           model = "OS")
+
     # generate the kaplan-meier model 
     kap_fit_gene <- survival::survfit(
       as.formula("survival::Surv(OS_days, os_status_level) ~ expression_level"),
@@ -152,20 +136,19 @@ lapply(cancer_group_list, function(x){
     
     ########################################## survival analysis PFS
     # generate the log-rank model 
-    fit_gene <- survival::survdiff(
+    fit_gene_pfs <- survival::survdiff(
       as.formula("survival::Surv(PFS_days, PFS_status) ~ expression_level"),
       data = combined_annotated
     )
     # get the p.values and all statistics for the model 
-    fit_gene$p.value <- pchisq(fit_gene$chisq, df = 1, lower = FALSE)
-    fit_gene_df <- as.data.frame(fit_gene[c("n", "obs", "exp", "chisq", "p.value")])
+    fit_gene_pfs$p.value <- pchisq(fit_gene_pfs$chisq, df = 1, lower = FALSE)
+    fit_gene_pfs_df <- as.data.frame(fit_gene_pfs[c("n", "obs", "exp", "chisq", "p.value")])
     
-    lr_sub_result_dir <- file.path(lr_survival_results_dir, "PFS",y)
-    if (!dir.exists(lr_sub_result_dir )) {
-      dir.create(lr_sub_result_dir , recursive = TRUE)
-    }
-    
-    readr::write_tsv(fit_gene_df, file.path(lr_sub_result_dir, "log_rank_survival.tsv"))
+    fit_gene_pfs_df <- fit_gene_pfs_df %>% mutate(cancer_group = x,
+                                          gene_interest = y, 
+                                          model = "PFS")
+    combined_df <- rbind(fit_gene_df, fit_gene_pfs_df)
+    return(combined_df)
     
     # generate the kaplan-meier model 
     kap_fit_gene <- survival::survfit(
@@ -196,5 +179,11 @@ lapply(cancer_group_list, function(x){
     
   })
 })
+
+cg_combined <- lapply(stat_list, function(x){
+  do.call(rbind,x)
+})
+all_combined <- do.call(rbind, cg_combined)
+readr::write_tsv(all_combined, opt$stat_outfile)
 
   

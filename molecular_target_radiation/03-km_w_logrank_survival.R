@@ -61,7 +61,7 @@ stat_list <- lapply(cancer_group_list, function(x){
   km_survival_plots_dir <- file.path(root_dir, "molecular_target_radiation", "plots",x, "KM_survival")
   
   # filter to the cohort of interest
-  cohort_df <- histology_df %>% dplyr::filter(cancer_group == long_name) %>%
+  cohort_df <- histology_df %>% dplyr::filter(cancer_group %in% long_name) %>%
     dplyr::select(Kids_First_Biospecimen_ID, os_status_level, OS_days, PFS_status,PFS_days) 
   
   # get biospecimen ID's for samples 
@@ -88,8 +88,8 @@ stat_list <- lapply(cancer_group_list, function(x){
     combined_annotated <- combined %>% 
       rename("gene_of_interest" = y) %>%
       mutate(expression_level = case_when(
-        gene_of_interest>=median_exp ~"High",
-        gene_of_interest<median_exp ~ "low"
+        gene_of_interest>median_exp ~"High",
+        gene_of_interest<=median_exp ~ "low"
     ))
     
     ########################################## survival analysis OS
@@ -99,7 +99,7 @@ stat_list <- lapply(cancer_group_list, function(x){
       data = combined_annotated
     )
     # get the p.values and all statistics for the model 
-    fit_gene$p.value <- pchisq(fit_gene$chisq, df = 1, lower = FALSE)
+    fit_gene$p.value <- round(pchisq(fit_gene$chisq, df = 1, lower = FALSE), digits=3)
     fit_gene_df <- as.data.frame(fit_gene[c("n", "obs", "exp", "chisq", "p.value")])
     
     fit_gene_df <- fit_gene_df %>% mutate(cancer_group = x,
@@ -114,7 +114,7 @@ stat_list <- lapply(cancer_group_list, function(x){
     
     # generate and save the survival plot 
     surv_plot <- survminer::ggsurvplot(kap_fit_gene,
-                                       pval = fit_gene$p.value, # use the computed pval from log rank analyses 
+                                       pval = round(fit_gene$p.value, digits=3), # use the computed pval from log rank analyses 
                                        data = combined_annotated,
                                        risk.table = TRUE,
                                        xlim = c(0, 2000),
@@ -141,14 +141,12 @@ stat_list <- lapply(cancer_group_list, function(x){
       data = combined_annotated
     )
     # get the p.values and all statistics for the model 
-    fit_gene_pfs$p.value <- pchisq(fit_gene_pfs$chisq, df = 1, lower = FALSE)
+    fit_gene_pfs$p.value <- round(pchisq(fit_gene_pfs$chisq, df = 1, lower = FALSE), digits=3)
     fit_gene_pfs_df <- as.data.frame(fit_gene_pfs[c("n", "obs", "exp", "chisq", "p.value")])
     
     fit_gene_pfs_df <- fit_gene_pfs_df %>% mutate(cancer_group = x,
                                           gene_interest = y, 
                                           model = "PFS")
-    combined_df <- rbind(fit_gene_df, fit_gene_pfs_df)
-    return(combined_df)
     
     # generate the kaplan-meier model 
     kap_fit_gene <- survival::survfit(
@@ -158,7 +156,7 @@ stat_list <- lapply(cancer_group_list, function(x){
     
     # generate and save the survival plot 
     surv_plot <- survminer::ggsurvplot(kap_fit_gene,
-                                       pval = fit_gene$p.value, # use the computed pval from log rank analyses 
+                                       pval = round(fit_gene_pfs$p.value,digits=3), # use the computed pval from log rank analyses 
                                        data = combined_annotated,
                                        risk.table = TRUE,
                                        xlim = c(0, 2000),
@@ -171,12 +169,15 @@ stat_list <- lapply(cancer_group_list, function(x){
     surv_plot <- cowplot::plot_grid(surv_plot[[1]], surv_plot[[2]], nrow = 2, 
                                     rel_heights = c(2.5, 1))
     
-    km_survival_plot_sub_dir <- file.path(km_survival_plots_dir, "PFS",y)
-    if (!dir.exists(km_survival_plot_sub_dir )) {
-      dir.create(km_survival_plot_sub_dir , recursive = TRUE)
+    km_survival_plot_pfs_dir <- file.path(km_survival_plots_dir, "PFS",y)
+    if (!dir.exists(km_survival_plot_pfs_dir )) {
+      dir.create(km_survival_plot_pfs_dir , recursive = TRUE)
     }
-    cowplot::save_plot(filename = file.path(km_survival_plot_sub_dir,"kaplan_meier_survival.png"), plot = surv_plot)
+
+    cowplot::save_plot(filename = file.path(km_survival_plot_pfs_dir,"kaplan_meier_survival.png"), plot = surv_plot)
     
+    combined_df <- rbind(fit_gene_df, fit_gene_pfs_df)
+    return(combined_df)
   })
 })
 

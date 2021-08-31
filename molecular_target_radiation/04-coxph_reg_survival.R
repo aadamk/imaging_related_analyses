@@ -76,7 +76,7 @@ for (i in 1:length(cancer_group_list)){
     pull(long_name) 
   
   # filter to the cohort of interest
-  cohort_df <- histology_df %>% dplyr::filter(cancer_group == long_name) %>%
+  cohort_df <- histology_df %>% dplyr::filter(cancer_group %in% long_name) %>%
     dplyr::select(Kids_First_Biospecimen_ID, os_status_level, OS_days, PFS_status,PFS_days, CNS_region, harmonized_diagnosis) 
   
   # get biospecimen ID's for samples 

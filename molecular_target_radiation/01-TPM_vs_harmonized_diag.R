@@ -91,13 +91,13 @@ for(i in 1:length(gene_list)){
     geom_violin(width=1.4, trim=FALSE, show.legend = F) +
     geom_boxplot(width=0.1, color="black", show.legend = F) +
     labs(title=paste0(x," TPM per Harmonized Diagnosis"),x="Harmonized Diagnosis", y = paste0(x," TPM Value")) + 
-    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
   
   tpm_plot_each_dir <- file.path(tpm_plots_dir,x)
   if (!dir.exists(tpm_plot_each_dir )) {
     dir.create(tpm_plot_each_dir , recursive = TRUE)
   }
-  ggsave(file.path(tpm_plot_each_dir,"harmonized_diagnosis_violin.png"), p)
+  ggsave(file.path(tpm_plot_each_dir,"harmonized_diagnosis_violin.png"), p, height = 6, width=12)
 
   # calculate statistics 
   res_aov <- aov(combined$gene_of_interest ~ combined$harmonized_diagnosis,

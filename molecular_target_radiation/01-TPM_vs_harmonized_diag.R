@@ -6,7 +6,7 @@ suppressPackageStartupMessages(library("optparse"))
 suppressPackageStartupMessages(library("tidyverse"))
 suppressPackageStartupMessages(library("car"))
 suppressPackageStartupMessages(library("multcomp"))
-suppressPackageStartupMessages(library("kableExtra"))
+suppressPackageStartupMessages(library("ggpubr"))
 
 #### Parse command line options ------------------------------------------------
 
@@ -83,41 +83,73 @@ for(i in 1:length(gene_list)){
   combined <- expression_of_interest %>% dplyr::left_join(cohort_df) %>%
     dplyr::rename(gene_of_interest = x)
   
-  n_sample_hd <- combined %>% group_by(harmonized_diagnosis) %>% summarize(n=n())
-  p<-combined %>%
-    dplyr::left_join(n_sample_hd) %>%
-    dplyr::mutate(myaxis = paste0(harmonized_diagnosis, "\n", "n=", n)) %>%
-    ggplot( aes(x=myaxis, y=gene_of_interest, fill=harmonized_diagnosis)) +
-    geom_violin(width=1.4, trim=FALSE, show.legend = F) +
-    geom_boxplot(width=0.1, color="black", show.legend = F) +
-    labs(title=paste0(x," TPM per Harmonized Diagnosis"),x="Harmonized Diagnosis", y = paste0(x," TPM Value")) + 
-    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
+  # get ready for calculating statistics
+  combined_fixed <- combined %>% mutate(harmonized_diagnosis = gsub("-","_", harmonized_diagnosis))
+  n_sample_hd <- combined_fixed %>% group_by(harmonized_diagnosis) %>% summarize(n=n())
   
-  tpm_plot_each_dir <- file.path(tpm_plots_dir,x)
-  if (!dir.exists(tpm_plot_each_dir )) {
-    dir.create(tpm_plot_each_dir , recursive = TRUE)
-  }
-  ggsave(file.path(tpm_plot_each_dir,"harmonized_diagnosis_violin.png"), p, height = 6, width=12)
-
+  combined_fixed <- combined_fixed %>%
+    dplyr::left_join(n_sample_hd) %>%
+    dplyr::mutate(harmonized_diagnosis = paste0(harmonized_diagnosis, " ", "n=", n))
   # calculate statistics 
-  res_aov <- aov(combined$gene_of_interest ~ combined$harmonized_diagnosis,
-                 data = combined)
+  res_aov <- aov(combined_fixed$gene_of_interest ~ combined_fixed$harmonized_diagnosis,
+                 data = combined_fixed)
   summary(res_aov)
   anova_result <- summary(res_aov)[[1]] %>% 
     tibble::rownames_to_column() %>%
     mutate(gene = x)
   anova_results <- rbind(anova_results, anova_result)
   
-  tukey.test<-TukeyHSD(res_aov)[1] %>% as.data.frame() %>% rownames_to_column() 
+  tukey.test<-TukeyHSD(res_aov)[1] %>% as.data.frame() %>% tibble::rownames_to_column() 
   colnames(tukey.test) <- c("Pair Compared", "DIFF", "LWR", "UPR", "P.adj")
   
-  tukey.test <- tukey.test %>% arrange(P.adj, descending = TRUE) %>%
-    mutate(gene=x)
+  tukey_test_heatmap <- tukey.test %>% arrange(P.adj, descending = TRUE) %>%
+    mutate(gene=x) %>%
+    tidyr::separate(col = `Pair Compared`, into = c("group1", "group2"), sep = "-") %>%
+    rename(p.adj = P.adj) 
+  
+  # generate data frame for adding statistics for violin plot
+  tukey_test_violin <- tukey_test_heatmap %>%
+    mutate(.y. = "harmonized_diagnosis") %>%
+    dplyr::select(.y., group1, group2, p.adj) %>% tibble() %>%
+    filter(p.adj <=0.01) 
+  tukey_test_violin <-tukey_test_violin %>%
+    mutate(y.position = seq(0.6*max(combined_fixed$gene_of_interest), 1.5*max(combined_fixed$gene_of_interest), length.out = nrow(tukey_test_violin))) 
+  
+  tukey_test_violin$p.adj <- round(tukey_test_violin$p.adj, digits=6)
+  
+  p<-combined_fixed %>%
+    ggplot( aes(x=harmonized_diagnosis, y=gene_of_interest)) +
+    geom_violin(width=1.4, trim=TRUE, show.legend = F, aes(fill=harmonized_diagnosis)) +
+    geom_boxplot(width=0.1, color="black", show.legend = F,aes(fill=harmonized_diagnosis)) +
+    labs(title=paste0(x," TPM per Harmonized Diagnosis"),x="Harmonized Diagnosis", y = paste0(x," TPM Value")) + 
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+    stat_pvalue_manual(tukey_test_violin, label = "p.adj")
+    
+  tpm_plot_each_dir <- file.path(tpm_plots_dir,x)
+  if (!dir.exists(tpm_plot_each_dir )) {
+    dir.create(tpm_plot_each_dir , recursive = TRUE)
+  }
+  ggsave(file.path(tpm_plot_each_dir,"harmonized_diagnosis_violin.png"), p, height = 10, width=12)
+ 
+  # Generate output
   tukey_results <- rbind(tukey_results, tukey.test)
   
+  # Generate complete dataframe for plotting heatmap
+  tukey_test_heatmap_filled <- tukey_test_heatmap %>%
+    rename(group2=group1, 
+           group1=group2)
+  tukey_heatmap_complete <- rbind(tukey_test_heatmap, tukey_test_heatmap_filled)
+  q<-ggplot(tukey_heatmap_complete, aes(x=group1, group2, fill= p.adj)) +
+          geom_tile(aes(fill=p.adj)) +
+          labs(title=paste0(x," Harmonized Diagnosis Tukey Test for TPM"),x="Harmonized Diagnosis", y = "Harmonized Diagnosis") + 
+          theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+  ggsave(file.path(tpm_plot_each_dir,"harmonized_diagnosis_heatmap.png"), q, height = 10, width=10)
 }
 
 write_tsv(anova_results, file.path(stats_anova_dir, "anova_result_hd.tsv"))
 write_tsv(tukey_results, file.path(stats_tukey_dir, "tukey_result_hd.tsv"))
+
+
+  
 
 

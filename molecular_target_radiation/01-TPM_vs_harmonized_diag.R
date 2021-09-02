@@ -55,14 +55,19 @@ expression_data <- readRDS(opt$expression)
 short_long_match <- readr::read_tsv(opt$short_long_match)
 
 #### Filter to the cancer group of interest -----------------------------------
-cancer_group_long <- short_long_match %>% 
-  filter(short_name %in% cancer_group_list) %>%
-  pull(long_name)
+cohort_df_list <- lapply(cancer_group_list, function(x){
+  cancer_group_long <- short_long_match %>% 
+    filter(short_name ==x) %>%
+    pull(long_name)
+  
+  cohort_df_each <- histology_df %>% dplyr::filter(tumor_descriptor == "Initial CNS Tumor") %>%
+    dplyr::filter(experimental_strategy=="RNA-Seq") %>% 
+    dplyr::filter(cancer_group %in% cancer_group_long) %>%
+    dplyr::select(Kids_First_Biospecimen_ID, harmonized_diagnosis) %>%
+    dplyr::mutate(short_name = x)
+})
 
-cohort_df <- histology_df %>% dplyr::filter(tumor_descriptor == "Initial CNS Tumor") %>%
-  dplyr::filter(experimental_strategy=="RNA-Seq") %>% 
-  dplyr::filter(cancer_group %in% cancer_group_long) %>%
-  dplyr::select(Kids_First_Biospecimen_ID, harmonized_diagnosis)
+cohort_df <- do.call(rbind,cohort_df_list)
 
 #### Generate figures and statistics for each gene ----------------------------------
 anova_results <- data.frame()
@@ -89,7 +94,8 @@ for(i in 1:length(gene_list)){
   
   combined_fixed <- combined_fixed %>%
     dplyr::left_join(n_sample_hd) %>%
-    dplyr::mutate(harmonized_diagnosis = paste0(harmonized_diagnosis, " ", "n=", n))
+    dplyr::mutate(harmonized_diagnosis = paste0(harmonized_diagnosis, " ", "n=", n)) %>%
+    dplyr::mutate(harmonized_diagnosis = paste0(short_name, "_", harmonized_diagnosis))
   # calculate statistics 
   res_aov <- aov(combined_fixed$gene_of_interest ~ combined_fixed$harmonized_diagnosis,
                  data = combined_fixed)
@@ -130,6 +136,17 @@ for(i in 1:length(gene_list)){
     dir.create(tpm_plot_each_dir , recursive = TRUE)
   }
   ggsave(file.path(tpm_plot_each_dir,"harmonized_diagnosis_violin.png"), p, height = 10, width=12)
+  
+  violin_plot <- combined_fixed %>%
+    group_by(short_name) %>% 
+    ggplot( aes(x=harmonized_diagnosis, y=gene_of_interest)) +
+    geom_violin(width=1.4, trim=TRUE, show.legend = F, aes(fill=harmonized_diagnosis)) +
+    geom_boxplot(width=0.1, color="black", show.legend = F,aes(fill=harmonized_diagnosis)) +
+    labs(title=paste0(x," TPM per Harmonized Diagnosis"),x="Harmonized Diagnosis", y = paste0(x," TPM Value")) + 
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
+  
+  ggsave(file.path(tpm_plot_each_dir,"harmonized_diagnosis_violin_no_stats.png"), violin_plot, height = 7, width=12)
+  
  
   # Generate output
   tukey_results <- rbind(tukey_results, tukey.test)
@@ -142,7 +159,8 @@ for(i in 1:length(gene_list)){
   q<-ggplot(tukey_heatmap_complete, aes(x=group1, group2, fill= p.adj)) +
           geom_tile(aes(fill=p.adj)) +
           labs(title=paste0(x," Harmonized Diagnosis Tukey Test for TPM"),x="Harmonized Diagnosis", y = "Harmonized Diagnosis") + 
-          theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+          theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+          scale_fill_gradient(low="red", high="white") 
   ggsave(file.path(tpm_plot_each_dir,"harmonized_diagnosis_heatmap.png"), q, height = 10, width=10)
 }
 

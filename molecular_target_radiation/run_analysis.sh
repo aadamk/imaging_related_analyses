@@ -25,7 +25,7 @@ stat_outfile_cox="${stat_dir}/coxph_test_stats_combined.tsv"
 Rscript --vanilla 01-TPM_vs_harmonized_diag.R \
 --histology $histology_file \
 --expression $expression_file \
---cancer_groups "LGG,HGG,Medullo" \
+--cancer_groups "LGG,HGG,Medullo,EPN,Cranio" \
 --gene_list "SLC7A5,FOLH1" \
 --short_long_match $short_long_match
 
@@ -33,20 +33,20 @@ Rscript --vanilla 01-TPM_vs_harmonized_diag.R \
 # Rscript -e "rmarkdown::render('02-lgg_cns_gtex.Rmd', clean = TRUE)"
 
 # Obtain drugs that are both in qSig and subnetwork
-# Rscript --vanilla 03-km_w_logrank_survival.R \
-# --histology $histology_file \
-# --expression $expression_file \
-# --cancer_groups "LGG,HGG,Medullo" \
-# --gene_list "SLC7A5,FOLH1" \
-# --short_long_match $short_long_match \
-# --stat_outfile $stat_outfile
+Rscript --vanilla 03-km_w_logrank_survival.R \
+--histology $histology_file \
+--expression $expression_file \
+--cancer_groups "LGG,HGG,Medullo,EPN,Cranio" \
+--gene_list "SLC7A5,FOLH1" \
+--short_long_match $short_long_match \
+--stat_outfile $stat_outfile
 
-# Rscript --vanilla 04-coxph_reg_survival.R \
-# --histology $histology_file \
-# --expression $expression_file \
-# --cancer_groups "LGG,HGG,Medullo" \
-# --gene_list "SLC7A5,FOLH1" \
-# --short_long_match $short_long_match \
-# --stat_outfile $stat_outfile_cox
+Rscript --vanilla 04-coxph_reg_survival.R \
+--histology $histology_file \
+--expression $expression_file \
+--cancer_groups "LGG,HGG,Medullo,EPN,Cranio" \
+--gene_list "SLC7A5,FOLH1" \
+--short_long_match $short_long_match \
+--stat_outfile $stat_outfile_cox
 
 

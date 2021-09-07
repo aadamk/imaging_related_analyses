@@ -26,7 +26,7 @@ Rscript --vanilla 01-TPM_vs_harmonized_diag.R \
 --histology $histology_file \
 --expression $expression_file \
 --cancer_groups "LGG,HGG,Medullo,EPN,Cranio" \
---gene_list "SLC7A5,FOLH1" \
+--gene_list "SLC7A5,FOLH1,BRAF" \
 --short_long_match $short_long_match
 
 # 
@@ -37,7 +37,7 @@ Rscript --vanilla 03-km_w_logrank_survival.R \
 --histology $histology_file \
 --expression $expression_file \
 --cancer_groups "LGG,HGG,Medullo,EPN,Cranio" \
---gene_list "SLC7A5,FOLH1" \
+--gene_list "SLC7A5,FOLH1,BRAF" \
 --short_long_match $short_long_match \
 --stat_outfile $stat_outfile
 
@@ -45,7 +45,7 @@ Rscript --vanilla 04-coxph_reg_survival.R \
 --histology $histology_file \
 --expression $expression_file \
 --cancer_groups "LGG,HGG,Medullo,EPN,Cranio" \
---gene_list "SLC7A5,FOLH1" \
+--gene_list "SLC7A5,FOLH1,BRAF" \
 --short_long_match $short_long_match \
 --stat_outfile $stat_outfile_cox
 

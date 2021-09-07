@@ -1121,3 +1121,564 @@ Medullo_Medulloblastoma, WNT_activated n=9-Medullo_Medulloblastoma, group 3 n=11
 Medullo_Medulloblastoma, SHH_activated n=23-Medullo_Medulloblastoma, group 4 n=47	0.13581868640148187	-5.072731999817655	5.344369372620619	1
 Medullo_Medulloblastoma, WNT_activated n=9-Medullo_Medulloblastoma, group 4 n=47	-0.07321513002363722	-7.520612920279825	7.37418266023255	1
 Medullo_Medulloblastoma, WNT_activated n=9-Medullo_Medulloblastoma, SHH_activated n=23	-0.2090338164251191	-8.256710832863575	7.838643200013337	1
+Cranio_Craniopharyngioma n=11-Cranio_Adamantinomatous Craniopharyngioma n=17	-5.764973262032139	-11.964666785598144	0.4347202615338679	0.11632646210890596
+EPN_Ependymoma n=47-Cranio_Adamantinomatous Craniopharyngioma n=17	-3.8099249061327196	-8.344416550767615	0.7245667385021752	0.2840987290047522
+EPN_Ependymoma, H3 K28_mutant n=1-Cranio_Adamantinomatous Craniopharyngioma n=17	-6.215882352941232	-22.702205209930646	10.270440504048182	0.9999715329026363
+EPN_Ependymoma, Posterior Fossa, Type A n=1-Cranio_Adamantinomatous Craniopharyngioma n=17	-4.745882352941221	-21.232205209930633	11.740440504048193	0.9999999588417661
+EPN_Ependymoma, Supratentorial, RELA fusion positive n=20-Cranio_Adamantinomatous Craniopharyngioma n=17	-3.251882352941225	-8.537228218256262	2.033463512373812	0.9033744598808466
+EPN_Ependymoma, Supratentorial, YAP1 fusion positive n=3-Cranio_Adamantinomatous Craniopharyngioma n=17	-4.242549019607894	-14.27580559637025	5.790707557154461	0.9996864188297803
+HGG_Brainstem glioma_ Diffuse intrinsic pontine glioma n=4-Cranio_Adamantinomatous Craniopharyngioma n=17	3.7741176470587483	-5.129514311806506	12.677749605924003	0.9996708984549483
+HGG_Diffuse midline glioma, H3 K28_mutant n=54-Cranio_Adamantinomatous Craniopharyngioma n=17	-0.3032897603486333	-4.759029774019918	4.152450253322652	1
+HGG_High_grade glioma/astrocytoma (WHO grade III/IV) n=24-Cranio_Adamantinomatous Craniopharyngioma n=17	-0.04463235294122647	-5.123581394660479	5.034316688778026	1
+HGG_High_grade glioma/astrocytoma, H3 G35_mutant n=3-Cranio_Adamantinomatous Craniopharyngioma n=17	5.64745098039203	-4.385805596370325	15.680707557154385	0.9656486938762132
+HGG_High_grade glioma/astrocytoma, H3 wildtype n=32-Cranio_Adamantinomatous Craniopharyngioma n=17	-1.9093198529412403	-6.71783068622982	2.8991909803473392	0.9999131355103297
+HGG_High_grade glioma/astrocytoma, IDH_mutant n=2-Cranio_Adamantinomatous Craniopharyngioma n=17	0.3291176470587711	-11.6479182336415	12.306153527759042	1
+LGG_Low_grade glioma/astrocytoma (WHO grade I/II) n=8-Cranio_Adamantinomatous Craniopharyngioma n=17	-0.9071323529412325	-7.776433543353489	5.962168837471024	1
+LGG_Low_grade glioma/astrocytoma, BRAF V600E n=32-Cranio_Adamantinomatous Craniopharyngioma n=17	-2.47275735294121	-7.28126818622979	2.3357534803473694	0.9903070736299715
+LGG_Low_grade glioma/astrocytoma, BRAF V600E, CDKN2A/B n=4-Cranio_Adamantinomatous Craniopharyngioma n=17	-4.175882352941247	-13.079514311806502	4.727749605924007	0.9978423865224284
+LGG_Low_grade glioma/astrocytoma, FGFR n=7-Cranio_Adamantinomatous Craniopharyngioma n=17	0.3698319327730637	-6.825389250430233	7.565053115976361	1
+LGG_Low_grade glioma/astrocytoma, H3 n=1-Cranio_Adamantinomatous Craniopharyngioma n=17	-7.585882352941291	-24.072205209930704	8.900440504048124	0.9984602673599685
+LGG_Low_grade glioma/astrocytoma, IDH n=4-Cranio_Adamantinomatous Craniopharyngioma n=17	-4.293382352941204	-13.19701431180646	4.610249605924051	0.9965320235967032
+LGG_Low_grade glioma/astrocytoma, KIAA1549_BRAF n=104-Cranio_Adamantinomatous Craniopharyngioma n=17	-1.094920814479691	-5.286363804556757	3.096522175597375	0.999999996931082
+LGG_Low_grade glioma/astrocytoma, MYB/MYBL1 n=3-Cranio_Adamantinomatous Craniopharyngioma n=17	-2.665882352941214	-12.699138929703569	7.367374223821141	0.9999999951291305
+LGG_Low_grade glioma/astrocytoma, NF1_germline n=1-Cranio_Adamantinomatous Craniopharyngioma n=17	-0.1358823529412163	-16.62220520993063	16.350440504048198	1
+LGG_Low_grade glioma/astrocytoma, NF1_somatic n=1-Cranio_Adamantinomatous Craniopharyngioma n=17	0.5941176470587806	-15.892205209930633	17.080440504048195	1
+LGG_Low_grade glioma/astrocytoma, NF1_somatic, FGFR n=1-Cranio_Adamantinomatous Craniopharyngioma n=17	-2.2558823529412564	-18.74220520993067	14.230440504048158	1
+LGG_Low_grade glioma/astrocytoma, other MAPK n=14-Cranio_Adamantinomatous Craniopharyngioma n=17	-0.5587394957983634	-6.341089515707623	5.223610524110896	1
+LGG_Low_grade glioma/astrocytoma, other MAPK, IDH n=1-Cranio_Adamantinomatous Craniopharyngioma n=17	-5.36588235294119	-21.852205209930602	11.120440504048224	0.9999990747048251
+LGG_Low_grade glioma/astrocytoma, RTK n=8-Cranio_Adamantinomatous Craniopharyngioma n=17	-2.0821323529412057	-8.951433543353463	4.787168837471051	0.9999998439664382
+LGG_Low_grade glioma/astrocytoma, RTK, CDKN2A/B n=2-Cranio_Adamantinomatous Craniopharyngioma n=17	-2.7208823529412367	-14.697918233641508	9.256153527759034	0.9999999999382316
+LGG_Low_grade glioma/astrocytoma, wildtype n=49-Cranio_Adamantinomatous Craniopharyngioma n=17	-2.287923169267776	-6.797766715126229	2.2219203765906768	0.9921283848031283
+Medullo_Medulloblastoma n=18-Cranio_Adamantinomatous Craniopharyngioma n=17	2.87245098039212	-2.5461268724905564	8.291028833274797	0.984810389390242
+Medullo_Medulloblastoma, group 3 n=11-Cranio_Adamantinomatous Craniopharyngioma n=17	2.8659358288769674	-3.333757694689039	9.065629352442974	0.9983275803560666
+Medullo_Medulloblastoma, group 4 n=47-Cranio_Adamantinomatous Craniopharyngioma n=17	5.208798498122617	0.6743068534877219	9.743290142757512	0.005846946773358175
+Medullo_Medulloblastoma, SHH_activated n=23-Cranio_Adamantinomatous Craniopharyngioma n=17	-0.33631713554991727	-5.460842246998189	4.788207975898355	1
+Medullo_Medulloblastoma, WNT_activated n=9-Cranio_Adamantinomatous Craniopharyngioma n=17	-4.096993464052325	-10.701691509022247	2.507704580917598	0.8948772250899382
+EPN_Ependymoma n=47-Cranio_Craniopharyngioma n=11	1.955048355899419	-3.411323137099034	7.321419848897872	0.9999867756569834
+EPN_Ependymoma, H3 K28_mutant n=1-Cranio_Craniopharyngioma n=11	-0.4509090909090938	-17.18516048947767	16.283342307659485	1
+EPN_Ependymoma, Posterior Fossa, Type A n=1-Cranio_Craniopharyngioma n=11	1.0190909090909175	-15.715160489477661	17.753342307659494	1
+EPN_Ependymoma, Supratentorial, RELA fusion positive n=20-Cranio_Craniopharyngioma n=11	2.5130909090909137	-3.5011596212416514	8.527341439423479	0.9997523779515683
+EPN_Ependymoma, Supratentorial, YAP1 fusion positive n=3-Cranio_Craniopharyngioma n=11	1.5224242424242442	-8.913214983840135	11.958063468688621	1
+HGG_Brainstem glioma_ Diffuse intrinsic pontine glioma n=4-Cranio_Craniopharyngioma n=11	9.539090909090888	0.1843599891483212	18.893821829033456	0.038627731701113
+HGG_Diffuse midline glioma, H3 K28_mutant n=54-Cranio_Craniopharyngioma n=11	5.461683501683505	0.16168844555051276	10.761678557816499	0.03341225588120533
+HGG_High_grade glioma/astrocytoma (WHO grade III/IV) n=24-Cranio_Craniopharyngioma n=11	5.720340909090912	-0.1133587655567041	11.554040583738528	0.06393203831236038
+HGG_High_grade glioma/astrocytoma, H3 G35_mutant n=3-Cranio_Craniopharyngioma n=11	11.41242424242417	0.9767850161597913	21.848063468688547	0.013634866491714415
+HGG_High_grade glioma/astrocytoma, H3 wildtype n=32-Cranio_Craniopharyngioma n=11	3.8556534090908983	-1.7441773883043599	9.455484206486156	0.7367612166560822
+HGG_High_grade glioma/astrocytoma, IDH_mutant n=2-Cranio_Craniopharyngioma n=11	6.09409090909091	-6.221984643339925	18.410166461521744	0.9946980198113813
+LGG_Low_grade glioma/astrocytoma (WHO grade I/II) n=8-Cranio_Craniopharyngioma n=11	4.857840909090906	-2.5868637438958073	12.302545562077619	0.82983297752732
+LGG_Low_grade glioma/astrocytoma, BRAF V600E n=32-Cranio_Craniopharyngioma n=11	3.2922159090909284	-2.3076148883043297	8.892046706486187	0.9414956463032715
+LGG_Low_grade glioma/astrocytoma, BRAF V600E, CDKN2A/B n=4-Cranio_Craniopharyngioma n=11	1.5890909090908911	-7.765640010851675	10.943821829033457	1
+LGG_Low_grade glioma/astrocytoma, FGFR n=7-Cranio_Craniopharyngioma n=11	6.134805194805202	-1.6116479549156582	13.881258344526064	0.41669096550630524
+LGG_Low_grade glioma/astrocytoma, H3 n=1-Cranio_Craniopharyngioma n=11	-1.8209090909091525	-18.55516048947773	14.913342307659425	1
+LGG_Low_grade glioma/astrocytoma, IDH n=4-Cranio_Craniopharyngioma n=11	1.471590909090935	-7.883140010851632	10.826321829033501	1
+LGG_Low_grade glioma/astrocytoma, KIAA1549_BRAF n=104-Cranio_Craniopharyngioma n=11	4.670052447552448	-0.40976279167318364	9.749867686778078	0.13068790416822262
+LGG_Low_grade glioma/astrocytoma, MYB/MYBL1 n=3-Cranio_Craniopharyngioma n=11	3.0990909090909247	-7.336548317173453	13.534730135355304	0.9999999076189451
+LGG_Low_grade glioma/astrocytoma, NF1_germline n=1-Cranio_Craniopharyngioma n=11	5.629090909090922	-11.105160489477655	22.3633423076595	0.9999979431900341
+LGG_Low_grade glioma/astrocytoma, NF1_somatic n=1-Cranio_Craniopharyngioma n=11	6.359090909090919	-10.375160489477658	23.093342307659498	0.9999661764375323
+LGG_Low_grade glioma/astrocytoma, NF1_somatic, FGFR n=1-Cranio_Craniopharyngioma n=11	3.509090909090882	-13.225160489477695	20.24334230765946	0.9999999999939944
+LGG_Low_grade glioma/astrocytoma, other MAPK n=14-Cranio_Craniopharyngioma n=11	5.206233766233775	-1.2491438585336088	11.66161139100116	0.3741009488972109
+LGG_Low_grade glioma/astrocytoma, other MAPK, IDH n=1-Cranio_Craniopharyngioma n=11	0.39909090909094846	-16.33516048947763	17.133342307659525	1
+LGG_Low_grade glioma/astrocytoma, RTK n=8-Cranio_Craniopharyngioma n=11	3.682840909090933	-3.7618637438957805	11.127545562077646	0.9947179042744358
+LGG_Low_grade glioma/astrocytoma, RTK, CDKN2A/B n=2-Cranio_Craniopharyngioma n=11	3.044090909090902	-9.271984643339934	15.360166461521736	0.9999999993322398
+LGG_Low_grade glioma/astrocytoma, wildtype n=49-Cranio_Craniopharyngioma n=11	3.4770500927643626	-1.8685104329171036	8.822610618445829	0.8345597033787531
+Medullo_Medulloblastoma n=18-Cranio_Craniopharyngioma n=11	8.63742424242426	2.505759340184949	14.769089144663571	5.436685206872127e-5
+Medullo_Medulloblastoma, group 3 n=11-Cranio_Craniopharyngioma n=11	8.630909090909107	1.7991795652509754	15.462638616567238	8.460665136695855e-4
+Medullo_Medulloblastoma, group 4 n=47-Cranio_Craniopharyngioma n=11	10.973771760154754	5.607400267156302	16.340143253153208	3.338750387271716e-10
+Medullo_Medulloblastoma, SHH_activated n=23-Cranio_Craniopharyngioma n=11	5.428656126482221	-0.4447658865751327	11.302078139539574	0.12379677574903813
+Medullo_Medulloblastoma, WNT_activated n=9-Cranio_Craniopharyngioma n=11	1.6679797979798137	-5.5332954217873285	8.869255017746955	0.9999999998925874
+EPN_Ependymoma, H3 K28_mutant n=1-EPN_Ependymoma n=47	-2.4059574468085128	-18.597331216801344	13.785416323184316	1
+EPN_Ependymoma, Posterior Fossa, Type A n=1-EPN_Ependymoma n=47	-0.9359574468085015	-17.12733121680133	15.255416323184328	1
+EPN_Ependymoma, Supratentorial, RELA fusion positive n=20-EPN_Ependymoma n=47	0.5580425531914948	-3.7194127803827683	4.835497886765758	1
+EPN_Ependymoma, Supratentorial, YAP1 fusion positive n=3-EPN_Ependymoma n=47	-0.4326241134751747	-9.97348260471511	9.108234377764761	1
+HGG_Brainstem glioma_ Diffuse intrinsic pontine glioma n=4-EPN_Ependymoma n=47	7.584042553191468	-0.760800481500489	15.928885587883425	0.14633225107316894
+HGG_Diffuse midline glioma, H3 K28_mutant n=54-EPN_Ependymoma n=47	3.5066351457840863	0.31048710726153717	6.702783184306636	0.012934770802238815
+HGG_High_grade glioma/astrocytoma (WHO grade III/IV) n=24-EPN_Ependymoma n=47	3.765292553191493	-0.254342577401963	7.784927683784949	0.1076952503292623
+HGG_High_grade glioma/astrocytoma, H3 G35_mutant n=3-EPN_Ependymoma n=47	9.45737588652475	-0.08348260471518643	18.998234377764685	0.05591228401917181
+HGG_High_grade glioma/astrocytoma, H3 wildtype n=32-EPN_Ependymoma n=47	1.9006050531914793	-1.7713861843489624	5.572596290731921	0.9893095053280049
+HGG_High_grade glioma/astrocytoma, IDH_mutant n=2-EPN_Ependymoma n=47	4.139042553191491	-7.428633605065269	15.70671871144825	0.9999912310208796
+LGG_Low_grade glioma/astrocytoma (WHO grade I/II) n=8-EPN_Ependymoma n=47	2.902792553191487	-3.224934762813967	9.03051986919694	0.9974352820927794
+LGG_Low_grade glioma/astrocytoma, BRAF V600E n=32-EPN_Ependymoma n=47	1.3371675531915095	-2.3348236843489323	5.009158790731951	0.9999869078365957
+LGG_Low_grade glioma/astrocytoma, BRAF V600E, CDKN2A/B n=4-EPN_Ependymoma n=47	-0.3659574468085278	-8.710800481500485	7.978885587883429	1
+LGG_Low_grade glioma/astrocytoma, FGFR n=7-EPN_Ependymoma n=47	4.179756838905783	-2.311233154149021	10.670746831960589	0.8489912612026883
+LGG_Low_grade glioma/astrocytoma, H3 n=1-EPN_Ependymoma n=47	-3.7759574468085715	-19.9673312168014	12.415416323184257	0.999999999869611
+LGG_Low_grade glioma/astrocytoma, IDH n=4-EPN_Ependymoma n=47	-0.483457446808484	-8.828300481500442	7.861385587883473	1
+LGG_Low_grade glioma/astrocytoma, KIAA1549_BRAF n=104-EPN_Ependymoma n=47	2.7150040916530287	-0.10101038874055313	5.5310185720466105	0.07816582583191223
+LGG_Low_grade glioma/astrocytoma, MYB/MYBL1 n=3-EPN_Ependymoma n=47	1.1440425531915057	-8.39681593804843	10.684901044431442	1
+LGG_Low_grade glioma/astrocytoma, NF1_germline n=1-EPN_Ependymoma n=47	3.6740425531915033	-12.517331216801326	19.865416323184334	0.9999999999402314
+LGG_Low_grade glioma/astrocytoma, NF1_somatic n=1-EPN_Ependymoma n=47	4.4040425531915	-11.787331216801329	20.59541632318433	0.9999999908420159
+LGG_Low_grade glioma/astrocytoma, NF1_somatic, FGFR n=1-EPN_Ependymoma n=47	1.5540425531914632	-14.637331216801366	17.745416323184294	1
+LGG_Low_grade glioma/astrocytoma, other MAPK n=14-EPN_Ependymoma n=47	3.2511854103343563	-1.6270637599586868	8.1294345806274	0.796104108325995
+LGG_Low_grade glioma/astrocytoma, other MAPK, IDH n=1-EPN_Ependymoma n=47	-1.5559574468084705	-17.7473312168013	14.635416323184359	1
+LGG_Low_grade glioma/astrocytoma, RTK n=8-EPN_Ependymoma n=47	1.727792553191514	-4.39993476281394	7.855519869196968	0.9999999761316376
+LGG_Low_grade glioma/astrocytoma, RTK, CDKN2A/B n=2-EPN_Ependymoma n=47	1.089042553191483	-10.478633605065276	12.656718711448242	1
+LGG_Low_grade glioma/astrocytoma, wildtype n=49-EPN_Ependymoma n=47	1.5220017368649437	-1.7491497458458913	4.793153219575778	0.998124067382673
+Medullo_Medulloblastoma n=18-EPN_Ependymoma n=47	6.68237588652484	2.2413479466813184	11.12340382636836	7.536274113650876e-6
+Medullo_Medulloblastoma, group 3 n=11-EPN_Ependymoma n=47	6.675860735009687	1.3094892420112343	12.042232228008139	0.001190231319368129
+Medullo_Medulloblastoma, group 4 n=47-EPN_Ependymoma n=47	9.018723404255336	5.713673073324834	12.323773735185839	3.195803621736104e-10
+Medullo_Medulloblastoma, SHH_activated n=23-EPN_Ependymoma n=47	3.4736077705828023	-0.6034623579021225	7.550677899067727	0.2559755111083626
+Medullo_Medulloblastoma, WNT_activated n=9-EPN_Ependymoma n=47	-0.2870685579196053	-6.116629388715496	5.542492272876285	1
+EPN_Ependymoma, Posterior Fossa, Type A n=1-EPN_Ependymoma, H3 K28_mutant n=1	1.4700000000000113	-21.188283505800683	24.128283505800702	1
+EPN_Ependymoma, Supratentorial, RELA fusion positive n=20-EPN_Ependymoma, H3 K28_mutant n=1	2.9640000000000075	-13.453486135226386	19.381486135226403	1
+EPN_Ependymoma, Supratentorial, YAP1 fusion positive n=3-EPN_Ependymoma, H3 K28_mutant n=1	1.973333333333338	-16.527077678844016	20.473744345510696	1
+HGG_Brainstem glioma_ Diffuse intrinsic pontine glioma n=4-EPN_Ependymoma, H3 K28_mutant n=1	9.98999999999998	-7.9229459370388184	27.90294593703878	0.9695187992092473
+HGG_Diffuse midline glioma, H3 K28_mutant n=54-EPN_Ependymoma, H3 K28_mutant n=1	5.912592592592599	-10.256903044370834	22.08208822955603	0.9999856229676561
+HGG_High_grade glioma/astrocytoma (WHO grade III/IV) n=24-EPN_Ependymoma, H3 K28_mutant n=1	6.171250000000006	-10.180957601811103	22.523457601811117	0.9999709233997214
+HGG_High_grade glioma/astrocytoma, H3 G35_mutant n=3-EPN_Ependymoma, H3 K28_mutant n=1	11.863333333333262	-6.6370776788440935	30.363744345510618	0.8547144281564215
+HGG_High_grade glioma/astrocytoma, H3 wildtype n=32-EPN_Ependymoma, H3 K28_mutant n=1	4.306562499999992	-11.963678632761432	20.576803632761415	0.9999999956092812
+HGG_High_grade glioma/astrocytoma, IDH_mutant n=2-EPN_Ependymoma, H3 K28_mutant n=1	6.5450000000000035	-13.077649122173328	26.167649122173337	0.9999983223350162
+LGG_Low_grade glioma/astrocytoma (WHO grade I/II) n=8-EPN_Ependymoma, H3 K28_mutant n=1	5.30875	-11.684962629350519	22.30246262935052	0.9999996652346567
+LGG_Low_grade glioma/astrocytoma, BRAF V600E n=32-EPN_Ependymoma, H3 K28_mutant n=1	3.7431250000000222	-12.527116132761401	20.013366132761448	0.9999999999114112
+LGG_Low_grade glioma/astrocytoma, BRAF V600E, CDKN2A/B n=4-EPN_Ependymoma, H3 K28_mutant n=1	2.039999999999985	-15.872945937038814	19.952945937038784	1
+LGG_Low_grade glioma/astrocytoma, FGFR n=7-EPN_Ependymoma, H3 K28_mutant n=1	6.585714285714296	-10.542338083412954	23.713766654841546	0.9999563068693956
+LGG_Low_grade glioma/astrocytoma, H3 n=1-EPN_Ependymoma, H3 K28_mutant n=1	-1.3700000000000587	-24.02828350580075	21.288283505800635	1
+LGG_Low_grade glioma/astrocytoma, IDH n=4-EPN_Ependymoma, H3 K28_mutant n=1	1.9225000000000287	-15.990445937038771	19.835445937038827	1
+LGG_Low_grade glioma/astrocytoma, KIAA1549_BRAF n=104-EPN_Ependymoma, H3 K28_mutant n=1	5.1209615384615415	-10.97770810916507	21.21963118608815	0.9999994742103125
+LGG_Low_grade glioma/astrocytoma, MYB/MYBL1 n=3-EPN_Ependymoma, H3 K28_mutant n=1	3.5500000000000185	-14.950411012177337	22.050411012177374	1
+LGG_Low_grade glioma/astrocytoma, NF1_germline n=1-EPN_Ependymoma, H3 K28_mutant n=1	6.080000000000016	-16.578283505800677	28.73828350580071	0.999999993642755
+LGG_Low_grade glioma/astrocytoma, NF1_somatic n=1-EPN_Ependymoma, H3 K28_mutant n=1	6.810000000000013	-15.84828350580068	29.468283505800706	0.9999998743128751
+LGG_Low_grade glioma/astrocytoma, NF1_somatic, FGFR n=1-EPN_Ependymoma, H3 K28_mutant n=1	3.959999999999976	-18.698283505800717	26.61828350580067	1
+LGG_Low_grade glioma/astrocytoma, other MAPK n=14-EPN_Ependymoma, H3 K28_mutant n=1	5.657142857142869	-10.927022537506712	22.24130825179245	0.9999971284497876
+LGG_Low_grade glioma/astrocytoma, other MAPK, IDH n=1-EPN_Ependymoma, H3 K28_mutant n=1	0.8500000000000423	-21.808283505800652	23.508283505800733	1
+LGG_Low_grade glioma/astrocytoma, RTK n=8-EPN_Ependymoma, H3 K28_mutant n=1	4.133750000000027	-12.859962629350491	21.127462629350546	0.9999999995722122
+LGG_Low_grade glioma/astrocytoma, RTK, CDKN2A/B n=2-EPN_Ependymoma, H3 K28_mutant n=1	3.4949999999999957	-16.127649122173338	23.117649122173326	1
+LGG_Low_grade glioma/astrocytoma, wildtype n=49-EPN_Ependymoma, H3 K28_mutant n=1	3.9279591836734564	-12.25652903475561	20.112447402102525	0.9999999995986051
+Medullo_Medulloblastoma n=18-EPN_Ependymoma, H3 K28_mutant n=1	9.088333333333352	-7.37252800597993	25.549194672646635	0.9733060495357955
+Medullo_Medulloblastoma, group 3 n=11-EPN_Ependymoma, H3 K28_mutant n=1	9.0818181818182	-7.652433216750378	25.816069580386777	0.9788541376990622
+Medullo_Medulloblastoma, group 4 n=47-EPN_Ependymoma, H3 K28_mutant n=1	11.42468085106385	-4.76669291892898	27.616054621056676	0.6867543127502903
+Medullo_Medulloblastoma, SHH_activated n=23-EPN_Ependymoma, H3 K28_mutant n=1	5.879565217391315	-10.486855518438864	22.245985953221492	0.9999903884362012
+Medullo_Medulloblastoma, WNT_activated n=9-EPN_Ependymoma, H3 K28_mutant n=1	2.1188888888889075	-14.769598501921962	19.007376279699777	1
+EPN_Ependymoma, Supratentorial, RELA fusion positive n=20-EPN_Ependymoma, Posterior Fossa, Type A n=1	1.4939999999999962	-14.923486135226398	17.91148613522639	1
+EPN_Ependymoma, Supratentorial, YAP1 fusion positive n=3-EPN_Ependymoma, Posterior Fossa, Type A n=1	0.5033333333333267	-17.99707767884403	19.003744345510682	1
+HGG_Brainstem glioma_ Diffuse intrinsic pontine glioma n=4-EPN_Ependymoma, Posterior Fossa, Type A n=1	8.51999999999997	-9.39294593703883	26.432945937038767	0.9972511525903006
+HGG_Diffuse midline glioma, H3 K28_mutant n=54-EPN_Ependymoma, Posterior Fossa, Type A n=1	4.442592592592588	-11.726903044370845	20.612088229556022	0.999999988008514
+HGG_High_grade glioma/astrocytoma (WHO grade III/IV) n=24-EPN_Ependymoma, Posterior Fossa, Type A n=1	4.701249999999995	-11.650957601811115	21.053457601811104	0.999999960198431
+HGG_High_grade glioma/astrocytoma, H3 G35_mutant n=3-EPN_Ependymoma, Posterior Fossa, Type A n=1	10.393333333333251	-8.107077678844105	28.893744345510605	0.9664884886519101
+HGG_High_grade glioma/astrocytoma, H3 wildtype n=32-EPN_Ependymoma, Posterior Fossa, Type A n=1	2.836562499999981	-13.433678632761442	19.106803632761405	1
+HGG_High_grade glioma/astrocytoma, IDH_mutant n=2-EPN_Ependymoma, Posterior Fossa, Type A n=1	5.074999999999992	-14.54764912217334	24.697649122173324	0.9999999976646194
+LGG_Low_grade glioma/astrocytoma (WHO grade I/II) n=8-EPN_Ependymoma, Posterior Fossa, Type A n=1	3.8387499999999886	-13.15496262935053	20.83246262935051	0.9999999999474682
+LGG_Low_grade glioma/astrocytoma, BRAF V600E n=32-EPN_Ependymoma, Posterior Fossa, Type A n=1	2.273125000000011	-13.997116132761413	18.543366132761435	1
+LGG_Low_grade glioma/astrocytoma, BRAF V600E, CDKN2A/B n=4-EPN_Ependymoma, Posterior Fossa, Type A n=1	0.5699999999999736	-17.342945937038827	18.48294593703877	1
+LGG_Low_grade glioma/astrocytoma, FGFR n=7-EPN_Ependymoma, Posterior Fossa, Type A n=1	5.115714285714285	-12.012338083412965	22.243766654841536	0.9999998929782165
+LGG_Low_grade glioma/astrocytoma, H3 n=1-EPN_Ependymoma, Posterior Fossa, Type A n=1	-2.84000000000007	-25.498283505800764	19.818283505800622	1
+LGG_Low_grade glioma/astrocytoma, IDH n=4-EPN_Ependymoma, Posterior Fossa, Type A n=1	0.45250000000001744	-17.46044593703878	18.365445937038817	1
+LGG_Low_grade glioma/astrocytoma, KIAA1549_BRAF n=104-EPN_Ependymoma, Posterior Fossa, Type A n=1	3.65096153846153	-12.447708109165081	19.74963118608814	0.9999999999411808
+LGG_Low_grade glioma/astrocytoma, MYB/MYBL1 n=3-EPN_Ependymoma, Posterior Fossa, Type A n=1	2.080000000000007	-16.420411012177347	20.580411012177365	1
+LGG_Low_grade glioma/astrocytoma, NF1_germline n=1-EPN_Ependymoma, Posterior Fossa, Type A n=1	4.610000000000005	-18.04828350580069	27.268283505800696	0.9999999999976283
+LGG_Low_grade glioma/astrocytoma, NF1_somatic n=1-EPN_Ependymoma, Posterior Fossa, Type A n=1	5.340000000000002	-17.318283505800693	27.998283505800693	0.9999999998243382
+LGG_Low_grade glioma/astrocytoma, NF1_somatic, FGFR n=1-EPN_Ependymoma, Posterior Fossa, Type A n=1	2.4899999999999647	-20.16828350580073	25.148283505800656	1
+LGG_Low_grade glioma/astrocytoma, other MAPK n=14-EPN_Ependymoma, Posterior Fossa, Type A n=1	4.187142857142858	-12.397022537506723	20.77130825179244	0.9999999987954484
+LGG_Low_grade glioma/astrocytoma, other MAPK, IDH n=1-EPN_Ependymoma, Posterior Fossa, Type A n=1	-0.619999999999969	-23.278283505800662	22.038283505800724	1
+LGG_Low_grade glioma/astrocytoma, RTK n=8-EPN_Ependymoma, Posterior Fossa, Type A n=1	2.6637500000000154	-14.329962629350504	19.657462629350533	1
+LGG_Low_grade glioma/astrocytoma, RTK, CDKN2A/B n=2-EPN_Ependymoma, Posterior Fossa, Type A n=1	2.0249999999999844	-17.597649122173348	21.647649122173316	1
+LGG_Low_grade glioma/astrocytoma, wildtype n=49-EPN_Ependymoma, Posterior Fossa, Type A n=1	2.457959183673445	-13.726529034755622	18.642447402102512	1
+Medullo_Medulloblastoma n=18-EPN_Ependymoma, Posterior Fossa, Type A n=1	7.618333333333341	-8.842528005979942	24.079194672646622	0.998292256158819
+Medullo_Medulloblastoma, group 3 n=11-EPN_Ependymoma, Posterior Fossa, Type A n=1	7.6118181818181885	-9.12243321675039	24.346069580386768	0.9987486496250839
+Medullo_Medulloblastoma, group 4 n=47-EPN_Ependymoma, Posterior Fossa, Type A n=1	9.954680851063838	-6.236692918928991	26.146054621056667	0.9041089972544903
+Medullo_Medulloblastoma, SHH_activated n=23-EPN_Ependymoma, Posterior Fossa, Type A n=1	4.409565217391304	-11.956855518438875	20.775985953221483	0.9999999929063299
+Medullo_Medulloblastoma, WNT_activated n=9-EPN_Ependymoma, Posterior Fossa, Type A n=1	0.6488888888888962	-16.239598501921975	17.537376279699764	1
+EPN_Ependymoma, Supratentorial, YAP1 fusion positive n=3-EPN_Ependymoma, Supratentorial, RELA fusion positive n=20	-0.9906666666666695	-10.910406945051193	8.929073611717854	1
+HGG_Brainstem glioma_ Diffuse intrinsic pontine glioma n=4-EPN_Ependymoma, Supratentorial, RELA fusion positive n=20	7.025999999999973	-1.749515467161256	15.801515467161202	0.391020008517893
+HGG_Diffuse midline glioma, H3 K28_mutant n=54-EPN_Ependymoma, Supratentorial, RELA fusion positive n=20	2.9485925925925915	-1.2452873204343202	7.142472505619503	0.6943568088504345
+HGG_High_grade glioma/astrocytoma (WHO grade III/IV) n=24-EPN_Ependymoma, Supratentorial, RELA fusion positive n=20	3.2072499999999984	-1.6435986910890321	8.058098691089029	0.809278676284235
+HGG_High_grade glioma/astrocytoma, H3 G35_mutant n=3-EPN_Ependymoma, Supratentorial, RELA fusion positive n=20	8.899333333333255	-1.0204069450512687	18.819073611717776	0.1653873976046285
+HGG_High_grade glioma/astrocytoma, H3 wildtype n=32-EPN_Ependymoma, Supratentorial, RELA fusion positive n=20	1.3425624999999846	-3.2243605439446865	5.909485543944656	0.9999999289110532
+HGG_High_grade glioma/astrocytoma, IDH_mutant n=2-EPN_Ependymoma, Supratentorial, RELA fusion positive n=20	3.580999999999996	-8.30110411261579	15.463104112615781	0.9999998651759816
+LGG_Low_grade glioma/astrocytoma (WHO grade I/II) n=8-EPN_Ependymoma, Supratentorial, RELA fusion positive n=20	2.3447499999999923	-4.357660648420356	9.047160648420341	0.9999947964643809
+LGG_Low_grade glioma/astrocytoma, BRAF V600E n=32-EPN_Ependymoma, Supratentorial, RELA fusion positive n=20	0.7791250000000147	-3.7877980439446564	5.346048043944686	1
+LGG_Low_grade glioma/astrocytoma, BRAF V600E, CDKN2A/B n=4-EPN_Ependymoma, Supratentorial, RELA fusion positive n=20	-0.9240000000000226	-9.699515467161252	7.851515467161207	1
+LGG_Low_grade glioma/astrocytoma, FGFR n=7-EPN_Ependymoma, Supratentorial, RELA fusion positive n=20	3.6217142857142886	-3.414351200811308	10.657779772239884	0.9901661794630934
+LGG_Low_grade glioma/astrocytoma, H3 n=1-EPN_Ependymoma, Supratentorial, RELA fusion positive n=20	-4.334000000000066	-20.75148613522646	12.083486135226327	0.9999999959149999
+LGG_Low_grade glioma/astrocytoma, IDH n=4-EPN_Ependymoma, Supratentorial, RELA fusion positive n=20	-1.0414999999999788	-9.817015467161209	7.73401546716125	1
+LGG_Low_grade glioma/astrocytoma, KIAA1549_BRAF n=104-EPN_Ependymoma, Supratentorial, RELA fusion positive n=20	2.156961538461534	-1.7549694418249815	6.068892518748049	0.973777981660911
+LGG_Low_grade glioma/astrocytoma, MYB/MYBL1 n=3-EPN_Ependymoma, Supratentorial, RELA fusion positive n=20	0.586000000000011	-9.333740278384512	10.505740278384534	1
+LGG_Low_grade glioma/astrocytoma, NF1_germline n=1-EPN_Ependymoma, Supratentorial, RELA fusion positive n=20	3.1160000000000085	-13.301486135226385	19.533486135226404	1
+LGG_Low_grade glioma/astrocytoma, NF1_somatic n=1-EPN_Ependymoma, Supratentorial, RELA fusion positive n=20	3.8460000000000054	-12.571486135226388	20.2634861352264	0.9999999998518254
+LGG_Low_grade glioma/astrocytoma, NF1_somatic, FGFR n=1-EPN_Ependymoma, Supratentorial, RELA fusion positive n=20	0.9959999999999685	-15.421486135226425	17.413486135226364	1
+LGG_Low_grade glioma/astrocytoma, other MAPK n=14-EPN_Ependymoma, Supratentorial, RELA fusion positive n=20	2.6931428571428615	-2.8899191529197035	8.276204867205426	0.9965112688840679
+LGG_Low_grade glioma/astrocytoma, other MAPK, IDH n=1-EPN_Ependymoma, Supratentorial, RELA fusion positive n=20	-2.1139999999999652	-18.53148613522636	14.303486135226429	1
+LGG_Low_grade glioma/astrocytoma, RTK n=8-EPN_Ependymoma, Supratentorial, RELA fusion positive n=20	1.1697500000000192	-5.532660648420329	7.872160648420367	1
+LGG_Low_grade glioma/astrocytoma, RTK, CDKN2A/B n=2-EPN_Ependymoma, Supratentorial, RELA fusion positive n=20	0.5309999999999881	-11.351104112615797	12.413104112615773	1
+LGG_Low_grade glioma/astrocytoma, wildtype n=49-EPN_Ependymoma, Supratentorial, RELA fusion positive n=20	0.9639591836734489	-3.287358078491347	5.215276445838245	0.9999999999414981
+Medullo_Medulloblastoma n=18-EPN_Ependymoma, Supratentorial, RELA fusion positive n=20	6.124333333333345	0.9189519252893703	11.32971474137732	0.0037328356359216386
+Medullo_Medulloblastoma, group 3 n=11-EPN_Ependymoma, Supratentorial, RELA fusion positive n=20	6.117818181818192	0.10356765148562719	12.132068712150758	0.03992551664984334
+Medullo_Medulloblastoma, group 4 n=47-EPN_Ependymoma, Supratentorial, RELA fusion positive n=20	8.460680851063842	4.1832255174895785	12.738136184638105	4.066369463373576e-10
+Medullo_Medulloblastoma, SHH_activated n=23-EPN_Ependymoma, Supratentorial, RELA fusion positive n=20	2.9155652173913076	-1.9829822482686055	7.814112683051221	0.9326204397151631
+Medullo_Medulloblastoma, WNT_activated n=9-EPN_Ependymoma, Supratentorial, RELA fusion positive n=20	-0.8451111111111	-7.276055514594057	5.5858332923718566	1
+HGG_Brainstem glioma_ Diffuse intrinsic pontine glioma n=4-EPN_Ependymoma, Supratentorial, YAP1 fusion positive n=3	8.016666666666643	-4.220205006008863	20.25353833934215	0.8237833968078299
+HGG_Diffuse midline glioma, H3 K28_mutant n=54-EPN_Ependymoma, Supratentorial, YAP1 fusion positive n=3	3.939259259259261	-5.564423466086367	13.44294198460489	0.9997894349688516
+HGG_High_grade glioma/astrocytoma (WHO grade III/IV) n=24-EPN_Ependymoma, Supratentorial, YAP1 fusion positive n=3	4.197916666666668	-5.613407894419998	14.009241227753334	0.9996047356863604
+HGG_High_grade glioma/astrocytoma, H3 G35_mutant n=3-EPN_Ependymoma, Supratentorial, YAP1 fusion positive n=3	9.889999999999924	-3.1917660814489626	22.971766081448813	0.5283190557546089
+HGG_High_grade glioma/astrocytoma, H3 wildtype n=32-EPN_Ependymoma, Supratentorial, YAP1 fusion positive n=3	2.333229166666654	-7.340867313545602	12.007325646878911	0.9999999996632623
+HGG_High_grade glioma/astrocytoma, IDH_mutant n=2-EPN_Ependymoma, Supratentorial, YAP1 fusion positive n=3	4.571666666666665	-10.054192445268717	19.19752577860205	0.9999996603832638
+LGG_Low_grade glioma/astrocytoma (WHO grade I/II) n=8-EPN_Ependymoma, Supratentorial, YAP1 fusion positive n=3	3.335416666666662	-7.5114107551742855	14.182244088507609	0.9999997750910532
+LGG_Low_grade glioma/astrocytoma, BRAF V600E n=32-EPN_Ependymoma, Supratentorial, YAP1 fusion positive n=3	1.7697916666666842	-7.904304813545572	11.44388814687894	1
+LGG_Low_grade glioma/astrocytoma, BRAF V600E, CDKN2A/B n=4-EPN_Ependymoma, Supratentorial, YAP1 fusion positive n=3	0.06666666666664689	-12.170205006008858	12.303538339342152	1
+LGG_Low_grade glioma/astrocytoma, FGFR n=7-EPN_Ependymoma, Supratentorial, YAP1 fusion positive n=3	4.612380952380958	-6.443729310718762	15.668491215480678	0.9997602854213754
+LGG_Low_grade glioma/astrocytoma, H3 n=1-EPN_Ependymoma, Supratentorial, YAP1 fusion positive n=3	-3.3433333333333968	-21.843744345510753	15.157077678843958	1
+LGG_Low_grade glioma/astrocytoma, IDH n=4-EPN_Ependymoma, Supratentorial, YAP1 fusion positive n=3	-0.050833333333309305	-12.287705006008814	12.186038339342197	1
+LGG_Low_grade glioma/astrocytoma, KIAA1549_BRAF n=104-EPN_Ependymoma, Supratentorial, YAP1 fusion positive n=3	3.1476282051282034	-6.235045220589422	12.530301630845829	0.9999980725219091
+LGG_Low_grade glioma/astrocytoma, MYB/MYBL1 n=3-EPN_Ependymoma, Supratentorial, YAP1 fusion positive n=3	1.5766666666666804	-11.505099414782206	14.658432748115567	1
+LGG_Low_grade glioma/astrocytoma, NF1_germline n=1-EPN_Ependymoma, Supratentorial, YAP1 fusion positive n=3	4.106666666666678	-14.393744345510678	22.607077678844036	0.9999999999682565
+LGG_Low_grade glioma/astrocytoma, NF1_somatic n=1-EPN_Ependymoma, Supratentorial, YAP1 fusion positive n=3	4.836666666666675	-13.66374434551068	23.337077678844032	0.9999999968637484
+LGG_Low_grade glioma/astrocytoma, NF1_somatic, FGFR n=1-EPN_Ependymoma, Supratentorial, YAP1 fusion positive n=3	1.986666666666638	-16.513744345510716	20.487077678843995	1
+LGG_Low_grade glioma/astrocytoma, other MAPK n=14-EPN_Ependymoma, Supratentorial, YAP1 fusion positive n=3	3.683809523809531	-6.509420485728473	13.877039533347535	0.9999889834535668
+LGG_Low_grade glioma/astrocytoma, other MAPK, IDH n=1-EPN_Ependymoma, Supratentorial, YAP1 fusion positive n=3	-1.1233333333332958	-19.62374434551065	17.37707767884406	1
+LGG_Low_grade glioma/astrocytoma, RTK n=8-EPN_Ependymoma, Supratentorial, YAP1 fusion positive n=3	2.1604166666666886	-8.686410755174258	13.007244088507637	0.9999999999988851
+LGG_Low_grade glioma/astrocytoma, RTK, CDKN2A/B n=2-EPN_Ependymoma, Supratentorial, YAP1 fusion positive n=3	1.5216666666666576	-13.104192445268724	16.147525778602038	1
+LGG_Low_grade glioma/astrocytoma, wildtype n=49-EPN_Ependymoma, Supratentorial, YAP1 fusion positive n=3	1.9546258503401184	-7.57454279559761	11.483794496277847	0.9999999999969478
+Medullo_Medulloblastoma n=18-EPN_Ependymoma, Supratentorial, YAP1 fusion positive n=3	7.115000000000014	-2.87636388199088	17.10636388199091	0.6669575592165407
+Medullo_Medulloblastoma, group 3 n=11-EPN_Ependymoma, Supratentorial, YAP1 fusion positive n=3	7.108484848484862	-3.3271543777795163	17.54412407474924	0.7572848675701213
+Medullo_Medulloblastoma, group 4 n=47-EPN_Ependymoma, Supratentorial, YAP1 fusion positive n=3	9.451347517730511	-0.08951097350942483	18.99220600897045	0.056361507172331016
+Medullo_Medulloblastoma, SHH_activated n=23-EPN_Ependymoma, Supratentorial, YAP1 fusion positive n=3	3.906231884057977	-5.92876297575082	13.741226743866774	0.9999126468044728
+Medullo_Medulloblastoma, WNT_activated n=9-EPN_Ependymoma, Supratentorial, YAP1 fusion positive n=3	0.14555555555556943	-10.535661722443743	10.826772833554882	1
+HGG_Diffuse midline glioma, H3 K28_mutant n=54-HGG_Brainstem glioma_ Diffuse intrinsic pontine glioma n=4	-4.077407407407382	-12.379720932432475	4.224906117617712	0.9953047032536324
+HGG_High_grade glioma/astrocytoma (WHO grade III/IV) n=24-HGG_Brainstem glioma_ Diffuse intrinsic pontine glioma n=4	-3.8187499999999748	-12.471524940258396	4.8340249402584465	0.9992840460532191
+HGG_High_grade glioma/astrocytoma, H3 G35_mutant n=3-HGG_Brainstem glioma_ Diffuse intrinsic pontine glioma n=4	1.8733333333332816	-10.363538339342224	14.110205006008787	1
+HGG_High_grade glioma/astrocytoma, H3 wildtype n=32-HGG_Brainstem glioma_ Diffuse intrinsic pontine glioma n=4	-5.683437499999989	-14.180293814675249	2.8134188146752708	0.7899311980828368
+HGG_High_grade glioma/astrocytoma, IDH_mutant n=2-HGG_Brainstem glioma_ Diffuse intrinsic pontine glioma n=4	-3.444999999999977	-17.320308259132993	10.43030825913304	0.9999999992428601
+LGG_Low_grade glioma/astrocytoma (WHO grade I/II) n=8-HGG_Brainstem glioma_ Diffuse intrinsic pontine glioma n=4	-4.681249999999981	-14.492574561086647	5.130074561086685	0.9971001071968504
+LGG_Low_grade glioma/astrocytoma, BRAF V600E n=32-HGG_Brainstem glioma_ Diffuse intrinsic pontine glioma n=4	-6.246874999999958	-14.743731314675218	2.249981314675301	0.5946743053541457
+LGG_Low_grade glioma/astrocytoma, BRAF V600E, CDKN2A/B n=4-HGG_Brainstem glioma_ Diffuse intrinsic pontine glioma n=4	-7.949999999999996	-19.279141752900344	3.3791417529003507	0.698356249171679
+LGG_Low_grade glioma/astrocytoma, FGFR n=7-HGG_Brainstem glioma_ Diffuse intrinsic pontine glioma n=4	-3.4042857142856846	-13.446496560190118	6.637925131618749	0.9999975244428808
+LGG_Low_grade glioma/astrocytoma, H3 n=1-HGG_Brainstem glioma_ Diffuse intrinsic pontine glioma n=4	-11.360000000000039	-29.272945937038838	6.552945937038761	0.8691657586046787
+LGG_Low_grade glioma/astrocytoma, IDH n=4-HGG_Brainstem glioma_ Diffuse intrinsic pontine glioma n=4	-8.067499999999953	-19.3966417529003	3.2616417529003936	0.6669985993039222
+LGG_Low_grade glioma/astrocytoma, KIAA1549_BRAF n=104-HGG_Brainstem glioma_ Diffuse intrinsic pontine glioma n=4	-4.869038461538439	-13.032553950434714	3.2944770273578357	0.9310067591637639
+LGG_Low_grade glioma/astrocytoma, MYB/MYBL1 n=3-HGG_Brainstem glioma_ Diffuse intrinsic pontine glioma n=4	-6.439999999999962	-18.676871672675468	5.796871672675543	0.9863262623593387
+LGG_Low_grade glioma/astrocytoma, NF1_germline n=1-HGG_Brainstem glioma_ Diffuse intrinsic pontine glioma n=4	-3.9099999999999646	-21.822945937038764	14.002945937038835	0.9999999999805007
+LGG_Low_grade glioma/astrocytoma, NF1_somatic n=1-HGG_Brainstem glioma_ Diffuse intrinsic pontine glioma n=4	-3.1799999999999677	-21.092945937038767	14.732945937038831	1
+LGG_Low_grade glioma/astrocytoma, NF1_somatic, FGFR n=1-HGG_Brainstem glioma_ Diffuse intrinsic pontine glioma n=4	-6.030000000000005	-23.942945937038804	11.882945937038794	0.9999979067280133
+LGG_Low_grade glioma/astrocytoma, other MAPK n=14-HGG_Brainstem glioma_ Diffuse intrinsic pontine glioma n=4	-4.332857142857112	-13.416378626903253	4.7506643411890295	0.9971130474125771
+LGG_Low_grade glioma/astrocytoma, other MAPK, IDH n=1-HGG_Brainstem glioma_ Diffuse intrinsic pontine glioma n=4	-9.139999999999938	-27.052945937038736	8.77294593703886	0.9913968226638776
+LGG_Low_grade glioma/astrocytoma, RTK n=8-HGG_Brainstem glioma_ Diffuse intrinsic pontine glioma n=4	-5.856249999999954	-15.66757456108662	3.955074561086712	0.9304217129028576
+LGG_Low_grade glioma/astrocytoma, RTK, CDKN2A/B n=2-HGG_Brainstem glioma_ Diffuse intrinsic pontine glioma n=4	-6.494999999999985	-20.370308259133004	7.380308259133033	0.9979143957579328
+LGG_Low_grade glioma/astrocytoma, wildtype n=49-HGG_Brainstem glioma_ Diffuse intrinsic pontine glioma n=4	-6.062040816326524	-14.39351605223189	2.2694344195788414	0.6187161685375799
+Medullo_Medulloblastoma n=18-HGG_Brainstem glioma_ Diffuse intrinsic pontine glioma n=4	-0.9016666666666282	-9.758064170512865	7.954730837179609	1
+Medullo_Medulloblastoma, group 3 n=11-HGG_Brainstem glioma_ Diffuse intrinsic pontine glioma n=4	-0.9081818181817809	-10.262912738124347	8.446549101760786	1
+Medullo_Medulloblastoma, group 4 n=47-HGG_Brainstem glioma_ Diffuse intrinsic pontine glioma n=4	1.4346808510638684	-6.910162183628088	9.779523885755825	1
+Medullo_Medulloblastoma, SHH_activated n=23-HGG_Brainstem glioma_ Diffuse intrinsic pontine glioma n=4	-4.110434782608666	-12.790040097151898	4.569170531934567	0.997448329345759
+Medullo_Medulloblastoma, WNT_activated n=9-HGG_Brainstem glioma_ Diffuse intrinsic pontine glioma n=4	-7.871111111111073	-17.49903025616068	1.7568080339385315	0.34319718338445404
+HGG_High_grade glioma/astrocytoma (WHO grade III/IV) n=24-HGG_Diffuse midline glioma, H3 K28_mutant n=54	0.25865740740740684	-3.6719241242833927	4.189238939098207	1
+HGG_High_grade glioma/astrocytoma, H3 G35_mutant n=3-HGG_Diffuse midline glioma, H3 K28_mutant n=54	5.950740740740663	-3.5529419846049652	15.454423466086292	0.8844804625485787
+HGG_High_grade glioma/astrocytoma, H3 wildtype n=32-HGG_Diffuse midline glioma, H3 K28_mutant n=54	-1.606030092592607	-5.180316628775946	1.9682564435907328	0.9989996705640253
+HGG_High_grade glioma/astrocytoma, IDH_mutant n=2-HGG_Diffuse midline glioma, H3 K28_mutant n=54	0.6324074074074044	-10.90462584627049	12.169440661085298	1
+LGG_Low_grade glioma/astrocytoma (WHO grade I/II) n=8-HGG_Diffuse midline glioma, H3 K28_mutant n=54	-0.6038425925925992	-6.673525175190071	5.465839990004873	1
+LGG_Low_grade glioma/astrocytoma, BRAF V600E n=32-HGG_Diffuse midline glioma, H3 K28_mutant n=54	-2.169467592592577	-5.743754128775917	1.404818943590763	0.9163319428956357
+LGG_Low_grade glioma/astrocytoma, BRAF V600E, CDKN2A/B n=4-HGG_Diffuse midline glioma, H3 K28_mutant n=54	-3.872592592592614	-12.174906117617708	4.429720932432479	0.9980395338876864
+LGG_Low_grade glioma/astrocytoma, FGFR n=7-HGG_Diffuse midline glioma, H3 K28_mutant n=54	0.673121693121697	-5.763100466197023	7.109343852440417	1
+LGG_Low_grade glioma/astrocytoma, H3 n=1-HGG_Diffuse midline glioma, H3 K28_mutant n=54	-7.282592592592658	-23.45208822955609	8.886903044370776	0.9989552685552254
+LGG_Low_grade glioma/astrocytoma, IDH n=4-HGG_Diffuse midline glioma, H3 K28_mutant n=54	-3.9900925925925703	-12.292406117617663	4.312220932432523	0.99672110588588
+LGG_Low_grade glioma/astrocytoma, KIAA1549_BRAF n=104-HGG_Diffuse midline glioma, H3 K28_mutant n=54	-0.7916310541310576	-3.4789981946524358	1.8957360863903205	0.999999925060514
+LGG_Low_grade glioma/astrocytoma, MYB/MYBL1 n=3-HGG_Diffuse midline glioma, H3 K28_mutant n=54	-2.3625925925925806	-11.866275317938209	7.141090132753048	0.9999999992157302
+LGG_Low_grade glioma/astrocytoma, NF1_germline n=1-HGG_Diffuse midline glioma, H3 K28_mutant n=54	0.167407407407417	-16.002088229556016	16.33690304437085	1
+LGG_Low_grade glioma/astrocytoma, NF1_somatic n=1-HGG_Diffuse midline glioma, H3 K28_mutant n=54	0.8974074074074139	-15.272088229556019	17.066903044370846	1
+LGG_Low_grade glioma/astrocytoma, NF1_somatic, FGFR n=1-HGG_Diffuse midline glioma, H3 K28_mutant n=54	-1.952592592592623	-18.122088229556056	14.21690304437081	1
+LGG_Low_grade glioma/astrocytoma, other MAPK n=14-HGG_Diffuse midline glioma, H3 K28_mutant n=54	-0.25544973544973004	-5.060584443408756	4.549684972509296	1
+LGG_Low_grade glioma/astrocytoma, other MAPK, IDH n=1-HGG_Diffuse midline glioma, H3 K28_mutant n=54	-5.062592592592557	-21.23208822955599	11.106903044370876	0.9999996459069878
+LGG_Low_grade glioma/astrocytoma, RTK n=8-HGG_Diffuse midline glioma, H3 K28_mutant n=54	-1.7788425925925724	-7.848525175190044	4.2908399900048995	0.9999999343718184
+LGG_Low_grade glioma/astrocytoma, RTK, CDKN2A/B n=2-HGG_Diffuse midline glioma, H3 K28_mutant n=54	-2.4175925925926034	-13.954625846270497	9.11944066108529	0.9999999999941587
+LGG_Low_grade glioma/astrocytoma, wildtype n=49-HGG_Diffuse midline glioma, H3 K28_mutant n=54	-1.9846334089191426	-5.1457149670269065	1.1764481491886212	0.8813674241777646
+Medullo_Medulloblastoma n=18-HGG_Diffuse midline glioma, H3 K28_mutant n=54	3.1757407407407534	-1.1848479530755425	7.536329434557049	0.6165850580665254
+Medullo_Medulloblastoma, group 3 n=11-HGG_Diffuse midline glioma, H3 K28_mutant n=54	3.1692255892256007	-2.1307694669073918	8.469220645358593	0.928995529952104
+Medullo_Medulloblastoma, group 4 n=47-HGG_Diffuse midline glioma, H3 K28_mutant n=54	5.51208825847125	2.315940219948701	8.7082362969938	5.305665740085175e-8
+Medullo_Medulloblastoma, SHH_activated n=23-HGG_Diffuse midline glioma, H3 K28_mutant n=54	-0.03302737520128396	-4.022326239256444	3.956271488853876	1
+Medullo_Medulloblastoma, WNT_activated n=9-HGG_Diffuse midline glioma, H3 K28_mutant n=54	-3.7937037037036916	-9.562220330542639	1.9748129231352554	0.8177832565451004
+HGG_High_grade glioma/astrocytoma, H3 G35_mutant n=3-HGG_High_grade glioma/astrocytoma (WHO grade III/IV) n=24	5.692083333333256	-4.11924122775341	15.503407894419922	0.9500027278844468
+HGG_High_grade glioma/astrocytoma, H3 wildtype n=32-HGG_High_grade glioma/astrocytoma (WHO grade III/IV) n=24	-1.8646875000000138	-6.1910749701292245	2.461699970129197	0.9995444284846238
+HGG_High_grade glioma/astrocytoma, IDH_mutant n=2-HGG_High_grade glioma/astrocytoma (WHO grade III/IV) n=24	0.3737499999999976	-11.417994595072399	12.165494595072394	1
+LGG_Low_grade glioma/astrocytoma (WHO grade I/II) n=8-HGG_High_grade glioma/astrocytoma (WHO grade III/IV) n=24	-0.862500000000006	-7.403383040724449	5.678383040724437	1
+LGG_Low_grade glioma/astrocytoma, BRAF V600E n=32-HGG_High_grade glioma/astrocytoma (WHO grade III/IV) n=24	-2.4281249999999837	-6.754512470129194	1.898262470129227	0.9669110344722902
+LGG_Low_grade glioma/astrocytoma, BRAF V600E, CDKN2A/B n=4-HGG_High_grade glioma/astrocytoma (WHO grade III/IV) n=24	-4.131250000000021	-12.784024940258442	4.5215249402584	0.9970667538083001
+LGG_Low_grade glioma/astrocytoma, FGFR n=7-HGG_High_grade glioma/astrocytoma (WHO grade III/IV) n=24	0.41446428571429017	-6.467908850279926	7.296837421708506	1
+LGG_Low_grade glioma/astrocytoma, H3 n=1-HGG_High_grade glioma/astrocytoma (WHO grade III/IV) n=24	-7.541250000000065	-23.893457601811175	8.810957601811044	0.9983966643850272
+LGG_Low_grade glioma/astrocytoma, IDH n=4-HGG_High_grade glioma/astrocytoma (WHO grade III/IV) n=24	-4.248749999999977	-12.901524940258398	4.404024940258444	0.9953186621058481
+LGG_Low_grade glioma/astrocytoma, KIAA1549_BRAF n=104-HGG_High_grade glioma/astrocytoma (WHO grade III/IV) n=24	-1.0502884615384644	-4.678517567714586	2.5779406446376574	0.9999999523891427
+LGG_Low_grade glioma/astrocytoma, MYB/MYBL1 n=3-HGG_High_grade glioma/astrocytoma (WHO grade III/IV) n=24	-2.6212499999999874	-12.432574561086653	7.1900745610866785	0.9999999943498035
+LGG_Low_grade glioma/astrocytoma, NF1_germline n=1-HGG_High_grade glioma/astrocytoma (WHO grade III/IV) n=24	-0.09124999999998984	-16.443457601811097	16.26095760181112	1
+LGG_Low_grade glioma/astrocytoma, NF1_somatic n=1-HGG_High_grade glioma/astrocytoma (WHO grade III/IV) n=24	0.638750000000007	-15.713457601811102	16.990957601811118	1
+LGG_Low_grade glioma/astrocytoma, NF1_somatic, FGFR n=1-HGG_High_grade glioma/astrocytoma (WHO grade III/IV) n=24	-2.21125000000003	-18.563457601811137	14.14095760181108	1
+LGG_Low_grade glioma/astrocytoma, other MAPK n=14-HGG_High_grade glioma/astrocytoma (WHO grade III/IV) n=24	-0.5141071428571369	-5.902188792255372	4.873974506541098	1
+LGG_Low_grade glioma/astrocytoma, other MAPK, IDH n=1-HGG_High_grade glioma/astrocytoma (WHO grade III/IV) n=24	-5.321249999999964	-21.673457601811073	11.030957601811146	0.9999990788730788
+LGG_Low_grade glioma/astrocytoma, RTK n=8-HGG_High_grade glioma/astrocytoma (WHO grade III/IV) n=24	-2.037499999999979	-8.578383040724422	4.503383040724464	0.9999996884380433
+LGG_Low_grade glioma/astrocytoma, RTK, CDKN2A/B n=2-HGG_High_grade glioma/astrocytoma (WHO grade III/IV) n=24	-2.6762500000000102	-14.467994595072406	9.115494595072386	0.9999999999398834
+LGG_Low_grade glioma/astrocytoma, wildtype n=49-HGG_High_grade glioma/astrocytoma (WHO grade III/IV) n=24	-2.2432908163265495	-6.235100044728947	1.7485184120758483	0.9663469320511149
+Medullo_Medulloblastoma n=18-HGG_High_grade glioma/astrocytoma (WHO grade III/IV) n=24	2.9170833333333466	-2.0785986076621006	7.912765274328794	0.9459936804261875
+Medullo_Medulloblastoma, group 3 n=11-HGG_High_grade glioma/astrocytoma (WHO grade III/IV) n=24	2.910568181818194	-2.9231314928294223	8.744267856465811	0.9939449165660704
+Medullo_Medulloblastoma, group 4 n=47-HGG_High_grade glioma/astrocytoma (WHO grade III/IV) n=24	5.253430851063843	1.233795720470387	9.2730659816573	3.8374984798461576e-4
+Medullo_Medulloblastoma, SHH_activated n=23-HGG_High_grade glioma/astrocytoma (WHO grade III/IV) n=24	-0.2916847826086908	-4.9667900996792405	4.383420534461859	1
+Medullo_Medulloblastoma, WNT_activated n=9-HGG_High_grade glioma/astrocytoma (WHO grade III/IV) n=24	-4.052361111111098	-10.314779842964384	2.2100576207421874	0.8420933560792462
+HGG_High_grade glioma/astrocytoma, H3 wildtype n=32-HGG_High_grade glioma/astrocytoma, H3 G35_mutant n=3	-7.55677083333327	-17.230867313545527	2.117325646878986	0.44951017640628377
+HGG_High_grade glioma/astrocytoma, IDH_mutant n=2-HGG_High_grade glioma/astrocytoma, H3 G35_mutant n=3	-5.318333333333259	-19.94419244526864	9.307525778602123	0.9999873314151577
+LGG_Low_grade glioma/astrocytoma (WHO grade I/II) n=8-HGG_High_grade glioma/astrocytoma, H3 G35_mutant n=3	-6.554583333333262	-17.40141075517421	4.292244088507685	0.9202522138954548
+LGG_Low_grade glioma/astrocytoma, BRAF V600E n=32-HGG_High_grade glioma/astrocytoma, H3 G35_mutant n=3	-8.12020833333324	-17.794304813545494	1.5538881468790162	0.28615774263716875
+LGG_Low_grade glioma/astrocytoma, BRAF V600E, CDKN2A/B n=4-HGG_High_grade glioma/astrocytoma, H3 G35_mutant n=3	-9.823333333333277	-22.060205006008783	2.413538339342228	0.38483515770505416
+LGG_Low_grade glioma/astrocytoma, FGFR n=7-HGG_High_grade glioma/astrocytoma, H3 G35_mutant n=3	-5.277619047618966	-16.333729310718688	5.778491215480754	0.9970771205014586
+LGG_Low_grade glioma/astrocytoma, H3 n=1-HGG_High_grade glioma/astrocytoma, H3 G35_mutant n=3	-13.23333333333332	-31.733744345510676	5.267077678844036	0.6571596701650724
+LGG_Low_grade glioma/astrocytoma, IDH n=4-HGG_High_grade glioma/astrocytoma, H3 G35_mutant n=3	-9.940833333333234	-22.17770500600874	2.296038339342271	0.35749356398317667
+LGG_Low_grade glioma/astrocytoma, KIAA1549_BRAF n=104-HGG_High_grade glioma/astrocytoma, H3 G35_mutant n=3	-6.742371794871721	-16.125045220589346	2.6403016308459044	0.6469387371529197
+LGG_Low_grade glioma/astrocytoma, MYB/MYBL1 n=3-HGG_High_grade glioma/astrocytoma, H3 G35_mutant n=3	-8.313333333333244	-21.39509941478213	4.768432748115643	0.8665516013181239
+LGG_Low_grade glioma/astrocytoma, NF1_germline n=1-HGG_High_grade glioma/astrocytoma, H3 G35_mutant n=3	-5.783333333333246	-24.283744345510602	12.71707767884411	0.9999996595258263
+LGG_Low_grade glioma/astrocytoma, NF1_somatic n=1-HGG_High_grade glioma/astrocytoma, H3 G35_mutant n=3	-5.053333333333249	-23.553744345510605	13.447077678844106	0.9999999897475085
+LGG_Low_grade glioma/astrocytoma, NF1_somatic, FGFR n=1-HGG_High_grade glioma/astrocytoma, H3 G35_mutant n=3	-7.903333333333286	-26.403744345510642	10.59707767884407	0.9996165874598755
+LGG_Low_grade glioma/astrocytoma, other MAPK n=14-HGG_High_grade glioma/astrocytoma, H3 G35_mutant n=3	-6.206190476190393	-16.3994204857284	3.9870395333476107	0.9134913879142161
+LGG_Low_grade glioma/astrocytoma, other MAPK, IDH n=1-HGG_High_grade glioma/astrocytoma, H3 G35_mutant n=3	-11.01333333333322	-29.513744345510574	7.487077678844136	0.9324764073807443
+LGG_Low_grade glioma/astrocytoma, RTK n=8-HGG_High_grade glioma/astrocytoma, H3 G35_mutant n=3	-7.7295833333332356	-18.576410755174184	3.1172440885077117	0.6654319802462016
+LGG_Low_grade glioma/astrocytoma, RTK, CDKN2A/B n=2-HGG_High_grade glioma/astrocytoma, H3 G35_mutant n=3	-8.368333333333267	-22.99419244526865	6.2575257786021155	0.9577843054095092
+LGG_Low_grade glioma/astrocytoma, wildtype n=49-HGG_High_grade glioma/astrocytoma, H3 G35_mutant n=3	-7.935374149659806	-17.464542795597534	1.5937944962779227	0.30285218479719367
+Medullo_Medulloblastoma n=18-HGG_High_grade glioma/astrocytoma, H3 G35_mutant n=3	-2.7749999999999098	-12.766363881990804	7.2163638819909846	0.9999999840003375
+Medullo_Medulloblastoma, group 3 n=11-HGG_High_grade glioma/astrocytoma, H3 G35_mutant n=3	-2.7815151515150625	-13.21715437777944	7.6541240747493156	0.9999999946970287
+Medullo_Medulloblastoma, group 4 n=47-HGG_High_grade glioma/astrocytoma, H3 G35_mutant n=3	-0.4386524822694131	-9.979510973509349	9.102206008970523	1
+Medullo_Medulloblastoma, SHH_activated n=23-HGG_High_grade glioma/astrocytoma, H3 G35_mutant n=3	-5.983768115941947	-15.818762975750744	3.8512267438668495	0.9141559829289054
+Medullo_Medulloblastoma, WNT_activated n=9-HGG_High_grade glioma/astrocytoma, H3 G35_mutant n=3	-9.744444444444355	-20.425661722443667	0.9367728335549579	0.14101758839932832
+HGG_High_grade glioma/astrocytoma, IDH_mutant n=2-HGG_High_grade glioma/astrocytoma, H3 wildtype n=32	2.2384375000000114	-9.439374523700824	13.916249523700849	1
+LGG_Low_grade glioma/astrocytoma (WHO grade I/II) n=8-HGG_High_grade glioma/astrocytoma, H3 wildtype n=32	1.0021875000000078	-5.330995271554067	7.3353702715540825	1
+LGG_Low_grade glioma/astrocytoma, BRAF V600E n=32-HGG_High_grade glioma/astrocytoma, H3 wildtype n=32	-0.5634374999999698	-4.568893979249712	3.442018979249772	1
+LGG_Low_grade glioma/astrocytoma, BRAF V600E, CDKN2A/B n=4-HGG_High_grade glioma/astrocytoma, H3 wildtype n=32	-2.266562500000007	-10.763418814675266	6.230293814675252	0.9999999945811326
+LGG_Low_grade glioma/astrocytoma, FGFR n=7-HGG_High_grade glioma/astrocytoma, H3 wildtype n=32	2.279151785714304	-4.406139011889609	8.964442583318217	0.9999971675510602
+LGG_Low_grade glioma/astrocytoma, H3 n=1-HGG_High_grade glioma/astrocytoma, H3 wildtype n=32	-5.676562500000051	-21.946803632761473	10.593678632761373	0.9999951150129771
+LGG_Low_grade glioma/astrocytoma, IDH n=4-HGG_High_grade glioma/astrocytoma, H3 wildtype n=32	-2.3840624999999633	-10.880918814675223	6.112793814675296	0.9999999790385399
+LGG_Low_grade glioma/astrocytoma, KIAA1549_BRAF n=104-HGG_High_grade glioma/astrocytoma, H3 wildtype n=32	0.8143990384615494	-2.4244432720525477	4.0532413489756465	0.9999999989242834
+LGG_Low_grade glioma/astrocytoma, MYB/MYBL1 n=3-HGG_High_grade glioma/astrocytoma, H3 wildtype n=32	-0.7565624999999736	-10.430658980212229	8.917533980212283	1
+LGG_Low_grade glioma/astrocytoma, NF1_germline n=1-HGG_High_grade glioma/astrocytoma, H3 wildtype n=32	1.773437500000024	-14.496803632761399	18.04367863276145	1
+LGG_Low_grade glioma/astrocytoma, NF1_somatic n=1-HGG_High_grade glioma/astrocytoma, H3 wildtype n=32	2.503437500000021	-13.766803632761402	18.773678632761445	1
+LGG_Low_grade glioma/astrocytoma, NF1_somatic, FGFR n=1-HGG_High_grade glioma/astrocytoma, H3 wildtype n=32	-0.3465625000000161	-16.61680363276144	15.923678632761408	1
+LGG_Low_grade glioma/astrocytoma, other MAPK n=14-HGG_High_grade glioma/astrocytoma, H3 wildtype n=32	1.350580357142877	-3.783372985657846	6.4845336999436	0.9999999962842832
+LGG_Low_grade glioma/astrocytoma, other MAPK, IDH n=1-HGG_High_grade glioma/astrocytoma, H3 wildtype n=32	-3.45656249999995	-19.726803632761374	12.813678632761473	0.9999999999911797
+LGG_Low_grade glioma/astrocytoma, RTK n=8-HGG_High_grade glioma/astrocytoma, H3 wildtype n=32	-0.1728124999999654	-6.50599527155404	6.160370271554109	1
+LGG_Low_grade glioma/astrocytoma, RTK, CDKN2A/B n=2-HGG_High_grade glioma/astrocytoma, H3 wildtype n=32	-0.8115624999999964	-12.489374523700832	10.86624952370084	1
+LGG_Low_grade glioma/astrocytoma, wildtype n=49-HGG_High_grade glioma/astrocytoma, H3 wildtype n=32	-0.37860331632653565	-4.0201131654730755	3.262906532820004	1
+Medullo_Medulloblastoma n=18-HGG_High_grade glioma/astrocytoma, H3 wildtype n=32	4.78177083333336	0.061295102958216496	9.502246563708503	0.04222326559221645
+Medullo_Medulloblastoma, group 3 n=11-HGG_High_grade glioma/astrocytoma, H3 wildtype n=32	4.775255681818208	-0.8245751155770504	10.375086479213465	0.2542148473501097
+Medullo_Medulloblastoma, group 4 n=47-HGG_High_grade glioma/astrocytoma, H3 wildtype n=32	7.118118351063857	3.4461271135234153	10.790109588604299	5.670108826905107e-10
+Medullo_Medulloblastoma, SHH_activated n=23-HGG_High_grade glioma/astrocytoma, H3 wildtype n=32	1.573002717391323	-2.8067989666092252	5.952804401391871	0.9999904472781456
+Medullo_Medulloblastoma, WNT_activated n=9-HGG_High_grade glioma/astrocytoma, H3 wildtype n=32	-2.1876736111110846	-8.232832123386807	3.8574849011646384	0.9999886375032897
+LGG_Low_grade glioma/astrocytoma (WHO grade I/II) n=8-HGG_High_grade glioma/astrocytoma, IDH_mutant n=2	-1.2362500000000036	-13.902615543108153	11.430115543108146	1
+LGG_Low_grade glioma/astrocytoma, BRAF V600E n=32-HGG_High_grade glioma/astrocytoma, IDH_mutant n=2	-2.8018749999999812	-14.479687023700818	8.875937023700855	0.999999999709046
+LGG_Low_grade glioma/astrocytoma, BRAF V600E, CDKN2A/B n=4-HGG_High_grade glioma/astrocytoma, IDH_mutant n=2	-4.5050000000000185	-18.380308259133038	9.370308259133	0.9999991286783125
+LGG_Low_grade glioma/astrocytoma, FGFR n=7-HGG_High_grade glioma/astrocytoma, IDH_mutant n=2	0.040714285714292586	-12.805324991131144	12.88675356255973	1
+LGG_Low_grade glioma/astrocytoma, H3 n=1-HGG_High_grade glioma/astrocytoma, IDH_mutant n=2	-7.915000000000062	-27.537649122173395	11.707649122173269	0.9998793820392786
+LGG_Low_grade glioma/astrocytoma, IDH n=4-HGG_High_grade glioma/astrocytoma, IDH_mutant n=2	-4.622499999999975	-18.49780825913299	9.252808259133044	0.9999983698906935
+LGG_Low_grade glioma/astrocytoma, KIAA1549_BRAF n=104-HGG_High_grade glioma/astrocytoma, IDH_mutant n=2	-1.424038461538462	-12.861595524395215	10.01351860131829	1
+LGG_Low_grade glioma/astrocytoma, MYB/MYBL1 n=3-HGG_High_grade glioma/astrocytoma, IDH_mutant n=2	-2.994999999999985	-17.620859111935367	11.630859111935397	0.9999999999970952
+LGG_Low_grade glioma/astrocytoma, NF1_germline n=1-HGG_High_grade glioma/astrocytoma, IDH_mutant n=2	-0.4649999999999874	-20.087649122173318	19.157649122173346	1
+LGG_Low_grade glioma/astrocytoma, NF1_somatic n=1-HGG_High_grade glioma/astrocytoma, IDH_mutant n=2	0.26500000000000945	-19.35764912217332	19.887649122173343	1
+LGG_Low_grade glioma/astrocytoma, NF1_somatic, FGFR n=1-HGG_High_grade glioma/astrocytoma, IDH_mutant n=2	-2.5850000000000275	-22.207649122173358	17.037649122173306	1
+LGG_Low_grade glioma/astrocytoma, other MAPK n=14-HGG_High_grade glioma/astrocytoma, IDH_mutant n=2	-0.8878571428571345	-12.999219121585323	11.223504835871054	1
+LGG_Low_grade glioma/astrocytoma, other MAPK, IDH n=1-HGG_High_grade glioma/astrocytoma, IDH_mutant n=2	-5.694999999999961	-25.317649122173293	13.92764912217337	0.9999999490704318
+LGG_Low_grade glioma/astrocytoma, RTK n=8-HGG_High_grade glioma/astrocytoma, IDH_mutant n=2	-2.411249999999977	-15.077615543108127	10.255115543108172	1
+LGG_Low_grade glioma/astrocytoma, RTK, CDKN2A/B n=2-HGG_High_grade glioma/astrocytoma, IDH_mutant n=2	-3.050000000000008	-19.071825916998975	12.97182591699896	1
+LGG_Low_grade glioma/astrocytoma, wildtype n=49-HGG_High_grade glioma/astrocytoma, IDH_mutant n=2	-2.617040816326547	-14.175077242777162	8.940995610124068	0.9999999999437974
+Medullo_Medulloblastoma n=18-HGG_High_grade glioma/astrocytoma, IDH_mutant n=2	2.543333333333349	-9.398630624692517	14.485297291359215	0.9999999999905198
+Medullo_Medulloblastoma, group 3 n=11-HGG_High_grade glioma/astrocytoma, IDH_mutant n=2	2.5368181818181963	-9.779257370612639	14.852893734249031	0.9999999999965378
+Medullo_Medulloblastoma, group 4 n=47-HGG_High_grade glioma/astrocytoma, IDH_mutant n=2	4.879680851063846	-6.687995307192914	16.447357009320605	0.9997009231162648
+Medullo_Medulloblastoma, SHH_activated n=23-HGG_High_grade glioma/astrocytoma, IDH_mutant n=2	-0.6654347826086884	-12.476881554486472	11.146011989269095	1
+Medullo_Medulloblastoma, WNT_activated n=9-HGG_High_grade glioma/astrocytoma, IDH_mutant n=2	-4.426111111111096	-16.95094857481767	8.098726352595477	0.999993419045846
+LGG_Low_grade glioma/astrocytoma, BRAF V600E n=32-LGG_Low_grade glioma/astrocytoma (WHO grade I/II) n=8	-1.5656249999999776	-7.898807771554052	4.767557771554097	0.9999999993287881
+LGG_Low_grade glioma/astrocytoma, BRAF V600E, CDKN2A/B n=4-LGG_Low_grade glioma/astrocytoma (WHO grade I/II) n=8	-3.268750000000015	-13.08007456108668	6.542574561086651	0.9999983680977989
+LGG_Low_grade glioma/astrocytoma, FGFR n=7-LGG_Low_grade glioma/astrocytoma (WHO grade I/II) n=8	1.2769642857142962	-7.015118411610494	9.569046983039087	1
+LGG_Low_grade glioma/astrocytoma, H3 n=1-LGG_Low_grade glioma/astrocytoma (WHO grade I/II) n=8	-6.678750000000059	-23.672462629350576	10.314962629350461	0.9999300948123603
+LGG_Low_grade glioma/astrocytoma, IDH n=4-LGG_Low_grade glioma/astrocytoma (WHO grade I/II) n=8	-3.386249999999971	-13.197574561086636	6.425074561086695	0.9999962111250342
+LGG_Low_grade glioma/astrocytoma, KIAA1549_BRAF n=104-LGG_Low_grade glioma/astrocytoma (WHO grade I/II) n=8	-0.1877884615384584	-6.06619146942435	5.690614546347433	1
+LGG_Low_grade glioma/astrocytoma, MYB/MYBL1 n=3-LGG_Low_grade glioma/astrocytoma (WHO grade I/II) n=8	-1.7587499999999814	-12.605577421840929	9.088077421840966	1
+LGG_Low_grade glioma/astrocytoma, NF1_germline n=1-LGG_Low_grade glioma/astrocytoma (WHO grade I/II) n=8	0.7712500000000162	-16.222462629350503	17.764962629350535	1
+LGG_Low_grade glioma/astrocytoma, NF1_somatic n=1-LGG_Low_grade glioma/astrocytoma (WHO grade I/II) n=8	1.501250000000013	-15.492462629350506	18.494962629350532	1
+LGG_Low_grade glioma/astrocytoma, NF1_somatic, FGFR n=1-LGG_Low_grade glioma/astrocytoma (WHO grade I/II) n=8	-1.3487500000000239	-18.342462629350543	15.644962629350495	1
+LGG_Low_grade glioma/astrocytoma, other MAPK n=14-LGG_Low_grade glioma/astrocytoma (WHO grade I/II) n=8	0.34839285714286916	-6.752522530101252	7.44930824438699	1
+LGG_Low_grade glioma/astrocytoma, other MAPK, IDH n=1-LGG_Low_grade glioma/astrocytoma (WHO grade I/II) n=8	-4.458749999999958	-21.452462629350478	12.534962629350561	0.9999999965412534
+LGG_Low_grade glioma/astrocytoma, RTK n=8-LGG_Low_grade glioma/astrocytoma (WHO grade I/II) n=8	-1.1749999999999732	-9.185912958499458	6.83591295849951	1
+LGG_Low_grade glioma/astrocytoma, RTK, CDKN2A/B n=2-LGG_Low_grade glioma/astrocytoma (WHO grade I/II) n=8	-1.8137500000000042	-14.480115543108154	10.852615543108145	1
+LGG_Low_grade glioma/astrocytoma, wildtype n=49-LGG_Low_grade glioma/astrocytoma (WHO grade I/II) n=8	-1.3807908163265434	-7.490301139763019	4.728719507109932	0.9999999999467011
+Medullo_Medulloblastoma n=18-LGG_Low_grade glioma/astrocytoma (WHO grade I/II) n=8	3.7795833333333526	-3.0283835828470114	10.587550249513717	0.9712818819489115
+Medullo_Medulloblastoma, group 3 n=11-LGG_Low_grade glioma/astrocytoma (WHO grade I/II) n=8	3.7730681818182	-3.6716364711685134	11.217772834804913	0.9922492506151839
+Medullo_Medulloblastoma, group 4 n=47-LGG_Low_grade glioma/astrocytoma (WHO grade I/II) n=8	6.115930851063849	-0.01179646494160469	12.243658167069302	0.051252369129568986
+Medullo_Medulloblastoma, SHH_activated n=23-LGG_Low_grade glioma/astrocytoma (WHO grade I/II) n=8	0.5708152173913152	-6.005520023601168	7.147150458383798	1
+Medullo_Medulloblastoma, WNT_activated n=9-LGG_Low_grade glioma/astrocytoma (WHO grade I/II) n=8	-3.1898611111110924	-10.975069126911649	4.595346904689465	0.9998334739856929
+LGG_Low_grade glioma/astrocytoma, BRAF V600E, CDKN2A/B n=4-LGG_Low_grade glioma/astrocytoma, BRAF V600E n=32	-1.7031250000000373	-10.199981314675297	6.793731314675222	0.9999999999985647
+LGG_Low_grade glioma/astrocytoma, FGFR n=7-LGG_Low_grade glioma/astrocytoma, BRAF V600E n=32	2.842589285714274	-3.842701511889639	9.527880083318188	0.999650215601602
+LGG_Low_grade glioma/astrocytoma, H3 n=1-LGG_Low_grade glioma/astrocytoma, BRAF V600E n=32	-5.113125000000081	-21.383366132761505	11.157116132761342	0.9999996113541725
+LGG_Low_grade glioma/astrocytoma, IDH n=4-LGG_Low_grade glioma/astrocytoma, BRAF V600E n=32	-1.8206249999999935	-10.317481314675252	6.676231314675266	0.999999999988664
+LGG_Low_grade glioma/astrocytoma, KIAA1549_BRAF n=104-LGG_Low_grade glioma/astrocytoma, BRAF V600E n=32	1.3778365384615192	-1.8610057720525779	4.616678848975616	0.9996468138238163
+LGG_Low_grade glioma/astrocytoma, MYB/MYBL1 n=3-LGG_Low_grade glioma/astrocytoma, BRAF V600E n=32	-0.19312500000000377	-9.86722148021226	9.480971480212252	1
+LGG_Low_grade glioma/astrocytoma, NF1_germline n=1-LGG_Low_grade glioma/astrocytoma, BRAF V600E n=32	2.336874999999994	-13.93336613276143	18.60711613276142	1
+LGG_Low_grade glioma/astrocytoma, NF1_somatic n=1-LGG_Low_grade glioma/astrocytoma, BRAF V600E n=32	3.0668749999999907	-13.203366132761433	19.337116132761416	1
+LGG_Low_grade glioma/astrocytoma, NF1_somatic, FGFR n=1-LGG_Low_grade glioma/astrocytoma, BRAF V600E n=32	0.21687499999995374	-16.053366132761468	16.48711613276138	1
+LGG_Low_grade glioma/astrocytoma, other MAPK n=14-LGG_Low_grade glioma/astrocytoma, BRAF V600E n=32	1.9140178571428468	-3.219935485657876	7.04797119994357	0.9999778070716135
+LGG_Low_grade glioma/astrocytoma, other MAPK, IDH n=1-LGG_Low_grade glioma/astrocytoma, BRAF V600E n=32	-2.89312499999998	-19.163366132761404	13.377116132761444	1
+LGG_Low_grade glioma/astrocytoma, RTK n=8-LGG_Low_grade glioma/astrocytoma, BRAF V600E n=32	0.39062500000000444	-5.94255777155407	6.723807771554079	1
+LGG_Low_grade glioma/astrocytoma, RTK, CDKN2A/B n=2-LGG_Low_grade glioma/astrocytoma, BRAF V600E n=32	-0.24812500000002657	-11.925937023700863	11.42968702370081	1
+LGG_Low_grade glioma/astrocytoma, wildtype n=49-LGG_Low_grade glioma/astrocytoma, BRAF V600E n=32	0.18483418367343418	-3.4566756654731057	3.826344032819974	1
+Medullo_Medulloblastoma n=18-LGG_Low_grade glioma/astrocytoma, BRAF V600E n=32	5.34520833333333	0.6247326029581863	10.065684063708474	0.007562642263506225
+Medullo_Medulloblastoma, group 3 n=11-LGG_Low_grade glioma/astrocytoma, BRAF V600E n=32	5.3386931818181775	-0.2611376155770806	10.938523979213436	0.0888469091316022
+Medullo_Medulloblastoma, group 4 n=47-LGG_Low_grade glioma/astrocytoma, BRAF V600E n=32	7.681555851063827	4.009564613523385	11.35354708860427	3.2353364431969567e-10
+Medullo_Medulloblastoma, SHH_activated n=23-LGG_Low_grade glioma/astrocytoma, BRAF V600E n=32	2.136440217391293	-2.2433614666092554	6.516241901391841	0.9957996302894101
+Medullo_Medulloblastoma, WNT_activated n=9-LGG_Low_grade glioma/astrocytoma, BRAF V600E n=32	-1.6242361111111148	-7.669394623386838	4.420922401164608	0.9999999934157148
+LGG_Low_grade glioma/astrocytoma, FGFR n=7-LGG_Low_grade glioma/astrocytoma, BRAF V600E, CDKN2A/B n=4	4.545714285714311	-5.496496560190122	14.587925131618745	0.9988545192106232
+LGG_Low_grade glioma/astrocytoma, H3 n=1-LGG_Low_grade glioma/astrocytoma, BRAF V600E, CDKN2A/B n=4	-3.4100000000000437	-21.322945937038842	14.502945937038756	1
+LGG_Low_grade glioma/astrocytoma, IDH n=4-LGG_Low_grade glioma/astrocytoma, BRAF V600E, CDKN2A/B n=4	-0.1174999999999562	-11.446641752900302	11.211641752900391	1
+LGG_Low_grade glioma/astrocytoma, KIAA1549_BRAF n=104-LGG_Low_grade glioma/astrocytoma, BRAF V600E, CDKN2A/B n=4	3.0809615384615565	-5.082553950434718	11.244477027357831	0.9999709052542909
+LGG_Low_grade glioma/astrocytoma, MYB/MYBL1 n=3-LGG_Low_grade glioma/astrocytoma, BRAF V600E, CDKN2A/B n=4	1.5100000000000335	-10.726871672675472	13.746871672675539	1
+LGG_Low_grade glioma/astrocytoma, NF1_germline n=1-LGG_Low_grade glioma/astrocytoma, BRAF V600E, CDKN2A/B n=4	4.040000000000031	-13.872945937038768	21.95294593703883	0.9999999999497956
+LGG_Low_grade glioma/astrocytoma, NF1_somatic n=1-LGG_Low_grade glioma/astrocytoma, BRAF V600E, CDKN2A/B n=4	4.770000000000028	-13.142945937038771	22.682945937038827	0.9999999948311281
+LGG_Low_grade glioma/astrocytoma, NF1_somatic, FGFR n=1-LGG_Low_grade glioma/astrocytoma, BRAF V600E, CDKN2A/B n=4	1.919999999999991	-15.992945937038808	19.83294593703879	1
+LGG_Low_grade glioma/astrocytoma, other MAPK n=14-LGG_Low_grade glioma/astrocytoma, BRAF V600E, CDKN2A/B n=4	3.617142857142884	-5.466378626903257	12.700664341189025	0.9999077487261032
+LGG_Low_grade glioma/astrocytoma, other MAPK, IDH n=1-LGG_Low_grade glioma/astrocytoma, BRAF V600E, CDKN2A/B n=4	-1.1899999999999427	-19.10294593703874	16.72294593703886	1
+LGG_Low_grade glioma/astrocytoma, RTK n=8-LGG_Low_grade glioma/astrocytoma, BRAF V600E, CDKN2A/B n=4	2.0937500000000417	-7.717574561086624	11.905074561086707	0.9999999999899516
+LGG_Low_grade glioma/astrocytoma, RTK, CDKN2A/B n=2-LGG_Low_grade glioma/astrocytoma, BRAF V600E, CDKN2A/B n=4	1.4550000000000107	-12.420308259133007	15.330308259133028	1
+LGG_Low_grade glioma/astrocytoma, wildtype n=49-LGG_Low_grade glioma/astrocytoma, BRAF V600E, CDKN2A/B n=4	1.8879591836734715	-6.443516052231894	10.219434419578837	0.9999999999425082
+Medullo_Medulloblastoma n=18-LGG_Low_grade glioma/astrocytoma, BRAF V600E, CDKN2A/B n=4	7.0483333333333675	-1.8080641705128695	15.904730837179605	0.40509398350339243
+Medullo_Medulloblastoma, group 3 n=11-LGG_Low_grade glioma/astrocytoma, BRAF V600E, CDKN2A/B n=4	7.041818181818215	-2.3129127381243517	16.396549101760783	0.5387001138794372
+Medullo_Medulloblastoma, group 4 n=47-LGG_Low_grade glioma/astrocytoma, BRAF V600E, CDKN2A/B n=4	9.384680851063864	1.0398378163719073	17.72952388575582	0.008526522408726533
+Medullo_Medulloblastoma, SHH_activated n=23-LGG_Low_grade glioma/astrocytoma, BRAF V600E, CDKN2A/B n=4	3.83956521739133	-4.840040097151903	12.519170531934563	0.99925184438004655
+Medullo_Medulloblastoma, WNT_activated n=9-LGG_Low_grade glioma/astrocytoma, BRAF V600E, CDKN2A/B n=4	0.07888888888892254	-9.549030256160682	9.706808033938527	1
+LGG_Low_grade glioma/astrocytoma, H3 n=1-LGG_Low_grade glioma/astrocytoma, FGFR n=7	-7.955714285714355	-25.083766654841604	9.172338083412896	0.9981798577851049
+LGG_Low_grade glioma/astrocytoma, IDH n=4-LGG_Low_grade glioma/astrocytoma, FGFR n=7	-4.663214285714267	-14.7054251316187	5.378996560190166	0.9981883627765116
+LGG_Low_grade glioma/astrocytoma, KIAA1549_BRAF n=104-LGG_Low_grade glioma/astrocytoma, FGFR n=7	-1.4647527472527546	-7.72091218845469	4.791406693949181	0.9999999998541849
+LGG_Low_grade glioma/astrocytoma, MYB/MYBL1 n=3-LGG_Low_grade glioma/astrocytoma, FGFR n=7	-3.0357142857142776	-14.091824548813998	8.020395977385443	0.9999999882144177
+LGG_Low_grade glioma/astrocytoma, NF1_germline n=1-LGG_Low_grade glioma/astrocytoma, FGFR n=7	-0.50571428571428	-17.63376665484153	16.62233808341297	1
+LGG_Low_grade glioma/astrocytoma, NF1_somatic n=1-LGG_Low_grade glioma/astrocytoma, FGFR n=7	0.22428571428571686	-16.903766654841533	17.352338083412967	1
+LGG_Low_grade glioma/astrocytoma, NF1_somatic, FGFR n=1-LGG_Low_grade glioma/astrocytoma, FGFR n=7	-2.62571428571432	-19.75376665484157	14.50233808341293	1
+LGG_Low_grade glioma/astrocytoma, other MAPK n=14-LGG_Low_grade glioma/astrocytoma, FGFR n=7	-0.928571428571427	-8.345235663078645	6.488092805935791	1
+LGG_Low_grade glioma/astrocytoma, other MAPK, IDH n=1-LGG_Low_grade glioma/astrocytoma, FGFR n=7	-5.735714285714254	-22.863766654841505	11.392338083412996	0.9999981536839566
+LGG_Low_grade glioma/astrocytoma, RTK n=8-LGG_Low_grade glioma/astrocytoma, FGFR n=7	-2.4519642857142694	-10.744046983039059	5.840118411610521	0.9999999173046663
+LGG_Low_grade glioma/astrocytoma, RTK, CDKN2A/B n=2-LGG_Low_grade glioma/astrocytoma, FGFR n=7	-3.0907142857143004	-15.936753562559737	9.755324991131136	0.9999999996855096
+LGG_Low_grade glioma/astrocytoma, wildtype n=49-LGG_Low_grade glioma/astrocytoma, FGFR n=7	-2.6577551020408396	-9.131550389412466	3.8160401853307864	0.9998266564800475
+Medullo_Medulloblastoma n=18-LGG_Low_grade glioma/astrocytoma, FGFR n=7	2.5026190476190564	-4.634069439517297	9.63930753475541	0.9999944997609731
+Medullo_Medulloblastoma, group 3 n=11-LGG_Low_grade glioma/astrocytoma, FGFR n=7	2.4961038961039037	-5.250349253616957	10.242557045824764	0.9999992768061939
+Medullo_Medulloblastoma, group 4 n=47-LGG_Low_grade glioma/astrocytoma, FGFR n=7	4.838966565349553	-1.6520234277052515	11.329956558404358	0.5618783548218969
+Medullo_Medulloblastoma, SHH_activated n=23-LGG_Low_grade glioma/astrocytoma, FGFR n=7	-0.706149068322981	-7.622224128104928	6.209925991458966	1
+Medullo_Medulloblastoma, WNT_activated n=9-LGG_Low_grade glioma/astrocytoma, FGFR n=7	-4.466825396825389	-12.541066715977514	3.6074159223267372	0.972588913553769
+LGG_Low_grade glioma/astrocytoma, IDH n=4-LGG_Low_grade glioma/astrocytoma, H3 n=1	3.2925000000000875	-14.620445937038712	21.20544593703889	1
+LGG_Low_grade glioma/astrocytoma, KIAA1549_BRAF n=104-LGG_Low_grade glioma/astrocytoma, H3 n=1	6.4909615384616	-9.60770810916501	22.589631186088212	0.9998803813007018
+LGG_Low_grade glioma/astrocytoma, MYB/MYBL1 n=3-LGG_Low_grade glioma/astrocytoma, H3 n=1	4.920000000000077	-13.58041101217728	23.420411012177432	0.9999999950108528
+LGG_Low_grade glioma/astrocytoma, NF1_germline n=1-LGG_Low_grade glioma/astrocytoma, H3 n=1	7.450000000000075	-15.208283505800619	30.108283505800767	0.9999988143053551
+LGG_Low_grade glioma/astrocytoma, NF1_somatic n=1-LGG_Low_grade glioma/astrocytoma, H3 n=1	8.18000000000007	-14.478283505800622	30.838283505800764	0.9999892457769519
+LGG_Low_grade glioma/astrocytoma, NF1_somatic, FGFR n=1-LGG_Low_grade glioma/astrocytoma, H3 n=1	5.330000000000035	-17.32828350580066	27.988283505800727	0.9999999998334071
+LGG_Low_grade glioma/astrocytoma, other MAPK n=14-LGG_Low_grade glioma/astrocytoma, H3 n=1	7.027142857142928	-9.557022537506654	23.611308251792508	0.9996733250032327
+LGG_Low_grade glioma/astrocytoma, other MAPK, IDH n=1-LGG_Low_grade glioma/astrocytoma, H3 n=1	2.220000000000101	-20.43828350580059	24.878283505800795	1
+LGG_Low_grade glioma/astrocytoma, RTK n=8-LGG_Low_grade glioma/astrocytoma, H3 n=1	5.503750000000085	-11.489962629350433	22.497462629350604	0.9999991803439385
+LGG_Low_grade glioma/astrocytoma, RTK, CDKN2A/B n=2-LGG_Low_grade glioma/astrocytoma, H3 n=1	4.865000000000054	-14.757649122173277	24.487649122173387	0.9999999992723803
+LGG_Low_grade glioma/astrocytoma, wildtype n=49-LGG_Low_grade glioma/astrocytoma, H3 n=1	5.297959183673515	-10.88652903475555	21.482447402102583	0.9999989353693728
+Medullo_Medulloblastoma n=18-LGG_Low_grade glioma/astrocytoma, H3 n=1	10.45833333333341	-6.0025280059798725	26.919194672646693	0.866841435996619
+Medullo_Medulloblastoma, group 3 n=11-LGG_Low_grade glioma/astrocytoma, H3 n=1	10.451818181818258	-6.28243321675032	27.186069580386835	0.8873469281058375
+Medullo_Medulloblastoma, group 4 n=47-LGG_Low_grade glioma/astrocytoma, H3 n=1	12.794680851063909	-3.3966929189289203	28.986054621056738	0.4218936659324787
+Medullo_Medulloblastoma, SHH_activated n=23-LGG_Low_grade glioma/astrocytoma, H3 n=1	7.249565217391374	-9.116855518438804	23.615985953221553	0.9992329895274137
+Medullo_Medulloblastoma, WNT_activated n=9-LGG_Low_grade glioma/astrocytoma, H3 n=1	3.488888888888966	-13.399598501921904	20.377376279699835	0.9999999999962257
+LGG_Low_grade glioma/astrocytoma, KIAA1549_BRAF n=104-LGG_Low_grade glioma/astrocytoma, IDH n=4	3.1984615384615127	-4.965053950434762	11.361977027357788	0.9999345460197664
+LGG_Low_grade glioma/astrocytoma, MYB/MYBL1 n=3-LGG_Low_grade glioma/astrocytoma, IDH n=4	1.6274999999999897	-10.609371672675515	13.864371672675496	1
+LGG_Low_grade glioma/astrocytoma, NF1_germline n=1-LGG_Low_grade glioma/astrocytoma, IDH n=4	4.157499999999987	-13.755445937038811	22.070445937038787	0.999999999886193
+LGG_Low_grade glioma/astrocytoma, NF1_somatic n=1-LGG_Low_grade glioma/astrocytoma, IDH n=4	4.887499999999984	-13.025445937038814	22.800445937038784	0.9999999900446959
+LGG_Low_grade glioma/astrocytoma, NF1_somatic, FGFR n=1-LGG_Low_grade glioma/astrocytoma, IDH n=4	2.0374999999999472	-15.875445937038851	19.950445937038747	1
+LGG_Low_grade glioma/astrocytoma, other MAPK n=14-LGG_Low_grade glioma/astrocytoma, IDH n=4	3.7346428571428403	-5.348878626903301	12.818164341188982	0.9998213868752047
+LGG_Low_grade glioma/astrocytoma, other MAPK, IDH n=1-LGG_Low_grade glioma/astrocytoma, IDH n=4	-1.0724999999999865	-18.985445937038786	16.84044593703881	1
+LGG_Low_grade glioma/astrocytoma, RTK n=8-LGG_Low_grade glioma/astrocytoma, IDH n=4	2.211249999999998	-7.600074561086668	12.022574561086664	0.9999999999508394
+LGG_Low_grade glioma/astrocytoma, RTK, CDKN2A/B n=2-LGG_Low_grade glioma/astrocytoma, IDH n=4	1.572499999999967	-12.302808259133052	15.447808259132984	1
+LGG_Low_grade glioma/astrocytoma, wildtype n=49-LGG_Low_grade glioma/astrocytoma, IDH n=4	2.0054591836734277	-6.326016052231938	10.336934419578792	0.9999999996813684
+Medullo_Medulloblastoma n=18-LGG_Low_grade glioma/astrocytoma, IDH n=4	7.165833333333324	-1.6905641705129133	16.02223083717956	0.36665118834427757
+Medullo_Medulloblastoma, group 3 n=11-LGG_Low_grade glioma/astrocytoma, IDH n=4	7.159318181818171	-2.1954127381243955	16.514049101760737	0.4988330080381992
+Medullo_Medulloblastoma, group 4 n=47-LGG_Low_grade glioma/astrocytoma, IDH n=4	9.50218085106382	1.1573378163718626	17.847023885755775	0.006848540815943993
+Medullo_Medulloblastoma, SHH_activated n=23-LGG_Low_grade glioma/astrocytoma, IDH n=4	3.9570652173912864	-4.7225400971519464	12.63667053193452	0.9986958220196709
+Medullo_Medulloblastoma, WNT_activated n=9-LGG_Low_grade glioma/astrocytoma, IDH n=4	0.19638888888887873	-9.431530256160727	9.824308033938483	1
+LGG_Low_grade glioma/astrocytoma, MYB/MYBL1 n=3-LGG_Low_grade glioma/astrocytoma, KIAA1549_BRAF n=104	-1.570961538461523	-10.953634964179148	7.811711887256102	1
+LGG_Low_grade glioma/astrocytoma, NF1_germline n=1-LGG_Low_grade glioma/astrocytoma, KIAA1549_BRAF n=104	0.9590384615384746	-15.139631186088137	17.057708109165084	1
+LGG_Low_grade glioma/astrocytoma, NF1_somatic n=1-LGG_Low_grade glioma/astrocytoma, KIAA1549_BRAF n=104	1.6890384615384715	-14.40963118608814	17.78770810916508	1
+LGG_Low_grade glioma/astrocytoma, NF1_somatic, FGFR n=1-LGG_Low_grade glioma/astrocytoma, KIAA1549_BRAF n=104	-1.1609615384615655	-17.25963118608818	14.937708109165046	1
+LGG_Low_grade glioma/astrocytoma, other MAPK n=14-LGG_Low_grade glioma/astrocytoma, KIAA1549_BRAF n=104	0.5361813186813276	-4.0249473608526385	5.097309998215294	1
+LGG_Low_grade glioma/astrocytoma, other MAPK, IDH n=1-LGG_Low_grade glioma/astrocytoma, KIAA1549_BRAF n=104	-4.270961538461499	-20.36963118608811	11.827708109165112	0.9999999953266547
+LGG_Low_grade glioma/astrocytoma, RTK n=8-LGG_Low_grade glioma/astrocytoma, KIAA1549_BRAF n=104	-0.9872115384615148	-6.865614546347406	4.891191469424377	1
+LGG_Low_grade glioma/astrocytoma, RTK, CDKN2A/B n=2-LGG_Low_grade glioma/astrocytoma, KIAA1549_BRAF n=104	-1.6259615384615458	-13.063518601318298	9.811595524395207	1
+LGG_Low_grade glioma/astrocytoma, wildtype n=49-LGG_Low_grade glioma/astrocytoma, KIAA1549_BRAF n=104	-1.193002354788085	-3.969152906657311	1.5831481970811407	0.9995697656040663
+Medullo_Medulloblastoma n=18-LGG_Low_grade glioma/astrocytoma, KIAA1549_BRAF n=104	3.967371794871811	-0.1227760051805662	8.057519594924187	0.07282117806803745
+Medullo_Medulloblastoma, group 3 n=11-LGG_Low_grade glioma/astrocytoma, KIAA1549_BRAF n=104	3.9608566433566583	-1.118958595868973	9.04067188258229	0.4538495618904904
+Medullo_Medulloblastoma, group 4 n=47-LGG_Low_grade glioma/astrocytoma, KIAA1549_BRAF n=104	6.303719312602308	3.487704832208726	9.11973379299589	3.196283238082742e-10
+Medullo_Medulloblastoma, SHH_activated n=23-LGG_Low_grade glioma/astrocytoma, KIAA1549_BRAF n=104	0.7586036789297737	-2.933154804013902	4.45036216187345	0.9999999999967715
+Medullo_Medulloblastoma, WNT_activated n=9-LGG_Low_grade glioma/astrocytoma, KIAA1549_BRAF n=104	-3.002072649572634	-8.568971188593459	2.5648258894481897	0.9806366429760093
+LGG_Low_grade glioma/astrocytoma, NF1_germline n=1-LGG_Low_grade glioma/astrocytoma, MYB/MYBL1 n=3	2.5299999999999976	-15.970411012177358	21.030411012177353	1
+LGG_Low_grade glioma/astrocytoma, NF1_somatic n=1-LGG_Low_grade glioma/astrocytoma, MYB/MYBL1 n=3	3.2599999999999945	-15.240411012177361	21.76041101217735	1
+LGG_Low_grade glioma/astrocytoma, NF1_somatic, FGFR n=1-LGG_Low_grade glioma/astrocytoma, MYB/MYBL1 n=3	0.4099999999999575	-18.090411012177398	18.910411012177313	1
+LGG_Low_grade glioma/astrocytoma, other MAPK n=14-LGG_Low_grade glioma/astrocytoma, MYB/MYBL1 n=3	2.1071428571428505	-8.086087152395153	12.300372866680855	0.9999999999960827
+LGG_Low_grade glioma/astrocytoma, other MAPK, IDH n=1-LGG_Low_grade glioma/astrocytoma, MYB/MYBL1 n=3	-2.699999999999976	-21.200411012177334	15.80041101217738	1
+LGG_Low_grade glioma/astrocytoma, RTK n=8-LGG_Low_grade glioma/astrocytoma, MYB/MYBL1 n=3	0.5837500000000082	-10.26307742184094	11.430577421840955	1
+LGG_Low_grade glioma/astrocytoma, RTK, CDKN2A/B n=2-LGG_Low_grade glioma/astrocytoma, MYB/MYBL1 n=3	-0.05500000000002281	-14.680859111935405	14.57085911193536	1
+LGG_Low_grade glioma/astrocytoma, wildtype n=49-LGG_Low_grade glioma/astrocytoma, MYB/MYBL1 n=3	0.37795918367343795	-9.15120946226429	9.907127829611166	1
+Medullo_Medulloblastoma n=18-LGG_Low_grade glioma/astrocytoma, MYB/MYBL1 n=3	5.538333333333334	-4.45303054865756	15.529697215324228	0.9718627578388089
+Medullo_Medulloblastoma, group 3 n=11-LGG_Low_grade glioma/astrocytoma, MYB/MYBL1 n=3	5.531818181818181	-4.903821044446197	15.96745740808256	0.9848196832323206
+Medullo_Medulloblastoma, group 4 n=47-LGG_Low_grade glioma/astrocytoma, MYB/MYBL1 n=3	7.874680851063831	-1.6661776401761053	17.415539342303767	0.3220803498901048
+Medullo_Medulloblastoma, SHH_activated n=23-LGG_Low_grade glioma/astrocytoma, MYB/MYBL1 n=3	2.3295652173912966	-7.5054296424175	12.164560077200093	0.9999999997974915
+Medullo_Medulloblastoma, WNT_activated n=9-LGG_Low_grade glioma/astrocytoma, MYB/MYBL1 n=3	-1.431111111111111	-12.112328389110424	9.250106166888202	1
+LGG_Low_grade glioma/astrocytoma, NF1_somatic n=1-LGG_Low_grade glioma/astrocytoma, NF1_germline n=1	0.7299999999999969	-21.928283505800696	23.38828350580069	1
+LGG_Low_grade glioma/astrocytoma, NF1_somatic, FGFR n=1-LGG_Low_grade glioma/astrocytoma, NF1_germline n=1	-2.12000000000004	-24.778283505800733	20.538283505800653	1
+LGG_Low_grade glioma/astrocytoma, other MAPK n=14-LGG_Low_grade glioma/astrocytoma, NF1_germline n=1	-0.42285714285714704	-17.007022537506728	16.161308251792434	1
+LGG_Low_grade glioma/astrocytoma, other MAPK, IDH n=1-LGG_Low_grade glioma/astrocytoma, NF1_germline n=1	-5.229999999999974	-27.888283505800665	17.42828350580072	0.9999999999026785
+LGG_Low_grade glioma/astrocytoma, RTK n=8-LGG_Low_grade glioma/astrocytoma, NF1_germline n=1	-1.9462499999999894	-18.939962629350507	15.04746262935053	1
+LGG_Low_grade glioma/astrocytoma, RTK, CDKN2A/B n=2-LGG_Low_grade glioma/astrocytoma, NF1_germline n=1	-2.5850000000000204	-22.20764912217335	17.037649122173313	1
+LGG_Low_grade glioma/astrocytoma, wildtype n=49-LGG_Low_grade glioma/astrocytoma, NF1_germline n=1	-2.1520408163265596	-18.33652903475563	14.032447402102507	1
+Medullo_Medulloblastoma n=18-LGG_Low_grade glioma/astrocytoma, NF1_germline n=1	3.0083333333333364	-13.452528005979946	19.46919467264662	1
+Medullo_Medulloblastoma, group 3 n=11-LGG_Low_grade glioma/astrocytoma, NF1_germline n=1	3.0018181818181837	-13.732433216750394	19.73606958038676	1
+Medullo_Medulloblastoma, group 4 n=47-LGG_Low_grade glioma/astrocytoma, NF1_germline n=1	5.344680851063833	-10.846692918928996	21.536054621056664	0.9999986953277873
+Medullo_Medulloblastoma, SHH_activated n=23-LGG_Low_grade glioma/astrocytoma, NF1_germline n=1	-0.20043478260870096	-16.566855518438878	16.16598595322148	1
+Medullo_Medulloblastoma, WNT_activated n=9-LGG_Low_grade glioma/astrocytoma, NF1_germline n=1	-3.9611111111111086	-20.849598501921978	12.927376279699761	0.9999999998466784
+LGG_Low_grade glioma/astrocytoma, NF1_somatic, FGFR n=1-LGG_Low_grade glioma/astrocytoma, NF1_somatic n=1	-2.850000000000037	-25.50828350580073	19.808283505800656	1
+LGG_Low_grade glioma/astrocytoma, other MAPK n=14-LGG_Low_grade glioma/astrocytoma, NF1_somatic n=1	-1.152857142857144	-17.737022537506725	15.431308251792437	1
+LGG_Low_grade glioma/astrocytoma, other MAPK, IDH n=1-LGG_Low_grade glioma/astrocytoma, NF1_somatic n=1	-5.959999999999971	-28.61828350580066	16.698283505800724	0.9999999962957291
+LGG_Low_grade glioma/astrocytoma, RTK n=8-LGG_Low_grade glioma/astrocytoma, NF1_somatic n=1	-2.6762499999999863	-19.669962629350504	14.317462629350533	1
+LGG_Low_grade glioma/astrocytoma, RTK, CDKN2A/B n=2-LGG_Low_grade glioma/astrocytoma, NF1_somatic n=1	-3.3150000000000173	-22.937649122173347	16.307649122173316	1
+LGG_Low_grade glioma/astrocytoma, wildtype n=49-LGG_Low_grade glioma/astrocytoma, NF1_somatic n=1	-2.8820408163265565	-19.066529034755625	13.30244740210251	1
+Medullo_Medulloblastoma n=18-LGG_Low_grade glioma/astrocytoma, NF1_somatic n=1	2.2783333333333395	-14.182528005979943	18.739194672646622	1
+Medullo_Medulloblastoma, group 3 n=11-LGG_Low_grade glioma/astrocytoma, NF1_somatic n=1	2.271818181818187	-14.46243321675039	19.006069580386765	1
+Medullo_Medulloblastoma, group 4 n=47-LGG_Low_grade glioma/astrocytoma, NF1_somatic n=1	4.614680851063836	-11.576692918928993	20.806054621056667	0.9999999683211696
+Medullo_Medulloblastoma, SHH_activated n=23-LGG_Low_grade glioma/astrocytoma, NF1_somatic n=1	-0.9304347826086978	-17.296855518438875	15.435985953221481	1
+Medullo_Medulloblastoma, WNT_activated n=9-LGG_Low_grade glioma/astrocytoma, NF1_somatic n=1	-4.6911111111111055	-21.579598501921975	12.197376279699764	0.9999999839544664
+LGG_Low_grade glioma/astrocytoma, other MAPK n=14-LGG_Low_grade glioma/astrocytoma, NF1_somatic, FGFR n=1	1.697142857142893	-14.887022537506688	18.281308251792474	1
+LGG_Low_grade glioma/astrocytoma, other MAPK, IDH n=1-LGG_Low_grade glioma/astrocytoma, NF1_somatic, FGFR n=1	-3.1099999999999337	-25.768283505800625	19.54828350580076	1
+LGG_Low_grade glioma/astrocytoma, RTK n=8-LGG_Low_grade glioma/astrocytoma, NF1_somatic, FGFR n=1	0.1737500000000507	-16.819962629350467	17.16746262935057	1
+LGG_Low_grade glioma/astrocytoma, RTK, CDKN2A/B n=2-LGG_Low_grade glioma/astrocytoma, NF1_somatic, FGFR n=1	-0.4649999999999803	-20.08764912217331	19.157649122173353	1
+LGG_Low_grade glioma/astrocytoma, wildtype n=49-LGG_Low_grade glioma/astrocytoma, NF1_somatic, FGFR n=1	-0.03204081632651956	-16.216529034755588	16.152447402102545	1
+Medullo_Medulloblastoma n=18-LGG_Low_grade glioma/astrocytoma, NF1_somatic, FGFR n=1	5.1283333333333765	-11.332528005979906	21.58919467264666	0.9999996873104477
+Medullo_Medulloblastoma, group 3 n=11-LGG_Low_grade glioma/astrocytoma, NF1_somatic, FGFR n=1	5.121818181818224	-11.612433216750354	21.8560695803868	0.9999998002014511
+Medullo_Medulloblastoma, group 4 n=47-LGG_Low_grade glioma/astrocytoma, NF1_somatic, FGFR n=1	7.464680851063873	-8.726692918928956	23.656054621056704	0.9984058145571819
+Medullo_Medulloblastoma, SHH_activated n=23-LGG_Low_grade glioma/astrocytoma, NF1_somatic, FGFR n=1	1.9195652173913391	-14.44685551843884	18.28598595322152	1
+Medullo_Medulloblastoma, WNT_activated n=9-LGG_Low_grade glioma/astrocytoma, NF1_somatic, FGFR n=1	-1.8411111111110685	-18.729598501921938	15.047376279699801	1
+LGG_Low_grade glioma/astrocytoma, other MAPK, IDH n=1-LGG_Low_grade glioma/astrocytoma, other MAPK n=14	-4.807142857142827	-21.39130825179241	11.777022537506754	0.9999999507027371
+LGG_Low_grade glioma/astrocytoma, RTK n=8-LGG_Low_grade glioma/astrocytoma, other MAPK n=14	-1.5233928571428423	-8.624308244386963	5.5775225301012785	0.999999999988251
+LGG_Low_grade glioma/astrocytoma, RTK, CDKN2A/B n=2-LGG_Low_grade glioma/astrocytoma, other MAPK n=14	-2.1621428571428734	-14.273504835871062	9.949219121585315	1
+LGG_Low_grade glioma/astrocytoma, wildtype n=49-LGG_Low_grade glioma/astrocytoma, other MAPK n=14	-1.7291836734694126	-6.584530138998132	3.126162792059307	0.9999921261859015
+Medullo_Medulloblastoma n=18-LGG_Low_grade glioma/astrocytoma, other MAPK n=14	3.4311904761904835	-2.2781603135185993	9.140541265899566	0.924917641724021
+Medullo_Medulloblastoma, group 3 n=11-LGG_Low_grade glioma/astrocytoma, other MAPK n=14	3.4246753246753308	-3.030702300092053	9.880052949442714	0.9846432493422751
+Medullo_Medulloblastoma, group 4 n=47-LGG_Low_grade glioma/astrocytoma, other MAPK n=14	5.76753799392098	0.889288823627937	10.645787164214024	0.00339612325299421
+Medullo_Medulloblastoma, SHH_activated n=23-LGG_Low_grade glioma/astrocytoma, other MAPK n=14	0.22242236024844608	-5.208641818166776	5.653486538663668	1
+Medullo_Medulloblastoma, WNT_activated n=9-LGG_Low_grade glioma/astrocytoma, other MAPK n=14	-3.5382539682539615	-10.38352509198826	3.3070171554803363	0.9895261831769944
+LGG_Low_grade glioma/astrocytoma, RTK n=8-LGG_Low_grade glioma/astrocytoma, other MAPK, IDH n=1	3.2837499999999844	-13.709962629350535	20.277462629350502	1
+LGG_Low_grade glioma/astrocytoma, RTK, CDKN2A/B n=2-LGG_Low_grade glioma/astrocytoma, other MAPK, IDH n=1	2.6449999999999534	-16.97764912217338	22.267649122173285	1
+LGG_Low_grade glioma/astrocytoma, wildtype n=49-LGG_Low_grade glioma/astrocytoma, other MAPK, IDH n=1	3.077959183673414	-13.106529034755653	19.26244740210248	1
+Medullo_Medulloblastoma n=18-LGG_Low_grade glioma/astrocytoma, other MAPK, IDH n=1	8.23833333333331	-8.222528005979973	24.69919467264659	0.9936375221610343
+Medullo_Medulloblastoma, group 3 n=11-LGG_Low_grade glioma/astrocytoma, other MAPK, IDH n=1	8.231818181818157	-8.50243321675042	24.966069580386737	0.9951788758649314
+Medullo_Medulloblastoma, group 4 n=47-LGG_Low_grade glioma/astrocytoma, other MAPK, IDH n=1	10.574680851063807	-5.616692918929022	26.766054621056636	0.828487187241556
+Medullo_Medulloblastoma, SHH_activated n=23-LGG_Low_grade glioma/astrocytoma, other MAPK, IDH n=1	5.029565217391273	-11.336855518438906	21.39598595322145	0.9999997786099133
+Medullo_Medulloblastoma, WNT_activated n=9-LGG_Low_grade glioma/astrocytoma, other MAPK, IDH n=1	1.2688888888888652	-15.619598501922004	18.157376279699733	1
+LGG_Low_grade glioma/astrocytoma, RTK, CDKN2A/B n=2-LGG_Low_grade glioma/astrocytoma, RTK n=8	-0.638750000000031	-13.30511554310818	12.02761554310812	1
+LGG_Low_grade glioma/astrocytoma, wildtype n=49-LGG_Low_grade glioma/astrocytoma, RTK n=8	-0.20579081632657026	-6.315301139763045	5.903719507109905	1
+Medullo_Medulloblastoma n=18-LGG_Low_grade glioma/astrocytoma, RTK n=8	4.954583333333326	-1.8533835828470382	11.76255024951369	0.618225979661857
+Medullo_Medulloblastoma, group 3 n=11-LGG_Low_grade glioma/astrocytoma, RTK n=8	4.948068181818173	-2.4966364711685403	12.392772834804887	0.8006917012528808
+Medullo_Medulloblastoma, group 4 n=47-LGG_Low_grade glioma/astrocytoma, RTK n=8	7.290930851063822	1.1632035350583685	13.418658167069276	0.0029986163661452903
+Medullo_Medulloblastoma, SHH_activated n=23-LGG_Low_grade glioma/astrocytoma, RTK n=8	1.7458152173912884	-4.830520023601195	8.32215045838377	0.9999999952446643
+Medullo_Medulloblastoma, WNT_activated n=9-LGG_Low_grade glioma/astrocytoma, RTK n=8	-2.014861111111119	-9.800069126911676	5.770346904689438	0.9999999976205631
+LGG_Low_grade glioma/astrocytoma, wildtype n=49-LGG_Low_grade glioma/astrocytoma, RTK, CDKN2A/B n=2	0.43295918367346076	-11.125077242777154	11.990995610124076	1
+Medullo_Medulloblastoma n=18-LGG_Low_grade glioma/astrocytoma, RTK, CDKN2A/B n=2	5.593333333333357	-6.348630624692509	17.53529729135922	0.9978925998229005
+Medullo_Medulloblastoma, group 3 n=11-LGG_Low_grade glioma/astrocytoma, RTK, CDKN2A/B n=2	5.586818181818204	-6.729257370612631	17.90289373424904	0.9988094428091083
+Medullo_Medulloblastoma, group 4 n=47-LGG_Low_grade glioma/astrocytoma, RTK, CDKN2A/B n=2	7.9296808510638535	-3.637995307192906	19.497357009320613	0.7452888107382153
+Medullo_Medulloblastoma, SHH_activated n=23-LGG_Low_grade glioma/astrocytoma, RTK, CDKN2A/B n=2	2.3845652173913194	-9.426881554486464	14.196011989269103	0.9999999999981688
+Medullo_Medulloblastoma, WNT_activated n=9-LGG_Low_grade glioma/astrocytoma, RTK, CDKN2A/B n=2	-1.3761111111110882	-13.900948574817662	11.148726352595485	1
+Medullo_Medulloblastoma n=18-LGG_Low_grade glioma/astrocytoma, wildtype n=49	5.160374149659896	0.744515966324717	9.576232332995076	0.0042484480918183465
+Medullo_Medulloblastoma, group 3 n=11-LGG_Low_grade glioma/astrocytoma, wildtype n=49	5.153858998144743	-0.19170152753672287	10.499419523826209	0.07815815002644044
+Medullo_Medulloblastoma, group 4 n=47-LGG_Low_grade glioma/astrocytoma, wildtype n=49	7.496721667390393	4.225570184679558	10.767873150101227	3.195830267088695e-10
+Medullo_Medulloblastoma, SHH_activated n=23-LGG_Low_grade glioma/astrocytoma, wildtype n=49	1.9516060337178587	-2.0980328594973807	6.001244926933098	0.9965662173013277
+Medullo_Medulloblastoma, WNT_activated n=9-LGG_Low_grade glioma/astrocytoma, wildtype n=49	-1.809070294784549	-7.619479386475697	4.001338796906599	0.9999996922449503
+Medullo_Medulloblastoma, group 3 n=11-Medullo_Medulloblastoma n=18	-0.006515151515152695	-6.138180053754463	6.125149750724158	1
+Medullo_Medulloblastoma, group 4 n=47-Medullo_Medulloblastoma n=18	2.3363475177304966	-2.1046804221130246	6.777375457574018	0.986400234893206
+Medullo_Medulloblastoma, SHH_activated n=23-Medullo_Medulloblastoma n=18	-3.2087681159420374	-8.250778856219277	1.8332426243352034	0.864707338014598
+Medullo_Medulloblastoma, WNT_activated n=9-Medullo_Medulloblastoma n=18	-6.969444444444445	-13.510327485168888	-0.4285614037200016	0.020523954600528138
+Medullo_Medulloblastoma, group 4 n=47-Medullo_Medulloblastoma, group 3 n=11	2.3428626692456493	-3.0235088237528034	7.709234162244102	0.9994167719078245
+Medullo_Medulloblastoma, SHH_activated n=23-Medullo_Medulloblastoma, group 3 n=11	-3.2022529644268847	-9.075674977484239	2.6711690486304693	0.9774764149860372
+Medullo_Medulloblastoma, WNT_activated n=9-Medullo_Medulloblastoma, group 3 n=11	-6.962929292929292	-14.164204512696434	0.23834592683784983	0.0755947013184256
+Medullo_Medulloblastoma, SHH_activated n=23-Medullo_Medulloblastoma, group 4 n=47	-5.545115633672534	-9.622185762157459	-1.4680455051876091	1.408521890620129e-4
+Medullo_Medulloblastoma, WNT_activated n=9-Medullo_Medulloblastoma, group 4 n=47	-9.305791962174942	-15.135352792970831	-3.476231131379051	1.0242828465401033e-6
+Medullo_Medulloblastoma, WNT_activated n=9-Medullo_Medulloblastoma, SHH_activated n=23	-3.7606763285024076	-10.060114606837224	2.53876194983241	0.9302916699133963

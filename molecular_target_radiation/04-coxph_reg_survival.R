@@ -124,14 +124,23 @@ for (i in 1:length(cancer_group_list)){
     # define between risk groups
     train_risk_gene <- predict(coxph_train_gene, type = "risk")
     med_risk_gene<- median(train_risk_gene)
-    # assign the groups between rish groups
+    # assign the groups between risk groups
     test_risk_gene <- predict(coxph_train_gene, newdata = data_test, type = "risk") %>% 
       as.data.frame() %>% cbind(data_test) %>%
       dplyr::rename("RiskScore" = ".") %>% 
       dplyr::mutate(RiskGroup = case_when(
         RiskScore > med_risk_gene ~ "High", 
         RiskScore <= med_risk_gene ~ "Low"
-      ))
+      )) %>%
+      dplyr::rename(gene_of_interest = all_of(y))
+    
+    # generate boxplots showing the expression of high vs. low risk group
+    exp_plot <- test_risk_gene %>%
+      ggplot( aes(x=RiskGroup, y=gene_of_interest)) +
+      geom_violin(width=1, trim=TRUE, show.legend = F, aes(fill=RiskGroup)) +
+      geom_boxplot(width=0.1, color="black", show.legend = F,aes(fill=RiskGroup)) +
+      labs(title=paste0(y," Expression of Risk Groups"),x="Risk Group", y = paste0(y," TPM Value")) 
+    
     # make risk groups into factors
     test_risk_gene$RiskGroup <- as.factor(test_risk_gene$RiskGroup)
     
@@ -178,6 +187,8 @@ for (i in 1:length(cancer_group_list)){
     
     # Save the plot
     cowplot::save_plot(filename = file.path(cox_survival_plots_os_dir, "coxph_riskgroup_survival.png"), plot = surv_plot_gene)
+    # Save expression plot
+    ggsave(filename = file.path(cox_survival_plots_os_dir, "coxph_riskgroup_tpm.png"), plot = exp_plot)
     
     ########################################## survival analysis PFS
     
@@ -211,7 +222,16 @@ for (i in 1:length(cancer_group_list)){
       dplyr::mutate(RiskGroup = case_when(
         RiskScore > med_risk_gene ~ "High", 
         RiskScore <= med_risk_gene ~ "Low"
-      ))
+      )) %>%
+      dplyr::rename(gene_of_interest = all_of(y))
+    
+    # generate boxplots showing the expression of high vs. low risk group
+    exp_plot <- test_risk_gene %>%
+      ggplot( aes(x=RiskGroup, y=gene_of_interest)) +
+      geom_violin(width=1, trim=TRUE, show.legend = F, aes(fill=RiskGroup)) +
+      geom_boxplot(width=0.1, color="black", show.legend = F,aes(fill=RiskGroup)) +
+      labs(title=paste0(y," Expression of Risk Groups"),x="Risk Group", y = paste0(y," TPM Value")) 
+    
     # make risk groups into factors
     test_risk_gene$RiskGroup <- as.factor(test_risk_gene$RiskGroup)
     
@@ -265,7 +285,9 @@ for (i in 1:length(cancer_group_list)){
     
     # Save the plot
     cowplot::save_plot(filename = file.path(cox_survival_plots_pfs_dir, "coxph_riskgroup_survival.png"), plot = surv_plot_gene_pfs)
-    
+    # Save expression plot
+    ggsave(filename = file.path(cox_survival_plots_pfs_dir, "coxph_riskgroup_tpm.png"), plot = exp_plot)
+
   }
 }
                   

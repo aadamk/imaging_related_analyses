@@ -7,6 +7,7 @@ suppressPackageStartupMessages(library("readr"))
 suppressPackageStartupMessages(library("survival"))
 suppressPackageStartupMessages(library("caret"))
 suppressPackageStartupMessages(library("cowplot"))
+suppressPackageStartupMessages(library("ggpubr"))
 
 #### Parse command line options ------------------------------------------------
 
@@ -134,12 +135,24 @@ for (i in 1:length(cancer_group_list)){
       )) %>%
       dplyr::rename(gene_of_interest = all_of(y))
     
+    #calculate n for each risk group
+    test_risk_n <- test_risk_gene %>% 
+      dplyr::group_by(RiskGroup) %>%
+      dplyr::summarize(n=n()) %>%
+      dplyr::mutate(risk_group_n = paste0(RiskGroup, " n=", n))
+    
+    #add n to the risk groups
+    test_risk_gene <- test_risk_gene %>% 
+      dplyr::left_join(test_risk_n)
+    
     # generate boxplots showing the expression of high vs. low risk group
     exp_plot <- test_risk_gene %>%
-      ggplot( aes(x=RiskGroup, y=gene_of_interest)) +
-      geom_violin(width=1, trim=TRUE, show.legend = F, aes(fill=RiskGroup)) +
-      geom_boxplot(width=0.1, color="black", show.legend = F,aes(fill=RiskGroup)) +
-      labs(title=paste0(y," Expression of Risk Groups"),x="Risk Group", y = paste0(y," TPM Value")) 
+      ggplot( aes(x=risk_group_n, y=gene_of_interest)) +
+      geom_violin(width=1, trim=TRUE, show.legend = F, aes(fill=risk_group_n)) +
+      geom_boxplot(width=0.1, color="black", show.legend = F,aes(fill=risk_group_n)) +
+      labs(title=paste0(y," Expression of Risk Groups"),x="Risk Group", y = paste0(y," TPM Value")) +
+      theme(axis.text.x = element_text(size = 16))  +
+      stat_compare_means(size = 6)
     
     # make risk groups into factors
     test_risk_gene$RiskGroup <- as.factor(test_risk_gene$RiskGroup)
@@ -215,7 +228,8 @@ for (i in 1:length(cancer_group_list)){
     # define between risk groups
     train_risk_gene <- predict(coxph_train_gene, type = "risk")
     med_risk_gene<- median(train_risk_gene)
-    # assign the groups between rish groups
+    
+    # assign the groups between risk groups
     test_risk_gene <- predict(coxph_train_gene, newdata = data_test, type = "risk") %>% 
       as.data.frame() %>% cbind(data_test) %>%
       dplyr::rename("RiskScore" = ".") %>% 
@@ -223,14 +237,26 @@ for (i in 1:length(cancer_group_list)){
         RiskScore > med_risk_gene ~ "High", 
         RiskScore <= med_risk_gene ~ "Low"
       )) %>%
-      dplyr::rename(gene_of_interest = all_of(y))
+      dplyr::rename(gene_of_interest = all_of(y)) 
+    
+    #calculate n for each risk group
+    test_risk_n <- test_risk_gene %>% 
+      dplyr::group_by(RiskGroup) %>%
+      dplyr::summarize(n=n()) %>%
+      dplyr::mutate(risk_group_n = paste0(RiskGroup, " n=", n))
+    
+    #add n to the risk groups
+    test_risk_gene <- test_risk_gene %>% 
+      dplyr::left_join(test_risk_n)
     
     # generate boxplots showing the expression of high vs. low risk group
     exp_plot <- test_risk_gene %>%
-      ggplot( aes(x=RiskGroup, y=gene_of_interest)) +
-      geom_violin(width=1, trim=TRUE, show.legend = F, aes(fill=RiskGroup)) +
-      geom_boxplot(width=0.1, color="black", show.legend = F,aes(fill=RiskGroup)) +
-      labs(title=paste0(y," Expression of Risk Groups"),x="Risk Group", y = paste0(y," TPM Value")) 
+      ggplot( aes(x=risk_group_n, y=gene_of_interest)) +
+      geom_violin(width=1, trim=TRUE, show.legend = F, aes(fill=risk_group_n)) +
+      geom_boxplot(width=0.1, color="black", show.legend = F,aes(fill=risk_group_n)) +
+      labs(title=paste0(y," Expression of Risk Groups"),x="Risk Group", y = paste0(y," TPM Value")) +
+      theme(axis.text.x = element_text(size = 16))  +
+      stat_compare_means(size = 6)
     
     # make risk groups into factors
     test_risk_gene$RiskGroup <- as.factor(test_risk_gene$RiskGroup)

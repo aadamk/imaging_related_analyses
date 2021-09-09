@@ -151,7 +151,8 @@ for (i in 1:length(cancer_group_list)){
       geom_violin(width=1, trim=TRUE, show.legend = F, aes(fill=risk_group_n)) +
       geom_boxplot(width=0.1, color="black", show.legend = F,aes(fill=risk_group_n)) +
       labs(title=paste0(y," Expression of Risk Groups"),x="Risk Group", y = paste0(y," TPM Value")) +
-      theme(axis.text.x = element_text(size = 16))  +
+      theme(axis.text.x = element_text(size = 18),
+            axis.title=element_text(size=20,face="bold"))  +
       stat_compare_means(size = 6)
     
     # make risk groups into factors
@@ -201,7 +202,7 @@ for (i in 1:length(cancer_group_list)){
     # Save the plot
     cowplot::save_plot(filename = file.path(cox_survival_plots_os_dir, "coxph_riskgroup_survival.png"), plot = surv_plot_gene)
     # Save expression plot
-    ggsave(filename = file.path(cox_survival_plots_os_dir, "coxph_riskgroup_tpm.png"), plot = exp_plot)
+    ggsave(filename = file.path(cox_survival_plots_os_dir, "coxph_riskgroup_tpm.png"), plot = exp_plot, height = 4, width=6)
     
     ########################################## survival analysis PFS
     
@@ -255,7 +256,8 @@ for (i in 1:length(cancer_group_list)){
       geom_violin(width=1, trim=TRUE, show.legend = F, aes(fill=risk_group_n)) +
       geom_boxplot(width=0.1, color="black", show.legend = F,aes(fill=risk_group_n)) +
       labs(title=paste0(y," Expression of Risk Groups"),x="Risk Group", y = paste0(y," TPM Value")) +
-      theme(axis.text.x = element_text(size = 16))  +
+      theme(axis.text.x = element_text(size = 18),
+            axis.title=element_text(size=20,face="bold"))  +
       stat_compare_means(size = 6)
     
     # make risk groups into factors
@@ -312,7 +314,7 @@ for (i in 1:length(cancer_group_list)){
     # Save the plot
     cowplot::save_plot(filename = file.path(cox_survival_plots_pfs_dir, "coxph_riskgroup_survival.png"), plot = surv_plot_gene_pfs)
     # Save expression plot
-    ggsave(filename = file.path(cox_survival_plots_pfs_dir, "coxph_riskgroup_tpm.png"), plot = exp_plot)
+    ggsave(filename = file.path(cox_survival_plots_pfs_dir, "coxph_riskgroup_tpm.png"), plot = exp_plot, height = 4, width=6)
 
   }
 }

@@ -41,15 +41,24 @@ short_long_match <- readr::read_tsv(opt$short_long_match)
 
 #### Calculate PFS status based on the PFS days and OS days -----------------------------------
 histology_df$PFS_days <- as.numeric(histology_df$PFS_days)
+
 histology_df <- histology_df %>%
-  dplyr::mutate(PFS_status = if_else(PFS_days < OS_days, 1, 0)) %>% 
+  # keep only initial CNV tumor
+  dplyr::filter(sample_type == "Tumor") %>% 
   dplyr::filter(tumor_descriptor == "Initial CNS Tumor") %>%
+  # does not include TCGA or GTEx
+  dplyr::filter(cohort %in% c("PBTA","GMKF","TARGET")) %>% 
   dplyr::filter(experimental_strategy=="RNA-Seq") %>% 
+  # exclude derived cell line
+  dplyr::filter(composition != "Derived Cell Line") %>% 
+  # keep only unique Kids First Participant 
+  dplyr::distinct(Kids_First_Participant_ID, .keep_all = TRUE) %>% 
   dplyr::filter(!is.na(OS_status)) %>%
   dplyr::mutate(os_status_level = case_when(
     OS_status == "LIVING" ~ 0,
-    OS_status == "DECEASED" ~ 1
-  )) 
+    OS_status == "DECEASED" ~ 1)) %>%
+  dplyr::mutate(PFS_status = if_else(PFS_days < OS_days, 1, 0)) 
+
 
 #### Do the analysis for all the cohort of interest -----------------------------------
 stat_list <- lapply(cancer_group_list, function(x){

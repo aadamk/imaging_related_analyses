@@ -59,10 +59,19 @@ cohort_df_list <- lapply(cancer_group_list, function(x){
   cancer_group_long <- short_long_match %>% 
     filter(short_name ==x) %>%
     pull(long_name)
-  
-  cohort_df_each <- histology_df %>% dplyr::filter(tumor_descriptor == "Initial CNS Tumor") %>%
+    
+  cohort_df_each <- histology_df %>% 
+    # keep only initial CNV tumor
+    dplyr::filter(sample_type == "Tumor") %>% 
+    dplyr::filter(tumor_descriptor == "Initial CNS Tumor") %>%
+    # does not include TCGA or GTEx
+    dplyr::filter(cohort %in% c("PBTA","GMKF","TARGET")) %>% 
     dplyr::filter(experimental_strategy=="RNA-Seq") %>% 
     dplyr::filter(cancer_group %in% cancer_group_long) %>%
+    # exclude derived cell line
+    dplyr::filter(composition != "Derived Cell Line") %>% 
+    # keep only unique Kids First Participant 
+    dplyr::distinct(Kids_First_Participant_ID, .keep_all = TRUE) %>% 
     dplyr::select(Kids_First_Biospecimen_ID, harmonized_diagnosis) %>%
     dplyr::mutate(short_name = x)
 })

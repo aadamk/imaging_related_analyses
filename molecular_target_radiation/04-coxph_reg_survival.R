@@ -153,7 +153,7 @@ for (i in 1:length(cancer_group_list)){
       labs(title=paste0(y," Expression of Risk Groups"),x="Risk Group", y = paste0(y," TPM Value")) +
       theme(axis.text.x = element_text(size = 18),
             axis.title=element_text(size=20,face="bold"))  +
-      stat_compare_means(size = 6)
+      stat_compare_means(size = 5)
     
     # make risk groups into factors
     test_risk_gene$RiskGroup <- as.factor(test_risk_gene$RiskGroup)
@@ -258,7 +258,7 @@ for (i in 1:length(cancer_group_list)){
       labs(title=paste0(y," Expression of Risk Groups"),x="Risk Group", y = paste0(y," TPM Value")) +
       theme(axis.text.x = element_text(size = 18),
             axis.title=element_text(size=20,face="bold"))  +
-      stat_compare_means(size = 6)
+      stat_compare_means(size = 5)
     
     # make risk groups into factors
     test_risk_gene$RiskGroup <- as.factor(test_risk_gene$RiskGroup)

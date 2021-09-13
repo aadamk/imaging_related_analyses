@@ -174,14 +174,22 @@ for(i in 1:length(gene_list)){
       p.adj >=0.05 ~ 0.05
     ))
   
-  q<-ggplot(tukey_heatmap_complete, aes(x=group1, group2, fill= p.adj)) +
+  q1<-ggplot(tukey_heatmap_complete, aes(x=group1, group2, fill= p.adj)) +
+    geom_tile(aes(fill=p.adj)) +
+    labs(title=paste0(x," Harmonized Diagnosis Tukey Test for TPM"),x="Harmonized Diagnosis", y = "Harmonized Diagnosis") + 
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+    scale_fill_gradient(low = "red", high = "white") + 
+    facet_grid(.~group_1_short, scales = "free", space = "free")
+  
+  q2<-ggplot(tukey_heatmap_complete, aes(x=group1, group2, fill= p.adj)) +
           geom_tile(aes(fill=p.adj)) +
           labs(title=paste0(x," Harmonized Diagnosis Tukey Test for TPM"),x="Harmonized Diagnosis", y = "Harmonized Diagnosis") + 
           theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
           scale_fill_gradient(low = "red", high = "white") + 
-    facet_grid(~group_1_short, scales = "free", space = "free")
+    facet_grid(group_2_short~group_1_short, scales = "free", space = "free")
   
-  ggsave(file.path(tpm_plot_each_dir,"harmonized_diagnosis_heatmap.png"), q, height = 10, width=10)
+  ggsave(file.path(tpm_plot_each_dir,"harmonized_diagnosis_heatmap.png"), q1, height = 10, width=10)
+  ggsave(file.path(tpm_plot_each_dir,"harmonized_diagnosis_heatmap_2.png"), q2, height = 10, width=10)
 }
 
 write_tsv(anova_results, file.path(stats_anova_dir, "anova_result_hd.tsv"))

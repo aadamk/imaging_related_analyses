@@ -25,24 +25,24 @@ gene_list="SLC7A5,FOLH1,BRAF,NRAS,PEBP1,MAPK1,MAPK3,MAP2K1,MAP2K2"
 cancer_group_list="LGG,HGG,EPN,Medullo,Cranio,ATRT"
 
 # Obtain drugs that are both in qSig and subnetwork
-# Rscript --vanilla 01-TPM_vs_harmonized_diag.R \
-# --histology $histology_file \
-# --expression $expression_file \
-# --cancer_groups $cancer_group_list \
-# --gene_list $gene_list \
-# --short_long_match $short_long_match
+Rscript --vanilla 01-TPM_vs_harmonized_diag.R \
+--histology $histology_file \
+--expression $expression_file \
+--cancer_groups $cancer_group_list \
+--gene_list $gene_list \
+--short_long_match $short_long_match
 
 
 # Rscript -e "rmarkdown::render('02-lgg_cns_gtex.Rmd', clean = TRUE)"
 
 # Obtain drugs that are both in qSig and subnetwork
-# Rscript --vanilla 03-km_w_logrank_survival.R \
-# --histology $histology_file \
-# --expression $expression_file \
-# --cancer_groups $cancer_group_list \
-# --gene_list $gene_list \
-# --short_long_match $short_long_match \
-# --stat_outfile $stat_outfile
+Rscript --vanilla 03-km_w_logrank_survival.R \
+--histology $histology_file \
+--expression $expression_file \
+--cancer_groups $cancer_group_list \
+--gene_list $gene_list \
+--short_long_match $short_long_match \
+--stat_outfile $stat_outfile
 
 Rscript --vanilla 04-coxph_reg_survival.R \
 --histology $histology_file \

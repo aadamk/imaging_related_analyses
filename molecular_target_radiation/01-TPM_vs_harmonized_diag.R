@@ -126,17 +126,17 @@ for(i in 1:length(gene_list)){
   tukey_test_violin <- tukey_test_heatmap %>%
     mutate(.y. = "harmonized_diagnosis") %>%
     dplyr::select(.y., group1, group2, p.adj) %>% tibble() %>%
-    filter(p.adj <=0.01) 
+    filter(p.adj <=0.01)
   tukey_test_violin <-tukey_test_violin %>%
-    mutate(y.position = seq(0.6*max(combined_fixed$gene_of_interest), 1.5*max(combined_fixed$gene_of_interest), length.out = nrow(tukey_test_violin))) 
-  
+    mutate(y.position = seq(0.6*max(combined_fixed$gene_of_interest), 1.5*max(combined_fixed$gene_of_interest), length.out = nrow(tukey_test_violin)))
+
   tukey_test_violin$p.adj <- round(tukey_test_violin$p.adj, digits=6)
   
   p<-combined_fixed %>%
     ggplot( aes(x=harmonized_diagnosis, y=gene_of_interest)) +
     geom_violin(width=1.4, trim=TRUE, show.legend = F, aes(fill=harmonized_diagnosis)) +
     geom_boxplot(width=0.1, color="black", show.legend = F,aes(fill=harmonized_diagnosis)) +
-    labs(title=paste0(x," TPM per Harmonized Diagnosis"),x="Harmonized Diagnosis", y = paste0(x," TPM Value")) + 
+    labs(title=paste0(x," TPM per Harmonized Diagnosis"),x="Harmonized Diagnosis", y = paste0(x," TPM Value")) +
     theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
     stat_pvalue_manual(tukey_test_violin, label = "p.adj")
     
@@ -144,7 +144,7 @@ for(i in 1:length(gene_list)){
   if (!dir.exists(tpm_plot_each_dir )) {
     dir.create(tpm_plot_each_dir , recursive = TRUE)
   }
-  ggsave(file.path(tpm_plot_each_dir,"harmonized_diagnosis_violin.png"), p, height = 10, width=12)
+  # ggsave(file.path(tpm_plot_each_dir,"harmonized_diagnosis_violin.png"), p, height = 10, width=12)
   
   violin_plot <- combined_fixed %>%
     group_by(short_name) %>% 
@@ -152,7 +152,8 @@ for(i in 1:length(gene_list)){
     geom_violin(width=1.4, trim=TRUE, show.legend = F, aes(fill=harmonized_diagnosis)) +
     geom_boxplot(width=0.1, color="black", show.legend = F,aes(fill=harmonized_diagnosis)) +
     labs(title=paste0(x," TPM per Harmonized Diagnosis"),x="Harmonized Diagnosis", y = paste0(x," TPM Value")) + 
-    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+    facet_grid(~ short_name, scales = "free", space = "free")
   
   ggsave(file.path(tpm_plot_each_dir,"harmonized_diagnosis_violin_no_stats.png"), violin_plot, height = 7, width=12)
   
@@ -164,12 +165,22 @@ for(i in 1:length(gene_list)){
   tukey_test_heatmap_filled <- tukey_test_heatmap %>%
     rename(group2=group1, 
            group1=group2)
-  tukey_heatmap_complete <- rbind(tukey_test_heatmap, tukey_test_heatmap_filled)
+  tukey_heatmap_complete <- rbind(tukey_test_heatmap, tukey_test_heatmap_filled) %>%
+    mutate(group_1_short = gsub("\\_.*", "", group1)) %>%
+    mutate(group_2_short = gsub("\\_.*", "", group2)) %>%
+    # treat all p.adj>=.05 as non significant 
+    mutate(p.adj = case_when(
+      p.adj < 0.05 ~ p.adj,
+      p.adj >=0.05 ~ 0.05
+    ))
+  
   q<-ggplot(tukey_heatmap_complete, aes(x=group1, group2, fill= p.adj)) +
           geom_tile(aes(fill=p.adj)) +
           labs(title=paste0(x," Harmonized Diagnosis Tukey Test for TPM"),x="Harmonized Diagnosis", y = "Harmonized Diagnosis") + 
           theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
-          scale_fill_gradient(low="red", high="white") 
+          scale_fill_gradient(low = "red", high = "white") + 
+    facet_grid(~group_1_short, scales = "free", space = "free")
+  
   ggsave(file.path(tpm_plot_each_dir,"harmonized_diagnosis_heatmap.png"), q, height = 10, width=10)
 }
 

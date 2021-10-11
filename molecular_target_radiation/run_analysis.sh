@@ -21,7 +21,7 @@ stat_dir="results"
 stat_outfile="${stat_dir}/km_stats_combined.tsv"
 stat_outfile_cox="${stat_dir}/coxph_test_stats_combined.tsv"
 
-gene_list="SLC7A5,FOLH1,BRAF,NRAS,PEBP1,MAPK1,MAPK3,MAP2K1,MAP2K2"
+gene_list="SLC7A5,FOLH1,BRAF,NRAS,PEBP1,MAPK1,MAPK3,MAP2K1,MAP2K2,SLC1A5,SLC3A2,SLC7A11,SLC6A14"
 cancer_group_list="LGG,HGG,EPN,Medullo,Cranio,ATRT"
 
 # Obtain drugs that are both in qSig and subnetwork

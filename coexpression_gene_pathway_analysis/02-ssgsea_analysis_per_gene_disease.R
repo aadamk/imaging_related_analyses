@@ -20,7 +20,7 @@ option_list <- list(
   make_option(c("-g","--gtf_file"),type="character",
               help="gtf file for annotation (.gtf.gz)"),
   make_option(c("-o","--out_file"),type="character",
-              help="output file with GSVA scores of each pathway in each disease (.tsv)"),
+              help="output file with GSEA scores of each pathway in each disease (.tsv)")
 )
 opt <- parse_args(OptionParser(option_list=option_list,add_help_option = FALSE))
 outfile <- opt$out_file
@@ -28,7 +28,7 @@ outfile <- opt$out_file
 #### Define Directories --------------------------------------------------------
 root_dir <- rprojroot::find_root(rprojroot::has_dir(".git"))
 analysis_dir <- file.path(root_dir, "coexpression_gene_pathway_analysis")
-results_dir <- file.path(analysis_dir, "results", "gsva_scores")
+results_dir <- file.path(analysis_dir, "results", "gsea_scores")
 if(!dir.exists(results_dir)){
   dir.create(results_dir, recursive = TRUE)
 }
@@ -206,7 +206,7 @@ for(i in 1:nrow(cg_gene_interest)){
   gsea_scores_each_df_tidy <- gsea_scores_each_df_tidy %>%
     dplyr::left_join(bs_id_quantile_df)
   # write out individual scores
-  readr::write_tsv(gsea_scores_each_df_tidy, file.path(results_dir, paste0(cg_interest, "_parsed_by_", gene_interest, "_gsva_scores.tsv")))
+  readr::write_tsv(gsea_scores_each_df_tidy, file.path(results_dir, paste0(cg_interest, "_parsed_by_", gene_interest, "_gsea_scores.tsv")))
   
   # merge into a combined file
   gsea_scores_df_tidy <-  bind_rows(gsea_scores_df_tidy , gsea_scores_each_df_tidy)

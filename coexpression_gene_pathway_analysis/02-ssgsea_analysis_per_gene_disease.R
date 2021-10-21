@@ -1,10 +1,11 @@
 # Author: Run Jin
-# GSEA analysis comparing upper and lower quantile of gene expressions in each disease
-BiocManager::install("BiocParallel")
+# GSVA analysis comparing upper and lower quantile of gene expressions in each disease
+# BiocManager::install("BiocParallel")
 suppressPackageStartupMessages(library("optparse"))
 suppressPackageStartupMessages(library("tidyverse"))
 suppressPackageStartupMessages(library("GSVA"))
 suppressPackageStartupMessages(library("KEGGREST"))
+suppressPackageStartupMessages(library("org.Hs.eg.db"))
 suppressPackageStartupMessages(library("BiocParallel"))
 
 #### Parse command line options ------------------------------------------------
@@ -20,7 +21,7 @@ option_list <- list(
   make_option(c("-g","--gtf_file"),type="character",
               help="gtf file for annotation (.gtf.gz)"),
   make_option(c("-o","--out_file"),type="character",
-              help="output file with GSEA scores of each pathway in each disease (.tsv)")
+              help="output file with GSVA scores of each pathway in each disease (.tsv)")
 )
 opt <- parse_args(OptionParser(option_list=option_list,add_help_option = FALSE))
 outfile <- opt$out_file
@@ -28,7 +29,7 @@ outfile <- opt$out_file
 #### Define Directories --------------------------------------------------------
 root_dir <- rprojroot::find_root(rprojroot::has_dir(".git"))
 analysis_dir <- file.path(root_dir, "coexpression_gene_pathway_analysis")
-results_dir <- file.path(analysis_dir, "results", "gsea_scores")
+results_dir <- file.path(analysis_dir, "results", "gsva_scores")
 if(!dir.exists(results_dir)){
   dir.create(results_dir, recursive = TRUE)
 }
@@ -125,6 +126,7 @@ pathway_list <- lapply(pathway_names, function(x){
 names(pathway_list) <- pathway_names 
 
 ################## Run GSVA scores for each gene, cancer group combination
+gsva_scores_df_tidy <- data.frame()
 for(i in 1:nrow(cg_gene_interest)){
   # find the cancer group of interest
   cg_interest <- cg_gene_interest[i,1] %>% 
@@ -133,10 +135,6 @@ for(i in 1:nrow(cg_gene_interest)){
   gene_interest <- cg_gene_interest[i,2] %>% 
     pull(gene_of_interest)
   
-  plots_dir_specific <- file.path(plots_dir, paste0(cg_interest, "_", gene_interest))
-  if(!dir.exists(plots_dir_specific)){
-    dir.create(plots_dir_specific)
-  }
   # get BS ID for that particular cancer group
   cg_bsid_each <- cohort_df %>%
     filter(short_name == cg_interest) %>%
@@ -178,7 +176,7 @@ for(i in 1:nrow(cg_gene_interest)){
   expression_of_interest_coding_each_log2_matrix <- as.matrix( log2(expression_of_interest_coding_each + 1) )
   
   # We then calculate the Gaussian-distributed scores
-  gsea_scores_each <- GSVA::gsva(expression_of_interest_coding_each_log2_matrix,
+  gsva_scores_each <- GSVA::gsva(expression_of_interest_coding_each_log2_matrix,
                                  pathway_list,
                                  method = "gsva",
                                  min.sz=1, max.sz=1500,## Arguments from K. Rathi
@@ -187,31 +185,31 @@ for(i in 1:nrow(cg_gene_interest)){
                                  BPPARAM=SerialParam(progressbar=T))        ## Setting this argument to TRUE computes Gaussian-distributed scores (bimodal score distribution if FALSE)
   
   ### Clean scoring into tidy format
-  gsea_scores_each_df <- as.data.frame(gsea_scores_each) %>%
+  gsva_scores_each_df <- as.data.frame(gsva_scores_each) %>%
     rownames_to_column(var = "pathway") 
   
   #first/last_bs needed for use in gather (we are not on tidyr1.0)
-  first_bs <- head(colnames(gsea_scores_each), n=1)
-  last_bs  <- tail(colnames(gsea_scores_each), n=1)
+  first_bs <- head(colnames(gsva_scores_each), n=1)
+  last_bs  <- tail(colnames(gsva_scores_each), n=1)
   
-  gsea_scores_each_df_tidy <- gsea_scores_each_df %>%
-    tidyr::gather(Kids_First_Biospecimen_ID, gsea_score, !!first_bs : !!last_bs) %>%
-    dplyr::select(Kids_First_Biospecimen_ID, pathway, gsea_score)  %>% 
+  gsva_scores_each_df_tidy <- gsva_scores_each_df %>%
+    tidyr::gather(Kids_First_Biospecimen_ID, gsva_score, !!first_bs : !!last_bs) %>%
+    dplyr::select(Kids_First_Biospecimen_ID, pathway, gsva_score)  %>% 
     dplyr::left_join(hsa_pathways) %>%
     dplyr::mutate(cancer_group = cg_interest) %>% 
     dplyr::mutate(gene_parsed_by = gene_interest)
   
   # add group number fo the final table as well
   bs_id_quantile_df <- bs_id_quantile_df %>% tibble::rownames_to_column("Kids_First_Biospecimen_ID")
-  gsea_scores_each_df_tidy <- gsea_scores_each_df_tidy %>%
+  gsva_scores_each_df_tidy <- gsva_scores_each_df_tidy %>%
     dplyr::left_join(bs_id_quantile_df)
   # write out individual scores
-  readr::write_tsv(gsea_scores_each_df_tidy, file.path(results_dir, paste0(cg_interest, "_parsed_by_", gene_interest, "_gsea_scores.tsv")))
+  readr::write_tsv(gsva_scores_each_df_tidy, file.path(results_dir, paste0(cg_interest, "_parsed_by_", gene_interest, "_gsva_scores.tsv")))
   
   # merge into a combined file
-  gsea_scores_df_tidy <-  bind_rows(gsea_scores_df_tidy , gsea_scores_each_df_tidy)
+  gsva_scores_df_tidy <-  bind_rows(gsva_scores_df_tidy , gsva_scores_each_df_tidy)
 }
 
 # write out results
-readr::write_tsv(gsea_scores_df_tidy, outfile)
+readr::write_tsv(gsva_scores_df_tidy, outfile)
 

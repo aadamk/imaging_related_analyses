@@ -21,8 +21,8 @@ expression_file="${data_dir}/gene-expression-rsem-tpm-collapsed.rds"
 short_long_match="${data_dir}/short_long_match.tsv"
 cg_gene_interest="${data_dir}/cg_gene_interest.tsv"
 gtf_file="${ref_dir}/gencode.v27.primary_assembly.annotation.gtf.gz"
-gsea_score="${results_dir}/gsea_scores/combined_gsea_scores.tsv"
-gsea_pval="${results_dir}/gsea_scores/combined_gsea_pval.tsv"
+gsva_score="${results_dir}/gsva_scores/combined_gsva_scores.tsv"
+gsva_pval="${results_dir}/gsva_pval/combined_gsva_pval.tsv"
 
 # Run GSNCA analysis per cancer group of interest
 Rscript --vanilla 01-gsnca_analysis_per_gene_disease.R \
@@ -32,17 +32,17 @@ Rscript --vanilla 01-gsnca_analysis_per_gene_disease.R \
 --short_long_match $short_long_match \
 --gtf_file $gtf_file
 
-# Calculate GSEA scores per cancer group of interest
-Rscript --vanilla 02-ssgsea_analysis_per_gene_disease.R \
---histology $histology_file \
---expression $expression_file \
---cg_gene_interest $cg_gene_interest \
---short_long_match $short_long_match \
---gtf_file $gtf_file \
---out_file $gsea_score
-
-# Calculate statistical significance of GSEA scores for each group
-Rscript --vanilla 03-ssgsea_sig_calc_per_gene_disease.R \
---gsea_score_file $gsea_score \
---cg_gene_interest $cg_gene_interest \
---out_file $gsea_pval
+# # Calculate GSVA scores per cancer group of interest
+# Rscript --vanilla 02-ssgsea_analysis_per_gene_disease.R \
+# --histology $histology_file \
+# --expression $expression_file \
+# --cg_gene_interest $cg_gene_interest \
+# --short_long_match $short_long_match \
+# --gtf_file $gtf_file \
+# --out_file $gsva_score
+# 
+# # Calculate statistical significance of GSVA scores for each group
+# Rscript --vanilla 03-ssgsea_sig_calc_per_gene_disease.R \
+# --gsva_score_file $gsva_score \
+# --cg_gene_interest $cg_gene_interest \
+# --out_file $gsva_pval

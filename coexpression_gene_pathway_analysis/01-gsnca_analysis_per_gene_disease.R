@@ -3,12 +3,14 @@
 # GSNCA analysis comparing upper and lower quantile of gene expressions in each disease
 # BiocManager::install("GSAR")
 # BiocManager::install("GSVAdata")
+# BiocManager::install("DGCA")
 suppressPackageStartupMessages(library("optparse"))
 suppressPackageStartupMessages(library("tidyverse"))
 suppressPackageStartupMessages(library("GSAR"))
-suppressPackageStartupMessages(library("edgeR"))
 suppressPackageStartupMessages(library("org.Hs.eg.db"))
 suppressPackageStartupMessages(library("KEGGREST"))
+suppressPackageStartupMessages(library("DGCA"))
+
 
 #### Parse command line options ------------------------------------------------
 option_list <- list(
@@ -110,7 +112,7 @@ hsa_kegg_anno <- hsa_path_eg %>%
     symbol = mapIds(org.Hs.eg.db, eg, "SYMBOL", "ENTREZID"),
     ensembl = mapIds(org.Hs.eg.db, eg, "ENSEMBL", "ENTREZID")
   )
-# get pathway discription
+# get pathway description
 hsa_pathways <- keggList("pathway", "hsa") %>% 
   tibble(pathway = names(.), description = .)
 
@@ -121,13 +123,13 @@ hsa_kegg_anno_pathways <- left_join(hsa_kegg_anno, hsa_pathways)
 combined_results <- data.frame()
 for(i in 1:nrow(cg_gene_interest)){
   # find the cancer group of interest
-  cg_interest <- cg_gene_interest[i,1] %>% 
-    pull(short_name)
+  cg_interest <- cg_gene_interest[i,1] %>% as.character()
   # find the gene of interest
-  gene_interest <- cg_gene_interest[i,2] %>% 
-    pull(gene_of_interest)
+  gene_interest <- cg_gene_interest[i,2] %>% as.character()
+  # get the quantile of interest 
+  quantile_interest <- cg_gene_interest[i,3] %>% as.character()
   
-  plots_dir_specific <- file.path(plots_dir, paste0(cg_interest, "_", gene_interest))
+  plots_dir_specific <- file.path(plots_dir, paste0(cg_interest, "_", gene_interest, "_", quantile_interest))
   if(!dir.exists(plots_dir_specific)){
     dir.create(plots_dir_specific)
   }
@@ -150,8 +152,8 @@ for(i in 1:nrow(cg_gene_interest)){
   colnames(expression_of_goi) <-"gene_interest"
   
   # calculate the quantile and assign groups
-  upper_quantile <- quantile(expression_of_goi$gene_interest, 0.75)
-  lower_quantile <- quantile(expression_of_goi$gene_interest, 0.25)
+  upper_quantile <- quantile(expression_of_goi$gene_interest, (1-(as.numeric(quantile_interest)/100)))
+  lower_quantile <- quantile(expression_of_goi$gene_interest, (as.numeric(quantile_interest)/100))
   
   bs_id_quantile_df <- expression_of_goi %>%
     tibble::rownames_to_column("Kids_First_Biospecimen_ID") %>% 
@@ -169,40 +171,14 @@ for(i in 1:nrow(cg_gene_interest)){
     # by selecting, the matrix is sorted in column based on row order o bs_id_quantile_df
     dplyr::select(unlist(rownames(bs_id_quantile_df)))
   
-  ######################### prepare to GSNCA test for all pathways-filter out genes with sd < 0.01 and tpm <0.1 for each group 
-  # separate expression to group 1 and group2
-  bs_id_group1 <- bs_id_quantile_df %>% filter(group == "1") %>% rownames()
-  bs_id_group2 <- bs_id_quantile_df %>% filter(group == "2") %>% rownames()
-  expression_of_interest_coding_each_group1 <- expression_of_interest_coding_each %>% 
-    dplyr::select(all_of(bs_id_group1))
-  expression_of_interest_coding_each_group2 <- expression_of_interest_coding_each %>% 
-    dplyr::select(all_of(bs_id_group2))
+  ######################### prepare to GSNCA test for all pathways-filter out low expression genes 
+   # filter lowly expressed genes by DGSA
+  eoi_coding_each_filtered <- filterGenes(expression_of_interest_coding_each, 
+                                           filterTypes = c("central", "dispersion"),
+                                           filterDispersionType = "cv", 
+                                           filterDispersionPercentile = 0.2,
+                                           sequential= TRUE)
   
-  # calculate sd for each gene and get gene names of sd < 0.0015
-  gene_sd_low1 <- apply(expression_of_interest_coding_each_group1, 1, sd, na.rm = TRUE) %>%
-    as.data.frame() %>% 
-    # <0.01 will be filtered since GSNCA round to 3 digits
-    filter(. <0.01) %>% 
-    rownames()
-  
-  gene_sd_low2 <- apply(expression_of_interest_coding_each_group2, 1, sd, na.rm = TRUE) %>%
-    as.data.frame() %>% filter(. <0.01) %>% rownames()
-  
-  gene_mean_low1 <- rowMeans(expression_of_interest_coding_each_group1, na.rm = TRUE) %>%
-    as.data.frame() %>% filter(. <0.1) %>% rownames()
-  
-  gene_mean_low2 <- rowMeans(expression_of_interest_coding_each_group2, na.rm = TRUE) %>%
-    as.data.frame() %>% filter(. <0.1) %>% rownames()
-  
-  # filter those genes out
-  expression_of_interest_coding_each <- expression_of_interest_coding_each %>%
-    tibble::rownames_to_column("Gene_symbol") %>% 
-    filter(!Gene_symbol %in% gene_sd_low1) %>%
-    filter(!Gene_symbol %in% gene_sd_low2) %>%
-    filter(!Gene_symbol %in% gene_mean_low1) %>%
-    filter(!Gene_symbol %in% gene_mean_low1) %>%
-    tibble::column_to_rownames("Gene_symbol")
-
   ######## finally run GSNCA test for all pathways
   gsnca_results <- data.frame(matrix(ncol = 3, nrow = 0))
   colnames(gsnca_results) <- c("pathway_id", "pathway_description", "pvalue")
@@ -226,21 +202,21 @@ for(i in 1:nrow(cg_gene_interest)){
       pull(symbol) %>% unique()
     
     # filter to genes in target pathway
-    expr_target_pathway_each <- expression_of_interest_coding_each %>%
+    eoi_target_pathway_each <- eoi_coding_each_filtered %>%
       tibble::rownames_to_column("gene_symbol") %>% 
       filter(gene_symbol %in% genes_in_pathway) %>% 
       tibble::column_to_rownames("gene_symbol") 
     
     # only run the test when there are >=10 genes in the pathway that is also in our expression table 
-    if(nrow(expr_target_pathway_each)>=10){
-      result_pval<-GSNCAtest(object=as.matrix(expr_target_pathway_each), 
+    if(nrow(eoi_target_pathway_each)>=10){
+      result_pval<-GSNCAtest(object=as.matrix(eoi_target_pathway_each), 
                              # since the matrix is selected by order of row, the group will match
                              group=bs_id_quantile_df$group, 
                              nperm=1000, 
-                             cor.method="pearson", 
+                             cor.method="spearman", 
                              check.sd=TRUE, 
                              min.sd=1e-3, 
-                             max.skip=500
+                             max.skip=10
       )
       # store the pathway name and results in the results table
       gsnca_results[j,1] <- pathway_of_interest
@@ -249,8 +225,8 @@ for(i in 1:nrow(cg_gene_interest)){
       
       #### For pathways that has <-0.05 significance, we can plot that----------------
       if(result_pval<0.05){
-        pdf(file = file.path(plots_dir_specific, paste0(cg_interest, "_parsed_by_", gene_interest, "_", pathway_of_interest, "_plot.pdf" )))
-        plotMST2.pathway(object=as.matrix(expr_target_pathway_each),
+        pdf(file = file.path(plots_dir_specific, paste0(cg_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_interest, pathway_of_interest, "_plot.pdf" )))
+        plotMST2.pathway(object=as.matrix(eoi_target_pathway_each),
                          # since the matrix is selected by order of row, the group will match
                          group=bs_id_quantile_df$group,
                          cor.method="pearson",
@@ -263,11 +239,12 @@ for(i in 1:nrow(cg_gene_interest)){
   }
   # write out results
   gsnca_results %>% 
-    readr::write_tsv(file.path(results_dir, paste0(cg_interest, "_parsed_by_", gene_interest, "_pathway_analysis.tsv" )))
+    readr::write_tsv(file.path(results_dir, paste0(cg_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_interest, "_pathway_analysis.tsv" )))
   # add gene and cancer group to the table
   gsnca_results <- gsnca_results %>% 
     mutate(cancer_group = cg_interest) %>% 
-    mutate(gene_parsed_by = gene_interest) 
+    mutate(gene_parsed_by = gene_interest) %>%
+    mutate(percentile = percentile_interest)
   # combine the results to the larger data set
   combined_results <- bind_rows(combined_results, gsnca_results)
   

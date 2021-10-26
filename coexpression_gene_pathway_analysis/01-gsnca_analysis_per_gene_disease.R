@@ -4,11 +4,12 @@
 # BiocManager::install("GSAR")
 # BiocManager::install("GSVAdata")
 # BiocManager::install("DGCA")
+# BiocManager::install("EGSEA")
 suppressPackageStartupMessages(library("optparse"))
 suppressPackageStartupMessages(library("tidyverse"))
 suppressPackageStartupMessages(library("GSAR"))
 suppressPackageStartupMessages(library("org.Hs.eg.db"))
-suppressPackageStartupMessages(library("KEGGREST"))
+suppressPackageStartupMessages(library("EGSEA"))
 suppressPackageStartupMessages(library("DGCA"))
 
 
@@ -102,22 +103,39 @@ gencode_gtf <- gencode_gtf %>%
 expression_of_interest_coding <- expression_of_interest[rownames(expression_of_interest) %in% gencode_gtf$gene_name,]
 
 #### Get the pathway information and select genes in the pathways---------------
-# get KEGG pathway and entrez gene ids
-hsa_path_eg  <- keggLink("pathway", "hsa") %>% 
-  tibble(pathway = ., eg = sub("hsa:", "", names(.)))
+# get entrezID for gene in expression pathway
+expression_of_interest_coding_anno <- expression_of_interest_coding %>% 
+  tibble::rownames_to_column("symbol") %>% 
+  dplyr::select(symbol) %>%
+  dplyr::mutate(eg = mapIds(org.Hs.eg.db, symbol, "ENTREZID", "SYMBOL")) 
 
-#annotated with the SYMBOL and ENSEMBL identifiers associated with each Entrez id
-hsa_kegg_anno <- hsa_path_eg %>%
-  mutate(
-    symbol = mapIds(org.Hs.eg.db, eg, "SYMBOL", "ENTREZID"),
-    ensembl = mapIds(org.Hs.eg.db, eg, "ENSEMBL", "ENTREZID")
-  )
-# get pathway description
-hsa_pathways <- keggList("pathway", "hsa") %>% 
-  tibble(pathway = names(.), description = .)
+# get GSCollectionSet object
+kegg_build <- buildKEGGIdx(entrezIDs = expression_of_interest_coding_anno$eg, species = "human")
 
-# combine to get a complete table
-hsa_kegg_anno_pathways <- left_join(hsa_kegg_anno, hsa_pathways)
+# get annotation to filter out disease related
+kegg_build_anno <- kegg_build@anno %>% as.data.frame() %>% 
+  dplyr::filter(Type != "Disease") %>% 
+  dplyr::select(c("ID", "GeneSet", "Type")) %>%
+  dplyr::rename(description = GeneSet, pathway=ID)
+
+# get gene set IDs
+kegg_build_genesets <- kegg_build_anno %>% pull(description)
+
+# build df with pathways and entrezID of genes
+kegg_build_genesets_list <- lapply(kegg_build_genesets, function(x){
+  kegg_df <- kegg_build@idx[[x]] %>% as.data.frame() %>%
+    mutate(description = x)
+})
+kegg_build_genesets_df <- do.call(rbind, kegg_build_genesets_list) %>%
+  dplyr::left_join(kegg_build_anno) 
+colnames(kegg_build_genesets_df) <- c("eg", "description", "pathway", "type")
+kegg_build_genesets_df$eg <- as.character(kegg_build_genesets_df$eg)
+
+# annotate gene symbol and ensemble IDs 
+kegg_build_genesets_df <-kegg_build_genesets_df %>%
+  dplyr::left_join(expression_of_interest_coding_anno) %>%
+  # filter the pathway file to contain only symbols available in expression
+  dplyr::filter(!is.na(symbol))
 
 #### Run GSNCA for each combination in the CG Gene match file-------------------
 combined_results <- data.frame()
@@ -201,7 +219,7 @@ for(i in 1:nrow(cg_gene_interest)){
   gsnca_results <- data.frame(matrix(ncol = 3, nrow = 0))
   colnames(gsnca_results) <- c("pathway_id", "pathway_description", "pvalue")
   # only look at pathways that has <=500 members
-  pathway_list <- hsa_kegg_anno_pathways %>% 
+  pathway_list <- kegg_build_genesets_df %>% 
     group_by(pathway) %>% 
     mutate(n=n()) %>% 
     filter(n <=500) %>% 
@@ -210,12 +228,12 @@ for(i in 1:nrow(cg_gene_interest)){
   
   for(j in 1:length(pathway_list)){
     pathway_of_interest <- pathway_list[j]
-    description <- hsa_kegg_anno_pathways %>% 
+    description <- kegg_build_genesets_df %>% 
       filter(pathway == pathway_of_interest) %>% 
       pull(description) %>% unique()
     
     # find genes in pathway of interest
-    genes_in_pathway <- hsa_kegg_anno_pathways %>% 
+    genes_in_pathway <- kegg_build_genesets_df %>% 
       filter(pathway == pathway_of_interest) %>% 
       pull(symbol) %>% unique()
     

@@ -1,12 +1,13 @@
 # Author: Run Jin
 # GSVA analysis comparing upper and lower quantile of gene expressions in each disease
 # BiocManager::install("BiocParallel")
+# BiocManager::install("EGSEA")
 suppressPackageStartupMessages(library("optparse"))
 suppressPackageStartupMessages(library("tidyverse"))
 suppressPackageStartupMessages(library("GSVA"))
-suppressPackageStartupMessages(library("KEGGREST"))
 suppressPackageStartupMessages(library("org.Hs.eg.db"))
 suppressPackageStartupMessages(library("BiocParallel"))
+suppressPackageStartupMessages(library("EGSEA"))
 
 #### Parse command line options ------------------------------------------------
 option_list <- list(
@@ -104,29 +105,46 @@ gencode_gtf <- gencode_gtf %>%
 expression_of_interest_coding <- expression_of_interest[rownames(expression_of_interest) %in% gencode_gtf$gene_name,]
 
 #### Get the pathway information and select genes in the pathways---------------
-# get KEGG pathway and entrez gene ids
-hsa_path_eg  <- keggLink("pathway", "hsa") %>% 
-  tibble(pathway = ., eg = sub("hsa:", "", names(.)))
+# get entrezID for gene in expression pathway
+expression_of_interest_coding_anno <- expression_of_interest_coding %>% 
+  tibble::rownames_to_column("symbol") %>% 
+  dplyr::select(symbol) %>%
+  dplyr::mutate(eg = mapIds(org.Hs.eg.db, symbol, "ENTREZID", "SYMBOL")) 
 
-#annotated with the SYMBOL and ENSEMBL identifiers associated with each Entrez id
-hsa_kegg_anno <- hsa_path_eg %>%
-  mutate(
-    symbol = mapIds(org.Hs.eg.db, eg, "SYMBOL", "ENTREZID"),
-    ensembl = mapIds(org.Hs.eg.db, eg, "ENSEMBL", "ENTREZID")
-  )
-# get pathway description
-hsa_pathways <- keggList("pathway", "hsa") %>% 
-  tibble(pathway = names(.), description = .)
+# get GSCollectionSet object
+kegg_build <- buildKEGGIdx(entrezIDs = expression_of_interest_coding_anno$eg, species = "human")
 
-# combine to get a complete table
-hsa_kegg_anno_pathways <- left_join(hsa_kegg_anno, hsa_pathways)
+# get annotation to filter out disease related
+kegg_build_anno <- kegg_build@anno %>% as.data.frame() %>% 
+  dplyr::filter(Type != "Disease") %>% 
+  dplyr::select(c("ID", "GeneSet", "Type")) %>%
+  dplyr::rename(description = GeneSet, pathway=ID)
+
+# get gene set IDs
+kegg_build_genesets <- kegg_build_anno %>% pull(description)
+
+# build df with pathways and entrezID of genes
+kegg_build_genesets_list <- lapply(kegg_build_genesets, function(x){
+  kegg_df <- kegg_build@idx[[x]] %>% as.data.frame() %>%
+    mutate(description = x)
+})
+kegg_build_genesets_df <- do.call(rbind, kegg_build_genesets_list) %>%
+  dplyr::left_join(kegg_build_anno) 
+colnames(kegg_build_genesets_df) <- c("eg", "description", "pathway", "type")
+kegg_build_genesets_df$eg <- as.character(kegg_build_genesets_df$eg)
+
+# annotate gene symbol and ensemble IDs 
+kegg_build_genesets_df <-kegg_build_genesets_df %>%
+  dplyr::left_join(expression_of_interest_coding_anno) %>%
+  # filter the pathway file to contain only symbols available in expression
+  dplyr::filter(!is.na(symbol))
 
 # generate a list of pathways and their matching genes for GSVA analysis 
-pathway_names <- hsa_kegg_anno_pathways %>% 
+pathway_names <- kegg_build_genesets_df %>% 
   pull(pathway) %>% unique() %>% as.list()
 
 pathway_list <- lapply(pathway_names, function(x){
-  genes <- hsa_kegg_anno_pathways %>% 
+  genes <- kegg_build_genesets_df %>% 
     filter(pathway == x) %>% 
     pull(symbol) %>% unique()
   return(genes)
@@ -190,7 +208,8 @@ for(i in 1:nrow(cg_gene_interest)){
   ssgsea_scores_each <- GSVA::gsva(expression_of_interest_coding_each_log2_matrix,
                                  pathway_list,
                                  method = "ssgsea",
-                                 min.sz=1, max.sz=1500,## Arguments from K. Rathi
+                                 min.sz=5, 
+                                 max.sz=500,## Arguments from K. Rathi
                                  parallel.sz = 8, # For the bigger dataset, this ensures this won't crash due to memory problems
                                  mx.diff = TRUE,
                                  BPPARAM=SerialParam(progressbar=T))        ## Setting this argument to TRUE computes Gaussian-distributed scores (bimodal score distribution if FALSE)
@@ -202,11 +221,11 @@ for(i in 1:nrow(cg_gene_interest)){
   #first/last_bs needed for use in gather (we are not on tidyr1.0)
   first_bs <- head(colnames(ssgsea_scores_each), n=1)
   last_bs  <- tail(colnames(ssgsea_scores_each), n=1)
-  
+
   ssgsea_scores_each_df_tidy <- ssgsea_scores_each_df %>%
     tidyr::gather(Kids_First_Biospecimen_ID, ssgsea_score, !!first_bs : !!last_bs) %>%
     dplyr::select(Kids_First_Biospecimen_ID, pathway, ssgsea_score)  %>% 
-    dplyr::left_join(hsa_pathways) %>%
+    dplyr::left_join(kegg_build_anno) %>%
     dplyr::mutate(cancer_group = cg_interest) %>% 
     dplyr::mutate(gene_parsed_by = gene_interest)
   

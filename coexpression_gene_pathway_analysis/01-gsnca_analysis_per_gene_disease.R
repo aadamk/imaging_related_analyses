@@ -261,7 +261,7 @@ for(i in 1:nrow(cg_gene_interest)){
       
       #### For pathways that has <-0.05 significance, we can plot that----------------
       if(result_pval<0.05){
-        pdf(file = file.path(plots_dir_specific, paste0(cg_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_interest, pathway_of_interest, "_plot.pdf" )))
+        pdf(file = file.path(plots_dir_specific, paste0(cg_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_interest, "_", pathway_of_interest, "_plot.pdf" )))
         plotMST2.pathway(object=as.matrix(eoi_target_pathway_each),
                          # since the matrix is selected by order of row, the group will match
                          group=bs_id_quantile_df$group,

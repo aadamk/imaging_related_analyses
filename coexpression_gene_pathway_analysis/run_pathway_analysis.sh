@@ -33,7 +33,7 @@ dcga_go_out="${results_dir}/dgca_go_term/combined_dgca_go_term_pval.tsv"
 # --short_long_match $short_long_match \
 # --gtf_file $gtf_file
 
-# Use DGCA to calculte co expression changes 
+# Use DGCA to calculte co expression changes
 Rscript --vanilla 02-dgca_analysis_per_gene_disease.R \
 --histology $histology_file \
 --expression $expression_file \

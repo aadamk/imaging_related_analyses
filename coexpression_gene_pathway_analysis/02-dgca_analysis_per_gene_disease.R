@@ -183,16 +183,16 @@ for(i in 1:nrow(cg_gene_interest)){
   #                          nPairs=100)
   # dev.off()
   
-  # write out all the results 
-  ddcor_res_all <- ddcorAll(inputMat =as.matrix(eoi_coding_each_filtered), 
-                            design = design_matrix, 
-                            compare = c("upper", "lower"), 
-                            adjust = "none", 
-                            heatmapPlot = FALSE, 
-                            nPerm = 0, 
+  # write out all the results
+  ddcor_res_all <- ddcorAll(inputMat =as.matrix(eoi_coding_each_filtered),
+                            design = design_matrix,
+                            compare = c("upper", "lower"),
+                            adjust = "none",
+                            heatmapPlot = FALSE,
+                            nPerm = 0,
                             corrType = "spearman")
-  
-  ddcor_res_all %>% 
+
+  ddcor_res_all %>%
     readr::write_tsv(file.path(score_results_dir, paste0(cg_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_interest, "_dgca_scores.tsv.gz" )))
   
   ################# run the analysis for gene of interest 
@@ -220,27 +220,27 @@ for(i in 1:nrow(cg_gene_interest)){
     
     # extract only GO term results 
     gain_bp <- ddcorGO_res[[3]][[1]] %>% as.data.frame() %>% dplyr::mutate(change_dir = "gain_of_correlation_genes") %>%
-      dplyr::rename(GOID = GOBPID) %>% mutate(direction = "gain")
+      dplyr::rename(GOID = GOBPID) %>% filter(Pvalue < 0.05)
     gain_mf <- ddcorGO_res[[3]][[2]] %>% as.data.frame() %>% dplyr::mutate(change_dir = "gain_of_correlation_genes") %>%
-      dplyr::rename(GOID = GOMFID) %>% mutate(direction = "gain")
+      dplyr::rename(GOID = GOMFID) %>%  filter(Pvalue < 0.05)
     gain_cc <- ddcorGO_res[[3]][[3]] %>% as.data.frame() %>% dplyr::mutate(change_dir = "gain_of_correlation_genes") %>%
-      dplyr::rename(GOID = GOCCID) %>% mutate(direction = "gain")
+      dplyr::rename(GOID = GOCCID) %>% filter(Pvalue < 0.05)
     
     loss_bp <- ddcorGO_res[[4]][[1]] %>% as.data.frame() %>% dplyr::mutate(change_dir = "loss_of_correlation_genes") %>%
-      dplyr::rename(GOID = GOBPID) %>% mutate(direction = "down")
+      dplyr::rename(GOID = GOBPID) %>% filter(Pvalue < 0.05)
     loss_mf <- ddcorGO_res[[4]][[2]] %>% as.data.frame() %>% dplyr::mutate(change_dir = "loss_of_correlation_genes") %>%
-      dplyr::rename(GOID = GOMFID) %>% mutate(direction = "down")
+      dplyr::rename(GOID = GOMFID) %>% filter(Pvalue < 0.05)
     loss_cc <- ddcorGO_res[[4]][[3]] %>% as.data.frame() %>% dplyr::mutate(change_dir = "loss_of_correlation_genes") %>%
-      dplyr::rename(GOID = GOCCID) %>% mutate(direction = "down")
+      dplyr::rename(GOID = GOCCID) %>% filter(Pvalue < 0.05)
     
       
     # combine only GO term results and write out as one file 
-    combined <- bind_rows(gain_bp, gain_mf, gain_cc, loss_bp, loss_mf, loss_cc) %>% 
-      mutate(cancer_group = cg_interest) %>% 
-      mutate(gene_parsed_by = gene_interest) %>% 
-      mutate(quantile = quantile_interest)
+    combined <- bind_rows(gain_bp, gain_mf, gain_cc, loss_bp, loss_mf, loss_cc) 
     
     combined %>% 
+      mutate(cancer_group = cg_interest) %>% 
+      mutate(gene_parsed_by = gene_interest) %>% 
+      mutate(quantile = quantile_interest) %>% 
       readr::write_tsv(file.path(go_term_results_dir, paste0(cg_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_interest, "_combined_GO_by_dgca.tsv" )))
     
     combined_results <- bind_rows(combined_results, combined )

@@ -1,0 +1,346 @@
+pathway_id	description	pval
+path:hsa05222	Small cell lung cancer - Homo sapiens (human)	1.7249696129746983e-8
+path:hsa04218	Cellular senescence - Homo sapiens (human)	1.558946194490851e-7
+path:hsa05165	Human papillomavirus infection - Homo sapiens (human)	1.0555697551588902e-6
+path:hsa05212	Pancreatic cancer - Homo sapiens (human)	1.1480653781564788e-6
+path:hsa05206	MicroRNAs in cancer - Homo sapiens (human)	1.3419405775852093e-6
+path:hsa04110	Cell cycle - Homo sapiens (human)	5.778404605994362e-6
+path:hsa04115	p53 signaling pathway - Homo sapiens (human)	6.06315958261556e-6
+path:hsa05219	Bladder cancer - Homo sapiens (human)	1.372661980497419e-5
+path:hsa05230	Central carbon metabolism in cancer - Homo sapiens (human)	1.3987841937260202e-5
+path:hsa04066	HIF-1 signaling pathway - Homo sapiens (human)	1.8446192109766164e-5
+path:hsa05161	Hepatitis B - Homo sapiens (human)	1.9707148854848928e-5
+path:hsa04146	Peroxisome - Homo sapiens (human)	2.1217254418459126e-5
+path:hsa05210	Colorectal cancer - Homo sapiens (human)	3.3278418451033456e-5
+path:hsa05170	Human immunodeficiency virus 1 infection - Homo sapiens (human)	4.294185011850718e-5
+path:hsa04933	AGE-RAGE signaling pathway in diabetic complications - Homo sapiens (human)	4.825478284403229e-5
+path:hsa05220	Chronic myeloid leukemia - Homo sapiens (human)	4.828186168674196e-5
+path:hsa05203	Viral carcinogenesis - Homo sapiens (human)	4.911213186669617e-5
+path:hsa00240	Pyrimidine metabolism - Homo sapiens (human)	6.876205472195181e-5
+path:hsa05200	Pathways in cancer - Homo sapiens (human)	1.0863590562727016e-4
+path:hsa04151	PI3K-Akt signaling pathway - Homo sapiens (human)	1.1084625293186229e-4
+path:hsa05215	Prostate cancer - Homo sapiens (human)	1.2146951894334507e-4
+path:hsa00410	beta-Alanine metabolism - Homo sapiens (human)	1.3913179514251901e-4
+path:hsa05211	Renal cell carcinoma - Homo sapiens (human)	1.8599596451835144e-4
+path:hsa00670	One carbon pool by folate - Homo sapiens (human)	2.0012326669806602e-4
+path:hsa05160	Hepatitis C - Homo sapiens (human)	2.0328403804403402e-4
+path:hsa05167	Kaposi sarcoma-associated herpesvirus infection - Homo sapiens (human)	2.0816239201243387e-4
+path:hsa00780	Biotin metabolism - Homo sapiens (human)	2.241255160609178e-4
+path:hsa00071	Fatty acid degradation - Homo sapiens (human)	2.3940545779277826e-4
+path:hsa05169	Epstein-Barr virus infection - Homo sapiens (human)	3.0120283847530013e-4
+path:hsa01522	Endocrine resistance - Homo sapiens (human)	4.2168656561893017e-4
+path:hsa05205	Proteoglycans in cancer - Homo sapiens (human)	4.357120987696273e-4
+path:hsa05146	Amoebiasis - Homo sapiens (human)	4.746187321176317e-4
+path:hsa04510	Focal adhesion - Homo sapiens (human)	5.566649414011325e-4
+path:hsa04926	Relaxin signaling pathway - Homo sapiens (human)	6.310132155759315e-4
+path:hsa00340	Histidine metabolism - Homo sapiens (human)	6.84504024970167e-4
+path:hsa03030	DNA replication - Homo sapiens (human)	6.898724924039254e-4
+path:hsa05166	Human T-cell leukemia virus 1 infection - Homo sapiens (human)	7.855605773310893e-4
+path:hsa04512	ECM-receptor interaction - Homo sapiens (human)	7.941315152713687e-4
+path:hsa00513	Various types of N-glycan biosynthesis - Homo sapiens (human)	8.064831362462418e-4
+path:hsa04917	Prolactin signaling pathway - Homo sapiens (human)	9.81496610127449e-4
+path:hsa05162	Measles - Homo sapiens (human)	0.0010596216659880609
+path:hsa04650	Natural killer cell mediated cytotoxicity - Homo sapiens (human)	0.0010655887788661353
+path:hsa04630	JAK-STAT signaling pathway - Homo sapiens (human)	0.0011024437165229972
+path:hsa04914	Progesterone-mediated oocyte maturation - Homo sapiens (human)	0.001245649423575144
+path:hsa04210	Apoptosis - Homo sapiens (human)	0.0013744817264742177
+path:hsa04744	Phototransduction - Homo sapiens (human)	0.0014560883329841894
+path:hsa00980	Metabolism of xenobiotics by cytochrome P450 - Homo sapiens (human)	0.0016771402084827375
+path:hsa00061	Fatty acid biosynthesis - Homo sapiens (human)	0.0017220755519915293
+path:hsa05163	Human cytomegalovirus infection - Homo sapiens (human)	0.0017675147542500881
+path:hsa00360	Phenylalanine metabolism - Homo sapiens (human)	0.0018725059503654944
+path:hsa00564	Glycerophospholipid metabolism - Homo sapiens (human)	0.002160621189545005
+path:hsa00100	Steroid biosynthesis - Homo sapiens (human)	0.002161857702702623
+path:hsa05214	Glioma - Homo sapiens (human)	0.0021837904023810145
+path:hsa04660	T cell receptor signaling pathway - Homo sapiens (human)	0.002306996868628646
+path:hsa04670	Leukocyte transendothelial migration - Homo sapiens (human)	0.0023116420762889847
+path:hsa05216	Thyroid cancer - Homo sapiens (human)	0.002575765381604331
+path:hsa05135	Yersinia infection - Homo sapiens (human)	0.002776563391148866
+path:hsa00350	Tyrosine metabolism - Homo sapiens (human)	0.003101655350849652
+path:hsa04810	Regulation of actin cytoskeleton - Homo sapiens (human)	0.0031866063709368644
+path:hsa00982	Drug metabolism - cytochrome P450 - Homo sapiens (human)	0.003421753554868554
+path:hsa00140	Steroid hormone biosynthesis - Homo sapiens (human)	0.0034288441219448447
+path:hsa04215	Apoptosis - multiple species - Homo sapiens (human)	0.0034459154435228035
+path:hsa05224	Breast cancer - Homo sapiens (human)	0.0035747135713319112
+path:hsa04141	Protein processing in endoplasmic reticulum - Homo sapiens (human)	0.0035982429788252537
+path:hsa04668	TNF signaling pathway - Homo sapiens (human)	0.003766747912656637
+path:hsa05235	PD-L1 expression and PD-1 checkpoint pathway in cancer - Homo sapiens (human)	0.0038329047391271512
+path:hsa04360	Axon guidance - Homo sapiens (human)	0.004003512057009523
+path:hsa05134	Legionellosis - Homo sapiens (human)	0.004218384648601456
+path:hsa00785	Lipoic acid metabolism - Homo sapiens (human)	0.004232415999485066
+path:hsa05130	Pathogenic Escherichia coli infection - Homo sapiens (human)	0.004256831072886132
+path:hsa04662	B cell receptor signaling pathway - Homo sapiens (human)	0.00451281142281473
+path:hsa04370	VEGF signaling pathway - Homo sapiens (human)	0.004744118772715269
+path:hsa05100	Bacterial invasion of epithelial cells - Homo sapiens (human)	0.004909563024178508
+path:hsa05120	Epithelial cell signaling in Helicobacter pylori infection - Homo sapiens (human)	0.005206682248616596
+path:hsa00120	Primary bile acid biosynthesis - Homo sapiens (human)	0.005370122059908336
+path:hsa05218	Melanoma - Homo sapiens (human)	0.0054188058468724615
+path:hsa04068	FoxO signaling pathway - Homo sapiens (human)	0.005430489711601625
+path:hsa00650	Butanoate metabolism - Homo sapiens (human)	0.005474586187186731
+path:hsa04114	Oocyte meiosis - Homo sapiens (human)	0.005525907844214841
+path:hsa00640	Propanoate metabolism - Homo sapiens (human)	0.00708136341017041
+path:hsa05221	Acute myeloid leukemia - Homo sapiens (human)	0.00712073191857303
+path:hsa00910	Nitrogen metabolism - Homo sapiens (human)	0.007271081845930039
+path:hsa01250	Biosynthesis of nucleotide sugars - Homo sapiens (human)	0.007484293882875347
+path:hsa04710	Circadian rhythm - Homo sapiens (human)	0.007506960654169906
+path:hsa05226	Gastric cancer - Homo sapiens (human)	0.007539121942307476
+path:hsa00830	Retinol metabolism - Homo sapiens (human)	0.008503187730220671
+path:hsa05204	Chemical carcinogenesis - DNA adducts - Homo sapiens (human)	0.008685480220929338
+path:hsa00592	alpha-Linolenic acid metabolism - Homo sapiens (human)	0.008892304558945107
+path:hsa04150	mTOR signaling pathway - Homo sapiens (human)	0.008934192945003156
+path:hsa00591	Linoleic acid metabolism - Homo sapiens (human)	0.009162997420549664
+path:hsa05225	Hepatocellular carcinoma - Homo sapiens (human)	0.009363194487321608
+path:hsa01523	Antifolate resistance - Homo sapiens (human)	0.009510930596490812
+path:hsa05164	Influenza A - Homo sapiens (human)	0.009568157790623257
+path:hsa00280	Valine, leucine and isoleucine degradation - Homo sapiens (human)	0.009741242759931872
+path:hsa05417	Lipid and atherosclerosis - Homo sapiens (human)	0.009872274878823209
+path:hsa04622	RIG-I-like receptor signaling pathway - Homo sapiens (human)	0.010278480793495913
+path:hsa04014	Ras signaling pathway - Homo sapiens (human)	0.01038392424817324
+path:hsa03013	Nucleocytoplasmic transport - Homo sapiens (human)	0.010791963391522831
+path:hsa00603	Glycosphingolipid biosynthesis - globo and isoglobo series - Homo sapiens (human)	0.01087059062660942
+path:hsa05145	Toxoplasmosis - Homo sapiens (human)	0.011077206100800535
+path:hsa04120	Ubiquitin mediated proteolysis - Homo sapiens (human)	0.011640302766766475
+path:hsa01521	EGFR tyrosine kinase inhibitor resistance - Homo sapiens (human)	0.012340503745759205
+path:hsa05131	Shigellosis - Homo sapiens (human)	0.012745087228163266
+path:hsa00510	N-Glycan biosynthesis - Homo sapiens (human)	0.013414134036906004
+path:hsa00520	Amino sugar and nucleotide sugar metabolism - Homo sapiens (human)	0.013443443544885667
+path:hsa04144	Endocytosis - Homo sapiens (human)	0.013508088467611354
+path:hsa00563	Glycosylphosphatidylinositol (GPI)-anchor biosynthesis - Homo sapiens (human)	0.013857814345582007
+path:hsa04974	Protein digestion and absorption - Homo sapiens (human)	0.013915794770324359
+path:hsa05418	Fluid shear stress and atherosclerosis - Homo sapiens (human)	0.014052182181005225
+path:hsa00400	Phenylalanine, tyrosine and tryptophan biosynthesis - Homo sapiens (human)	0.015031590700890001
+path:hsa04064	NF-kappa B signaling pathway - Homo sapiens (human)	0.015787518924484885
+path:hsa04062	Chemokine signaling pathway - Homo sapiens (human)	0.015821430411319854
+path:hsa04657	IL-17 signaling pathway - Homo sapiens (human)	0.01588354162029817
+path:hsa00470	D-Amino acid metabolism - Homo sapiens (human)	0.016960706351692455
+path:hsa04658	Th1 and Th2 cell differentiation - Homo sapiens (human)	0.01702968652733657
+path:hsa03440	Homologous recombination - Homo sapiens (human)	0.01709529870063852
+path:hsa04010	MAPK signaling pathway - Homo sapiens (human)	0.01718205974479495
+path:hsa04664	Fc epsilon RI signaling pathway - Homo sapiens (human)	0.019403334840619166
+path:hsa05223	Non-small cell lung cancer - Homo sapiens (human)	0.01947716671772311
+path:hsa00740	Riboflavin metabolism - Homo sapiens (human)	0.02150495062434473
+path:hsa04621	NOD-like receptor signaling pathway - Homo sapiens (human)	0.022084307246181534
+path:hsa05213	Endometrial cancer - Homo sapiens (human)	0.022317747520208455
+path:hsa04977	Vitamin digestion and absorption - Homo sapiens (human)	0.024739538433234037
+path:hsa04970	Salivary secretion - Homo sapiens (human)	0.02649542768583359
+path:hsa03430	Mismatch repair - Homo sapiens (human)	0.027255870532487497
+path:hsa05110	Vibrio cholerae infection - Homo sapiens (human)	0.028395567008476456
+path:hsa03410	Base excision repair - Homo sapiens (human)	0.029122670294234144
+path:hsa00983	Drug metabolism - other enzymes - Homo sapiens (human)	0.0297933816417545
+path:hsa00330	Arginine and proline metabolism - Homo sapiens (human)	0.03052792167348463
+path:hsa04015	Rap1 signaling pathway - Homo sapiens (human)	0.030828208974469844
+path:hsa04971	Gastric acid secretion - Homo sapiens (human)	0.03131402107711638
+path:hsa03040	Spliceosome - Homo sapiens (human)	0.03176209565905712
+path:hsa04614	Renin-angiotensin system - Homo sapiens (human)	0.0327101894325984
+path:hsa04350	TGF-beta signaling pathway - Homo sapiens (human)	0.03358660016954968
+path:hsa01524	Platinum drug resistance - Homo sapiens (human)	0.03451898506829207
+path:hsa05340	Primary immunodeficiency - Homo sapiens (human)	0.034847579048607406
+path:hsa05231	Choline metabolism in cancer - Homo sapiens (human)	0.034972336564383505
+path:hsa04666	Fc gamma R-mediated phagocytosis - Homo sapiens (human)	0.036564444403201016
+path:hsa04330	Notch signaling pathway - Homo sapiens (human)	0.03832619437112977
+path:hsa04550	Signaling pathways regulating pluripotency of stem cells - Homo sapiens (human)	0.03895467322664533
+path:hsa03008	Ribosome biogenesis in eukaryotes - Homo sapiens (human)	0.039492022697361684
+path:hsa05171	Coronavirus disease - COVID-19 - Homo sapiens (human)	0.039740233929154434
+path:hsa00561	Glycerolipid metabolism - Homo sapiens (human)	0.0426428351287628
+path:hsa04911	Insulin secretion - Homo sapiens (human)	0.0436266505643861
+path:hsa00260	Glycine, serine and threonine metabolism - Homo sapiens (human)	0.04434428442699699
+path:hsa04723	Retrograde endocannabinoid signaling - Homo sapiens (human)	0.04631589583524813
+path:hsa04713	Circadian entrainment - Homo sapiens (human)	0.047814428994890565
+path:hsa03320	PPAR signaling pathway - Homo sapiens (human)	0.0481773000683334
+path:hsa04613	Neutrophil extracellular trap formation - Homo sapiens (human)	0.0501883182855107
+path:hsa05132	Salmonella infection - Homo sapiens (human)	0.051244056372937524
+path:hsa04060	Cytokine-cytokine receptor interaction - Homo sapiens (human)	0.05246333698009233
+path:hsa00534	Glycosaminoglycan biosynthesis - heparan sulfate / heparin - Homo sapiens (human)	0.056738855040449794
+path:hsa00730	Thiamine metabolism - Homo sapiens (human)	0.05728022565874433
+path:hsa00790	Folate biosynthesis - Homo sapiens (human)	0.057523520056601794
+path:hsa04625	C-type lectin receptor signaling pathway - Homo sapiens (human)	0.05825004099092772
+path:hsa04261	Adrenergic signaling in cardiomyocytes - Homo sapiens (human)	0.05946505898427234
+path:hsa04722	Neurotrophin signaling pathway - Homo sapiens (human)	0.061870652648913976
+path:hsa05140	Leishmaniasis - Homo sapiens (human)	0.06728041503331064
+path:hsa05133	Pertussis - Homo sapiens (human)	0.06783839990152694
+path:hsa00220	Arginine biosynthesis - Homo sapiens (human)	0.06821039265613471
+path:hsa03050	Proteasome - Homo sapiens (human)	0.07198163935312826
+path:hsa05144	Malaria - Homo sapiens (human)	0.07448916301539421
+path:hsa04913	Ovarian steroidogenesis - Homo sapiens (human)	0.07465152629882495
+path:hsa00010	Glycolysis / Gluconeogenesis - Homo sapiens (human)	0.07545291487176543
+path:hsa04910	Insulin signaling pathway - Homo sapiens (human)	0.07621990495898526
+path:hsa04730	Long-term depression - Homo sapiens (human)	0.08033484271055878
+path:hsa04610	Complement and coagulation cascades - Homo sapiens (human)	0.08083221029489399
+path:hsa04950	Maturity onset diabetes of the young - Homo sapiens (human)	0.08091961231238681
+path:hsa04728	Dopaminergic synapse - Homo sapiens (human)	0.08423674148692421
+path:hsa04724	Glutamatergic synapse - Homo sapiens (human)	0.08490722319941725
+path:hsa03460	Fanconi anemia pathway - Homo sapiens (human)	0.085704164201023
+path:hsa01210	2-Oxocarboxylic acid metabolism - Homo sapiens (human)	0.08742537749916209
+path:hsa05217	Basal cell carcinoma - Homo sapiens (human)	0.0886835050583387
+path:hsa05152	Tuberculosis - Homo sapiens (human)	0.08901612814371664
+path:hsa05323	Rheumatoid arthritis - Homo sapiens (human)	0.09366548936435291
+path:hsa04260	Cardiac muscle contraction - Homo sapiens (human)	0.09542886834180188
+path:hsa04972	Pancreatic secretion - Homo sapiens (human)	0.09546416625011259
+path:hsa04012	ErbB signaling pathway - Homo sapiens (human)	0.09649732578326516
+path:hsa01200	Carbon metabolism - Homo sapiens (human)	0.09778972095790721
+path:hsa04620	Toll-like receptor signaling pathway - Homo sapiens (human)	0.09875918307321899
+path:hsa04130	SNARE interactions in vesicular transport - Homo sapiens (human)	0.09997044152678662
+path:hsa03420	Nucleotide excision repair - Homo sapiens (human)	0.10048610910907782
+path:hsa04145	Phagosome - Homo sapiens (human)	0.10071249699309619
+path:hsa00900	Terpenoid backbone biosynthesis - Homo sapiens (human)	0.10210772442361081
+path:hsa05016	Huntington disease - Homo sapiens (human)	0.1070962090800554
+path:hsa04934	Cushing syndrome - Homo sapiens (human)	0.11138484875392778
+path:hsa00533	Glycosaminoglycan biosynthesis - keratan sulfate - Homo sapiens (human)	0.11155214965511287
+path:hsa05142	Chagas disease - Homo sapiens (human)	0.1139328260027665
+path:hsa04612	Antigen processing and presentation - Homo sapiens (human)	0.11495909569531768
+path:hsa04071	Sphingolipid signaling pathway - Homo sapiens (human)	0.11809514908856174
+path:hsa04540	Gap junction - Homo sapiens (human)	0.11902705763529539
+path:hsa00232	Caffeine metabolism - Homo sapiens (human)	0.11972738972416763
+path:hsa04640	Hematopoietic cell lineage - Homo sapiens (human)	0.12163506121511933
+path:hsa00040	Pentose and glucuronate interconversions - Homo sapiens (human)	0.12166509916588657
+path:hsa04136	Autophagy - other - Homo sapiens (human)	0.1233050005692799
+path:hsa04380	Osteoclast differentiation - Homo sapiens (human)	0.12446505173085898
+path:hsa00514	Other types of O-glycan biosynthesis - Homo sapiens (human)	0.12942424814903392
+path:hsa04976	Bile secretion - Homo sapiens (human)	0.13434476437057305
+path:hsa04659	Th17 cell differentiation - Homo sapiens (human)	0.14213380194248657
+path:hsa04919	Thyroid hormone signaling pathway - Homo sapiens (human)	0.14500578321214627
+path:hsa04217	Necroptosis - Homo sapiens (human)	0.14777492951346755
+path:hsa05010	Alzheimer disease - Homo sapiens (human)	0.15227324076925816
+path:hsa04061	Viral protein interaction with cytokine and cytokine receptor - Homo sapiens (human)	0.15270672715069109
+path:hsa04714	Thermogenesis - Homo sapiens (human)	0.15350191686563866
+path:hsa05416	Viral myocarditis - Homo sapiens (human)	0.15369709504667683
+path:hsa03060	Protein export - Homo sapiens (human)	0.15734400166154217
+path:hsa04142	Lysosome - Homo sapiens (human)	0.15746961521867525
+path:hsa05031	Amphetamine addiction - Homo sapiens (human)	0.15830505703684103
+path:hsa05017	Spinocerebellar ataxia - Homo sapiens (human)	0.15932506722919546
+path:hsa00604	Glycosphingolipid biosynthesis - ganglio series - Homo sapiens (human)	0.16817528115900496
+path:hsa04975	Fat digestion and absorption - Homo sapiens (human)	0.1780385694191424
+path:hsa00620	Pyruvate metabolism - Homo sapiens (human)	0.18132529646902262
+path:hsa00532	Glycosaminoglycan biosynthesis - chondroitin sulfate / dermatan sulfate - Homo sapiens (human)	0.1857574843810576
+path:hsa04920	Adipocytokine signaling pathway - Homo sapiens (human)	0.18598739558889982
+path:hsa04978	Mineral absorption - Homo sapiens (human)	0.1904700465362262
+path:hsa04918	Thyroid hormone synthesis - Homo sapiens (human)	0.1924092032322872
+path:hsa01212	Fatty acid metabolism - Homo sapiens (human)	0.19576612315199593
+path:hsa00052	Galactose metabolism - Homo sapiens (human)	0.19792375235248935
+path:hsa03018	RNA degradation - Homo sapiens (human)	0.2007911853025469
+path:hsa04740	Olfactory transduction - Homo sapiens (human)	0.2068569383137912
+path:hsa05033	Nicotine addiction - Homo sapiens (human)	0.20732876272492884
+path:hsa03450	Non-homologous end-joining - Homo sapiens (human)	0.2132499766013183
+path:hsa04960	Aldosterone-regulated sodium reabsorption - Homo sapiens (human)	0.21391478298333091
+path:hsa00130	Ubiquinone and other terpenoid-quinone biosynthesis - Homo sapiens (human)	0.2150791198802835
+path:hsa01100	Metabolic pathways - Homo sapiens (human)	0.2186234025824844
+path:hsa00190	Oxidative phosphorylation - Homo sapiens (human)	0.21903149740450126
+path:hsa00590	Arachidonic acid metabolism - Homo sapiens (human)	0.2304099903321378
+path:hsa05030	Cocaine addiction - Homo sapiens (human)	0.23126972349941766
+path:hsa00430	Taurine and hypotaurine metabolism - Homo sapiens (human)	0.2322016513292813
+path:hsa05321	Inflammatory bowel disease - Homo sapiens (human)	0.23242612206664637
+path:hsa05034	Alcoholism - Homo sapiens (human)	0.23280452371827243
+path:hsa04270	Vascular smooth muscle contraction - Homo sapiens (human)	0.23918396078803553
+path:hsa05207	Chemical carcinogenesis - receptor activation - Homo sapiens (human)	0.24258449831698917
+path:hsa00051	Fructose and mannose metabolism - Homo sapiens (human)	0.24486826578977822
+path:hsa04929	GnRH secretion - Homo sapiens (human)	0.249354361167526
+path:hsa00250	Alanine, aspartate and glutamate metabolism - Homo sapiens (human)	0.25028971640602543
+path:hsa04520	Adherens junction - Homo sapiens (human)	0.2557768330402964
+path:hsa04940	Type I diabetes mellitus - Homo sapiens (human)	0.25699249290394927
+path:hsa04720	Long-term potentiation - Homo sapiens (human)	0.25846046655935967
+path:hsa00511	Other glycan degradation - Homo sapiens (human)	0.2597642250239794
+path:hsa04072	Phospholipase D signaling pathway - Homo sapiens (human)	0.26278277485416507
+path:hsa04936	Alcoholic liver disease - Homo sapiens (human)	0.2667256606272999
+path:hsa04514	Cell adhesion molecules - Homo sapiens (human)	0.2676687653266167
+path:hsa04216	Ferroptosis - Homo sapiens (human)	0.26895353637246333
+path:hsa04925	Aldosterone synthesis and secretion - Homo sapiens (human)	0.27401990503919416
+path:hsa04750	Inflammatory mediator regulation of TRP channels - Homo sapiens (human)	0.27623038104744074
+path:hsa00480	Glutathione metabolism - Homo sapiens (human)	0.28536169410009743
+path:hsa04672	Intestinal immune network for IgA production - Homo sapiens (human)	0.28551841469674855
+path:hsa05320	Autoimmune thyroid disease - Homo sapiens (human)	0.2872722149968909
+path:hsa05330	Allograft rejection - Homo sapiens (human)	0.2909757369645393
+path:hsa04964	Proximal tubule bicarbonate reclamation - Homo sapiens (human)	0.2963129834716171
+path:hsa00290	Valine, leucine and isoleucine biosynthesis - Homo sapiens (human)	0.2968765139391235
+path:hsa05202	Transcriptional misregulation in cancer - Homo sapiens (human)	0.3014770012402252
+path:hsa05332	Graft-versus-host disease - Homo sapiens (human)	0.3026992656635297
+path:hsa00770	Pantothenate and CoA biosynthesis - Homo sapiens (human)	0.3056704201861202
+path:hsa05150	Staphylococcus aureus infection - Homo sapiens (human)	0.3070151020331634
+path:hsa04726	Serotonergic synapse - Homo sapiens (human)	0.31642092249272874
+path:hsa04390	Hippo signaling pathway - Homo sapiens (human)	0.3192767012938787
+path:hsa05322	Systemic lupus erythematosus - Homo sapiens (human)	0.32568959842428213
+path:hsa00600	Sphingolipid metabolism - Homo sapiens (human)	0.3281833746101638
+path:hsa04922	Glucagon signaling pathway - Homo sapiens (human)	0.329546962698283
+path:hsa04935	Growth hormone synthesis, secretion and action - Homo sapiens (human)	0.3345075444821519
+path:hsa04611	Platelet activation - Homo sapiens (human)	0.34048428378661155
+path:hsa04623	Cytosolic DNA-sensing pathway - Homo sapiens (human)	0.34403218676032854
+path:hsa04927	Cortisol synthesis and secretion - Homo sapiens (human)	0.34496297085429495
+path:hsa00531	Glycosaminoglycan degradation - Homo sapiens (human)	0.3473973847225136
+path:hsa00562	Inositol phosphate metabolism - Homo sapiens (human)	0.3818314949109486
+path:hsa05310	Asthma - Homo sapiens (human)	0.40862003698277816
+path:hsa04966	Collecting duct acid secretion - Homo sapiens (human)	0.41835414793644554
+path:hsa04921	Oxytocin signaling pathway - Homo sapiens (human)	0.4185788583912845
+path:hsa04022	cGMP-PKG signaling pathway - Homo sapiens (human)	0.4243772318099248
+path:hsa04924	Renin secretion - Homo sapiens (human)	0.43033120434107286
+path:hsa04530	Tight junction - Homo sapiens (human)	0.44020193651864914
+path:hsa05168	Herpes simplex virus 1 infection - Homo sapiens (human)	0.4511166310856013
+path:hsa04931	Insulin resistance - Homo sapiens (human)	0.4521859125911605
+path:hsa01240	Biosynthesis of cofactors - Homo sapiens (human)	0.45655853710492533
+path:hsa04725	Cholinergic synapse - Homo sapiens (human)	0.4587041137518769
+path:hsa05143	African trypanosomiasis - Homo sapiens (human)	0.466129460419328
+path:hsa04915	Estrogen signaling pathway - Homo sapiens (human)	0.4668064469070279
+path:hsa00565	Ether lipid metabolism - Homo sapiens (human)	0.4691628373158092
+path:hsa04961	Endocrine and other factor-regulated calcium reabsorption - Homo sapiens (human)	0.4844300639562583
+path:hsa00630	Glyoxylate and dicarboxylate metabolism - Homo sapiens (human)	0.49628008517999855
+path:hsa00515	Mannose type O-glycan biosynthesis - Homo sapiens (human)	0.5101609842857467
+path:hsa04140	Autophagy - animal - Homo sapiens (human)	0.5181949171567848
+path:hsa01230	Biosynthesis of amino acids - Homo sapiens (human)	0.5228468995440545
+path:hsa04020	Calcium signaling pathway - Homo sapiens (human)	0.5295756285702943
+path:hsa05020	Prion disease - Homo sapiens (human)	0.5320708797768215
+path:hsa05032	Morphine addiction - Homo sapiens (human)	0.5338397511513027
+path:hsa04979	Cholesterol metabolism - Homo sapiens (human)	0.5354689539791524
+path:hsa00020	Citrate cycle (TCA cycle) - Homo sapiens (human)	0.5505300908315286
+path:hsa03015	mRNA surveillance pathway - Homo sapiens (human)	0.5719657236342364
+path:hsa04211	Longevity regulating pathway - Homo sapiens (human)	0.5868083400924922
+path:hsa00860	Porphyrin and chlorophyll metabolism - Homo sapiens (human)	0.5881475343946195
+path:hsa00524	Neomycin, kanamycin and gentamicin biosynthesis - Homo sapiens (human)	0.5936259054865582
+path:hsa00230	Purine metabolism - Homo sapiens (human)	0.5943103311448601
+path:hsa04122	Sulfur relay system - Homo sapiens (human)	0.6000487028063006
+path:hsa04727	GABAergic synapse - Homo sapiens (human)	0.6025793168753467
+path:hsa05022	Pathways of neurodegeneration - multiple diseases - Homo sapiens (human)	0.6289799626081933
+path:hsa04916	Melanogenesis - Homo sapiens (human)	0.6488308302641184
+path:hsa05415	Diabetic cardiomyopathy - Homo sapiens (human)	0.6531508226909795
+path:hsa05208	Chemical carcinogenesis - reactive oxygen species - Homo sapiens (human)	0.6546882244977847
+path:hsa00512	Mucin type O-glycan biosynthesis - Homo sapiens (human)	0.6683292755789507
+path:hsa04721	Synaptic vesicle cycle - Homo sapiens (human)	0.6695895510279308
+path:hsa04932	Non-alcoholic fatty liver disease - Homo sapiens (human)	0.683915097932293
+path:hsa04024	cAMP signaling pathway - Homo sapiens (human)	0.689113246913686
+path:hsa00380	Tryptophan metabolism - Homo sapiens (human)	0.691503828033865
+path:hsa00062	Fatty acid elongation - Homo sapiens (human)	0.6926642130706455
+path:hsa04137	Mitophagy - animal - Homo sapiens (human)	0.6961688226890305
+path:hsa00310	Lysine degradation - Homo sapiens (human)	0.7113718548965825
+path:hsa04371	Apelin signaling pathway - Homo sapiens (human)	0.7118540634084847
+path:hsa00440	Phosphonate and phosphinate metabolism - Homo sapiens (human)	0.7169904007798615
+path:hsa00450	Selenocompound metabolism - Homo sapiens (human)	0.7205239528835922
+path:hsa00053	Ascorbate and aldarate metabolism - Homo sapiens (human)	0.7271056881358583
+path:hsa04962	Vasopressin-regulated water reabsorption - Homo sapiens (human)	0.7279546930273901
+path:hsa00500	Starch and sucrose metabolism - Homo sapiens (human)	0.7420118254886298
+path:hsa05410	Hypertrophic cardiomyopathy - Homo sapiens (human)	0.7449138730594111
+path:hsa04930	Type II diabetes mellitus - Homo sapiens (human)	0.7494216506031631
+path:hsa04310	Wnt signaling pathway - Homo sapiens (human)	0.7611528939647443
+path:hsa01040	Biosynthesis of unsaturated fatty acids - Homo sapiens (human)	0.7614672955025588
+path:hsa05414	Dilated cardiomyopathy - Homo sapiens (human)	0.7625496772609656
+path:hsa04923	Regulation of lipolysis in adipocytes - Homo sapiens (human)	0.7953488009232887
+path:hsa04742	Taste transduction - Homo sapiens (human)	0.7983311399969073
+path:hsa03022	Basal transcription factors - Homo sapiens (human)	0.8023425078917985
+path:hsa04070	Phosphatidylinositol signaling system - Homo sapiens (human)	0.8116280208945087
+path:hsa00750	Vitamin B6 metabolism - Homo sapiens (human)	0.8195496310814759
+path:hsa03010	Ribosome - Homo sapiens (human)	0.8207447620173383
+path:hsa04080	Neuroactive ligand-receptor interaction - Homo sapiens (human)	0.8357001536530997
+path:hsa04912	GnRH signaling pathway - Homo sapiens (human)	0.838283807762908
+path:hsa05012	Parkinson disease - Homo sapiens (human)	0.8420563331064751
+path:hsa00030	Pentose phosphate pathway - Homo sapiens (human)	0.8484590668133475
+path:hsa04340	Hedgehog signaling pathway - Homo sapiens (human)	0.8487206950196533
+path:hsa04928	Parathyroid hormone synthesis, secretion and action - Homo sapiens (human)	0.850781695521236
+path:hsa00920	Sulfur metabolism - Homo sapiens (human)	0.856965759395308
+path:hsa05412	Arrhythmogenic right ventricular cardiomyopathy - Homo sapiens (human)	0.8735480721368203
+path:hsa05014	Amyotrophic lateral sclerosis - Homo sapiens (human)	0.8818777852408246
+path:hsa03020	RNA polymerase - Homo sapiens (human)	0.8959268538890952
+path:hsa04392	Hippo signaling pathway - multiple species - Homo sapiens (human)	0.9252991774201104
+path:hsa00760	Nicotinate and nicotinamide metabolism - Homo sapiens (human)	0.9276898051473564
+path:hsa00601	Glycosphingolipid biosynthesis - lacto and neolacto series - Homo sapiens (human)	0.9326177183078851
+path:hsa04973	Carbohydrate digestion and absorption - Homo sapiens (human)	0.9434101466134653
+path:hsa00970	Aminoacyl-tRNA biosynthesis - Homo sapiens (human)	0.9458831518516191
+path:hsa00270	Cysteine and methionine metabolism - Homo sapiens (human)	0.9549117544704399
+path:hsa04152	AMPK signaling pathway - Homo sapiens (human)	0.9559950538354738
+path:hsa04213	Longevity regulating pathway - multiple species - Homo sapiens (human)	0.9738699646412113
+path:hsa02010	ABC transporters - Homo sapiens (human)	0.9742710061518767

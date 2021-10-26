@@ -34,20 +34,20 @@ opt <- parse_args(OptionParser(option_list=option_list,add_help_option = FALSE))
 #### Define Directories --------------------------------------------------------
 root_dir <- rprojroot::find_root(rprojroot::has_dir(".git"))
 analysis_dir <- file.path(root_dir, "coexpression_gene_pathway_analysis")
-score_results_dir <- file.path(analysis_dir, "results", "dgca_scores")
-if(!dir.exists(score_results_dir)){
-  dir.create(score_results_dir, recursive=TRUE)
-}
+# score_results_dir <- file.path(analysis_dir, "results", "dgca_scores")
+# if(!dir.exists(score_results_dir)){
+#   dir.create(score_results_dir, recursive=TRUE)
+# }
 
 go_term_results_dir <- file.path(analysis_dir, "results", "dgca_go_term")
 if(!dir.exists(go_term_results_dir)){
   dir.create(go_term_results_dir, recursive=TRUE)
 }
 
-plots_dir <- file.path(analysis_dir, "plots", "dgca_plots")
-if(!dir.exists(plots_dir)){
-  dir.create(plots_dir, recursive=TRUE)
-}
+# plots_dir <- file.path(analysis_dir, "plots", "dgca_plots")
+# if(!dir.exists(plots_dir)){
+#   dir.create(plots_dir, recursive=TRUE)
+# }
 
 #### Read in files necessary for analyses --------------------------------------
 # histology file
@@ -183,17 +183,17 @@ for(i in 1:nrow(cg_gene_interest)){
   #                          nPairs=100)
   # dev.off()
   
-  # write out all the results
-  ddcor_res_all <- ddcorAll(inputMat =as.matrix(eoi_coding_each_filtered),
-                            design = design_matrix,
-                            compare = c("upper", "lower"),
-                            adjust = "none",
-                            heatmapPlot = FALSE,
-                            nPerm = 0,
-                            corrType = "spearman")
-
-  ddcor_res_all %>%
-    readr::write_tsv(file.path(score_results_dir, paste0(cg_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_interest, "_dgca_scores.tsv.gz" )))
+  # # write out all the results
+  # ddcor_res_all <- ddcorAll(inputMat =as.matrix(eoi_coding_each_filtered),
+  #                           design = design_matrix,
+  #                           compare = c("upper", "lower"),
+  #                           adjust = "none",
+  #                           heatmapPlot = FALSE,
+  #                           nPerm = 0,
+  #                           corrType = "spearman")
+  # 
+  # ddcor_res_all %>%
+  #   readr::write_tsv(file.path(score_results_dir, paste0(cg_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_interest, "_dgca_scores.tsv.gz" )))
   
   ################# run the analysis for gene of interest 
   if(gene_interest %in% rownames(eoi_coding_each_filtered)){

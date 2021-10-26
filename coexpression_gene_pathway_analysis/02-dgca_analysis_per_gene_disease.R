@@ -1,5 +1,5 @@
 # Author: Run Jin
-#
+
 # GSNCA analysis comparing upper and lower quantile of gene expressions in each disease
 # BiocManager::install("GSAR")
 # BiocManager::install("GSVAdata")
@@ -171,18 +171,27 @@ for(i in 1:nrow(cg_gene_interest)){
   # prepare design matrix
   design_matrix <- makeDesign(as.vector(bs_id_quantile_df$group))
   
-  # define directory for the heatmap
-  pdf(file = file.path(plots_dir, paste0(cg_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_interest, "_plot.pdf" )))
-  ddcor_res_all <- ddcorAll(inputMat =as.matrix(eoi_coding_each_filtered), 
-                           design = design_matrix, 
-                           compare = c("upper", "lower"), 
-                           adjust = "none", 
-                           heatmapPlot = T, 
-                           nPerm = 0, 
-                           corrType = "spearman")
-  dev.off()
+  # # define directory for the heatmap
+  # pdf(file = file.path(plots_dir, paste0(cg_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_interest, "_plot.pdf" )))
+  # ddcor_res_100 <- ddcorAll(inputMat =as.matrix(eoi_coding_each_filtered), 
+  #                          design = design_matrix, 
+  #                          compare = c("upper", "lower"), 
+  #                          adjust = "none", 
+  #                          heatmapPlot = T, 
+  #                          nPerm = 0, 
+  #                          corrType = "spearman",
+  #                          nPairs=100)
+  # dev.off()
   
   # write out all the results 
+  ddcor_res_all <- ddcorAll(inputMat =as.matrix(eoi_coding_each_filtered), 
+                            design = design_matrix, 
+                            compare = c("upper", "lower"), 
+                            adjust = "none", 
+                            heatmapPlot = FALSE, 
+                            nPerm = 0, 
+                            corrType = "spearman")
+  
   ddcor_res_all %>% 
     readr::write_tsv(file.path(score_results_dir, paste0(cg_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_interest, "_dgca_scores.tsv.gz" )))
   
@@ -217,11 +226,11 @@ for(i in 1:nrow(cg_gene_interest)){
     gain_cc <- ddcorGO_res[[3]][[3]] %>% as.data.frame() %>% dplyr::mutate(change_dir = "gain_of_correlation_genes") %>%
       dplyr::rename(GOID = GOCCID)
     
-    loss_bp <- ddcorGO_res[[3]][[1]] %>% as.data.frame() %>% dplyr::mutate(change_dir = "loss_of_correlation_genes") %>%
+    loss_bp <- ddcorGO_res[[4]][[1]] %>% as.data.frame() %>% dplyr::mutate(change_dir = "loss_of_correlation_genes") %>%
       dplyr::rename(GOID = GOBPID)
-    loss_mf <- ddcorGO_res[[3]][[2]] %>% as.data.frame() %>% dplyr::mutate(change_dir = "loss_of_correlation_genes") %>%
+    loss_mf <- ddcorGO_res[[4]][[2]] %>% as.data.frame() %>% dplyr::mutate(change_dir = "loss_of_correlation_genes") %>%
       dplyr::rename(GOID = GOMFID)
-    loss_cc <- ddcorGO_res[[3]][[3]] %>% as.data.frame() %>% dplyr::mutate(change_dir = "loss_of_correlation_genes") %>%
+    loss_cc <- ddcorGO_res[[4]][[3]] %>% as.data.frame() %>% dplyr::mutate(change_dir = "loss_of_correlation_genes") %>%
       dplyr::rename(GOID = GOCCID)
     
     combined %>% 
@@ -237,6 +246,7 @@ for(i in 1:nrow(cg_gene_interest)){
   }
 }
 
+# write out combined GO term results
 combined_results %>% 
   readr::write_tsv(file.path(go_term_results_dir, opt$outfile))
 

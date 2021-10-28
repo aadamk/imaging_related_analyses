@@ -160,48 +160,85 @@ for(i in 1:nrow(cg_gene_interest)){
     dplyr::select(unlist(rownames(bs_id_quantile_df)))
   
   ######################### prepare to DGCA test for all pathways-filter out low expression genes 
-  # filter lowly expressed genes by DGCA
-  eoi_coding_each_filtered <- filterGenes(expression_of_interest_coding_each, 
-                                          filterTypes = c("central", "dispersion"),
-                                          filterDispersionType = "cv", 
-                                          filterDispersionPercentile = 0.2,
-                                          sequential= TRUE)
-  
-  ######## finally run DGCA test 
   # prepare design matrix
   design_matrix <- makeDesign(as.vector(bs_id_quantile_df$group))
   
+  # filter for default heatmap
+  eoi_coding_each_filtered_top95 <- filterGenes(expression_of_interest_coding_each, 
+                                              filterTypes = c("central", "dispersion"),
+                                              filterCentralPercentile = 0.95,
+                                              filterDispersionPercentile = 0.95,
+                                              sequential= TRUE)
   # define directory for the heatmap
-  ddcor_res_100 <- ddcorAll(inputMat =as.matrix(eoi_coding_each_filtered),
-                           design = design_matrix,
-                           compare = c("upper", "lower"),
-                           adjust = "none",
-                           heatmapPlot = F,
-                           nPerm = 0,
-                           corrType = "spearman",
-                           # specific filtering parameter for heatmap
-                           filterCentralPercentile = 0.75, 
-                           filterDispersionPercentile = 0.75,
-                           nPairs=100)
-  ddcor_res_100 %>%
-    readr::write_tsv(file.path(score_results_dir, paste0(cg_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_interest, "_dgca_100_scores.tsv.gz" )))
+  pdf(file = file.path(plots_dir, paste0(cg_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_interest, "_filter95_plot.pdf" )))
+  p<- ddcorAll(inputMat =as.matrix(eoi_coding_each_filtered_top95),
+               design = design_matrix,
+               compare = c("upper", "lower"),
+               adjust = "none",
+               heatmapPlot = T,
+               nPerm = 0,
+               cexRow=0.8,
+               cexCol=0.8,
+               corrType = "spearman",
+               nPairs=100)
+  print(p)
+  dev.off()
+  
+  p %>%
+    readr::write_tsv(file.path(score_results_dir, paste0(cg_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_interest, "_dgca_scores_filter95.tsv.gz" )))
+  
+  
+  # filter for default heatmap
+  eoi_coding_each_filtered_top90 <- filterGenes(expression_of_interest_coding_each, 
+                                              filterTypes = c("central", "dispersion"),
+                                              filterCentralPercentile = 0.90,
+                                              filterDispersionPercentile = 0.90,
+                                              sequential= TRUE)
+  # define directory for the heatmap
+  pdf(file = file.path(plots_dir, paste0(cg_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_interest, "_filter90_plot.pdf" )))
+  p<- ddcorAll(inputMat =as.matrix(eoi_coding_each_filtered_top90),
+               design = design_matrix,
+               compare = c("upper", "lower"),
+               adjust = "none",
+               heatmapPlot = T,
+               nPerm = 0,
+               cexRow=0.8,
+               cexCol=0.8,
+               corrType = "spearman",
+               nPairs=100)
+  print(p)
+  dev.off()
+  
+  p %>%
+    readr::write_tsv(file.path(score_results_dir, paste0(cg_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_interest, "_dgca_scores_filter90.tsv.gz" )))
+  
   
   # write out all the results
+  eoi_coding_each_filtered_all <- filterGenes(expression_of_interest_coding_each, 
+                                              filterTypes = c("central", "dispersion"),
+                                              filterDispersionType = "cv",
+                                              filterDispersionPercentile = 0.2,
+                                              sequential= TRUE)
+  
   ddcor_res_all <- ddcorAll(inputMat =as.matrix(eoi_coding_each_filtered),
                             design = design_matrix,
                             compare = c("upper", "lower"),
                             adjust = "none",
                             heatmapPlot = FALSE,
                             nPerm = 0,
-                            corrType = "spearman",
-                            # specific filtering parameter for generating all results 
-                            filterCentralPercentile = 0.3, 
-                            filterDispersionPercentile = 0.3)
+                            corrType = "spearman")
 
   ddcor_res_all %>%
-    readr::write_tsv(file.path(score_results_dir, paste0(cg_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_interest, "_dgca_full_scores.tsv.gz" )))
+    readr::write_tsv(file.path(score_results_dir, paste0(cg_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_interest, "_dgca_scores.tsv.gz" )))
   
   # ################# run the analysis for gene of interest 
+  # # filter lowly expressed genes by DGCA
+  # eoi_coding_each_filtered <- filterGenes(expression_of_interest_coding_each, 
+  #                                         filterTypes = c("central", "dispersion"),
+  #                                         filterDispersionType = "cv", 
+  #                                         filterDispersionPercentile = 0.2,
+  #                                         sequential= TRUE)
+  #
   # if(!gene_interest %in% rownames(eoi_coding_each_filtered)){
   #   gene_rescue <- expression_of_interest_coding_each[gene_interest,]
   #   eoi_coding_each_filtered <- bind_rows(eoi_coding_each_filtered, gene_rescue)

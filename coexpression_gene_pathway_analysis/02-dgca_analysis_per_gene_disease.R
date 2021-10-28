@@ -217,10 +217,11 @@ for(i in 1:nrow(cg_gene_interest)){
   eoi_coding_each_filtered_all <- filterGenes(expression_of_interest_coding_each, 
                                               filterTypes = c("central", "dispersion"),
                                               filterDispersionType = "cv",
-                                              filterDispersionPercentile = 0.2,
+                                              filterDispersionPercentile = 0.25,
+                                              filterDispersionType = 0.25,
                                               sequential= TRUE)
   
-  ddcor_res_all <- ddcorAll(inputMat =as.matrix(eoi_coding_each_filtered),
+  ddcor_res_all <- ddcorAll(inputMat =as.matrix(eoi_coding_each_filtered_all),
                             design = design_matrix,
                             compare = c("upper", "lower"),
                             adjust = "none",

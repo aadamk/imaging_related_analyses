@@ -24,7 +24,9 @@ option_list <- list(
   make_option(c("-m","--short_long_match"),type="character",
               help="match between long and short names (.tsv)"),
   make_option(c("-g","--gtf_file"),type="character",
-              help="gtf file for annotation (.gtf.gz)")
+              help="gtf file for annotation (.gtf.gz)"),
+  make_option(c("-o","--outfile"),type="character",
+              help="path and name of the output combined pval file")
 )
 opt <- parse_args(OptionParser(option_list=option_list,add_help_option = FALSE))
 
@@ -36,7 +38,7 @@ if(!dir.exists(results_dir)){
   dir.create(results_dir, recursive=TRUE)
 }
 
-plots_dir <- file.path(analysis_dir, "plots", "gsnca_plots")
+plots_dir <- file.path(analysis_dir, "plots", "gsnca_network_plots")
 if(!dir.exists(plots_dir)){
   dir.create(plots_dir, recursive=TRUE)
 }
@@ -289,7 +291,7 @@ for(i in 1:nrow(cg_gene_interest)){
   
 }
 # write out combined results
-readr::write_tsv(combined_results, file.path(results_dir, "combined_gscna_pathway_analysis.tsv" ))
+readr::write_tsv(combined_results, opt$outfile )
 
 
 

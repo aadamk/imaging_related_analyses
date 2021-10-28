@@ -1,1026 +1,1026 @@
-pathway_id	description	pval	cancer_group	gene_parsed_by
-hsa03030	DNA replication	3.265911374648985e-9	Medullo	SLC1A5
-hsa04110	Cell cycle	4.846547386898159e-9	Medullo	SLC1A5
-hsa04330	Notch signaling pathway	8.516389488907099e-8	Medullo	SLC1A5
-hsa04966	Collecting duct acid secretion	1.330473329874308e-7	Medullo	SLC1A5
-hsa04390	Hippo signaling pathway	1.530277304394119e-7	Medullo	SLC1A5
-hsa04340	Hedgehog signaling pathway	6.92913636501018e-7	EPN	FOLH1
-hsa04974	Protein digestion and absorption	8.027778863567618e-7	Medullo	SLC1A5
-hsa04012	ErbB signaling pathway	8.946713547080231e-7	EPN	FOLH1
-hsa03015	mRNA surveillance pathway	9.035538736752438e-7	Medullo	SLC1A5
-hsa03430	Mismatch repair	1.1893647114584163e-6	Medullo	SLC1A5
-hsa04144	Endocytosis	3.693017761366122e-6	Medullo	SLC1A5
-hsa00601	Glycosphingolipid biosynthesis - lacto and neolacto series	6.0077136775860295e-6	Medullo	SLC1A5
-hsa03040	Spliceosome	1.1489291302729176e-5	Medullo	FOLH1
-hsa00730	Thiamine metabolism	2.790349588671739e-5	Medullo	SLC1A5
-hsa04390	Hippo signaling pathway	3.791561254517771e-5	EPN	FOLH1
-hsa04350	TGF-beta signaling pathway	5.6268008790928296e-5	Medullo	SLC1A5
-hsa04550	Signaling pathways regulating pluripotency of stem cells	5.696416437516023e-5	EPN	FOLH1
-hsa03010	Ribosome	7.647202098488634e-5	Medullo	SLC1A5
-hsa04722	Neurotrophin signaling pathway	8.348645426120223e-5	EPN	FOLH1
-hsa04310	Wnt signaling pathway	1.0538381738149779e-4	Medullo	SLC1A5
-hsa00534	Glycosaminoglycan biosynthesis - heparan sulfate / heparin	1.2519521520649247e-4	Medullo	SLC1A5
-hsa00280	Valine, leucine and isoleucine degradation	1.3496259351128203e-4	Medullo	SLC1A5
-hsa00510	N-Glycan biosynthesis	1.3712359800599724e-4	Medullo	SLC1A5
-hsa03018	RNA degradation	1.5070172336863614e-4	Medullo	SLC1A5
-hsa01212	Fatty acid metabolism	1.6089971811492727e-4	Medullo	SLC1A5
-hsa04962	Vasopressin-regulated water reabsorption	1.731756736328045e-4	Medullo	SLC1A5
-hsa04210	Apoptosis	1.8154970068243523e-4	EPN	FOLH1
-hsa00510	N-Glycan biosynthesis	2.0962234921717836e-4	EPN	FOLH1
-hsa04722	Neurotrophin signaling pathway	2.1732001171459106e-4	Medullo	SLC1A5
-hsa04917	Prolactin signaling pathway	2.2617186203639395e-4	EPN	FOLH1
-hsa04012	ErbB signaling pathway	2.2886707949924522e-4	Medullo	SLC1A5
-hsa04550	Signaling pathways regulating pluripotency of stem cells	2.605571707974252e-4	Medullo	SLC1A5
-hsa04922	Glucagon signaling pathway	3.1073600044776556e-4	Medullo	SLC1A5
-hsa00564	Glycerophospholipid metabolism	3.44893632825821e-4	Medullo	SLC1A5
-hsa04916	Melanogenesis	3.613541190784356e-4	EPN	FOLH1
-hsa04723	Retrograde endocannabinoid signaling	4.3777480234123966e-4	EPN	FOLH1
-hsa00860	Porphyrin and chlorophyll metabolism	4.46605736757688e-4	EPN	FOLH1
-hsa00983	Drug metabolism - other enzymes	4.517427512147957e-4	Medullo	SLC1A5
-hsa03320	PPAR signaling pathway	4.6368465084087253e-4	Medullo	SLC1A5
-hsa04740	Olfactory transduction	5.255737310280469e-4	EPN	FOLH1
-hsa04114	Oocyte meiosis	5.989184225126648e-4	Medullo	SLC1A5
-hsa00640	Propanoate metabolism	6.053041876882335e-4	Medullo	SLC1A5
-hsa04723	Retrograde endocannabinoid signaling	6.350932490457097e-4	Medullo	FOLH1
-hsa00380	Tryptophan metabolism	6.904589912817036e-4	Medullo	SLC1A5
-hsa04750	Inflammatory mediator regulation of TRP channels	7.478658627310651e-4	EPN	FOLH1
-hsa04640	Hematopoietic cell lineage	8.267475160199655e-4	Medullo	SLC1A5
-hsa04916	Melanogenesis	9.203619284937683e-4	Medullo	SLC1A5
-hsa04068	FoxO signaling pathway	9.719836457304714e-4	Medullo	SLC1A5
-hsa00062	Fatty acid elongation	9.776015090726222e-4	EPN	FOLH1
-hsa04530	Tight junction	0.001009425787923924	EPN	SLC1A5
-hsa04010	MAPK signaling pathway	0.0010405114398048454	EPN	FOLH1
-hsa04668	TNF signaling pathway	0.001205317462484547	Medullo	SLC1A5
-hsa00360	Phenylalanine metabolism	0.0013060316324978757	EPN	FOLH1
-hsa00040	Pentose and glucuronate interconversions	0.0013094563713609616	Medullo	SLC1A5
-hsa04666	Fc gamma R-mediated phagocytosis	0.0014156847239715808	Medullo	SLC1A5
-hsa04976	Bile secretion	0.001503397056959433	EPN	FOLH1
-hsa04630	Jak-STAT signaling pathway	0.0015436958153470196	EPN	FOLH1
-hsa00062	Fatty acid elongation	0.00159926075574925	Medullo	SLC1A5
-hsa00052	Galactose metabolism	0.001698973126983455	EPN	FOLH1
-hsa04360	Axon guidance	0.0017397882652661015	Medullo	SLC1A5
-hsa00511	Other glycan degradation	0.0018924972703333266	Medullo	FOLH1
-hsa04810	Regulation of actin cytoskeleton	0.0019511685122398491	Medullo	SLC1A5
-hsa00480	Glutathione metabolism	0.0020505428796142684	Medullo	SLC1A5
-hsa03420	Nucleotide excision repair	0.002188283320326799	EPN	FOLH1
-hsa00565	Ether lipid metabolism	0.0022622334964513204	Medullo	SLC1A5
-hsa03430	Mismatch repair	0.0022689768521402683	EPN	FOLH1
-hsa00010	Glycolysis / Gluconeogenesis	0.002301028821391691	EPN	SLC1A5
-hsa04726	Serotonergic synapse	0.0023693072255397104	ATRT	SLC7A5
-hsa04022	cGMP-PKG signaling pathway	0.0024010883496637827	Medullo	SLC1A5
-hsa00670	One carbon pool by folate	0.002411303067253591	Medullo	SLC1A5
-hsa04340	Hedgehog signaling pathway	0.0024962838777551496	EPN	SLC1A5
-hsa00920	Sulfur metabolism	0.002668592826091	Medullo	SLC1A5
-hsa00280	Valine, leucine and isoleucine degradation	0.0026829755645267107	EPN	FOLH1
-hsa00910	Nitrogen metabolism	0.0026983885384027862	Medullo	SLC1A5
-hsa04975	Fat digestion and absorption	0.00294701114810261	Medullo	SLC1A5
-hsa03013	RNA transport	0.00300100186930629	Medullo	SLC1A5
-hsa04340	Hedgehog signaling pathway	0.0032091334293202502	Medullo	SLC1A5
-hsa04921	Oxytocin signaling pathway	0.003235509326330513	Medullo	SLC1A5
-hsa03040	Spliceosome	0.0032406408882616976	Medullo	SLC1A5
-hsa04120	Ubiquitin mediated proteolysis	0.0032409420955180285	EPN	FOLH1
-hsa04115	p53 signaling pathway	0.003242792514606739	Medullo	SLC1A5
-hsa04919	Thyroid hormone signaling pathway	0.0032741599913759314	EPN	FOLH1
-hsa04713	Circadian entrainment	0.003315604641655041	EPN	FOLH1
-hsa04910	Insulin signaling pathway	0.0035084135771438745	Medullo	SLC1A5
-hsa04917	Prolactin signaling pathway	0.0038444285294881595	EPN	SLC1A5
-hsa00562	Inositol phosphate metabolism	0.004026878529780977	Medullo	SLC1A5
-hsa03010	Ribosome	0.004095919373101838	EPN	SLC1A5
-hsa00562	Inositol phosphate metabolism	0.0041819956145501685	EPN	SLC1A5
-hsa03010	Ribosome	0.004193955090011067	EPN	FOLH1
-hsa00603	Glycosphingolipid biosynthesis - globo series	0.004393205288497302	Medullo	SLC1A5
-hsa04130	SNARE interactions in vesicular transport	0.004637373163613953	EPN	FOLH1
-hsa00230	Purine metabolism	0.004725278806666786	EPN	FOLH1
-hsa04919	Thyroid hormone signaling pathway	0.005110288004847152	EPN	SLC1A5
-hsa00330	Arginine and proline metabolism	0.005126818593737113	Medullo	FOLH1
-hsa00030	Pentose phosphate pathway	0.005314794183022318	Medullo	SLC1A5
-hsa04530	Tight junction	0.005330819485423979	EPN	FOLH1
-hsa00280	Valine, leucine and isoleucine degradation	0.0054144262043776875	EPN	SLC1A5
-hsa04080	Neuroactive ligand-receptor interaction	0.005442552884646036	EPN	SLC1A5
-hsa04064	NF-kappa B signaling pathway	0.005492239958077508	EPN	FOLH1
-hsa04014	Ras signaling pathway	0.005620453635408003	EPN	FOLH1
-hsa04650	Natural killer cell mediated cytotoxicity	0.005660749058259009	Medullo	SLC1A5
-hsa04977	Vitamin digestion and absorption	0.005875828342558859	ATRT	SLC7A5
-hsa04915	Estrogen signaling pathway	0.0060587035393171815	Medullo	SLC1A5
-hsa04713	Circadian entrainment	0.0062778789112327175	Medullo	FOLH1
-hsa04621	NOD-like receptor signaling pathway	0.0062905589334540934	EPN	FOLH1
-hsa00512	Mucin type O-Glycan biosynthesis	0.00657725158844674	ATRT	SLC7A5
-hsa04130	SNARE interactions in vesicular transport	0.006777121093520721	Medullo	FOLH1
-hsa04210	Apoptosis	0.006993253518174741	Medullo	SLC1A5
-hsa04210	Apoptosis	0.007133912827801442	EPN	SLC1A5
-hsa00770	Pantothenate and CoA biosynthesis	0.007155793427906854	EPN	FOLH1
-hsa03060	Protein export	0.007306228799327581	Medullo	SLC1A5
-hsa00533	Glycosaminoglycan biosynthesis - keratan sulfate	0.007350431267859943	EPN	SLC1A5
-hsa04261	Adrenergic signaling in cardiomyocytes	0.007437730637743328	Medullo	FOLH1
-hsa00062	Fatty acid elongation	0.007808062816122929	ATRT	SLC7A5
-hsa04066	HIF-1 signaling pathway	0.007888793416545676	EPN	FOLH1
-hsa04141	Protein processing in endoplasmic reticulum	0.007924012038498313	EPN	FOLH1
-hsa01040	Biosynthesis of unsaturated fatty acids	0.008077410527942131	Medullo	SLC1A5
-hsa04728	Dopaminergic synapse	0.00821605924262393	Medullo	FOLH1
-hsa03440	Homologous recombination	0.008254345797936265	Medullo	SLC1A5
-hsa04921	Oxytocin signaling pathway	0.008399397521288042	EPN	FOLH1
-hsa04270	Vascular smooth muscle contraction	0.00867597951626158	EPN	FOLH1
-hsa04146	Peroxisome	0.00908906105459779	EPN	SLC1A5
-hsa04260	Cardiac muscle contraction	0.009318459407943945	Medullo	FOLH1
-hsa04723	Retrograde endocannabinoid signaling	0.009406345775557674	ATRT	SLC7A5
-hsa04975	Fat digestion and absorption	0.009661544252849619	EPN	FOLH1
-hsa04024	cAMP signaling pathway	0.01004055756336161	EPN	SLC1A5
-hsa04014	Ras signaling pathway	0.010130529823369847	EPN	SLC1A5
-hsa00270	Cysteine and methionine metabolism	0.01021163169628101	Medullo	SLC1A5
-hsa00514	Other types of O-glycan biosynthesis	0.010489391901191502	EPN	SLC1A5
-hsa04530	Tight junction	0.011548176219092356	Medullo	FOLH1
-hsa03420	Nucleotide excision repair	0.01182012384176991	Medullo	SLC1A5
-hsa04145	Phagosome	0.012465333242169063	EPN	FOLH1
-hsa03022	Basal transcription factors	0.012468313765068205	EPN	FOLH1
-hsa00140	Steroid hormone biosynthesis	0.013005753820862768	Medullo	FOLH1
-hsa00640	Propanoate metabolism	0.01315781929658608	ATRT	SLC7A5
-hsa01212	Fatty acid metabolism	0.013467769204284216	ATRT	SLC7A5
-hsa00511	Other glycan degradation	0.014197096183111336	EPN	FOLH1
-hsa04730	Long-term depression	0.014481342856821082	EPN	FOLH1
-hsa00730	Thiamine metabolism	0.015019557129196157	ATRT	SLC7A5
-hsa01210	2-Oxocarboxylic acid metabolism	0.015133174865081844	EPN	FOLH1
-hsa04370	VEGF signaling pathway	0.015738509483428507	ATRT	SLC7A5
-hsa04721	Synaptic vesicle cycle	0.016598527639655393	EPN	FOLH1
-hsa04066	HIF-1 signaling pathway	0.016953868398794553	Medullo	SLC1A5
-hsa00600	Sphingolipid metabolism	0.0170023387739471	Medullo	SLC1A5
-hsa04976	Bile secretion	0.017126679112718538	EPN	SLC1A5
-hsa03040	Spliceosome	0.018338400566150242	EPN	FOLH1
-hsa04390	Hippo signaling pathway	0.01871392089724849	EPN	SLC1A5
-hsa04330	Notch signaling pathway	0.018764644330562498	EPN	FOLH1
-hsa00270	Cysteine and methionine metabolism	0.019321438075617002	EPN	FOLH1
-hsa04070	Phosphatidylinositol signaling system	0.01954780709660235	Medullo	FOLH1
-hsa04922	Glucagon signaling pathway	0.01956684631408335	EPN	SLC1A5
-hsa04380	Osteoclast differentiation	0.020388893814792686	Medullo	SLC1A5
-hsa00511	Other glycan degradation	0.020701588093878003	EPN	SLC1A5
-hsa04662	B cell receptor signaling pathway	0.020712506792744168	Medullo	SLC1A5
-hsa00510	N-Glycan biosynthesis	0.020763313735596332	EPN	SLC1A5
-hsa00900	Terpenoid backbone biosynthesis	0.020916871258226596	ATRT	SLC7A5
-hsa00531	Glycosaminoglycan degradation	0.021656312354973273	EPN	FOLH1
-hsa00860	Porphyrin and chlorophyll metabolism	0.022261713256869924	EPN	SLC1A5
-hsa00140	Steroid hormone biosynthesis	0.022357111198700545	Medullo	SLC1A5
-hsa04650	Natural killer cell mediated cytotoxicity	0.023604831188694973	EPN	SLC1A5
-hsa00591	Linoleic acid metabolism	0.024909750813566157	Medullo	SLC1A5
-hsa04725	Cholinergic synapse	0.024975500777125154	ATRT	SLC7A5
-hsa04911	Insulin secretion	0.025839021469147367	EPN	SLC1A5
-hsa04740	Olfactory transduction	0.026729790878153713	ATRT	SLC7A5
-hsa04640	Hematopoietic cell lineage	0.027008711349446147	EPN	FOLH1
-hsa04668	TNF signaling pathway	0.027044241744576026	EPN	FOLH1
-hsa00590	Arachidonic acid metabolism	0.0270743392860021	ATRT	SLC7A5
-hsa03008	Ribosome biogenesis in eukaryotes	0.02712029122790532	Medullo	SLC1A5
-hsa00563	Glycosylphosphatidylinositol(GPI)-anchor biosynthesis	0.027246290383631445	Medullo	SLC1A5
-hsa03410	Base excision repair	0.028475692541875396	Medullo	SLC1A5
-hsa00532	Glycosaminoglycan biosynthesis - chondroitin sulfate / dermatan sulfate	0.028674652341517833	EPN	FOLH1
-hsa04960	Aldosterone-regulated sodium reabsorption	0.02868970407796434	Medullo	FOLH1
-hsa04141	Protein processing in endoplasmic reticulum	0.028856417151737278	EPN	SLC1A5
-hsa04071	Sphingolipid signaling pathway	0.029052180167624515	EPN	FOLH1
-hsa04973	Carbohydrate digestion and absorption	0.029820508316583016	EPN	SLC1A5
-hsa00640	Propanoate metabolism	0.03067016172168597	EPN	FOLH1
-hsa04918	Thyroid hormone synthesis	0.031136181808218165	Medullo	FOLH1
-hsa00590	Arachidonic acid metabolism	0.03118594514663617	Medullo	FOLH1
-hsa00511	Other glycan degradation	0.032173703593473345	Medullo	SLC1A5
-hsa04727	GABAergic synapse	0.03275717828391747	Medullo	FOLH1
-hsa03410	Base excision repair	0.03344014648281671	Medullo	FOLH1
-hsa04152	AMPK signaling pathway	0.03498190996310975	Medullo	FOLH1
-hsa04064	NF-kappa B signaling pathway	0.03526412971945527	EPN	SLC1A5
-hsa04964	Proximal tubule bicarbonate reclamation	0.03556447321429172	Medullo	SLC1A5
-hsa04724	Glutamatergic synapse	0.03593404130769808	ATRT	SLC7A5
-hsa00052	Galactose metabolism	0.03601454495296684	EPN	SLC1A5
-hsa00670	One carbon pool by folate	0.036745885056790314	ATRT	SLC7A5
-hsa04970	Salivary secretion	0.036922515682520494	Medullo	FOLH1
-hsa00670	One carbon pool by folate	0.036995612873747155	EPN	FOLH1
-hsa00603	Glycosphingolipid biosynthesis - globo series	0.03704682390029252	ATRT	SLC7A5
-hsa02010	ABC transporters	0.03724466628170204	Medullo	SLC1A5
-hsa00380	Tryptophan metabolism	0.03769578579192266	EPN	FOLH1
-hsa04060	Cytokine-cytokine receptor interaction	0.038037452796414524	EPN	FOLH1
-hsa00760	Nicotinate and nicotinamide metabolism	0.03853303422089068	Medullo	SLC1A5
-hsa04024	cAMP signaling pathway	0.04052921809699362	EPN	FOLH1
-hsa03440	Homologous recombination	0.04124598163817401	EPN	FOLH1
-hsa04977	Vitamin digestion and absorption	0.04172236246205483	EPN	FOLH1
-hsa00561	Glycerolipid metabolism	0.04228286054268334	EPN	FOLH1
-hsa04971	Gastric acid secretion	0.04235509818333039	Medullo	SLC1A5
-hsa04142	Lysosome	0.04267356948584858	EPN	FOLH1
-hsa00360	Phenylalanine metabolism	0.043121020077776365	Medullo	SLC1A5
-hsa04010	MAPK signaling pathway	0.044243961010563805	Medullo	SLC1A5
-hsa04962	Vasopressin-regulated water reabsorption	0.04425332362165306	Medullo	FOLH1
-hsa04623	Cytosolic DNA-sensing pathway	0.04474181411677238	Medullo	SLC1A5
-hsa04725	Cholinergic synapse	0.04516802844220546	EPN	FOLH1
-hsa04971	Gastric acid secretion	0.04522307799820282	EPN	FOLH1
-hsa04725	Cholinergic synapse	0.04525531763628147	Medullo	FOLH1
-hsa00565	Ether lipid metabolism	0.04661917145518886	EPN	SLC1A5
-hsa00280	Valine, leucine and isoleucine degradation	0.04701028894351972	Medullo	FOLH1
-hsa04922	Glucagon signaling pathway	0.04766781596686863	Medullo	FOLH1
-hsa00330	Arginine and proline metabolism	0.04987683653312687	EPN	FOLH1
-hsa00120	Primary bile acid biosynthesis	0.05110459519039887	Medullo	FOLH1
-hsa04913	Ovarian steroidogenesis	0.05207959582946519	EPN	FOLH1
-hsa00601	Glycosphingolipid biosynthesis - lacto and neolacto series	0.052474764121079806	Medullo	FOLH1
-hsa04664	Fc epsilon RI signaling pathway	0.05258754452898575	ATRT	SLC7A5
-hsa00380	Tryptophan metabolism	0.053883925374297294	Medullo	FOLH1
-hsa00601	Glycosphingolipid biosynthesis - lacto and neolacto series	0.05454684711952778	EPN	FOLH1
-hsa04742	Taste transduction	0.05588461459669231	Medullo	SLC1A5
-hsa04141	Protein processing in endoplasmic reticulum	0.055992403723834704	Medullo	FOLH1
-hsa00071	Fatty acid degradation	0.05599841298500219	Medullo	SLC1A5
-hsa04713	Circadian entrainment	0.05611098204851463	ATRT	SLC7A5
-hsa00830	Retinol metabolism	0.05637972499039485	Medullo	SLC1A5
-hsa00770	Pantothenate and CoA biosynthesis	0.05667867526314761	ATRT	SLC7A5
-hsa04810	Regulation of actin cytoskeleton	0.05678643234191555	EPN	FOLH1
-hsa00270	Cysteine and methionine metabolism	0.057223635890828344	Medullo	FOLH1
-hsa04911	Insulin secretion	0.05729742679741632	Medullo	FOLH1
-hsa00790	Folate biosynthesis	0.05729776475207445	EPN	SLC1A5
-hsa00514	Other types of O-glycan biosynthesis	0.05815387669163815	EPN	FOLH1
-hsa04915	Estrogen signaling pathway	0.05886916982388756	EPN	SLC1A5
-hsa00760	Nicotinate and nicotinamide metabolism	0.05930447738327742	EPN	SLC1A5
-hsa04140	Regulation of autophagy	0.059478873529155776	ATRT	SLC7A5
-hsa00520	Amino sugar and nucleotide sugar metabolism	0.060388798939810126	EPN	FOLH1
-hsa00640	Propanoate metabolism	0.060598275537183444	EPN	SLC1A5
-hsa04062	Chemokine signaling pathway	0.062325280018097014	Medullo	SLC1A5
-hsa01212	Fatty acid metabolism	0.0623759479896752	Medullo	FOLH1
-hsa04728	Dopaminergic synapse	0.06264828768471853	ATRT	SLC7A5
-hsa04114	Oocyte meiosis	0.06298376401265858	ATRT	SLC7A5
-hsa00230	Purine metabolism	0.06371075339611713	EPN	SLC1A5
-hsa03022	Basal transcription factors	0.06516106778635211	Medullo	FOLH1
-hsa04920	Adipocytokine signaling pathway	0.06539564892777214	EPN	FOLH1
-hsa00512	Mucin type O-Glycan biosynthesis	0.06647061252333487	Medullo	SLC1A5
-hsa04722	Neurotrophin signaling pathway	0.06682322840242506	EPN	SLC1A5
-hsa00592	alpha-Linolenic acid metabolism	0.06683764083554809	Medullo	SLC1A5
-hsa00910	Nitrogen metabolism	0.06832047190670805	EPN	SLC1A5
-hsa04015	Rap1 signaling pathway	0.06890825230043741	EPN	FOLH1
-hsa04725	Cholinergic synapse	0.07001917053821363	Medullo	SLC1A5
-hsa04960	Aldosterone-regulated sodium reabsorption	0.070359252388367155	EPN	SLC1A5
-hsa00190	Oxidative phosphorylation	0.07115789840297924	Medullo	FOLH1
-hsa00760	Nicotinate and nicotinamide metabolism	0.0724840774766709	EPN	FOLH1
-hsa00051	Fructose and mannose metabolism	0.073048526331452715	Medullo	SLC1A5
-hsa04913	Ovarian steroidogenesis	0.07311305779884472	Medullo	FOLH1
-hsa04620	Toll-like receptor signaling pathway	0.07361019944612729	Medullo	SLC1A5
-hsa00310	Lysine degradation	0.07541673849373291	Medullo	FOLH1
-hsa00534	Glycosaminoglycan biosynthesis - heparan sulfate / heparin	0.07543243672289067	Medullo	FOLH1
-hsa04020	Calcium signaling pathway	0.07560828869769523	Medullo	FOLH1
-hsa00982	Drug metabolism - cytochrome P450	0.07587989755663717	EPN	FOLH1
-hsa00350	Tyrosine metabolism	0.07622518485232885	EPN	FOLH1
-hsa00520	Amino sugar and nucleotide sugar metabolism	0.07706169649826872	EPN	SLC1A5
-hsa00590	Arachidonic acid metabolism	0.07714567226730584	EPN	FOLH1
-hsa00564	Glycerophospholipid metabolism	0.07714725098232272	EPN	FOLH1
-hsa00970	Aminoacyl-tRNA biosynthesis	0.07805506639689393	EPN	SLC1A5
-hsa04742	Taste transduction	0.07817440226493572	EPN	FOLH1
-hsa04713	Circadian entrainment	0.07878009229485507	EPN	SLC1A5
-hsa04360	Axon guidance	0.08064905737496782	EPN	SLC1A5
-hsa04142	Lysosome	0.08070185643873658	ATRT	SLC7A5
-hsa03015	mRNA surveillance pathway	0.08123661477851789	EPN	FOLH1
-hsa03450	Non-homologous end-joining	0.08234895759790566	ATRT	SLC7A5
-hsa00514	Other types of O-glycan biosynthesis	0.08242227535229923	ATRT	SLC7A5
-hsa00920	Sulfur metabolism	0.08281338438029189	Medullo	FOLH1
-hsa01200	Carbon metabolism	0.08286853791676638	EPN	SLC1A5
-hsa04612	Antigen processing and presentation	0.08322473127248535	EPN	FOLH1
-hsa04977	Vitamin digestion and absorption	0.08334030795035711	EPN	SLC1A5
-hsa03022	Basal transcription factors	0.08356655236685023	Medullo	SLC1A5
-hsa04012	ErbB signaling pathway	0.08362909126714115	EPN	SLC1A5
-hsa04370	VEGF signaling pathway	0.08450220672376312	EPN	FOLH1
-hsa04740	Olfactory transduction	0.08776403199868882	EPN	SLC1A5
-hsa04014	Ras signaling pathway	0.08785218106286577	ATRT	SLC7A5
-hsa04146	Peroxisome	0.08795192113795942	Medullo	SLC1A5
-hsa04662	B cell receptor signaling pathway	0.0882861341381987	EPN	SLC1A5
-hsa04622	RIG-I-like receptor signaling pathway	0.08844705088202696	EPN	FOLH1
-hsa00140	Steroid hormone biosynthesis	0.08903249521889217	EPN	FOLH1
-hsa00562	Inositol phosphate metabolism	0.08935590876871305	Medullo	FOLH1
-hsa04611	Platelet activation	0.09077404195268222	ATRT	SLC7A5
-hsa04370	VEGF signaling pathway	0.090808888183051	Medullo	FOLH1
-hsa04660	T cell receptor signaling pathway	0.09154525056218196	Medullo	SLC1A5
-hsa04974	Protein digestion and absorption	0.09299394306902291	EPN	SLC1A5
-hsa04022	cGMP-PKG signaling pathway	0.09348860778446899	Medullo	FOLH1
-hsa04966	Collecting duct acid secretion	0.09428066239352338	EPN	SLC1A5
-hsa04310	Wnt signaling pathway	0.09617107057294928	ATRT	SLC7A5
-hsa04141	Protein processing in endoplasmic reticulum	0.09633413196870126	ATRT	SLC7A5
-hsa04914	Progesterone-mediated oocyte maturation	0.0969855514988446	Medullo	SLC1A5
-hsa04310	Wnt signaling pathway	0.09769089205408152	EPN	FOLH1
-hsa04622	RIG-I-like receptor signaling pathway	0.09802842600018179	Medullo	FOLH1
-hsa00591	Linoleic acid metabolism	0.09929918966459997	Medullo	FOLH1
-hsa04142	Lysosome	0.09971351288808354	EPN	SLC1A5
-hsa01040	Biosynthesis of unsaturated fatty acids	0.10017721868021352	ATRT	SLC7A5
-hsa00100	Steroid biosynthesis	0.10047895354547656	Medullo	SLC1A5
-hsa04611	Platelet activation	0.10059022904882513	Medullo	SLC1A5
-hsa04510	Focal adhesion	0.10070382098370555	EPN	FOLH1
-hsa00010	Glycolysis / Gluconeogenesis	0.10104779132130416	Medullo	SLC1A5
-hsa04966	Collecting duct acid secretion	0.10162365412310204	EPN	FOLH1
-hsa04142	Lysosome	0.10257446986278561	Medullo	SLC1A5
-hsa00561	Glycerolipid metabolism	0.10277409201955642	ATRT	SLC7A5
-hsa04962	Vasopressin-regulated water reabsorption	0.10320218259036555	EPN	SLC1A5
-hsa00500	Starch and sucrose metabolism	0.10324318630479624	EPN	FOLH1
-hsa00982	Drug metabolism - cytochrome P450	0.10344671943416582	EPN	SLC1A5
-hsa04062	Chemokine signaling pathway	0.10493149148980929	ATRT	SLC7A5
-hsa04912	GnRH signaling pathway	0.10552176721855813	Medullo	SLC1A5
-hsa03013	RNA transport	0.10574101580272373	EPN	FOLH1
-hsa04014	Ras signaling pathway	0.10581497497146664	Medullo	SLC1A5
-hsa00260	Glycine, serine and threonine metabolism	0.10686110802060365	ATRT	SLC7A5
-hsa04120	Ubiquitin mediated proteolysis	0.10828637269818922	EPN	SLC1A5
-hsa04062	Chemokine signaling pathway	0.10829328564002502	EPN	FOLH1
-hsa00061	Fatty acid biosynthesis	0.10936630265450248	Medullo	FOLH1
-hsa04977	Vitamin digestion and absorption	0.11022752608037654	Medullo	FOLH1
-hsa04070	Phosphatidylinositol signaling system	0.11024371079910789	EPN	SLC1A5
-hsa04370	VEGF signaling pathway	0.11102814340629809	EPN	SLC1A5
-hsa03022	Basal transcription factors	0.11114069314531835	ATRT	SLC7A5
-hsa04921	Oxytocin signaling pathway	0.1119275858204143	ATRT	SLC7A5
-hsa00770	Pantothenate and CoA biosynthesis	0.11333191282223348	EPN	SLC1A5
-hsa00450	Selenocompound metabolism	0.11387700164543066	Medullo	FOLH1
-hsa04662	B cell receptor signaling pathway	0.11421866099110813	Medullo	FOLH1
-hsa03008	Ribosome biogenesis in eukaryotes	0.11450300430853504	EPN	SLC1A5
-hsa04920	Adipocytokine signaling pathway	0.11454716165303898	Medullo	SLC1A5
-hsa04330	Notch signaling pathway	0.11465348059458096	EPN	SLC1A5
-hsa04350	TGF-beta signaling pathway	0.11510519323574507	ATRT	SLC7A5
-hsa00532	Glycosaminoglycan biosynthesis - chondroitin sulfate / dermatan sulfate	0.11522466389311224	Medullo	FOLH1
-hsa00100	Steroid biosynthesis	0.11594538898752901	ATRT	SLC7A5
-hsa04360	Axon guidance	0.11598078851084485	EPN	FOLH1
-hsa04972	Pancreatic secretion	0.11600543131063494	Medullo	FOLH1
-hsa00071	Fatty acid degradation	0.11702774319406434	ATRT	SLC7A5
-hsa03420	Nucleotide excision repair	0.11705053673741304	ATRT	SLC7A5
-hsa04514	Cell adhesion molecules (CAMs)	0.11759089953963861	Medullo	FOLH1
-hsa04140	Regulation of autophagy	0.11779024289376014	Medullo	SLC1A5
-hsa04971	Gastric acid secretion	0.11812060534872013	EPN	SLC1A5
-hsa01040	Biosynthesis of unsaturated fatty acids	0.11890033649961637	EPN	FOLH1
-hsa00010	Glycolysis / Gluconeogenesis	0.11928216448373945	EPN	FOLH1
-hsa00360	Phenylalanine metabolism	0.11999655816253307	ATRT	SLC7A5
-hsa04727	GABAergic synapse	0.12047487904335874	ATRT	SLC7A5
-hsa04380	Osteoclast differentiation	0.12091366571493503	EPN	SLC1A5
-hsa00072	Synthesis and degradation of ketone bodies	0.12261451689383601	Medullo	SLC1A5
-hsa00500	Starch and sucrose metabolism	0.12362948443130957	EPN	SLC1A5
-hsa04710	Circadian rhythm	0.12620981795417135	EPN	SLC1A5
-hsa04151	PI3K-Akt signaling pathway	0.12639595664257042	Medullo	SLC1A5
-hsa04913	Ovarian steroidogenesis	0.12992231055729728	ATRT	SLC7A5
-hsa00604	Glycosphingolipid biosynthesis - ganglio series	0.13019061041335558	EPN	SLC1A5
-hsa04664	Fc epsilon RI signaling pathway	0.1306805790871489	Medullo	SLC1A5
-hsa03030	DNA replication	0.13109166231264338	EPN	FOLH1
-hsa04614	Renin-angiotensin system	0.13241460562439464	ATRT	SLC7A5
-hsa04260	Cardiac muscle contraction	0.13259016944273178	Medullo	SLC1A5
-hsa00561	Glycerolipid metabolism	0.13558874592614012	EPN	SLC1A5
-hsa04270	Vascular smooth muscle contraction	0.13612346866640537	EPN	SLC1A5
-hsa00620	Pyruvate metabolism	0.1364218634682497	ATRT	SLC7A5
-hsa04152	AMPK signaling pathway	0.13643575899070742	EPN	FOLH1
-hsa00040	Pentose and glucuronate interconversions	0.13687581564722281	EPN	SLC1A5
-hsa00270	Cysteine and methionine metabolism	0.1376799519291915	ATRT	SLC7A5
-hsa04913	Ovarian steroidogenesis	0.13803467524031826	Medullo	SLC1A5
-hsa04977	Vitamin digestion and absorption	0.13880125005580415	Medullo	SLC1A5
-hsa04020	Calcium signaling pathway	0.1389133367325604	EPN	FOLH1
-hsa00030	Pentose phosphate pathway	0.14022484980907363	EPN	SLC1A5
-hsa00565	Ether lipid metabolism	0.1418497446230787	ATRT	SLC7A5
-hsa04970	Salivary secretion	0.14274799658486456	Medullo	SLC1A5
-hsa00980	Metabolism of xenobiotics by cytochrome P450	0.1430612974434749	EPN	SLC1A5
-hsa04611	Platelet activation	0.14441929574978363	EPN	FOLH1
-hsa00740	Riboflavin metabolism	0.1447986127154664	EPN	SLC1A5
-hsa00790	Folate biosynthesis	0.14487738820604434	EPN	FOLH1
-hsa00534	Glycosaminoglycan biosynthesis - heparan sulfate / heparin	0.14506833035061234	EPN	FOLH1
-hsa04978	Mineral absorption	0.14536497568772613	EPN	SLC1A5
-hsa04320	Dorso-ventral axis formation	0.14605131707760038	EPN	SLC1A5
-hsa04510	Focal adhesion	0.14632436730746906	ATRT	SLC7A5
-hsa04912	GnRH signaling pathway	0.14977275665268594	EPN	FOLH1
-hsa04664	Fc epsilon RI signaling pathway	0.15092648738548511	EPN	FOLH1
-hsa00630	Glyoxylate and dicarboxylate metabolism	0.1511839113575657	EPN	SLC1A5
-hsa01200	Carbon metabolism	0.15175275208183742	EPN	FOLH1
-hsa04261	Adrenergic signaling in cardiomyocytes	0.15333666872823012	Medullo	SLC1A5
-hsa04145	Phagosome	0.15391788583165464	Medullo	SLC1A5
-hsa00760	Nicotinate and nicotinamide metabolism	0.15481898313415343	ATRT	SLC7A5
-hsa03020	RNA polymerase	0.15659903560384986	EPN	SLC1A5
-hsa00500	Starch and sucrose metabolism	0.15696035729672378	Medullo	SLC1A5
-hsa03440	Homologous recombination	0.15910403935625342	Medullo	FOLH1
-hsa01200	Carbon metabolism	0.1598006752426384	ATRT	SLC7A5
-hsa04911	Insulin secretion	0.16072329830408622	EPN	FOLH1
-hsa04666	Fc gamma R-mediated phagocytosis	0.16190362551145634	Medullo	FOLH1
-hsa04520	Adherens junction	0.16382277098876255	EPN	SLC1A5
-hsa00740	Riboflavin metabolism	0.1640932505631843	ATRT	SLC7A5
-hsa04080	Neuroactive ligand-receptor interaction	0.1658675970230704	Medullo	SLC1A5
-hsa04350	TGF-beta signaling pathway	0.1663641992513019	EPN	FOLH1
-hsa00500	Starch and sucrose metabolism	0.16654067089984084	ATRT	SLC7A5
-hsa04721	Synaptic vesicle cycle	0.1680243213500749	Medullo	FOLH1
-hsa04614	Renin-angiotensin system	0.16927096313215015	Medullo	FOLH1
-hsa00450	Selenocompound metabolism	0.17008323360737695	Medullo	SLC1A5
-hsa00533	Glycosaminoglycan biosynthesis - keratan sulfate	0.17094706778051094	Medullo	SLC1A5
-hsa00410	beta-Alanine metabolism	0.1712023834880566	Medullo	SLC1A5
-hsa03050	Proteasome	0.17131204018816226	EPN	FOLH1
-hsa03060	Protein export	0.1729878064678233	EPN	FOLH1
-hsa00533	Glycosaminoglycan biosynthesis - keratan sulfate	0.17299639471244246	EPN	FOLH1
-hsa00562	Inositol phosphate metabolism	0.1741894840513606	ATRT	SLC7A5
-hsa00061	Fatty acid biosynthesis	0.17439544098511411	ATRT	SLC7A5
-hsa04015	Rap1 signaling pathway	0.17571477340001157	Medullo	SLC1A5
-hsa00650	Butanoate metabolism	0.17613470723141703	EPN	FOLH1
-hsa04917	Prolactin signaling pathway	0.17613870626376948	Medullo	SLC1A5
-hsa04710	Circadian rhythm	0.17891835031789877	ATRT	SLC7A5
-hsa04540	Gap junction	0.17995403585199227	EPN	SLC1A5
-hsa03450	Non-homologous end-joining	0.18064952382058158	Medullo	FOLH1
-hsa04612	Antigen processing and presentation	0.18123784125953485	Medullo	FOLH1
-hsa04610	Complement and coagulation cascades	0.18190242476537208	ATRT	SLC7A5
-hsa00533	Glycosaminoglycan biosynthesis - keratan sulfate	0.18226547781304164	ATRT	SLC7A5
-hsa04370	VEGF signaling pathway	0.1833487931875257	Medullo	SLC1A5
-hsa00534	Glycosaminoglycan biosynthesis - heparan sulfate / heparin	0.1844354228548026	ATRT	SLC7A5
-hsa00970	Aminoacyl-tRNA biosynthesis	0.1844755024751976	Medullo	FOLH1
-hsa04964	Proximal tubule bicarbonate reclamation	0.18449788064490863	ATRT	SLC7A5
-hsa00120	Primary bile acid biosynthesis	0.18681504881847247	EPN	SLC1A5
-hsa00670	One carbon pool by folate	0.18711562134507348	EPN	SLC1A5
-hsa00130	Ubiquinone and other terpenoid-quinone biosynthesis	0.18719320574020523	Medullo	SLC1A5
-hsa00790	Folate biosynthesis	0.1882765306048718	ATRT	SLC7A5
-hsa00970	Aminoacyl-tRNA biosynthesis	0.18898095540383197	EPN	FOLH1
-hsa04660	T cell receptor signaling pathway	0.18970147752641456	Medullo	FOLH1
-hsa00532	Glycosaminoglycan biosynthesis - chondroitin sulfate / dermatan sulfate	0.19004410271376304	Medullo	SLC1A5
-hsa04971	Gastric acid secretion	0.19078750809555287	Medullo	FOLH1
-hsa04750	Inflammatory mediator regulation of TRP channels	0.1917888070184742	Medullo	SLC1A5
-hsa00650	Butanoate metabolism	0.1921672633772318	Medullo	SLC1A5
-hsa04740	Olfactory transduction	0.19219159791815776	Medullo	SLC1A5
-hsa04662	B cell receptor signaling pathway	0.1922544447151312	EPN	FOLH1
-hsa04666	Fc gamma R-mediated phagocytosis	0.19356506295593998	EPN	SLC1A5
-hsa04550	Signaling pathways regulating pluripotency of stem cells	0.19410783140569793	EPN	SLC1A5
-hsa04080	Neuroactive ligand-receptor interaction	0.1963821451803464	Medullo	FOLH1
-hsa00604	Glycosphingolipid biosynthesis - ganglio series	0.1971234263634353	EPN	FOLH1
-hsa04722	Neurotrophin signaling pathway	0.19767627973401464	Medullo	FOLH1
-hsa00071	Fatty acid degradation	0.1976909712849388	EPN	SLC1A5
-hsa04721	Synaptic vesicle cycle	0.19799441630403297	EPN	SLC1A5
-hsa04141	Protein processing in endoplasmic reticulum	0.2015362401206135	Medullo	SLC1A5
-hsa00590	Arachidonic acid metabolism	0.20248021329619764	Medullo	SLC1A5
-hsa00900	Terpenoid backbone biosynthesis	0.20363711853562066	Medullo	SLC1A5
-hsa01040	Biosynthesis of unsaturated fatty acids	0.20507083355650593	EPN	SLC1A5
-hsa04330	Notch signaling pathway	0.20543667334358964	ATRT	SLC7A5
-hsa00533	Glycosaminoglycan biosynthesis - keratan sulfate	0.20668828681773332	Medullo	FOLH1
-hsa00360	Phenylalanine metabolism	0.20928550028201018	EPN	SLC1A5
-hsa00970	Aminoacyl-tRNA biosynthesis	0.20981266692913605	ATRT	SLC7A5
-hsa00260	Glycine, serine and threonine metabolism	0.21080176998956338	Medullo	FOLH1
-hsa03320	PPAR signaling pathway	0.21145982678958877	EPN	SLC1A5
-hsa00592	alpha-Linolenic acid metabolism	0.2122330401533515	Medullo	FOLH1
-hsa00010	Glycolysis / Gluconeogenesis	0.21270343947405557	ATRT	SLC7A5
-hsa04622	RIG-I-like receptor signaling pathway	0.21272004906156164	EPN	SLC1A5
-hsa04922	Glucagon signaling pathway	0.21280028927806569	EPN	FOLH1
-hsa04261	Adrenergic signaling in cardiomyocytes	0.21378087735726145	EPN	SLC1A5
-hsa00600	Sphingolipid metabolism	0.21455175234112667	ATRT	SLC7A5
-hsa04668	TNF signaling pathway	0.2157055346819634	Medullo	FOLH1
-hsa00670	One carbon pool by folate	0.21650178280307764	Medullo	FOLH1
-hsa04066	HIF-1 signaling pathway	0.21740983639272085	EPN	SLC1A5
-hsa04614	Renin-angiotensin system	0.21802857492901523	Medullo	SLC1A5
-hsa00730	Thiamine metabolism	0.21987314598954397	Medullo	FOLH1
-hsa00350	Tyrosine metabolism	0.22102526281540805	EPN	SLC1A5
-hsa03018	RNA degradation	0.2215314547431135	EPN	FOLH1
-hsa00591	Linoleic acid metabolism	0.2240295785535702	ATRT	SLC7A5
-hsa00330	Arginine and proline metabolism	0.2262318756643382	ATRT	SLC7A5
-hsa04350	TGF-beta signaling pathway	0.22641987860565918	Medullo	FOLH1
-hsa00730	Thiamine metabolism	0.22642559205704674	EPN	FOLH1
-hsa04144	Endocytosis	0.22674477322702127	Medullo	FOLH1
-hsa04146	Peroxisome	0.22702835464475407	ATRT	SLC7A5
-hsa00062	Fatty acid elongation	0.22706872615617368	Medullo	FOLH1
-hsa00562	Inositol phosphate metabolism	0.2283434736059518	EPN	FOLH1
-hsa00603	Glycosphingolipid biosynthesis - globo series	0.23099484343716045	EPN	SLC1A5
-hsa04710	Circadian rhythm	0.23113673577499252	EPN	FOLH1
-hsa04672	Intestinal immune network for IgA production	0.23305892957834276	EPN	SLC1A5
-hsa04150	mTOR signaling pathway	0.2367147620020456	EPN	SLC1A5
-hsa03060	Protein export	0.23795992832770552	EPN	SLC1A5
-hsa04530	Tight junction	0.24172345344267893	Medullo	SLC1A5
-hsa04510	Focal adhesion	0.24414339144924155	Medullo	SLC1A5
-hsa00600	Sphingolipid metabolism	0.24485821739429683	Medullo	FOLH1
-hsa00052	Galactose metabolism	0.24680829506341528	ATRT	SLC7A5
-hsa00051	Fructose and mannose metabolism	0.2473957577221001	Medullo	FOLH1
-hsa04727	GABAergic synapse	0.2504655499149548	EPN	FOLH1
-hsa04080	Neuroactive ligand-receptor interaction	0.2513733714175042	EPN	FOLH1
-hsa04120	Ubiquitin mediated proteolysis	0.2524149615710588	Medullo	FOLH1
-hsa04120	Ubiquitin mediated proteolysis	0.2537244100890834	ATRT	SLC7A5
-hsa00190	Oxidative phosphorylation	0.2538426898758393	ATRT	SLC7A5
-hsa00982	Drug metabolism - cytochrome P450	0.25410570662253845	Medullo	FOLH1
-hsa04020	Calcium signaling pathway	0.2568738087606625	ATRT	SLC7A5
-hsa04973	Carbohydrate digestion and absorption	0.2596274913208575	EPN	FOLH1
-hsa04911	Insulin secretion	0.26161142456448605	Medullo	SLC1A5
-hsa04150	mTOR signaling pathway	0.2620498295647679	Medullo	SLC1A5
-hsa03020	RNA polymerase	0.26233204383809966	ATRT	SLC7A5
-hsa04611	Platelet activation	0.2630183372082612	Medullo	FOLH1
-hsa00531	Glycosaminoglycan degradation	0.2634413901959187	Medullo	SLC1A5
-hsa04070	Phosphatidylinositol signaling system	0.2642175504417037	EPN	FOLH1
-hsa00071	Fatty acid degradation	0.2658439498035254	Medullo	FOLH1
-hsa04330	Notch signaling pathway	0.26765946739702284	Medullo	FOLH1
-hsa04144	Endocytosis	0.2689290357673533	ATRT	SLC7A5
-hsa04960	Aldosterone-regulated sodium reabsorption	0.26899843308290483	EPN	FOLH1
-hsa00640	Propanoate metabolism	0.27124979642877256	Medullo	FOLH1
-hsa04520	Adherens junction	0.27262748168364176	Medullo	FOLH1
-hsa03320	PPAR signaling pathway	0.2734813458892903	Medullo	FOLH1
-hsa00510	N-Glycan biosynthesis	0.27349817649855845	Medullo	FOLH1
-hsa04910	Insulin signaling pathway	0.274068359703167	Medullo	FOLH1
-hsa00650	Butanoate metabolism	0.2743462001023708	ATRT	SLC7A5
-hsa03008	Ribosome biogenesis in eukaryotes	0.2749194018642124	ATRT	SLC7A5
-hsa04960	Aldosterone-regulated sodium reabsorption	0.27579154004983875	Medullo	SLC1A5
-hsa04730	Long-term depression	0.27595361702280163	EPN	SLC1A5
-hsa03015	mRNA surveillance pathway	0.27736601971797853	Medullo	FOLH1
-hsa04726	Serotonergic synapse	0.2777283162487329	Medullo	FOLH1
-hsa00240	Pyrimidine metabolism	0.2805209806122317	EPN	SLC1A5
-hsa04022	cGMP-PKG signaling pathway	0.28101078240017596	EPN	SLC1A5
-hsa00592	alpha-Linolenic acid metabolism	0.2823723295527192	ATRT	SLC7A5
-hsa04742	Taste transduction	0.2835228646856918	EPN	SLC1A5
-hsa04978	Mineral absorption	0.2838426597077146	Medullo	SLC1A5
-hsa03015	mRNA surveillance pathway	0.284483826722743	EPN	SLC1A5
-hsa04080	Neuroactive ligand-receptor interaction	0.28467471351347706	ATRT	SLC7A5
-hsa04724	Glutamatergic synapse	0.28476981154231884	Medullo	FOLH1
-hsa04728	Dopaminergic synapse	0.28563170892687373	EPN	FOLH1
-hsa04962	Vasopressin-regulated water reabsorption	0.2857526762185253	EPN	FOLH1
-hsa04512	ECM-receptor interaction	0.28622325374737406	EPN	SLC1A5
-hsa04972	Pancreatic secretion	0.28757095525149395	ATRT	SLC7A5
-hsa00061	Fatty acid biosynthesis	0.28780967633212456	EPN	FOLH1
-hsa01200	Carbon metabolism	0.28836106102083353	Medullo	SLC1A5
-hsa00480	Glutathione metabolism	0.2891454231834226	EPN	SLC1A5
-hsa04976	Bile secretion	0.2900368162956362	Medullo	FOLH1
-hsa04140	Regulation of autophagy	0.29013893971482835	EPN	SLC1A5
-hsa04012	ErbB signaling pathway	0.29273386681981917	Medullo	FOLH1
-hsa04614	Renin-angiotensin system	0.29395520191905705	EPN	FOLH1
-hsa04623	Cytosolic DNA-sensing pathway	0.2945727074625059	EPN	SLC1A5
-hsa00561	Glycerolipid metabolism	0.29515489491145763	Medullo	SLC1A5
-hsa04912	GnRH signaling pathway	0.29593097520126727	ATRT	SLC7A5
-hsa00030	Pentose phosphate pathway	0.30004872241128716	ATRT	SLC7A5
-hsa03050	Proteasome	0.30416659477563107	EPN	SLC1A5
-hsa03018	RNA degradation	0.3043801798754394	EPN	SLC1A5
-hsa00620	Pyruvate metabolism	0.30508861736909726	EPN	FOLH1
-hsa03020	RNA polymerase	0.3061064019955467	Medullo	FOLH1
-hsa02010	ABC transporters	0.3077472648817586	EPN	FOLH1
-hsa00520	Amino sugar and nucleotide sugar metabolism	0.30822910335280523	Medullo	SLC1A5
-hsa00601	Glycosphingolipid biosynthesis - lacto and neolacto series	0.308296341434219	EPN	SLC1A5
-hsa04152	AMPK signaling pathway	0.3083891593513129	Medullo	SLC1A5
-hsa04970	Salivary secretion	0.30996255719388655	EPN	SLC1A5
-hsa01230	Biosynthesis of amino acids	0.31024783674657214	Medullo	SLC1A5
-hsa00410	beta-Alanine metabolism	0.31226525499630264	EPN	FOLH1
-hsa04620	Toll-like receptor signaling pathway	0.31368784638928915	EPN	FOLH1
-hsa04919	Thyroid hormone signaling pathway	0.31371189365771096	Medullo	FOLH1
-hsa00020	Citrate cycle (TCA cycle)	0.31547829387423265	EPN	SLC1A5
-hsa00980	Metabolism of xenobiotics by cytochrome P450	0.3180894622762007	Medullo	SLC1A5
-hsa04964	Proximal tubule bicarbonate reclamation	0.3181300354643557	EPN	SLC1A5
-hsa04916	Melanogenesis	0.31875010717359414	Medullo	FOLH1
-hsa04340	Hedgehog signaling pathway	0.31961285551332647	Medullo	FOLH1
-hsa04713	Circadian entrainment	0.31972883269707686	Medullo	SLC1A5
-hsa04810	Regulation of actin cytoskeleton	0.3203452880163131	EPN	SLC1A5
-hsa00531	Glycosaminoglycan degradation	0.3218613232840701	ATRT	SLC7A5
-hsa04540	Gap junction	0.322036112853599	Medullo	SLC1A5
-hsa04150	mTOR signaling pathway	0.3244197145161686	ATRT	SLC7A5
-hsa04621	NOD-like receptor signaling pathway	0.3246248552701173	Medullo	FOLH1
-hsa00260	Glycine, serine and threonine metabolism	0.32720656692376504	Medullo	SLC1A5
-hsa00860	Porphyrin and chlorophyll metabolism	0.327242987520051	Medullo	SLC1A5
-hsa04151	PI3K-Akt signaling pathway	0.32937069891435977	Medullo	FOLH1
-hsa04070	Phosphatidylinositol signaling system	0.330702120560625	Medullo	SLC1A5
-hsa04010	MAPK signaling pathway	0.3327696601228902	EPN	SLC1A5
-hsa04721	Synaptic vesicle cycle	0.33356745376048924	Medullo	SLC1A5
-hsa00051	Fructose and mannose metabolism	0.3344704317770084	ATRT	SLC7A5
-hsa01040	Biosynthesis of unsaturated fatty acids	0.33748864696117087	Medullo	FOLH1
-hsa04110	Cell cycle	0.33864913656381934	Medullo	FOLH1
-hsa04130	SNARE interactions in vesicular transport	0.33903627375353507	Medullo	SLC1A5
-hsa00900	Terpenoid backbone biosynthesis	0.33948929254560634	Medullo	FOLH1
-hsa03410	Base excision repair	0.3395706284003721	ATRT	SLC7A5
-hsa03410	Base excision repair	0.34024100808767277	EPN	FOLH1
-hsa00982	Drug metabolism - cytochrome P450	0.3406801095198094	Medullo	SLC1A5
-hsa04612	Antigen processing and presentation	0.34257355747202767	ATRT	SLC7A5
-hsa04920	Adipocytokine signaling pathway	0.3432022123124659	ATRT	SLC7A5
-hsa00740	Riboflavin metabolism	0.3436843970464254	EPN	FOLH1
-hsa04630	Jak-STAT signaling pathway	0.34503823478387907	EPN	SLC1A5
-hsa04960	Aldosterone-regulated sodium reabsorption	0.34568850768005827	ATRT	SLC7A5
-hsa04921	Oxytocin signaling pathway	0.3474035898627452	Medullo	FOLH1
-hsa00062	Fatty acid elongation	0.34744311824664487	EPN	SLC1A5
-hsa04151	PI3K-Akt signaling pathway	0.3485236021213965	ATRT	SLC7A5
-hsa03450	Non-homologous end-joining	0.3499806692217049	EPN	FOLH1
-hsa00130	Ubiquinone and other terpenoid-quinone biosynthesis	0.3525011407477048	EPN	FOLH1
-hsa03460	Fanconi anemia pathway	0.35258819046451206	Medullo	SLC1A5
-hsa03040	Spliceosome	0.35334513900979636	ATRT	SLC7A5
-hsa04724	Glutamatergic synapse	0.35389191457185787	EPN	SLC1A5
-hsa00600	Sphingolipid metabolism	0.3564269196148775	EPN	FOLH1
-hsa04270	Vascular smooth muscle contraction	0.35812157335299444	ATRT	SLC7A5
-hsa04727	GABAergic synapse	0.3591380083537017	EPN	SLC1A5
-hsa04728	Dopaminergic synapse	0.35958374718971764	Medullo	SLC1A5
-hsa00910	Nitrogen metabolism	0.3600359074105771	Medullo	FOLH1
-hsa04918	Thyroid hormone synthesis	0.3600731708100468	ATRT	SLC7A5
-hsa04961	Endocrine and other factor-regulated calcium reabsorption	0.3603987925422182	EPN	SLC1A5
-hsa04510	Focal adhesion	0.3623680935380341	Medullo	FOLH1
-hsa04260	Cardiac muscle contraction	0.36410730498665034	EPN	SLC1A5
-hsa04742	Taste transduction	0.36503661591665804	Medullo	FOLH1
-hsa00190	Oxidative phosphorylation	0.36720772496960397	EPN	SLC1A5
-hsa04710	Circadian rhythm	0.36738389179801956	Medullo	SLC1A5
-hsa00512	Mucin type O-Glycan biosynthesis	0.3700282098141875	EPN	SLC1A5
-hsa04514	Cell adhesion molecules (CAMs)	0.37025491251342496	ATRT	SLC7A5
-hsa00340	Histidine metabolism	0.3707781462272767	Medullo	FOLH1
-hsa04961	Endocrine and other factor-regulated calcium reabsorption	0.3722228295963934	Medullo	FOLH1
-hsa04964	Proximal tubule bicarbonate reclamation	0.37272656528680437	Medullo	FOLH1
-hsa04973	Carbohydrate digestion and absorption	0.3728175949709406	ATRT	SLC7A5
-hsa04660	T cell receptor signaling pathway	0.3731180600008861	EPN	FOLH1
-hsa00980	Metabolism of xenobiotics by cytochrome P450	0.3739985914212506	ATRT	SLC7A5
-hsa00260	Glycine, serine and threonine metabolism	0.3749196081341537	EPN	SLC1A5
-hsa01210	2-Oxocarboxylic acid metabolism	0.37580688388793304	Medullo	SLC1A5
-hsa02010	ABC transporters	0.3767045475433256	EPN	SLC1A5
-hsa03320	PPAR signaling pathway	0.3768294944077981	EPN	FOLH1
-hsa04721	Synaptic vesicle cycle	0.378651967284664	ATRT	SLC7A5
-hsa04146	Peroxisome	0.38012766635545436	Medullo	FOLH1
-hsa00240	Pyrimidine metabolism	0.3806145643570733	EPN	FOLH1
-hsa00830	Retinol metabolism	0.3809500801192035	EPN	FOLH1
-hsa04071	Sphingolipid signaling pathway	0.38098232714697033	Medullo	SLC1A5
-hsa04110	Cell cycle	0.38331203808775305	EPN	FOLH1
-hsa03450	Non-homologous end-joining	0.38397466672203684	Medullo	SLC1A5
-hsa01200	Carbon metabolism	0.3866668556445634	Medullo	FOLH1
-hsa04975	Fat digestion and absorption	0.3869751259917408	ATRT	SLC7A5
-hsa00604	Glycosphingolipid biosynthesis - ganglio series	0.391352267635112	Medullo	FOLH1
-hsa00770	Pantothenate and CoA biosynthesis	0.39248622184090887	Medullo	SLC1A5
-hsa00072	Synthesis and degradation of ketone bodies	0.3956274512426049	EPN	SLC1A5
-hsa00910	Nitrogen metabolism	0.39567908143448693	EPN	FOLH1
-hsa04520	Adherens junction	0.39684770659066715	Medullo	SLC1A5
-hsa00240	Pyrimidine metabolism	0.39809006467618857	Medullo	SLC1A5
-hsa04115	p53 signaling pathway	0.3982395417176565	EPN	FOLH1
-hsa00620	Pyruvate metabolism	0.39841724037037607	Medullo	FOLH1
-hsa03018	RNA degradation	0.3994291416214085	Medullo	FOLH1
-hsa00010	Glycolysis / Gluconeogenesis	0.399717967869608	Medullo	FOLH1
-hsa04210	Apoptosis	0.4008521305391868	ATRT	SLC7A5
-hsa04919	Thyroid hormone signaling pathway	0.4026197321891265	Medullo	SLC1A5
-hsa04730	Long-term depression	0.4051519470268403	ATRT	SLC7A5
-hsa04750	Inflammatory mediator regulation of TRP channels	0.4081365702164772	Medullo	FOLH1
-hsa00770	Pantothenate and CoA biosynthesis	0.41074367787556665	Medullo	FOLH1
-hsa04961	Endocrine and other factor-regulated calcium reabsorption	0.41179592866450443	EPN	FOLH1
-hsa00620	Pyruvate metabolism	0.4121861502400319	Medullo	SLC1A5
-hsa04917	Prolactin signaling pathway	0.4133928996267644	Medullo	FOLH1
-hsa00760	Nicotinate and nicotinamide metabolism	0.4153859832890163	Medullo	FOLH1
-hsa04914	Progesterone-mediated oocyte maturation	0.4160914582753014	ATRT	SLC7A5
-hsa00040	Pentose and glucuronate interconversions	0.4186002539903114	EPN	FOLH1
-hsa04060	Cytokine-cytokine receptor interaction	0.42018887867322274	EPN	SLC1A5
-hsa04623	Cytosolic DNA-sensing pathway	0.4205711398799773	EPN	FOLH1
-hsa01210	2-Oxocarboxylic acid metabolism	0.4206284911627235	EPN	SLC1A5
-hsa00230	Purine metabolism	0.4212278672674916	Medullo	SLC1A5
-hsa04740	Olfactory transduction	0.4216218682022189	Medullo	FOLH1
-hsa00360	Phenylalanine metabolism	0.42269126537615986	Medullo	FOLH1
-hsa04310	Wnt signaling pathway	0.42507166032467947	Medullo	FOLH1
-hsa04966	Collecting duct acid secretion	0.4281687142499256	ATRT	SLC7A5
-hsa00532	Glycosaminoglycan biosynthesis - chondroitin sulfate / dermatan sulfate	0.4295333257802171	ATRT	SLC7A5
-hsa00910	Nitrogen metabolism	0.43191466091432956	ATRT	SLC7A5
-hsa00920	Sulfur metabolism	0.4330714982991062	EPN	SLC1A5
-hsa04115	p53 signaling pathway	0.4336624142954777	EPN	SLC1A5
-hsa04120	Ubiquitin mediated proteolysis	0.4367913292855343	Medullo	SLC1A5
-hsa04622	RIG-I-like receptor signaling pathway	0.43836294771427065	Medullo	SLC1A5
-hsa04664	Fc epsilon RI signaling pathway	0.43843772630587274	Medullo	FOLH1
-hsa04964	Proximal tubule bicarbonate reclamation	0.43895529883251705	EPN	FOLH1
-hsa04150	mTOR signaling pathway	0.44183577126500106	Medullo	FOLH1
-hsa02010	ABC transporters	0.4435036380959188	ATRT	SLC7A5
-hsa04540	Gap junction	0.4440269610415386	ATRT	SLC7A5
-hsa00260	Glycine, serine and threonine metabolism	0.44435416586748755	EPN	FOLH1
-hsa04261	Adrenergic signaling in cardiomyocytes	0.4444957867871634	EPN	FOLH1
-hsa00120	Primary bile acid biosynthesis	0.44492498847086104	ATRT	SLC7A5
-hsa04621	NOD-like receptor signaling pathway	0.44743095518716314	Medullo	SLC1A5
-hsa04666	Fc gamma R-mediated phagocytosis	0.44796126799117786	ATRT	SLC7A5
-hsa04145	Phagosome	0.44895694059335667	ATRT	SLC7A5
-hsa00982	Drug metabolism - cytochrome P450	0.45060522491048444	ATRT	SLC7A5
-hsa00030	Pentose phosphate pathway	0.4522534400515069	Medullo	FOLH1
-hsa00052	Galactose metabolism	0.45256664152115045	Medullo	FOLH1
-hsa00310	Lysine degradation	0.4538485129240609	EPN	FOLH1
-hsa00051	Fructose and mannose metabolism	0.4546090453137299	EPN	FOLH1
-hsa04672	Intestinal immune network for IgA production	0.4562737991505742	Medullo	SLC1A5
-hsa00270	Cysteine and methionine metabolism	0.4583885145893615	EPN	SLC1A5
-hsa04320	Dorso-ventral axis formation	0.46147551444526913	Medullo	FOLH1
-hsa04115	p53 signaling pathway	0.4617700752011966	Medullo	FOLH1
-hsa04015	Rap1 signaling pathway	0.4620189695617914	ATRT	SLC7A5
-hsa04726	Serotonergic synapse	0.4624329290655568	EPN	FOLH1
-hsa04742	Taste transduction	0.4628239591780298	ATRT	SLC7A5
-hsa04068	FoxO signaling pathway	0.46359282885723074	EPN	SLC1A5
-hsa00072	Synthesis and degradation of ketone bodies	0.46527129772420694	EPN	FOLH1
-hsa04972	Pancreatic secretion	0.4653528225670297	Medullo	SLC1A5
-hsa04750	Inflammatory mediator regulation of TRP channels	0.46560139980696025	EPN	SLC1A5
-hsa04015	Rap1 signaling pathway	0.46783498752052144	EPN	SLC1A5
-hsa04973	Carbohydrate digestion and absorption	0.46790288709139494	Medullo	FOLH1
-hsa04720	Long-term potentiation	0.4687926008543799	Medullo	SLC1A5
-hsa04910	Insulin signaling pathway	0.46940487426077215	EPN	FOLH1
-hsa00510	N-Glycan biosynthesis	0.47233834559789734	ATRT	SLC7A5
-hsa00071	Fatty acid degradation	0.4732917836239924	EPN	FOLH1
-hsa00310	Lysine degradation	0.4745009347215059	ATRT	SLC7A5
-hsa04975	Fat digestion and absorption	0.4754961437003965	Medullo	FOLH1
-hsa00061	Fatty acid biosynthesis	0.476736362669105	EPN	SLC1A5
-hsa04142	Lysosome	0.47710737893546884	Medullo	FOLH1
-hsa00280	Valine, leucine and isoleucine degradation	0.4786809235780171	ATRT	SLC7A5
-hsa03050	Proteasome	0.4805331313539549	Medullo	FOLH1
-hsa00120	Primary bile acid biosynthesis	0.48208460019600075	EPN	FOLH1
-hsa04720	Long-term potentiation	0.48361949282258776	EPN	SLC1A5
-hsa04140	Regulation of autophagy	0.4840506410017936	Medullo	FOLH1
-hsa04666	Fc gamma R-mediated phagocytosis	0.4844688100645277	EPN	FOLH1
-hsa04670	Leukocyte transendothelial migration	0.4852500888053535	Medullo	FOLH1
-hsa04130	SNARE interactions in vesicular transport	0.4854943575237989	EPN	SLC1A5
-hsa00590	Arachidonic acid metabolism	0.48560724409259115	EPN	SLC1A5
-hsa04966	Collecting duct acid secretion	0.48787317229414184	Medullo	FOLH1
-hsa04727	GABAergic synapse	0.48902599624489795	Medullo	SLC1A5
-hsa00514	Other types of O-glycan biosynthesis	0.48911274135949945	Medullo	SLC1A5
-hsa04144	Endocytosis	0.49147521819540185	EPN	SLC1A5
-hsa04970	Salivary secretion	0.49198347245249263	EPN	FOLH1
-hsa04972	Pancreatic secretion	0.49224147874504554	EPN	SLC1A5
-hsa04975	Fat digestion and absorption	0.492334149980461	EPN	SLC1A5
-hsa04725	Cholinergic synapse	0.4958597599844361	EPN	SLC1A5
-hsa04623	Cytosolic DNA-sensing pathway	0.49601213256322085	Medullo	FOLH1
-hsa00061	Fatty acid biosynthesis	0.5008698110032153	Medullo	SLC1A5
-hsa03030	DNA replication	0.5057225334710627	ATRT	SLC7A5
-hsa00340	Histidine metabolism	0.50719011289225	Medullo	SLC1A5
-hsa03440	Homologous recombination	0.5076259020744444	ATRT	SLC7A5
-hsa01212	Fatty acid metabolism	0.5087283642175219	EPN	FOLH1
-hsa03030	DNA replication	0.5110844232751073	Medullo	FOLH1
-hsa04726	Serotonergic synapse	0.5149467731025561	Medullo	SLC1A5
-hsa00603	Glycosphingolipid biosynthesis - globo series	0.5150705900876007	EPN	FOLH1
-hsa00330	Arginine and proline metabolism	0.5174814014787322	Medullo	SLC1A5
-hsa04672	Intestinal immune network for IgA production	0.5195732251308046	ATRT	SLC7A5
-hsa04512	ECM-receptor interaction	0.5217323731386994	Medullo	SLC1A5
-hsa00380	Tryptophan metabolism	0.5222613486981558	EPN	SLC1A5
-hsa04724	Glutamatergic synapse	0.5229164492277076	EPN	FOLH1
-hsa00970	Aminoacyl-tRNA biosynthesis	0.5244977632903333	Medullo	SLC1A5
-hsa00563	Glycosylphosphatidylinositol(GPI)-anchor biosynthesis	0.5269903640924186	Medullo	FOLH1
-hsa00350	Tyrosine metabolism	0.5290210217673699	Medullo	FOLH1
-hsa00860	Porphyrin and chlorophyll metabolism	0.5296112892892193	ATRT	SLC7A5
-hsa04512	ECM-receptor interaction	0.5299818309090487	EPN	FOLH1
-hsa01230	Biosynthesis of amino acids	0.5301436465738146	ATRT	SLC7A5
-hsa03008	Ribosome biogenesis in eukaryotes	0.531159676939819	Medullo	FOLH1
-hsa00480	Glutathione metabolism	0.5314183335089666	EPN	FOLH1
-hsa04621	NOD-like receptor signaling pathway	0.5319230272058946	EPN	SLC1A5
-hsa04612	Antigen processing and presentation	0.5366198362748782	EPN	SLC1A5
-hsa04024	cAMP signaling pathway	0.5375778563980613	ATRT	SLC7A5
-hsa04918	Thyroid hormone synthesis	0.5375791043999641	EPN	FOLH1
-hsa00900	Terpenoid backbone biosynthesis	0.5377071315607092	EPN	FOLH1
-hsa04961	Endocrine and other factor-regulated calcium reabsorption	0.5392801843569812	ATRT	SLC7A5
-hsa04670	Leukocyte transendothelial migration	0.5400597846324329	ATRT	SLC7A5
-hsa04610	Complement and coagulation cascades	0.5402565553900662	Medullo	FOLH1
-hsa00514	Other types of O-glycan biosynthesis	0.5406780406323939	Medullo	FOLH1
-hsa04921	Oxytocin signaling pathway	0.5413531166089787	EPN	SLC1A5
-hsa04310	Wnt signaling pathway	0.5419278004223209	EPN	SLC1A5
-hsa04978	Mineral absorption	0.5419988974018999	Medullo	FOLH1
-hsa04720	Long-term potentiation	0.544249364211479	EPN	FOLH1
-hsa01210	2-Oxocarboxylic acid metabolism	0.5446885023185459	Medullo	FOLH1
-hsa00250	Alanine, aspartate and glutamate metabolism	0.5453426594786005	Medullo	SLC1A5
-hsa04971	Gastric acid secretion	0.5454570814640973	ATRT	SLC7A5
-hsa04670	Leukocyte transendothelial migration	0.5463778721838826	EPN	SLC1A5
-hsa04750	Inflammatory mediator regulation of TRP channels	0.5483958311393542	ATRT	SLC7A5
-hsa03430	Mismatch repair	0.5497520874266217	Medullo	FOLH1
-hsa04145	Phagosome	0.5512221350233173	EPN	SLC1A5
-hsa04140	Regulation of autophagy	0.5518487980041422	EPN	FOLH1
-hsa04668	TNF signaling pathway	0.5535037921770478	EPN	SLC1A5
-hsa00052	Galactose metabolism	0.5538655080488936	Medullo	SLC1A5
-hsa00563	Glycosylphosphatidylinositol(GPI)-anchor biosynthesis	0.5539178538231404	EPN	FOLH1
-hsa04260	Cardiac muscle contraction	0.5552751952954951	EPN	FOLH1
-hsa00830	Retinol metabolism	0.5576215170471972	EPN	SLC1A5
-hsa04621	NOD-like receptor signaling pathway	0.5581230233414833	ATRT	SLC7A5
-hsa03450	Non-homologous end-joining	0.5616486754907719	EPN	SLC1A5
-hsa03060	Protein export	0.5632540611989731	Medullo	FOLH1
-hsa00830	Retinol metabolism	0.5642616873618369	ATRT	SLC7A5
-hsa00130	Ubiquinone and other terpenoid-quinone biosynthesis	0.5667370237029612	EPN	SLC1A5
-hsa04640	Hematopoietic cell lineage	0.5708969887233257	Medullo	FOLH1
-hsa04670	Leukocyte transendothelial migration	0.5717071513869623	EPN	FOLH1
-hsa00511	Other glycan degradation	0.5723780368060691	ATRT	SLC7A5
-hsa04623	Cytosolic DNA-sensing pathway	0.5746296886756268	ATRT	SLC7A5
-hsa04550	Signaling pathways regulating pluripotency of stem cells	0.5774396171222622	ATRT	SLC7A5
-hsa03013	RNA transport	0.5784680405136686	EPN	SLC1A5
-hsa04912	GnRH signaling pathway	0.5786354620250473	EPN	SLC1A5
-hsa01210	2-Oxocarboxylic acid metabolism	0.5797349086385101	ATRT	SLC7A5
-hsa04066	HIF-1 signaling pathway	0.5832373802672992	Medullo	FOLH1
-hsa00410	beta-Alanine metabolism	0.5840322756930192	ATRT	SLC7A5
-hsa04620	Toll-like receptor signaling pathway	0.5856699930337153	EPN	SLC1A5
-hsa00790	Folate biosynthesis	0.5871823074510809	Medullo	SLC1A5
-hsa03020	RNA polymerase	0.5884069973102688	EPN	FOLH1
-hsa04060	Cytokine-cytokine receptor interaction	0.5914637779366216	Medullo	SLC1A5
-hsa00250	Alanine, aspartate and glutamate metabolism	0.591620412716362	ATRT	SLC7A5
-hsa00380	Tryptophan metabolism	0.5932319966543709	ATRT	SLC7A5
-hsa04320	Dorso-ventral axis formation	0.5933015402814188	Medullo	SLC1A5
-hsa04012	ErbB signaling pathway	0.5939614354051508	ATRT	SLC7A5
-hsa03430	Mismatch repair	0.594460710303186	ATRT	SLC7A5
-hsa04612	Antigen processing and presentation	0.5946211546756834	Medullo	SLC1A5
-hsa00120	Primary bile acid biosynthesis	0.5956661461958581	Medullo	SLC1A5
-hsa04611	Platelet activation	0.5958844006860783	EPN	SLC1A5
-hsa04916	Melanogenesis	0.5993154407991665	EPN	SLC1A5
-hsa03440	Homologous recombination	0.6004350202007406	EPN	SLC1A5
-hsa00350	Tyrosine metabolism	0.6015811171330445	ATRT	SLC7A5
-hsa00520	Amino sugar and nucleotide sugar metabolism	0.6017940785123637	ATRT	SLC7A5
-hsa00130	Ubiquinone and other terpenoid-quinone biosynthesis	0.6037921431481361	Medullo	FOLH1
-hsa00040	Pentose and glucuronate interconversions	0.6040779753623268	Medullo	FOLH1
-hsa04064	NF-kappa B signaling pathway	0.6080833837729137	Medullo	SLC1A5
-hsa00140	Steroid hormone biosynthesis	0.6081986774896789	ATRT	SLC7A5
-hsa00531	Glycosaminoglycan degradation	0.6093246310819258	Medullo	FOLH1
-hsa03460	Fanconi anemia pathway	0.6094062417518414	EPN	FOLH1
-hsa03460	Fanconi anemia pathway	0.6108261321155763	Medullo	FOLH1
-hsa04914	Progesterone-mediated oocyte maturation	0.613640345292533	EPN	FOLH1
-hsa04380	Osteoclast differentiation	0.617807222106465	ATRT	SLC7A5
-hsa00230	Purine metabolism	0.6178348911022892	Medullo	FOLH1
-hsa04015	Rap1 signaling pathway	0.6180672637835001	Medullo	FOLH1
-hsa04918	Thyroid hormone synthesis	0.6201994706199685	EPN	SLC1A5
-hsa03010	Ribosome	0.6204057227761162	Medullo	FOLH1
-hsa00340	Histidine metabolism	0.6226161004648276	EPN	FOLH1
-hsa00020	Citrate cycle (TCA cycle)	0.6227012204509652	Medullo	SLC1A5
-hsa04068	FoxO signaling pathway	0.6243274235748979	Medullo	FOLH1
-hsa04672	Intestinal immune network for IgA production	0.6267511340987918	Medullo	FOLH1
-hsa00630	Glyoxylate and dicarboxylate metabolism	0.6302773333523517	Medullo	FOLH1
-hsa04660	T cell receptor signaling pathway	0.6315438792017944	ATRT	SLC7A5
-hsa04010	MAPK signaling pathway	0.6327922098751444	ATRT	SLC7A5
-hsa00592	alpha-Linolenic acid metabolism	0.6331440884264583	EPN	SLC1A5
-hsa04071	Sphingolipid signaling pathway	0.6337568739137178	ATRT	SLC7A5
-hsa04962	Vasopressin-regulated water reabsorption	0.6359772249888922	ATRT	SLC7A5
-hsa04916	Melanogenesis	0.6364218448514132	ATRT	SLC7A5
-hsa04640	Hematopoietic cell lineage	0.6376021957967919	ATRT	SLC7A5
-hsa04020	Calcium signaling pathway	0.6379671701486067	Medullo	SLC1A5
-hsa04920	Adipocytokine signaling pathway	0.638060380172539	Medullo	FOLH1
-hsa04912	GnRH signaling pathway	0.6402318815344221	Medullo	FOLH1
-hsa04260	Cardiac muscle contraction	0.6428103856285536	ATRT	SLC7A5
-hsa04973	Carbohydrate digestion and absorption	0.6431531825755323	Medullo	SLC1A5
-hsa04974	Protein digestion and absorption	0.6436374783629442	Medullo	FOLH1
-hsa04064	NF-kappa B signaling pathway	0.6437994442961397	Medullo	FOLH1
-hsa04917	Prolactin signaling pathway	0.6446519766743901	ATRT	SLC7A5
-hsa04070	Phosphatidylinositol signaling system	0.6446692791152129	ATRT	SLC7A5
-hsa04380	Osteoclast differentiation	0.6472238972878999	EPN	FOLH1
-hsa03018	RNA degradation	0.6472695223350906	ATRT	SLC7A5
-hsa04320	Dorso-ventral axis formation	0.647273117645253	ATRT	SLC7A5
-hsa00020	Citrate cycle (TCA cycle)	0.6474600968881798	ATRT	SLC7A5
-hsa04922	Glucagon signaling pathway	0.6495660668897059	ATRT	SLC7A5
-hsa00250	Alanine, aspartate and glutamate metabolism	0.649916901557112	Medullo	FOLH1
-hsa03013	RNA transport	0.6503690907830091	Medullo	FOLH1
-hsa00340	Histidine metabolism	0.6505429683107213	EPN	SLC1A5
-hsa04114	Oocyte meiosis	0.6511471523111745	EPN	SLC1A5
-hsa00340	Histidine metabolism	0.6513495370764993	ATRT	SLC7A5
-hsa04974	Protein digestion and absorption	0.6546338545791845	ATRT	SLC7A5
-hsa04530	Tight junction	0.6652138018867533	ATRT	SLC7A5
-hsa04022	cGMP-PKG signaling pathway	0.6665296452025642	EPN	FOLH1
-hsa00450	Selenocompound metabolism	0.6684157424721578	EPN	FOLH1
-hsa00520	Amino sugar and nucleotide sugar metabolism	0.6701210254437794	Medullo	FOLH1
-hsa00980	Metabolism of xenobiotics by cytochrome P450	0.671796591869325	EPN	FOLH1
-hsa04914	Progesterone-mediated oocyte maturation	0.6726802406643468	Medullo	FOLH1
-hsa03410	Base excision repair	0.6764774879913587	EPN	SLC1A5
-hsa00900	Terpenoid backbone biosynthesis	0.6767300487802848	EPN	SLC1A5
-hsa04390	Hippo signaling pathway	0.6851078816307522	ATRT	SLC7A5
-hsa00830	Retinol metabolism	0.6852837049942594	Medullo	FOLH1
-hsa04144	Endocytosis	0.6854916341408044	EPN	FOLH1
-hsa03060	Protein export	0.6883209379099662	ATRT	SLC7A5
-hsa00190	Oxidative phosphorylation	0.689197811830238	Medullo	SLC1A5
-hsa04730	Long-term depression	0.691001644398556	Medullo	FOLH1
-hsa00240	Pyrimidine metabolism	0.6913113944055301	Medullo	FOLH1
-hsa04270	Vascular smooth muscle contraction	0.6923201599503044	Medullo	FOLH1
-hsa00410	beta-Alanine metabolism	0.6927786438093546	EPN	SLC1A5
-hsa04620	Toll-like receptor signaling pathway	0.6997094266145021	Medullo	FOLH1
-hsa04510	Focal adhesion	0.70335645979222	EPN	SLC1A5
-hsa04146	Peroxisome	0.7042534539999434	EPN	FOLH1
-hsa04514	Cell adhesion molecules (CAMs)	0.7042545073655084	EPN	FOLH1
-hsa04970	Salivary secretion	0.7077703195255455	ATRT	SLC7A5
-hsa00140	Steroid hormone biosynthesis	0.7084371578309707	EPN	SLC1A5
-hsa03430	Mismatch repair	0.7114674188016443	EPN	SLC1A5
-hsa00100	Steroid biosynthesis	0.7131159966053577	EPN	SLC1A5
-hsa00920	Sulfur metabolism	0.7131843871468626	EPN	FOLH1
-hsa00350	Tyrosine metabolism	0.7174813312406401	Medullo	SLC1A5
-hsa04114	Oocyte meiosis	0.7184956399568185	EPN	FOLH1
-hsa00030	Pentose phosphate pathway	0.7187248309501632	EPN	FOLH1
-hsa00051	Fructose and mannose metabolism	0.7187922547898915	EPN	SLC1A5
-hsa00072	Synthesis and degradation of ketone bodies	0.7197083679073026	Medullo	FOLH1
-hsa00500	Starch and sucrose metabolism	0.7198960832516513	Medullo	FOLH1
-hsa04130	SNARE interactions in vesicular transport	0.7251288003250322	ATRT	SLC7A5
-hsa04610	Complement and coagulation cascades	0.7265485861283874	EPN	SLC1A5
-hsa00534	Glycosaminoglycan biosynthesis - heparan sulfate / heparin	0.7272176832623956	EPN	SLC1A5
-hsa04961	Endocrine and other factor-regulated calcium reabsorption	0.727674864177186	Medullo	SLC1A5
-hsa04660	T cell receptor signaling pathway	0.7279671898537592	EPN	SLC1A5
-hsa04010	MAPK signaling pathway	0.7284589363842653	Medullo	FOLH1
-hsa04066	HIF-1 signaling pathway	0.7291307443684876	ATRT	SLC7A5
-hsa04340	Hedgehog signaling pathway	0.7314626232255019	ATRT	SLC7A5
-hsa00740	Riboflavin metabolism	0.7316325070958116	Medullo	FOLH1
-hsa00100	Steroid biosynthesis	0.733781128041839	Medullo	FOLH1
-hsa04550	Signaling pathways regulating pluripotency of stem cells	0.7346355854022419	Medullo	FOLH1
-hsa00130	Ubiquinone and other terpenoid-quinone biosynthesis	0.7378167391225567	ATRT	SLC7A5
-hsa00190	Oxidative phosphorylation	0.7388188751592146	EPN	FOLH1
-hsa00512	Mucin type O-Glycan biosynthesis	0.7413105012676162	EPN	FOLH1
-hsa00860	Porphyrin and chlorophyll metabolism	0.7417418272737932	Medullo	FOLH1
-hsa00100	Steroid biosynthesis	0.7443619208737817	EPN	FOLH1
-hsa04919	Thyroid hormone signaling pathway	0.7467787999871276	ATRT	SLC7A5
-hsa03050	Proteasome	0.7481325876094237	ATRT	SLC7A5
-hsa00601	Glycosphingolipid biosynthesis - lacto and neolacto series	0.7481619811812811	ATRT	SLC7A5
-hsa04514	Cell adhesion molecules (CAMs)	0.7484991289727122	Medullo	SLC1A5
-hsa00250	Alanine, aspartate and glutamate metabolism	0.749032589902451	EPN	FOLH1
-hsa00564	Glycerophospholipid metabolism	0.7491272547998706	EPN	SLC1A5
-hsa04915	Estrogen signaling pathway	0.749620838235982	EPN	FOLH1
-hsa04630	Jak-STAT signaling pathway	0.7509984599855477	Medullo	SLC1A5
-hsa00591	Linoleic acid metabolism	0.7510122629957563	EPN	FOLH1
-hsa00072	Synthesis and degradation of ketone bodies	0.7515434771366716	ATRT	SLC7A5
-hsa00650	Butanoate metabolism	0.7524184222106178	EPN	SLC1A5
-hsa04614	Renin-angiotensin system	0.7527399993766692	EPN	SLC1A5
-hsa00790	Folate biosynthesis	0.7542854445835265	Medullo	FOLH1
-hsa00920	Sulfur metabolism	0.7550236662106549	ATRT	SLC7A5
-hsa00410	beta-Alanine metabolism	0.7556965097223125	Medullo	FOLH1
-hsa00983	Drug metabolism - other enzymes	0.7595033640550136	ATRT	SLC7A5
-hsa04662	B cell receptor signaling pathway	0.7614523180565707	ATRT	SLC7A5
-hsa04068	FoxO signaling pathway	0.7674945557812094	ATRT	SLC7A5
-hsa04320	Dorso-ventral axis formation	0.7685561127064109	EPN	FOLH1
-hsa04650	Natural killer cell mediated cytotoxicity	0.7694947283979673	Medullo	FOLH1
-hsa00512	Mucin type O-Glycan biosynthesis	0.7699597590594843	Medullo	FOLH1
-hsa00600	Sphingolipid metabolism	0.7779710849069061	EPN	SLC1A5
-hsa03010	Ribosome	0.7781384796819132	ATRT	SLC7A5
-hsa04650	Natural killer cell mediated cytotoxicity	0.7792581541597583	ATRT	SLC7A5
-hsa00604	Glycosphingolipid biosynthesis - ganglio series	0.7811136974620956	ATRT	SLC7A5
-hsa03420	Nucleotide excision repair	0.7815091087518747	Medullo	FOLH1
-hsa00604	Glycosphingolipid biosynthesis - ganglio series	0.7847353685155487	Medullo	SLC1A5
-hsa04722	Neurotrophin signaling pathway	0.7853632954220651	ATRT	SLC7A5
-hsa04520	Adherens junction	0.7860585668724014	EPN	FOLH1
-hsa04976	Bile secretion	0.7876692095351985	ATRT	SLC7A5
-hsa04728	Dopaminergic synapse	0.7881062620546098	EPN	SLC1A5
-hsa04610	Complement and coagulation cascades	0.788639730487442	Medullo	SLC1A5
-hsa04620	Toll-like receptor signaling pathway	0.7893079720496348	ATRT	SLC7A5
-hsa04668	TNF signaling pathway	0.7917173975269484	ATRT	SLC7A5
-hsa04810	Regulation of actin cytoskeleton	0.7919206046082503	ATRT	SLC7A5
-hsa00740	Riboflavin metabolism	0.7926896907532883	Medullo	SLC1A5
-hsa04114	Oocyte meiosis	0.7995434962031642	Medullo	FOLH1
-hsa04610	Complement and coagulation cascades	0.8008073589730527	EPN	FOLH1
-hsa04360	Axon guidance	0.8033120821990313	ATRT	SLC7A5
-hsa00310	Lysine degradation	0.8039021217445996	EPN	SLC1A5
-hsa04152	AMPK signaling pathway	0.8092250527099105	ATRT	SLC7A5
-hsa04024	cAMP signaling pathway	0.8104895257997805	Medullo	SLC1A5
-hsa00603	Glycosphingolipid biosynthesis - globo series	0.8120930582867123	Medullo	FOLH1
-hsa04060	Cytokine-cytokine receptor interaction	0.8149086096070183	ATRT	SLC7A5
-hsa04360	Axon guidance	0.8158268599725942	Medullo	FOLH1
-hsa04723	Retrograde endocannabinoid signaling	0.8184559227933815	Medullo	SLC1A5
-hsa00620	Pyruvate metabolism	0.8196231536721847	EPN	SLC1A5
-hsa00592	alpha-Linolenic acid metabolism	0.8204604370940106	EPN	FOLH1
-hsa00565	Ether lipid metabolism	0.8207315447423197	Medullo	FOLH1
-hsa04514	Cell adhesion molecules (CAMs)	0.820808829708269	EPN	SLC1A5
-hsa04520	Adherens junction	0.8222484069773196	ATRT	SLC7A5
-hsa04664	Fc epsilon RI signaling pathway	0.8273757614133372	EPN	SLC1A5
-hsa00983	Drug metabolism - other enzymes	0.8278867839574882	EPN	FOLH1
-hsa00630	Glyoxylate and dicarboxylate metabolism	0.8295340302749505	Medullo	SLC1A5
-hsa04920	Adipocytokine signaling pathway	0.8301859691499918	EPN	SLC1A5
-hsa04512	ECM-receptor interaction	0.8331608448902532	Medullo	FOLH1
-hsa03015	mRNA surveillance pathway	0.8341959387046268	ATRT	SLC7A5
-hsa00564	Glycerophospholipid metabolism	0.8350558444323213	ATRT	SLC7A5
-hsa04976	Bile secretion	0.837272682814575	Medullo	SLC1A5
-hsa04710	Circadian rhythm	0.8377256758112344	Medullo	FOLH1
-hsa03460	Fanconi anemia pathway	0.8386873648927697	EPN	SLC1A5
-hsa00480	Glutathione metabolism	0.8426602831506553	Medullo	FOLH1
-hsa04810	Regulation of actin cytoskeleton	0.8432623797962147	Medullo	FOLH1
-hsa04978	Mineral absorption	0.8442401435467427	ATRT	SLC7A5
-hsa03320	PPAR signaling pathway	0.8479490525424971	ATRT	SLC7A5
-hsa00020	Citrate cycle (TCA cycle)	0.8498061558390494	Medullo	FOLH1
-hsa00240	Pyrimidine metabolism	0.8507822458538506	ATRT	SLC7A5
-hsa04724	Glutamatergic synapse	0.8534103057589408	Medullo	SLC1A5
-hsa00450	Selenocompound metabolism	0.8540303096928594	ATRT	SLC7A5
-hsa04974	Protein digestion and absorption	0.8545292497975517	EPN	FOLH1
-hsa04720	Long-term potentiation	0.8582882807879405	ATRT	SLC7A5
-hsa04640	Hematopoietic cell lineage	0.8676099856195627	EPN	SLC1A5
-hsa04151	PI3K-Akt signaling pathway	0.8678449118929593	EPN	SLC1A5
-hsa00310	Lysine degradation	0.8704468047207237	Medullo	SLC1A5
-hsa04022	cGMP-PKG signaling pathway	0.8709876681205466	ATRT	SLC7A5
-hsa00450	Selenocompound metabolism	0.8724128610744276	EPN	SLC1A5
-hsa00531	Glycosaminoglycan degradation	0.8726860466210464	EPN	SLC1A5
-hsa04062	Chemokine signaling pathway	0.875041095644302	Medullo	FOLH1
-hsa00630	Glyoxylate and dicarboxylate metabolism	0.8757948797110738	ATRT	SLC7A5
-hsa04978	Mineral absorption	0.8777131850970065	EPN	FOLH1
-hsa04915	Estrogen signaling pathway	0.8785207492706434	Medullo	FOLH1
-hsa04115	p53 signaling pathway	0.8814724764765385	ATRT	SLC7A5
-hsa00250	Alanine, aspartate and glutamate metabolism	0.8817493530003041	EPN	SLC1A5
-hsa04723	Retrograde endocannabinoid signaling	0.883873795085246	EPN	SLC1A5
-hsa03040	Spliceosome	0.8844367554237	EPN	SLC1A5
-hsa04270	Vascular smooth muscle contraction	0.8897892907369696	Medullo	SLC1A5
-hsa00532	Glycosaminoglycan biosynthesis - chondroitin sulfate / dermatan sulfate	0.8955299166338009	EPN	SLC1A5
-hsa04064	NF-kappa B signaling pathway	0.8959338017202167	ATRT	SLC7A5
-hsa04110	Cell cycle	0.8965824211413272	ATRT	SLC7A5
-hsa00730	Thiamine metabolism	0.8969085980629632	EPN	SLC1A5
-hsa01212	Fatty acid metabolism	0.9046682480012371	EPN	SLC1A5
-hsa00040	Pentose and glucuronate interconversions	0.9057439279820999	ATRT	SLC7A5
-hsa03420	Nucleotide excision repair	0.9059829175314	EPN	SLC1A5
-hsa04720	Long-term potentiation	0.9088155978538109	Medullo	FOLH1
-hsa04071	Sphingolipid signaling pathway	0.914312939941701	EPN	SLC1A5
-hsa04630	Jak-STAT signaling pathway	0.9148422878867359	Medullo	FOLH1
-hsa03020	RNA polymerase	0.9151573592875265	Medullo	SLC1A5
-hsa00980	Metabolism of xenobiotics by cytochrome P450	0.9159381544718973	Medullo	FOLH1
-hsa04024	cAMP signaling pathway	0.9187129538684783	Medullo	FOLH1
-hsa00564	Glycerophospholipid metabolism	0.9195225975004985	Medullo	FOLH1
-hsa04110	Cell cycle	0.9220321770927258	EPN	SLC1A5
-hsa00480	Glutathione metabolism	0.9226592025465137	ATRT	SLC7A5
-hsa00983	Drug metabolism - other enzymes	0.9237853193759356	EPN	SLC1A5
-hsa00630	Glyoxylate and dicarboxylate metabolism	0.9246121448751569	EPN	FOLH1
-hsa04972	Pancreatic secretion	0.9261767886375387	EPN	FOLH1
-hsa04150	mTOR signaling pathway	0.9263093009344623	EPN	FOLH1
-hsa04540	Gap junction	0.9280642966881553	EPN	FOLH1
-hsa03022	Basal transcription factors	0.9293094186019998	EPN	SLC1A5
-hsa01230	Biosynthesis of amino acids	0.9301797676060936	EPN	FOLH1
-hsa04152	AMPK signaling pathway	0.930425645740777	EPN	SLC1A5
-hsa03460	Fanconi anemia pathway	0.9310971800776262	ATRT	SLC7A5
-hsa00563	Glycosylphosphatidylinositol(GPI)-anchor biosynthesis	0.9333733655751687	ATRT	SLC7A5
-hsa04261	Adrenergic signaling in cardiomyocytes	0.9353178001919826	ATRT	SLC7A5
-hsa04910	Insulin signaling pathway	0.9362123174125512	ATRT	SLC7A5
-hsa04060	Cytokine-cytokine receptor interaction	0.9371515667793868	Medullo	FOLH1
-hsa01230	Biosynthesis of amino acids	0.9390960476602671	Medullo	FOLH1
-hsa04913	Ovarian steroidogenesis	0.9392801448448735	EPN	SLC1A5
-hsa02010	ABC transporters	0.9395486273535671	Medullo	FOLH1
-hsa04350	TGF-beta signaling pathway	0.9413001881084803	EPN	SLC1A5
-hsa00983	Drug metabolism - other enzymes	0.9424556047362587	Medullo	FOLH1
-hsa04630	Jak-STAT signaling pathway	0.9424828707695185	ATRT	SLC7A5
-hsa00020	Citrate cycle (TCA cycle)	0.9441325960908364	EPN	FOLH1
-hsa00563	Glycosylphosphatidylinositol(GPI)-anchor biosynthesis	0.9447948010842642	EPN	SLC1A5
-hsa04672	Intestinal immune network for IgA production	0.9453590236460326	EPN	FOLH1
-hsa00565	Ether lipid metabolism	0.9456487296016021	EPN	FOLH1
-hsa00561	Glycerolipid metabolism	0.9490071016961643	Medullo	FOLH1
-hsa04540	Gap junction	0.9497634289843746	Medullo	FOLH1
-hsa04915	Estrogen signaling pathway	0.9528830517854876	ATRT	SLC7A5
-hsa04014	Ras signaling pathway	0.9532182954831876	Medullo	FOLH1
-hsa04726	Serotonergic synapse	0.9543737222051893	EPN	SLC1A5
-hsa00330	Arginine and proline metabolism	0.954925005893881	EPN	SLC1A5
-hsa04071	Sphingolipid signaling pathway	0.9558296943882287	Medullo	FOLH1
-hsa04918	Thyroid hormone synthesis	0.9564207050455327	Medullo	SLC1A5
-hsa04512	ECM-receptor interaction	0.95720684051005	ATRT	SLC7A5
-hsa04730	Long-term depression	0.9577000021410089	Medullo	SLC1A5
-hsa04622	RIG-I-like receptor signaling pathway	0.9578738962271245	ATRT	SLC7A5
-hsa04210	Apoptosis	0.9580520614712132	Medullo	FOLH1
-hsa00650	Butanoate metabolism	0.9612277926681939	Medullo	FOLH1
-hsa04390	Hippo signaling pathway	0.9616531391613183	Medullo	FOLH1
-hsa04911	Insulin secretion	0.9634769708639218	ATRT	SLC7A5
-hsa03030	DNA replication	0.963512291681319	EPN	SLC1A5
-hsa04910	Insulin signaling pathway	0.9666479839043484	EPN	SLC1A5
-hsa01230	Biosynthesis of amino acids	0.9666926287488266	EPN	SLC1A5
-hsa04020	Calcium signaling pathway	0.9675651935211833	EPN	SLC1A5
-hsa04670	Leukocyte transendothelial migration	0.968490851155378	Medullo	SLC1A5
-hsa04650	Natural killer cell mediated cytotoxicity	0.9704322358071784	EPN	FOLH1
-hsa03013	RNA transport	0.9706669292782946	ATRT	SLC7A5
-hsa04151	PI3K-Akt signaling pathway	0.9778358357552486	EPN	FOLH1
-hsa00230	Purine metabolism	0.9789096449862366	ATRT	SLC7A5
-hsa00591	Linoleic acid metabolism	0.9868053141043064	EPN	SLC1A5
-hsa04380	Osteoclast differentiation	0.9899761375529952	Medullo	FOLH1
-hsa03008	Ribosome biogenesis in eukaryotes	0.9906670285769213	EPN	FOLH1
-hsa03050	Proteasome	0.9925944430968867	Medullo	SLC1A5
-hsa04068	FoxO signaling pathway	0.9952028733959832	EPN	FOLH1
-hsa04062	Chemokine signaling pathway	0.9952382176759325	EPN	SLC1A5
-hsa04914	Progesterone-mediated oocyte maturation	0.9981720304285164	EPN	SLC1A5
-hsa04145	Phagosome	0.998764983416181	Medullo	FOLH1
+pathway_id	description	pval	cancer_group	gene_parsed_by	percentile
+hsa03030	DNA replication	3.265911374648985e-9	Medullo	SLC1A5	15
+hsa04110	Cell cycle	4.846547386898159e-9	Medullo	SLC1A5	15
+hsa04330	Notch signaling pathway	8.516389488907099e-8	Medullo	SLC1A5	15
+hsa04966	Collecting duct acid secretion	1.330473329874308e-7	Medullo	SLC1A5	15
+hsa04390	Hippo signaling pathway	1.530277304394119e-7	Medullo	SLC1A5	15
+hsa04340	Hedgehog signaling pathway	6.92913636501018e-7	EPN	FOLH1	40
+hsa04974	Protein digestion and absorption	8.027778863567618e-7	Medullo	SLC1A5	15
+hsa04012	ErbB signaling pathway	8.946713547080231e-7	EPN	FOLH1	40
+hsa03015	mRNA surveillance pathway	9.035538736752438e-7	Medullo	SLC1A5	15
+hsa03430	Mismatch repair	1.1893647114584163e-6	Medullo	SLC1A5	15
+hsa04144	Endocytosis	3.693017761366122e-6	Medullo	SLC1A5	15
+hsa00601	Glycosphingolipid biosynthesis - lacto and neolacto series	6.0077136775860295e-6	Medullo	SLC1A5	15
+hsa03040	Spliceosome	1.1489291302729176e-5	Medullo	FOLH1	30
+hsa00730	Thiamine metabolism	2.790349588671739e-5	Medullo	SLC1A5	15
+hsa04390	Hippo signaling pathway	3.791561254517771e-5	EPN	FOLH1	40
+hsa04350	TGF-beta signaling pathway	5.6268008790928296e-5	Medullo	SLC1A5	15
+hsa04550	Signaling pathways regulating pluripotency of stem cells	5.696416437516023e-5	EPN	FOLH1	40
+hsa03010	Ribosome	7.647202098488634e-5	Medullo	SLC1A5	15
+hsa04722	Neurotrophin signaling pathway	8.348645426120223e-5	EPN	FOLH1	40
+hsa04310	Wnt signaling pathway	1.0538381738149779e-4	Medullo	SLC1A5	15
+hsa00534	Glycosaminoglycan biosynthesis - heparan sulfate / heparin	1.2519521520649247e-4	Medullo	SLC1A5	15
+hsa00280	Valine, leucine and isoleucine degradation	1.3496259351128203e-4	Medullo	SLC1A5	15
+hsa00510	N-Glycan biosynthesis	1.3712359800599724e-4	Medullo	SLC1A5	15
+hsa03018	RNA degradation	1.5070172336863614e-4	Medullo	SLC1A5	15
+hsa01212	Fatty acid metabolism	1.6089971811492727e-4	Medullo	SLC1A5	15
+hsa04962	Vasopressin-regulated water reabsorption	1.731756736328045e-4	Medullo	SLC1A5	15
+hsa04210	Apoptosis	1.8154970068243523e-4	EPN	FOLH1	40
+hsa00510	N-Glycan biosynthesis	2.0962234921717836e-4	EPN	FOLH1	40
+hsa04722	Neurotrophin signaling pathway	2.1732001171459106e-4	Medullo	SLC1A5	15
+hsa04917	Prolactin signaling pathway	2.2617186203639395e-4	EPN	FOLH1	40
+hsa04012	ErbB signaling pathway	2.2886707949924522e-4	Medullo	SLC1A5	15
+hsa04550	Signaling pathways regulating pluripotency of stem cells	2.605571707974252e-4	Medullo	SLC1A5	15
+hsa04922	Glucagon signaling pathway	3.1073600044776556e-4	Medullo	SLC1A5	15
+hsa00564	Glycerophospholipid metabolism	3.44893632825821e-4	Medullo	SLC1A5	15
+hsa04916	Melanogenesis	3.613541190784356e-4	EPN	FOLH1	40
+hsa04723	Retrograde endocannabinoid signaling	4.3777480234123966e-4	EPN	FOLH1	40
+hsa00860	Porphyrin and chlorophyll metabolism	4.46605736757688e-4	EPN	FOLH1	40
+hsa00983	Drug metabolism - other enzymes	4.517427512147957e-4	Medullo	SLC1A5	15
+hsa03320	PPAR signaling pathway	4.6368465084087253e-4	Medullo	SLC1A5	15
+hsa04740	Olfactory transduction	5.255737310280469e-4	EPN	FOLH1	40
+hsa04114	Oocyte meiosis	5.989184225126648e-4	Medullo	SLC1A5	15
+hsa00640	Propanoate metabolism	6.053041876882335e-4	Medullo	SLC1A5	15
+hsa04723	Retrograde endocannabinoid signaling	6.350932490457097e-4	Medullo	FOLH1	30
+hsa00380	Tryptophan metabolism	6.904589912817036e-4	Medullo	SLC1A5	15
+hsa04750	Inflammatory mediator regulation of TRP channels	7.478658627310651e-4	EPN	FOLH1	40
+hsa04640	Hematopoietic cell lineage	8.267475160199655e-4	Medullo	SLC1A5	15
+hsa04916	Melanogenesis	9.203619284937683e-4	Medullo	SLC1A5	15
+hsa04068	FoxO signaling pathway	9.719836457304714e-4	Medullo	SLC1A5	15
+hsa00062	Fatty acid elongation	9.776015090726222e-4	EPN	FOLH1	40
+hsa04530	Tight junction	0.001009425787923924	EPN	SLC1A5	10
+hsa04010	MAPK signaling pathway	0.0010405114398048454	EPN	FOLH1	40
+hsa04668	TNF signaling pathway	0.001205317462484547	Medullo	SLC1A5	15
+hsa00360	Phenylalanine metabolism	0.0013060316324978757	EPN	FOLH1	40
+hsa00040	Pentose and glucuronate interconversions	0.0013094563713609616	Medullo	SLC1A5	15
+hsa04666	Fc gamma R-mediated phagocytosis	0.0014156847239715808	Medullo	SLC1A5	15
+hsa04976	Bile secretion	0.001503397056959433	EPN	FOLH1	40
+hsa04630	Jak-STAT signaling pathway	0.0015436958153470196	EPN	FOLH1	40
+hsa00062	Fatty acid elongation	0.00159926075574925	Medullo	SLC1A5	15
+hsa00052	Galactose metabolism	0.001698973126983455	EPN	FOLH1	40
+hsa04360	Axon guidance	0.0017397882652661015	Medullo	SLC1A5	15
+hsa00511	Other glycan degradation	0.0018924972703333266	Medullo	FOLH1	30
+hsa04810	Regulation of actin cytoskeleton	0.0019511685122398491	Medullo	SLC1A5	15
+hsa00480	Glutathione metabolism	0.0020505428796142684	Medullo	SLC1A5	15
+hsa03420	Nucleotide excision repair	0.002188283320326799	EPN	FOLH1	40
+hsa00565	Ether lipid metabolism	0.0022622334964513204	Medullo	SLC1A5	15
+hsa03430	Mismatch repair	0.0022689768521402683	EPN	FOLH1	40
+hsa00010	Glycolysis / Gluconeogenesis	0.002301028821391691	EPN	SLC1A5	10
+hsa04726	Serotonergic synapse	0.0023693072255397104	ATRT	SLC7A5	10
+hsa04022	cGMP-PKG signaling pathway	0.0024010883496637827	Medullo	SLC1A5	15
+hsa00670	One carbon pool by folate	0.002411303067253591	Medullo	SLC1A5	15
+hsa04340	Hedgehog signaling pathway	0.0024962838777551496	EPN	SLC1A5	10
+hsa00920	Sulfur metabolism	0.002668592826091	Medullo	SLC1A5	15
+hsa00280	Valine, leucine and isoleucine degradation	0.0026829755645267107	EPN	FOLH1	40
+hsa00910	Nitrogen metabolism	0.0026983885384027862	Medullo	SLC1A5	15
+hsa04975	Fat digestion and absorption	0.00294701114810261	Medullo	SLC1A5	15
+hsa03013	RNA transport	0.00300100186930629	Medullo	SLC1A5	15
+hsa04340	Hedgehog signaling pathway	0.0032091334293202502	Medullo	SLC1A5	15
+hsa04921	Oxytocin signaling pathway	0.003235509326330513	Medullo	SLC1A5	15
+hsa03040	Spliceosome	0.0032406408882616976	Medullo	SLC1A5	15
+hsa04120	Ubiquitin mediated proteolysis	0.0032409420955180285	EPN	FOLH1	40
+hsa04115	p53 signaling pathway	0.003242792514606739	Medullo	SLC1A5	15
+hsa04919	Thyroid hormone signaling pathway	0.0032741599913759314	EPN	FOLH1	40
+hsa04713	Circadian entrainment	0.003315604641655041	EPN	FOLH1	40
+hsa04910	Insulin signaling pathway	0.0035084135771438745	Medullo	SLC1A5	15
+hsa04917	Prolactin signaling pathway	0.0038444285294881595	EPN	SLC1A5	10
+hsa00562	Inositol phosphate metabolism	0.004026878529780977	Medullo	SLC1A5	15
+hsa03010	Ribosome	0.004095919373101838	EPN	SLC1A5	10
+hsa00562	Inositol phosphate metabolism	0.0041819956145501685	EPN	SLC1A5	10
+hsa03010	Ribosome	0.004193955090011067	EPN	FOLH1	40
+hsa00603	Glycosphingolipid biosynthesis - globo series	0.004393205288497302	Medullo	SLC1A5	15
+hsa04130	SNARE interactions in vesicular transport	0.004637373163613953	EPN	FOLH1	40
+hsa00230	Purine metabolism	0.004725278806666786	EPN	FOLH1	40
+hsa04919	Thyroid hormone signaling pathway	0.005110288004847152	EPN	SLC1A5	10
+hsa00330	Arginine and proline metabolism	0.005126818593737113	Medullo	FOLH1	30
+hsa00030	Pentose phosphate pathway	0.005314794183022318	Medullo	SLC1A5	15
+hsa04530	Tight junction	0.005330819485423979	EPN	FOLH1	40
+hsa00280	Valine, leucine and isoleucine degradation	0.0054144262043776875	EPN	SLC1A5	10
+hsa04080	Neuroactive ligand-receptor interaction	0.005442552884646036	EPN	SLC1A5	10
+hsa04064	NF-kappa B signaling pathway	0.005492239958077508	EPN	FOLH1	40
+hsa04014	Ras signaling pathway	0.005620453635408003	EPN	FOLH1	40
+hsa04650	Natural killer cell mediated cytotoxicity	0.005660749058259009	Medullo	SLC1A5	15
+hsa04977	Vitamin digestion and absorption	0.005875828342558859	ATRT	SLC7A5	10
+hsa04915	Estrogen signaling pathway	0.0060587035393171815	Medullo	SLC1A5	15
+hsa04713	Circadian entrainment	0.0062778789112327175	Medullo	FOLH1	30
+hsa04621	NOD-like receptor signaling pathway	0.0062905589334540934	EPN	FOLH1	40
+hsa00512	Mucin type O-Glycan biosynthesis	0.00657725158844674	ATRT	SLC7A5	10
+hsa04130	SNARE interactions in vesicular transport	0.006777121093520721	Medullo	FOLH1	30
+hsa04210	Apoptosis	0.006993253518174741	Medullo	SLC1A5	15
+hsa04210	Apoptosis	0.007133912827801442	EPN	SLC1A5	10
+hsa00770	Pantothenate and CoA biosynthesis	0.007155793427906854	EPN	FOLH1	40
+hsa03060	Protein export	0.007306228799327581	Medullo	SLC1A5	15
+hsa00533	Glycosaminoglycan biosynthesis - keratan sulfate	0.007350431267859943	EPN	SLC1A5	10
+hsa04261	Adrenergic signaling in cardiomyocytes	0.007437730637743328	Medullo	FOLH1	30
+hsa00062	Fatty acid elongation	0.007808062816122929	ATRT	SLC7A5	10
+hsa04066	HIF-1 signaling pathway	0.007888793416545676	EPN	FOLH1	40
+hsa04141	Protein processing in endoplasmic reticulum	0.007924012038498313	EPN	FOLH1	40
+hsa01040	Biosynthesis of unsaturated fatty acids	0.008077410527942131	Medullo	SLC1A5	15
+hsa04728	Dopaminergic synapse	0.00821605924262393	Medullo	FOLH1	30
+hsa03440	Homologous recombination	0.008254345797936265	Medullo	SLC1A5	15
+hsa04921	Oxytocin signaling pathway	0.008399397521288042	EPN	FOLH1	40
+hsa04270	Vascular smooth muscle contraction	0.00867597951626158	EPN	FOLH1	40
+hsa04146	Peroxisome	0.00908906105459779	EPN	SLC1A5	10
+hsa04260	Cardiac muscle contraction	0.009318459407943945	Medullo	FOLH1	30
+hsa04723	Retrograde endocannabinoid signaling	0.009406345775557674	ATRT	SLC7A5	10
+hsa04975	Fat digestion and absorption	0.009661544252849619	EPN	FOLH1	40
+hsa04024	cAMP signaling pathway	0.01004055756336161	EPN	SLC1A5	10
+hsa04014	Ras signaling pathway	0.010130529823369847	EPN	SLC1A5	10
+hsa00270	Cysteine and methionine metabolism	0.01021163169628101	Medullo	SLC1A5	15
+hsa00514	Other types of O-glycan biosynthesis	0.010489391901191502	EPN	SLC1A5	10
+hsa04530	Tight junction	0.011548176219092356	Medullo	FOLH1	30
+hsa03420	Nucleotide excision repair	0.01182012384176991	Medullo	SLC1A5	15
+hsa04145	Phagosome	0.012465333242169063	EPN	FOLH1	40
+hsa03022	Basal transcription factors	0.012468313765068205	EPN	FOLH1	40
+hsa00140	Steroid hormone biosynthesis	0.013005753820862768	Medullo	FOLH1	30
+hsa00640	Propanoate metabolism	0.01315781929658608	ATRT	SLC7A5	10
+hsa01212	Fatty acid metabolism	0.013467769204284216	ATRT	SLC7A5	10
+hsa00511	Other glycan degradation	0.014197096183111336	EPN	FOLH1	40
+hsa04730	Long-term depression	0.014481342856821082	EPN	FOLH1	40
+hsa00730	Thiamine metabolism	0.015019557129196157	ATRT	SLC7A5	10
+hsa01210	2-Oxocarboxylic acid metabolism	0.015133174865081844	EPN	FOLH1	40
+hsa04370	VEGF signaling pathway	0.015738509483428507	ATRT	SLC7A5	10
+hsa04721	Synaptic vesicle cycle	0.016598527639655393	EPN	FOLH1	40
+hsa04066	HIF-1 signaling pathway	0.016953868398794553	Medullo	SLC1A5	15
+hsa00600	Sphingolipid metabolism	0.0170023387739471	Medullo	SLC1A5	15
+hsa04976	Bile secretion	0.017126679112718538	EPN	SLC1A5	10
+hsa03040	Spliceosome	0.018338400566150242	EPN	FOLH1	40
+hsa04390	Hippo signaling pathway	0.01871392089724849	EPN	SLC1A5	10
+hsa04330	Notch signaling pathway	0.018764644330562498	EPN	FOLH1	40
+hsa00270	Cysteine and methionine metabolism	0.019321438075617002	EPN	FOLH1	40
+hsa04070	Phosphatidylinositol signaling system	0.01954780709660235	Medullo	FOLH1	30
+hsa04922	Glucagon signaling pathway	0.01956684631408335	EPN	SLC1A5	10
+hsa04380	Osteoclast differentiation	0.020388893814792686	Medullo	SLC1A5	15
+hsa00511	Other glycan degradation	0.020701588093878003	EPN	SLC1A5	10
+hsa04662	B cell receptor signaling pathway	0.020712506792744168	Medullo	SLC1A5	15
+hsa00510	N-Glycan biosynthesis	0.020763313735596332	EPN	SLC1A5	10
+hsa00900	Terpenoid backbone biosynthesis	0.020916871258226596	ATRT	SLC7A5	10
+hsa00531	Glycosaminoglycan degradation	0.021656312354973273	EPN	FOLH1	40
+hsa00860	Porphyrin and chlorophyll metabolism	0.022261713256869924	EPN	SLC1A5	10
+hsa00140	Steroid hormone biosynthesis	0.022357111198700545	Medullo	SLC1A5	15
+hsa04650	Natural killer cell mediated cytotoxicity	0.023604831188694973	EPN	SLC1A5	10
+hsa00591	Linoleic acid metabolism	0.024909750813566157	Medullo	SLC1A5	15
+hsa04725	Cholinergic synapse	0.024975500777125154	ATRT	SLC7A5	10
+hsa04911	Insulin secretion	0.025839021469147367	EPN	SLC1A5	10
+hsa04740	Olfactory transduction	0.026729790878153713	ATRT	SLC7A5	10
+hsa04640	Hematopoietic cell lineage	0.027008711349446147	EPN	FOLH1	40
+hsa04668	TNF signaling pathway	0.027044241744576026	EPN	FOLH1	40
+hsa00590	Arachidonic acid metabolism	0.0270743392860021	ATRT	SLC7A5	10
+hsa03008	Ribosome biogenesis in eukaryotes	0.02712029122790532	Medullo	SLC1A5	15
+hsa00563	Glycosylphosphatidylinositol(GPI)-anchor biosynthesis	0.027246290383631445	Medullo	SLC1A5	15
+hsa03410	Base excision repair	0.028475692541875396	Medullo	SLC1A5	15
+hsa00532	Glycosaminoglycan biosynthesis - chondroitin sulfate / dermatan sulfate	0.028674652341517833	EPN	FOLH1	40
+hsa04960	Aldosterone-regulated sodium reabsorption	0.02868970407796434	Medullo	FOLH1	30
+hsa04141	Protein processing in endoplasmic reticulum	0.028856417151737278	EPN	SLC1A5	10
+hsa04071	Sphingolipid signaling pathway	0.029052180167624515	EPN	FOLH1	40
+hsa04973	Carbohydrate digestion and absorption	0.029820508316583016	EPN	SLC1A5	10
+hsa00640	Propanoate metabolism	0.03067016172168597	EPN	FOLH1	40
+hsa04918	Thyroid hormone synthesis	0.031136181808218165	Medullo	FOLH1	30
+hsa00590	Arachidonic acid metabolism	0.03118594514663617	Medullo	FOLH1	30
+hsa00511	Other glycan degradation	0.032173703593473345	Medullo	SLC1A5	15
+hsa04727	GABAergic synapse	0.03275717828391747	Medullo	FOLH1	30
+hsa03410	Base excision repair	0.03344014648281671	Medullo	FOLH1	30
+hsa04152	AMPK signaling pathway	0.03498190996310975	Medullo	FOLH1	30
+hsa04064	NF-kappa B signaling pathway	0.03526412971945527	EPN	SLC1A5	10
+hsa04964	Proximal tubule bicarbonate reclamation	0.03556447321429172	Medullo	SLC1A5	15
+hsa04724	Glutamatergic synapse	0.03593404130769808	ATRT	SLC7A5	10
+hsa00052	Galactose metabolism	0.03601454495296684	EPN	SLC1A5	10
+hsa00670	One carbon pool by folate	0.036745885056790314	ATRT	SLC7A5	10
+hsa04970	Salivary secretion	0.036922515682520494	Medullo	FOLH1	30
+hsa00670	One carbon pool by folate	0.036995612873747155	EPN	FOLH1	40
+hsa00603	Glycosphingolipid biosynthesis - globo series	0.03704682390029252	ATRT	SLC7A5	10
+hsa02010	ABC transporters	0.03724466628170204	Medullo	SLC1A5	15
+hsa00380	Tryptophan metabolism	0.03769578579192266	EPN	FOLH1	40
+hsa04060	Cytokine-cytokine receptor interaction	0.038037452796414524	EPN	FOLH1	40
+hsa00760	Nicotinate and nicotinamide metabolism	0.03853303422089068	Medullo	SLC1A5	15
+hsa04024	cAMP signaling pathway	0.04052921809699362	EPN	FOLH1	40
+hsa03440	Homologous recombination	0.04124598163817401	EPN	FOLH1	40
+hsa04977	Vitamin digestion and absorption	0.04172236246205483	EPN	FOLH1	40
+hsa00561	Glycerolipid metabolism	0.04228286054268334	EPN	FOLH1	40
+hsa04971	Gastric acid secretion	0.04235509818333039	Medullo	SLC1A5	15
+hsa04142	Lysosome	0.04267356948584858	EPN	FOLH1	40
+hsa00360	Phenylalanine metabolism	0.043121020077776365	Medullo	SLC1A5	15
+hsa04010	MAPK signaling pathway	0.044243961010563805	Medullo	SLC1A5	15
+hsa04962	Vasopressin-regulated water reabsorption	0.04425332362165306	Medullo	FOLH1	30
+hsa04623	Cytosolic DNA-sensing pathway	0.04474181411677238	Medullo	SLC1A5	15
+hsa04725	Cholinergic synapse	0.04516802844220546	EPN	FOLH1	40
+hsa04971	Gastric acid secretion	0.04522307799820282	EPN	FOLH1	40
+hsa04725	Cholinergic synapse	0.04525531763628147	Medullo	FOLH1	30
+hsa00565	Ether lipid metabolism	0.04661917145518886	EPN	SLC1A5	10
+hsa00280	Valine, leucine and isoleucine degradation	0.04701028894351972	Medullo	FOLH1	30
+hsa04922	Glucagon signaling pathway	0.04766781596686863	Medullo	FOLH1	30
+hsa00330	Arginine and proline metabolism	0.04987683653312687	EPN	FOLH1	40
+hsa00120	Primary bile acid biosynthesis	0.05110459519039887	Medullo	FOLH1	30
+hsa04913	Ovarian steroidogenesis	0.05207959582946519	EPN	FOLH1	40
+hsa00601	Glycosphingolipid biosynthesis - lacto and neolacto series	0.052474764121079806	Medullo	FOLH1	30
+hsa04664	Fc epsilon RI signaling pathway	0.05258754452898575	ATRT	SLC7A5	10
+hsa00380	Tryptophan metabolism	0.053883925374297294	Medullo	FOLH1	30
+hsa00601	Glycosphingolipid biosynthesis - lacto and neolacto series	0.05454684711952778	EPN	FOLH1	40
+hsa04742	Taste transduction	0.05588461459669231	Medullo	SLC1A5	15
+hsa04141	Protein processing in endoplasmic reticulum	0.055992403723834704	Medullo	FOLH1	30
+hsa00071	Fatty acid degradation	0.05599841298500219	Medullo	SLC1A5	15
+hsa04713	Circadian entrainment	0.05611098204851463	ATRT	SLC7A5	10
+hsa00830	Retinol metabolism	0.05637972499039485	Medullo	SLC1A5	15
+hsa00770	Pantothenate and CoA biosynthesis	0.05667867526314761	ATRT	SLC7A5	10
+hsa04810	Regulation of actin cytoskeleton	0.05678643234191555	EPN	FOLH1	40
+hsa00270	Cysteine and methionine metabolism	0.057223635890828344	Medullo	FOLH1	30
+hsa04911	Insulin secretion	0.05729742679741632	Medullo	FOLH1	30
+hsa00790	Folate biosynthesis	0.05729776475207445	EPN	SLC1A5	10
+hsa00514	Other types of O-glycan biosynthesis	0.05815387669163815	EPN	FOLH1	40
+hsa04915	Estrogen signaling pathway	0.05886916982388756	EPN	SLC1A5	10
+hsa00760	Nicotinate and nicotinamide metabolism	0.05930447738327742	EPN	SLC1A5	10
+hsa04140	Regulation of autophagy	0.059478873529155776	ATRT	SLC7A5	10
+hsa00520	Amino sugar and nucleotide sugar metabolism	0.060388798939810126	EPN	FOLH1	40
+hsa00640	Propanoate metabolism	0.060598275537183444	EPN	SLC1A5	10
+hsa04062	Chemokine signaling pathway	0.062325280018097014	Medullo	SLC1A5	15
+hsa01212	Fatty acid metabolism	0.0623759479896752	Medullo	FOLH1	30
+hsa04728	Dopaminergic synapse	0.06264828768471853	ATRT	SLC7A5	10
+hsa04114	Oocyte meiosis	0.06298376401265858	ATRT	SLC7A5	10
+hsa00230	Purine metabolism	0.06371075339611713	EPN	SLC1A5	10
+hsa03022	Basal transcription factors	0.06516106778635211	Medullo	FOLH1	30
+hsa04920	Adipocytokine signaling pathway	0.06539564892777214	EPN	FOLH1	40
+hsa00512	Mucin type O-Glycan biosynthesis	0.06647061252333487	Medullo	SLC1A5	15
+hsa04722	Neurotrophin signaling pathway	0.06682322840242506	EPN	SLC1A5	10
+hsa00592	alpha-Linolenic acid metabolism	0.06683764083554809	Medullo	SLC1A5	15
+hsa00910	Nitrogen metabolism	0.06832047190670805	EPN	SLC1A5	10
+hsa04015	Rap1 signaling pathway	0.06890825230043741	EPN	FOLH1	40
+hsa04725	Cholinergic synapse	0.07001917053821363	Medullo	SLC1A5	15
+hsa04960	Aldosterone-regulated sodium reabsorption	0.070359252388367155	EPN	SLC1A5	10
+hsa00190	Oxidative phosphorylation	0.07115789840297924	Medullo	FOLH1	30
+hsa00760	Nicotinate and nicotinamide metabolism	0.0724840774766709	EPN	FOLH1	40
+hsa00051	Fructose and mannose metabolism	0.073048526331452715	Medullo	SLC1A5	15
+hsa04913	Ovarian steroidogenesis	0.07311305779884472	Medullo	FOLH1	30
+hsa04620	Toll-like receptor signaling pathway	0.07361019944612729	Medullo	SLC1A5	15
+hsa00310	Lysine degradation	0.07541673849373291	Medullo	FOLH1	30
+hsa00534	Glycosaminoglycan biosynthesis - heparan sulfate / heparin	0.07543243672289067	Medullo	FOLH1	30
+hsa04020	Calcium signaling pathway	0.07560828869769523	Medullo	FOLH1	30
+hsa00982	Drug metabolism - cytochrome P450	0.07587989755663717	EPN	FOLH1	40
+hsa00350	Tyrosine metabolism	0.07622518485232885	EPN	FOLH1	40
+hsa00520	Amino sugar and nucleotide sugar metabolism	0.07706169649826872	EPN	SLC1A5	10
+hsa00590	Arachidonic acid metabolism	0.07714567226730584	EPN	FOLH1	40
+hsa00564	Glycerophospholipid metabolism	0.07714725098232272	EPN	FOLH1	40
+hsa00970	Aminoacyl-tRNA biosynthesis	0.07805506639689393	EPN	SLC1A5	10
+hsa04742	Taste transduction	0.07817440226493572	EPN	FOLH1	40
+hsa04713	Circadian entrainment	0.07878009229485507	EPN	SLC1A5	10
+hsa04360	Axon guidance	0.08064905737496782	EPN	SLC1A5	10
+hsa04142	Lysosome	0.08070185643873658	ATRT	SLC7A5	10
+hsa03015	mRNA surveillance pathway	0.08123661477851789	EPN	FOLH1	40
+hsa03450	Non-homologous end-joining	0.08234895759790566	ATRT	SLC7A5	10
+hsa00514	Other types of O-glycan biosynthesis	0.08242227535229923	ATRT	SLC7A5	10
+hsa00920	Sulfur metabolism	0.08281338438029189	Medullo	FOLH1	30
+hsa01200	Carbon metabolism	0.08286853791676638	EPN	SLC1A5	10
+hsa04612	Antigen processing and presentation	0.08322473127248535	EPN	FOLH1	40
+hsa04977	Vitamin digestion and absorption	0.08334030795035711	EPN	SLC1A5	10
+hsa03022	Basal transcription factors	0.08356655236685023	Medullo	SLC1A5	15
+hsa04012	ErbB signaling pathway	0.08362909126714115	EPN	SLC1A5	10
+hsa04370	VEGF signaling pathway	0.08450220672376312	EPN	FOLH1	40
+hsa04740	Olfactory transduction	0.08776403199868882	EPN	SLC1A5	10
+hsa04014	Ras signaling pathway	0.08785218106286577	ATRT	SLC7A5	10
+hsa04146	Peroxisome	0.08795192113795942	Medullo	SLC1A5	15
+hsa04662	B cell receptor signaling pathway	0.0882861341381987	EPN	SLC1A5	10
+hsa04622	RIG-I-like receptor signaling pathway	0.08844705088202696	EPN	FOLH1	40
+hsa00140	Steroid hormone biosynthesis	0.08903249521889217	EPN	FOLH1	40
+hsa00562	Inositol phosphate metabolism	0.08935590876871305	Medullo	FOLH1	30
+hsa04611	Platelet activation	0.09077404195268222	ATRT	SLC7A5	10
+hsa04370	VEGF signaling pathway	0.090808888183051	Medullo	FOLH1	30
+hsa04660	T cell receptor signaling pathway	0.09154525056218196	Medullo	SLC1A5	15
+hsa04974	Protein digestion and absorption	0.09299394306902291	EPN	SLC1A5	10
+hsa04022	cGMP-PKG signaling pathway	0.09348860778446899	Medullo	FOLH1	30
+hsa04966	Collecting duct acid secretion	0.09428066239352338	EPN	SLC1A5	10
+hsa04310	Wnt signaling pathway	0.09617107057294928	ATRT	SLC7A5	10
+hsa04141	Protein processing in endoplasmic reticulum	0.09633413196870126	ATRT	SLC7A5	10
+hsa04914	Progesterone-mediated oocyte maturation	0.0969855514988446	Medullo	SLC1A5	15
+hsa04310	Wnt signaling pathway	0.09769089205408152	EPN	FOLH1	40
+hsa04622	RIG-I-like receptor signaling pathway	0.09802842600018179	Medullo	FOLH1	30
+hsa00591	Linoleic acid metabolism	0.09929918966459997	Medullo	FOLH1	30
+hsa04142	Lysosome	0.09971351288808354	EPN	SLC1A5	10
+hsa01040	Biosynthesis of unsaturated fatty acids	0.10017721868021352	ATRT	SLC7A5	10
+hsa00100	Steroid biosynthesis	0.10047895354547656	Medullo	SLC1A5	15
+hsa04611	Platelet activation	0.10059022904882513	Medullo	SLC1A5	15
+hsa04510	Focal adhesion	0.10070382098370555	EPN	FOLH1	40
+hsa00010	Glycolysis / Gluconeogenesis	0.10104779132130416	Medullo	SLC1A5	15
+hsa04966	Collecting duct acid secretion	0.10162365412310204	EPN	FOLH1	40
+hsa04142	Lysosome	0.10257446986278561	Medullo	SLC1A5	15
+hsa00561	Glycerolipid metabolism	0.10277409201955642	ATRT	SLC7A5	10
+hsa04962	Vasopressin-regulated water reabsorption	0.10320218259036555	EPN	SLC1A5	10
+hsa00500	Starch and sucrose metabolism	0.10324318630479624	EPN	FOLH1	40
+hsa00982	Drug metabolism - cytochrome P450	0.10344671943416582	EPN	SLC1A5	10
+hsa04062	Chemokine signaling pathway	0.10493149148980929	ATRT	SLC7A5	10
+hsa04912	GnRH signaling pathway	0.10552176721855813	Medullo	SLC1A5	15
+hsa03013	RNA transport	0.10574101580272373	EPN	FOLH1	40
+hsa04014	Ras signaling pathway	0.10581497497146664	Medullo	SLC1A5	15
+hsa00260	Glycine, serine and threonine metabolism	0.10686110802060365	ATRT	SLC7A5	10
+hsa04120	Ubiquitin mediated proteolysis	0.10828637269818922	EPN	SLC1A5	10
+hsa04062	Chemokine signaling pathway	0.10829328564002502	EPN	FOLH1	40
+hsa00061	Fatty acid biosynthesis	0.10936630265450248	Medullo	FOLH1	30
+hsa04977	Vitamin digestion and absorption	0.11022752608037654	Medullo	FOLH1	30
+hsa04070	Phosphatidylinositol signaling system	0.11024371079910789	EPN	SLC1A5	10
+hsa04370	VEGF signaling pathway	0.11102814340629809	EPN	SLC1A5	10
+hsa03022	Basal transcription factors	0.11114069314531835	ATRT	SLC7A5	10
+hsa04921	Oxytocin signaling pathway	0.1119275858204143	ATRT	SLC7A5	10
+hsa00770	Pantothenate and CoA biosynthesis	0.11333191282223348	EPN	SLC1A5	10
+hsa00450	Selenocompound metabolism	0.11387700164543066	Medullo	FOLH1	30
+hsa04662	B cell receptor signaling pathway	0.11421866099110813	Medullo	FOLH1	30
+hsa03008	Ribosome biogenesis in eukaryotes	0.11450300430853504	EPN	SLC1A5	10
+hsa04920	Adipocytokine signaling pathway	0.11454716165303898	Medullo	SLC1A5	15
+hsa04330	Notch signaling pathway	0.11465348059458096	EPN	SLC1A5	10
+hsa04350	TGF-beta signaling pathway	0.11510519323574507	ATRT	SLC7A5	10
+hsa00532	Glycosaminoglycan biosynthesis - chondroitin sulfate / dermatan sulfate	0.11522466389311224	Medullo	FOLH1	30
+hsa00100	Steroid biosynthesis	0.11594538898752901	ATRT	SLC7A5	10
+hsa04360	Axon guidance	0.11598078851084485	EPN	FOLH1	40
+hsa04972	Pancreatic secretion	0.11600543131063494	Medullo	FOLH1	30
+hsa00071	Fatty acid degradation	0.11702774319406434	ATRT	SLC7A5	10
+hsa03420	Nucleotide excision repair	0.11705053673741304	ATRT	SLC7A5	10
+hsa04514	Cell adhesion molecules (CAMs)	0.11759089953963861	Medullo	FOLH1	30
+hsa04140	Regulation of autophagy	0.11779024289376014	Medullo	SLC1A5	15
+hsa04971	Gastric acid secretion	0.11812060534872013	EPN	SLC1A5	10
+hsa01040	Biosynthesis of unsaturated fatty acids	0.11890033649961637	EPN	FOLH1	40
+hsa00010	Glycolysis / Gluconeogenesis	0.11928216448373945	EPN	FOLH1	40
+hsa00360	Phenylalanine metabolism	0.11999655816253307	ATRT	SLC7A5	10
+hsa04727	GABAergic synapse	0.12047487904335874	ATRT	SLC7A5	10
+hsa04380	Osteoclast differentiation	0.12091366571493503	EPN	SLC1A5	10
+hsa00072	Synthesis and degradation of ketone bodies	0.12261451689383601	Medullo	SLC1A5	15
+hsa00500	Starch and sucrose metabolism	0.12362948443130957	EPN	SLC1A5	10
+hsa04710	Circadian rhythm	0.12620981795417135	EPN	SLC1A5	10
+hsa04151	PI3K-Akt signaling pathway	0.12639595664257042	Medullo	SLC1A5	15
+hsa04913	Ovarian steroidogenesis	0.12992231055729728	ATRT	SLC7A5	10
+hsa00604	Glycosphingolipid biosynthesis - ganglio series	0.13019061041335558	EPN	SLC1A5	10
+hsa04664	Fc epsilon RI signaling pathway	0.1306805790871489	Medullo	SLC1A5	15
+hsa03030	DNA replication	0.13109166231264338	EPN	FOLH1	40
+hsa04614	Renin-angiotensin system	0.13241460562439464	ATRT	SLC7A5	10
+hsa04260	Cardiac muscle contraction	0.13259016944273178	Medullo	SLC1A5	15
+hsa00561	Glycerolipid metabolism	0.13558874592614012	EPN	SLC1A5	10
+hsa04270	Vascular smooth muscle contraction	0.13612346866640537	EPN	SLC1A5	10
+hsa00620	Pyruvate metabolism	0.1364218634682497	ATRT	SLC7A5	10
+hsa04152	AMPK signaling pathway	0.13643575899070742	EPN	FOLH1	40
+hsa00040	Pentose and glucuronate interconversions	0.13687581564722281	EPN	SLC1A5	10
+hsa00270	Cysteine and methionine metabolism	0.1376799519291915	ATRT	SLC7A5	10
+hsa04913	Ovarian steroidogenesis	0.13803467524031826	Medullo	SLC1A5	15
+hsa04977	Vitamin digestion and absorption	0.13880125005580415	Medullo	SLC1A5	15
+hsa04020	Calcium signaling pathway	0.1389133367325604	EPN	FOLH1	40
+hsa00030	Pentose phosphate pathway	0.14022484980907363	EPN	SLC1A5	10
+hsa00565	Ether lipid metabolism	0.1418497446230787	ATRT	SLC7A5	10
+hsa04970	Salivary secretion	0.14274799658486456	Medullo	SLC1A5	15
+hsa00980	Metabolism of xenobiotics by cytochrome P450	0.1430612974434749	EPN	SLC1A5	10
+hsa04611	Platelet activation	0.14441929574978363	EPN	FOLH1	40
+hsa00740	Riboflavin metabolism	0.1447986127154664	EPN	SLC1A5	10
+hsa00790	Folate biosynthesis	0.14487738820604434	EPN	FOLH1	40
+hsa00534	Glycosaminoglycan biosynthesis - heparan sulfate / heparin	0.14506833035061234	EPN	FOLH1	40
+hsa04978	Mineral absorption	0.14536497568772613	EPN	SLC1A5	10
+hsa04320	Dorso-ventral axis formation	0.14605131707760038	EPN	SLC1A5	10
+hsa04510	Focal adhesion	0.14632436730746906	ATRT	SLC7A5	10
+hsa04912	GnRH signaling pathway	0.14977275665268594	EPN	FOLH1	40
+hsa04664	Fc epsilon RI signaling pathway	0.15092648738548511	EPN	FOLH1	40
+hsa00630	Glyoxylate and dicarboxylate metabolism	0.1511839113575657	EPN	SLC1A5	10
+hsa01200	Carbon metabolism	0.15175275208183742	EPN	FOLH1	40
+hsa04261	Adrenergic signaling in cardiomyocytes	0.15333666872823012	Medullo	SLC1A5	15
+hsa04145	Phagosome	0.15391788583165464	Medullo	SLC1A5	15
+hsa00760	Nicotinate and nicotinamide metabolism	0.15481898313415343	ATRT	SLC7A5	10
+hsa03020	RNA polymerase	0.15659903560384986	EPN	SLC1A5	10
+hsa00500	Starch and sucrose metabolism	0.15696035729672378	Medullo	SLC1A5	15
+hsa03440	Homologous recombination	0.15910403935625342	Medullo	FOLH1	30
+hsa01200	Carbon metabolism	0.1598006752426384	ATRT	SLC7A5	10
+hsa04911	Insulin secretion	0.16072329830408622	EPN	FOLH1	40
+hsa04666	Fc gamma R-mediated phagocytosis	0.16190362551145634	Medullo	FOLH1	30
+hsa04520	Adherens junction	0.16382277098876255	EPN	SLC1A5	10
+hsa00740	Riboflavin metabolism	0.1640932505631843	ATRT	SLC7A5	10
+hsa04080	Neuroactive ligand-receptor interaction	0.1658675970230704	Medullo	SLC1A5	15
+hsa04350	TGF-beta signaling pathway	0.1663641992513019	EPN	FOLH1	40
+hsa00500	Starch and sucrose metabolism	0.16654067089984084	ATRT	SLC7A5	10
+hsa04721	Synaptic vesicle cycle	0.1680243213500749	Medullo	FOLH1	30
+hsa04614	Renin-angiotensin system	0.16927096313215015	Medullo	FOLH1	30
+hsa00450	Selenocompound metabolism	0.17008323360737695	Medullo	SLC1A5	15
+hsa00533	Glycosaminoglycan biosynthesis - keratan sulfate	0.17094706778051094	Medullo	SLC1A5	15
+hsa00410	beta-Alanine metabolism	0.1712023834880566	Medullo	SLC1A5	15
+hsa03050	Proteasome	0.17131204018816226	EPN	FOLH1	40
+hsa03060	Protein export	0.1729878064678233	EPN	FOLH1	40
+hsa00533	Glycosaminoglycan biosynthesis - keratan sulfate	0.17299639471244246	EPN	FOLH1	40
+hsa00562	Inositol phosphate metabolism	0.1741894840513606	ATRT	SLC7A5	10
+hsa00061	Fatty acid biosynthesis	0.17439544098511411	ATRT	SLC7A5	10
+hsa04015	Rap1 signaling pathway	0.17571477340001157	Medullo	SLC1A5	15
+hsa00650	Butanoate metabolism	0.17613470723141703	EPN	FOLH1	40
+hsa04917	Prolactin signaling pathway	0.17613870626376948	Medullo	SLC1A5	15
+hsa04710	Circadian rhythm	0.17891835031789877	ATRT	SLC7A5	10
+hsa04540	Gap junction	0.17995403585199227	EPN	SLC1A5	10
+hsa03450	Non-homologous end-joining	0.18064952382058158	Medullo	FOLH1	30
+hsa04612	Antigen processing and presentation	0.18123784125953485	Medullo	FOLH1	30
+hsa04610	Complement and coagulation cascades	0.18190242476537208	ATRT	SLC7A5	10
+hsa00533	Glycosaminoglycan biosynthesis - keratan sulfate	0.18226547781304164	ATRT	SLC7A5	10
+hsa04370	VEGF signaling pathway	0.1833487931875257	Medullo	SLC1A5	15
+hsa00534	Glycosaminoglycan biosynthesis - heparan sulfate / heparin	0.1844354228548026	ATRT	SLC7A5	10
+hsa00970	Aminoacyl-tRNA biosynthesis	0.1844755024751976	Medullo	FOLH1	30
+hsa04964	Proximal tubule bicarbonate reclamation	0.18449788064490863	ATRT	SLC7A5	10
+hsa00120	Primary bile acid biosynthesis	0.18681504881847247	EPN	SLC1A5	10
+hsa00670	One carbon pool by folate	0.18711562134507348	EPN	SLC1A5	10
+hsa00130	Ubiquinone and other terpenoid-quinone biosynthesis	0.18719320574020523	Medullo	SLC1A5	15
+hsa00790	Folate biosynthesis	0.1882765306048718	ATRT	SLC7A5	10
+hsa00970	Aminoacyl-tRNA biosynthesis	0.18898095540383197	EPN	FOLH1	40
+hsa04660	T cell receptor signaling pathway	0.18970147752641456	Medullo	FOLH1	30
+hsa00532	Glycosaminoglycan biosynthesis - chondroitin sulfate / dermatan sulfate	0.19004410271376304	Medullo	SLC1A5	15
+hsa04971	Gastric acid secretion	0.19078750809555287	Medullo	FOLH1	30
+hsa04750	Inflammatory mediator regulation of TRP channels	0.1917888070184742	Medullo	SLC1A5	15
+hsa00650	Butanoate metabolism	0.1921672633772318	Medullo	SLC1A5	15
+hsa04740	Olfactory transduction	0.19219159791815776	Medullo	SLC1A5	15
+hsa04662	B cell receptor signaling pathway	0.1922544447151312	EPN	FOLH1	40
+hsa04666	Fc gamma R-mediated phagocytosis	0.19356506295593998	EPN	SLC1A5	10
+hsa04550	Signaling pathways regulating pluripotency of stem cells	0.19410783140569793	EPN	SLC1A5	10
+hsa04080	Neuroactive ligand-receptor interaction	0.1963821451803464	Medullo	FOLH1	30
+hsa00604	Glycosphingolipid biosynthesis - ganglio series	0.1971234263634353	EPN	FOLH1	40
+hsa04722	Neurotrophin signaling pathway	0.19767627973401464	Medullo	FOLH1	30
+hsa00071	Fatty acid degradation	0.1976909712849388	EPN	SLC1A5	10
+hsa04721	Synaptic vesicle cycle	0.19799441630403297	EPN	SLC1A5	10
+hsa04141	Protein processing in endoplasmic reticulum	0.2015362401206135	Medullo	SLC1A5	15
+hsa00590	Arachidonic acid metabolism	0.20248021329619764	Medullo	SLC1A5	15
+hsa00900	Terpenoid backbone biosynthesis	0.20363711853562066	Medullo	SLC1A5	15
+hsa01040	Biosynthesis of unsaturated fatty acids	0.20507083355650593	EPN	SLC1A5	10
+hsa04330	Notch signaling pathway	0.20543667334358964	ATRT	SLC7A5	10
+hsa00533	Glycosaminoglycan biosynthesis - keratan sulfate	0.20668828681773332	Medullo	FOLH1	30
+hsa00360	Phenylalanine metabolism	0.20928550028201018	EPN	SLC1A5	10
+hsa00970	Aminoacyl-tRNA biosynthesis	0.20981266692913605	ATRT	SLC7A5	10
+hsa00260	Glycine, serine and threonine metabolism	0.21080176998956338	Medullo	FOLH1	30
+hsa03320	PPAR signaling pathway	0.21145982678958877	EPN	SLC1A5	10
+hsa00592	alpha-Linolenic acid metabolism	0.2122330401533515	Medullo	FOLH1	30
+hsa00010	Glycolysis / Gluconeogenesis	0.21270343947405557	ATRT	SLC7A5	10
+hsa04622	RIG-I-like receptor signaling pathway	0.21272004906156164	EPN	SLC1A5	10
+hsa04922	Glucagon signaling pathway	0.21280028927806569	EPN	FOLH1	40
+hsa04261	Adrenergic signaling in cardiomyocytes	0.21378087735726145	EPN	SLC1A5	10
+hsa00600	Sphingolipid metabolism	0.21455175234112667	ATRT	SLC7A5	10
+hsa04668	TNF signaling pathway	0.2157055346819634	Medullo	FOLH1	30
+hsa00670	One carbon pool by folate	0.21650178280307764	Medullo	FOLH1	30
+hsa04066	HIF-1 signaling pathway	0.21740983639272085	EPN	SLC1A5	10
+hsa04614	Renin-angiotensin system	0.21802857492901523	Medullo	SLC1A5	15
+hsa00730	Thiamine metabolism	0.21987314598954397	Medullo	FOLH1	30
+hsa00350	Tyrosine metabolism	0.22102526281540805	EPN	SLC1A5	10
+hsa03018	RNA degradation	0.2215314547431135	EPN	FOLH1	40
+hsa00591	Linoleic acid metabolism	0.2240295785535702	ATRT	SLC7A5	10
+hsa00330	Arginine and proline metabolism	0.2262318756643382	ATRT	SLC7A5	10
+hsa04350	TGF-beta signaling pathway	0.22641987860565918	Medullo	FOLH1	30
+hsa00730	Thiamine metabolism	0.22642559205704674	EPN	FOLH1	40
+hsa04144	Endocytosis	0.22674477322702127	Medullo	FOLH1	30
+hsa04146	Peroxisome	0.22702835464475407	ATRT	SLC7A5	10
+hsa00062	Fatty acid elongation	0.22706872615617368	Medullo	FOLH1	30
+hsa00562	Inositol phosphate metabolism	0.2283434736059518	EPN	FOLH1	40
+hsa00603	Glycosphingolipid biosynthesis - globo series	0.23099484343716045	EPN	SLC1A5	10
+hsa04710	Circadian rhythm	0.23113673577499252	EPN	FOLH1	40
+hsa04672	Intestinal immune network for IgA production	0.23305892957834276	EPN	SLC1A5	10
+hsa04150	mTOR signaling pathway	0.2367147620020456	EPN	SLC1A5	10
+hsa03060	Protein export	0.23795992832770552	EPN	SLC1A5	10
+hsa04530	Tight junction	0.24172345344267893	Medullo	SLC1A5	15
+hsa04510	Focal adhesion	0.24414339144924155	Medullo	SLC1A5	15
+hsa00600	Sphingolipid metabolism	0.24485821739429683	Medullo	FOLH1	30
+hsa00052	Galactose metabolism	0.24680829506341528	ATRT	SLC7A5	10
+hsa00051	Fructose and mannose metabolism	0.2473957577221001	Medullo	FOLH1	30
+hsa04727	GABAergic synapse	0.2504655499149548	EPN	FOLH1	40
+hsa04080	Neuroactive ligand-receptor interaction	0.2513733714175042	EPN	FOLH1	40
+hsa04120	Ubiquitin mediated proteolysis	0.2524149615710588	Medullo	FOLH1	30
+hsa04120	Ubiquitin mediated proteolysis	0.2537244100890834	ATRT	SLC7A5	10
+hsa00190	Oxidative phosphorylation	0.2538426898758393	ATRT	SLC7A5	10
+hsa00982	Drug metabolism - cytochrome P450	0.25410570662253845	Medullo	FOLH1	30
+hsa04020	Calcium signaling pathway	0.2568738087606625	ATRT	SLC7A5	10
+hsa04973	Carbohydrate digestion and absorption	0.2596274913208575	EPN	FOLH1	40
+hsa04911	Insulin secretion	0.26161142456448605	Medullo	SLC1A5	15
+hsa04150	mTOR signaling pathway	0.2620498295647679	Medullo	SLC1A5	15
+hsa03020	RNA polymerase	0.26233204383809966	ATRT	SLC7A5	10
+hsa04611	Platelet activation	0.2630183372082612	Medullo	FOLH1	30
+hsa00531	Glycosaminoglycan degradation	0.2634413901959187	Medullo	SLC1A5	15
+hsa04070	Phosphatidylinositol signaling system	0.2642175504417037	EPN	FOLH1	40
+hsa00071	Fatty acid degradation	0.2658439498035254	Medullo	FOLH1	30
+hsa04330	Notch signaling pathway	0.26765946739702284	Medullo	FOLH1	30
+hsa04144	Endocytosis	0.2689290357673533	ATRT	SLC7A5	10
+hsa04960	Aldosterone-regulated sodium reabsorption	0.26899843308290483	EPN	FOLH1	40
+hsa00640	Propanoate metabolism	0.27124979642877256	Medullo	FOLH1	30
+hsa04520	Adherens junction	0.27262748168364176	Medullo	FOLH1	30
+hsa03320	PPAR signaling pathway	0.2734813458892903	Medullo	FOLH1	30
+hsa00510	N-Glycan biosynthesis	0.27349817649855845	Medullo	FOLH1	30
+hsa04910	Insulin signaling pathway	0.274068359703167	Medullo	FOLH1	30
+hsa00650	Butanoate metabolism	0.2743462001023708	ATRT	SLC7A5	10
+hsa03008	Ribosome biogenesis in eukaryotes	0.2749194018642124	ATRT	SLC7A5	10
+hsa04960	Aldosterone-regulated sodium reabsorption	0.27579154004983875	Medullo	SLC1A5	15
+hsa04730	Long-term depression	0.27595361702280163	EPN	SLC1A5	10
+hsa03015	mRNA surveillance pathway	0.27736601971797853	Medullo	FOLH1	30
+hsa04726	Serotonergic synapse	0.2777283162487329	Medullo	FOLH1	30
+hsa00240	Pyrimidine metabolism	0.2805209806122317	EPN	SLC1A5	10
+hsa04022	cGMP-PKG signaling pathway	0.28101078240017596	EPN	SLC1A5	10
+hsa00592	alpha-Linolenic acid metabolism	0.2823723295527192	ATRT	SLC7A5	10
+hsa04742	Taste transduction	0.2835228646856918	EPN	SLC1A5	10
+hsa04978	Mineral absorption	0.2838426597077146	Medullo	SLC1A5	15
+hsa03015	mRNA surveillance pathway	0.284483826722743	EPN	SLC1A5	10
+hsa04080	Neuroactive ligand-receptor interaction	0.28467471351347706	ATRT	SLC7A5	10
+hsa04724	Glutamatergic synapse	0.28476981154231884	Medullo	FOLH1	30
+hsa04728	Dopaminergic synapse	0.28563170892687373	EPN	FOLH1	40
+hsa04962	Vasopressin-regulated water reabsorption	0.2857526762185253	EPN	FOLH1	40
+hsa04512	ECM-receptor interaction	0.28622325374737406	EPN	SLC1A5	10
+hsa04972	Pancreatic secretion	0.28757095525149395	ATRT	SLC7A5	10
+hsa00061	Fatty acid biosynthesis	0.28780967633212456	EPN	FOLH1	40
+hsa01200	Carbon metabolism	0.28836106102083353	Medullo	SLC1A5	15
+hsa00480	Glutathione metabolism	0.2891454231834226	EPN	SLC1A5	10
+hsa04976	Bile secretion	0.2900368162956362	Medullo	FOLH1	30
+hsa04140	Regulation of autophagy	0.29013893971482835	EPN	SLC1A5	10
+hsa04012	ErbB signaling pathway	0.29273386681981917	Medullo	FOLH1	30
+hsa04614	Renin-angiotensin system	0.29395520191905705	EPN	FOLH1	40
+hsa04623	Cytosolic DNA-sensing pathway	0.2945727074625059	EPN	SLC1A5	10
+hsa00561	Glycerolipid metabolism	0.29515489491145763	Medullo	SLC1A5	15
+hsa04912	GnRH signaling pathway	0.29593097520126727	ATRT	SLC7A5	10
+hsa00030	Pentose phosphate pathway	0.30004872241128716	ATRT	SLC7A5	10
+hsa03050	Proteasome	0.30416659477563107	EPN	SLC1A5	10
+hsa03018	RNA degradation	0.3043801798754394	EPN	SLC1A5	10
+hsa00620	Pyruvate metabolism	0.30508861736909726	EPN	FOLH1	40
+hsa03020	RNA polymerase	0.3061064019955467	Medullo	FOLH1	30
+hsa02010	ABC transporters	0.3077472648817586	EPN	FOLH1	40
+hsa00520	Amino sugar and nucleotide sugar metabolism	0.30822910335280523	Medullo	SLC1A5	15
+hsa00601	Glycosphingolipid biosynthesis - lacto and neolacto series	0.308296341434219	EPN	SLC1A5	10
+hsa04152	AMPK signaling pathway	0.3083891593513129	Medullo	SLC1A5	15
+hsa04970	Salivary secretion	0.30996255719388655	EPN	SLC1A5	10
+hsa01230	Biosynthesis of amino acids	0.31024783674657214	Medullo	SLC1A5	15
+hsa00410	beta-Alanine metabolism	0.31226525499630264	EPN	FOLH1	40
+hsa04620	Toll-like receptor signaling pathway	0.31368784638928915	EPN	FOLH1	40
+hsa04919	Thyroid hormone signaling pathway	0.31371189365771096	Medullo	FOLH1	30
+hsa00020	Citrate cycle (TCA cycle)	0.31547829387423265	EPN	SLC1A5	10
+hsa00980	Metabolism of xenobiotics by cytochrome P450	0.3180894622762007	Medullo	SLC1A5	15
+hsa04964	Proximal tubule bicarbonate reclamation	0.3181300354643557	EPN	SLC1A5	10
+hsa04916	Melanogenesis	0.31875010717359414	Medullo	FOLH1	30
+hsa04340	Hedgehog signaling pathway	0.31961285551332647	Medullo	FOLH1	30
+hsa04713	Circadian entrainment	0.31972883269707686	Medullo	SLC1A5	15
+hsa04810	Regulation of actin cytoskeleton	0.3203452880163131	EPN	SLC1A5	10
+hsa00531	Glycosaminoglycan degradation	0.3218613232840701	ATRT	SLC7A5	10
+hsa04540	Gap junction	0.322036112853599	Medullo	SLC1A5	15
+hsa04150	mTOR signaling pathway	0.3244197145161686	ATRT	SLC7A5	10
+hsa04621	NOD-like receptor signaling pathway	0.3246248552701173	Medullo	FOLH1	30
+hsa00260	Glycine, serine and threonine metabolism	0.32720656692376504	Medullo	SLC1A5	15
+hsa00860	Porphyrin and chlorophyll metabolism	0.327242987520051	Medullo	SLC1A5	15
+hsa04151	PI3K-Akt signaling pathway	0.32937069891435977	Medullo	FOLH1	30
+hsa04070	Phosphatidylinositol signaling system	0.330702120560625	Medullo	SLC1A5	15
+hsa04010	MAPK signaling pathway	0.3327696601228902	EPN	SLC1A5	10
+hsa04721	Synaptic vesicle cycle	0.33356745376048924	Medullo	SLC1A5	15
+hsa00051	Fructose and mannose metabolism	0.3344704317770084	ATRT	SLC7A5	10
+hsa01040	Biosynthesis of unsaturated fatty acids	0.33748864696117087	Medullo	FOLH1	30
+hsa04110	Cell cycle	0.33864913656381934	Medullo	FOLH1	30
+hsa04130	SNARE interactions in vesicular transport	0.33903627375353507	Medullo	SLC1A5	15
+hsa00900	Terpenoid backbone biosynthesis	0.33948929254560634	Medullo	FOLH1	30
+hsa03410	Base excision repair	0.3395706284003721	ATRT	SLC7A5	10
+hsa03410	Base excision repair	0.34024100808767277	EPN	FOLH1	40
+hsa00982	Drug metabolism - cytochrome P450	0.3406801095198094	Medullo	SLC1A5	15
+hsa04612	Antigen processing and presentation	0.34257355747202767	ATRT	SLC7A5	10
+hsa04920	Adipocytokine signaling pathway	0.3432022123124659	ATRT	SLC7A5	10
+hsa00740	Riboflavin metabolism	0.3436843970464254	EPN	FOLH1	40
+hsa04630	Jak-STAT signaling pathway	0.34503823478387907	EPN	SLC1A5	10
+hsa04960	Aldosterone-regulated sodium reabsorption	0.34568850768005827	ATRT	SLC7A5	10
+hsa04921	Oxytocin signaling pathway	0.3474035898627452	Medullo	FOLH1	30
+hsa00062	Fatty acid elongation	0.34744311824664487	EPN	SLC1A5	10
+hsa04151	PI3K-Akt signaling pathway	0.3485236021213965	ATRT	SLC7A5	10
+hsa03450	Non-homologous end-joining	0.3499806692217049	EPN	FOLH1	40
+hsa00130	Ubiquinone and other terpenoid-quinone biosynthesis	0.3525011407477048	EPN	FOLH1	40
+hsa03460	Fanconi anemia pathway	0.35258819046451206	Medullo	SLC1A5	15
+hsa03040	Spliceosome	0.35334513900979636	ATRT	SLC7A5	10
+hsa04724	Glutamatergic synapse	0.35389191457185787	EPN	SLC1A5	10
+hsa00600	Sphingolipid metabolism	0.3564269196148775	EPN	FOLH1	40
+hsa04270	Vascular smooth muscle contraction	0.35812157335299444	ATRT	SLC7A5	10
+hsa04727	GABAergic synapse	0.3591380083537017	EPN	SLC1A5	10
+hsa04728	Dopaminergic synapse	0.35958374718971764	Medullo	SLC1A5	15
+hsa00910	Nitrogen metabolism	0.3600359074105771	Medullo	FOLH1	30
+hsa04918	Thyroid hormone synthesis	0.3600731708100468	ATRT	SLC7A5	10
+hsa04961	Endocrine and other factor-regulated calcium reabsorption	0.3603987925422182	EPN	SLC1A5	10
+hsa04510	Focal adhesion	0.3623680935380341	Medullo	FOLH1	30
+hsa04260	Cardiac muscle contraction	0.36410730498665034	EPN	SLC1A5	10
+hsa04742	Taste transduction	0.36503661591665804	Medullo	FOLH1	30
+hsa00190	Oxidative phosphorylation	0.36720772496960397	EPN	SLC1A5	10
+hsa04710	Circadian rhythm	0.36738389179801956	Medullo	SLC1A5	15
+hsa00512	Mucin type O-Glycan biosynthesis	0.3700282098141875	EPN	SLC1A5	10
+hsa04514	Cell adhesion molecules (CAMs)	0.37025491251342496	ATRT	SLC7A5	10
+hsa00340	Histidine metabolism	0.3707781462272767	Medullo	FOLH1	30
+hsa04961	Endocrine and other factor-regulated calcium reabsorption	0.3722228295963934	Medullo	FOLH1	30
+hsa04964	Proximal tubule bicarbonate reclamation	0.37272656528680437	Medullo	FOLH1	30
+hsa04973	Carbohydrate digestion and absorption	0.3728175949709406	ATRT	SLC7A5	10
+hsa04660	T cell receptor signaling pathway	0.3731180600008861	EPN	FOLH1	40
+hsa00980	Metabolism of xenobiotics by cytochrome P450	0.3739985914212506	ATRT	SLC7A5	10
+hsa00260	Glycine, serine and threonine metabolism	0.3749196081341537	EPN	SLC1A5	10
+hsa01210	2-Oxocarboxylic acid metabolism	0.37580688388793304	Medullo	SLC1A5	15
+hsa02010	ABC transporters	0.3767045475433256	EPN	SLC1A5	10
+hsa03320	PPAR signaling pathway	0.3768294944077981	EPN	FOLH1	40
+hsa04721	Synaptic vesicle cycle	0.378651967284664	ATRT	SLC7A5	10
+hsa04146	Peroxisome	0.38012766635545436	Medullo	FOLH1	30
+hsa00240	Pyrimidine metabolism	0.3806145643570733	EPN	FOLH1	40
+hsa00830	Retinol metabolism	0.3809500801192035	EPN	FOLH1	40
+hsa04071	Sphingolipid signaling pathway	0.38098232714697033	Medullo	SLC1A5	15
+hsa04110	Cell cycle	0.38331203808775305	EPN	FOLH1	40
+hsa03450	Non-homologous end-joining	0.38397466672203684	Medullo	SLC1A5	15
+hsa01200	Carbon metabolism	0.3866668556445634	Medullo	FOLH1	30
+hsa04975	Fat digestion and absorption	0.3869751259917408	ATRT	SLC7A5	10
+hsa00604	Glycosphingolipid biosynthesis - ganglio series	0.391352267635112	Medullo	FOLH1	30
+hsa00770	Pantothenate and CoA biosynthesis	0.39248622184090887	Medullo	SLC1A5	15
+hsa00072	Synthesis and degradation of ketone bodies	0.3956274512426049	EPN	SLC1A5	10
+hsa00910	Nitrogen metabolism	0.39567908143448693	EPN	FOLH1	40
+hsa04520	Adherens junction	0.39684770659066715	Medullo	SLC1A5	15
+hsa00240	Pyrimidine metabolism	0.39809006467618857	Medullo	SLC1A5	15
+hsa04115	p53 signaling pathway	0.3982395417176565	EPN	FOLH1	40
+hsa00620	Pyruvate metabolism	0.39841724037037607	Medullo	FOLH1	30
+hsa03018	RNA degradation	0.3994291416214085	Medullo	FOLH1	30
+hsa00010	Glycolysis / Gluconeogenesis	0.399717967869608	Medullo	FOLH1	30
+hsa04210	Apoptosis	0.4008521305391868	ATRT	SLC7A5	10
+hsa04919	Thyroid hormone signaling pathway	0.4026197321891265	Medullo	SLC1A5	15
+hsa04730	Long-term depression	0.4051519470268403	ATRT	SLC7A5	10
+hsa04750	Inflammatory mediator regulation of TRP channels	0.4081365702164772	Medullo	FOLH1	30
+hsa00770	Pantothenate and CoA biosynthesis	0.41074367787556665	Medullo	FOLH1	30
+hsa04961	Endocrine and other factor-regulated calcium reabsorption	0.41179592866450443	EPN	FOLH1	40
+hsa00620	Pyruvate metabolism	0.4121861502400319	Medullo	SLC1A5	15
+hsa04917	Prolactin signaling pathway	0.4133928996267644	Medullo	FOLH1	30
+hsa00760	Nicotinate and nicotinamide metabolism	0.4153859832890163	Medullo	FOLH1	30
+hsa04914	Progesterone-mediated oocyte maturation	0.4160914582753014	ATRT	SLC7A5	10
+hsa00040	Pentose and glucuronate interconversions	0.4186002539903114	EPN	FOLH1	40
+hsa04060	Cytokine-cytokine receptor interaction	0.42018887867322274	EPN	SLC1A5	10
+hsa04623	Cytosolic DNA-sensing pathway	0.4205711398799773	EPN	FOLH1	40
+hsa01210	2-Oxocarboxylic acid metabolism	0.4206284911627235	EPN	SLC1A5	10
+hsa00230	Purine metabolism	0.4212278672674916	Medullo	SLC1A5	15
+hsa04740	Olfactory transduction	0.4216218682022189	Medullo	FOLH1	30
+hsa00360	Phenylalanine metabolism	0.42269126537615986	Medullo	FOLH1	30
+hsa04310	Wnt signaling pathway	0.42507166032467947	Medullo	FOLH1	30
+hsa04966	Collecting duct acid secretion	0.4281687142499256	ATRT	SLC7A5	10
+hsa00532	Glycosaminoglycan biosynthesis - chondroitin sulfate / dermatan sulfate	0.4295333257802171	ATRT	SLC7A5	10
+hsa00910	Nitrogen metabolism	0.43191466091432956	ATRT	SLC7A5	10
+hsa00920	Sulfur metabolism	0.4330714982991062	EPN	SLC1A5	10
+hsa04115	p53 signaling pathway	0.4336624142954777	EPN	SLC1A5	10
+hsa04120	Ubiquitin mediated proteolysis	0.4367913292855343	Medullo	SLC1A5	15
+hsa04622	RIG-I-like receptor signaling pathway	0.43836294771427065	Medullo	SLC1A5	15
+hsa04664	Fc epsilon RI signaling pathway	0.43843772630587274	Medullo	FOLH1	30
+hsa04964	Proximal tubule bicarbonate reclamation	0.43895529883251705	EPN	FOLH1	40
+hsa04150	mTOR signaling pathway	0.44183577126500106	Medullo	FOLH1	30
+hsa02010	ABC transporters	0.4435036380959188	ATRT	SLC7A5	10
+hsa04540	Gap junction	0.4440269610415386	ATRT	SLC7A5	10
+hsa00260	Glycine, serine and threonine metabolism	0.44435416586748755	EPN	FOLH1	40
+hsa04261	Adrenergic signaling in cardiomyocytes	0.4444957867871634	EPN	FOLH1	40
+hsa00120	Primary bile acid biosynthesis	0.44492498847086104	ATRT	SLC7A5	10
+hsa04621	NOD-like receptor signaling pathway	0.44743095518716314	Medullo	SLC1A5	15
+hsa04666	Fc gamma R-mediated phagocytosis	0.44796126799117786	ATRT	SLC7A5	10
+hsa04145	Phagosome	0.44895694059335667	ATRT	SLC7A5	10
+hsa00982	Drug metabolism - cytochrome P450	0.45060522491048444	ATRT	SLC7A5	10
+hsa00030	Pentose phosphate pathway	0.4522534400515069	Medullo	FOLH1	30
+hsa00052	Galactose metabolism	0.45256664152115045	Medullo	FOLH1	30
+hsa00310	Lysine degradation	0.4538485129240609	EPN	FOLH1	40
+hsa00051	Fructose and mannose metabolism	0.4546090453137299	EPN	FOLH1	40
+hsa04672	Intestinal immune network for IgA production	0.4562737991505742	Medullo	SLC1A5	15
+hsa00270	Cysteine and methionine metabolism	0.4583885145893615	EPN	SLC1A5	10
+hsa04320	Dorso-ventral axis formation	0.46147551444526913	Medullo	FOLH1	30
+hsa04115	p53 signaling pathway	0.4617700752011966	Medullo	FOLH1	30
+hsa04015	Rap1 signaling pathway	0.4620189695617914	ATRT	SLC7A5	10
+hsa04726	Serotonergic synapse	0.4624329290655568	EPN	FOLH1	40
+hsa04742	Taste transduction	0.4628239591780298	ATRT	SLC7A5	10
+hsa04068	FoxO signaling pathway	0.46359282885723074	EPN	SLC1A5	10
+hsa00072	Synthesis and degradation of ketone bodies	0.46527129772420694	EPN	FOLH1	40
+hsa04972	Pancreatic secretion	0.4653528225670297	Medullo	SLC1A5	15
+hsa04750	Inflammatory mediator regulation of TRP channels	0.46560139980696025	EPN	SLC1A5	10
+hsa04015	Rap1 signaling pathway	0.46783498752052144	EPN	SLC1A5	10
+hsa04973	Carbohydrate digestion and absorption	0.46790288709139494	Medullo	FOLH1	30
+hsa04720	Long-term potentiation	0.4687926008543799	Medullo	SLC1A5	15
+hsa04910	Insulin signaling pathway	0.46940487426077215	EPN	FOLH1	40
+hsa00510	N-Glycan biosynthesis	0.47233834559789734	ATRT	SLC7A5	10
+hsa00071	Fatty acid degradation	0.4732917836239924	EPN	FOLH1	40
+hsa00310	Lysine degradation	0.4745009347215059	ATRT	SLC7A5	10
+hsa04975	Fat digestion and absorption	0.4754961437003965	Medullo	FOLH1	30
+hsa00061	Fatty acid biosynthesis	0.476736362669105	EPN	SLC1A5	10
+hsa04142	Lysosome	0.47710737893546884	Medullo	FOLH1	30
+hsa00280	Valine, leucine and isoleucine degradation	0.4786809235780171	ATRT	SLC7A5	10
+hsa03050	Proteasome	0.4805331313539549	Medullo	FOLH1	30
+hsa00120	Primary bile acid biosynthesis	0.48208460019600075	EPN	FOLH1	40
+hsa04720	Long-term potentiation	0.48361949282258776	EPN	SLC1A5	10
+hsa04140	Regulation of autophagy	0.4840506410017936	Medullo	FOLH1	30
+hsa04666	Fc gamma R-mediated phagocytosis	0.4844688100645277	EPN	FOLH1	40
+hsa04670	Leukocyte transendothelial migration	0.4852500888053535	Medullo	FOLH1	30
+hsa04130	SNARE interactions in vesicular transport	0.4854943575237989	EPN	SLC1A5	10
+hsa00590	Arachidonic acid metabolism	0.48560724409259115	EPN	SLC1A5	10
+hsa04966	Collecting duct acid secretion	0.48787317229414184	Medullo	FOLH1	30
+hsa04727	GABAergic synapse	0.48902599624489795	Medullo	SLC1A5	15
+hsa00514	Other types of O-glycan biosynthesis	0.48911274135949945	Medullo	SLC1A5	15
+hsa04144	Endocytosis	0.49147521819540185	EPN	SLC1A5	10
+hsa04970	Salivary secretion	0.49198347245249263	EPN	FOLH1	40
+hsa04972	Pancreatic secretion	0.49224147874504554	EPN	SLC1A5	10
+hsa04975	Fat digestion and absorption	0.492334149980461	EPN	SLC1A5	10
+hsa04725	Cholinergic synapse	0.4958597599844361	EPN	SLC1A5	10
+hsa04623	Cytosolic DNA-sensing pathway	0.49601213256322085	Medullo	FOLH1	30
+hsa00061	Fatty acid biosynthesis	0.5008698110032153	Medullo	SLC1A5	15
+hsa03030	DNA replication	0.5057225334710627	ATRT	SLC7A5	10
+hsa00340	Histidine metabolism	0.50719011289225	Medullo	SLC1A5	15
+hsa03440	Homologous recombination	0.5076259020744444	ATRT	SLC7A5	10
+hsa01212	Fatty acid metabolism	0.5087283642175219	EPN	FOLH1	40
+hsa03030	DNA replication	0.5110844232751073	Medullo	FOLH1	30
+hsa04726	Serotonergic synapse	0.5149467731025561	Medullo	SLC1A5	15
+hsa00603	Glycosphingolipid biosynthesis - globo series	0.5150705900876007	EPN	FOLH1	40
+hsa00330	Arginine and proline metabolism	0.5174814014787322	Medullo	SLC1A5	15
+hsa04672	Intestinal immune network for IgA production	0.5195732251308046	ATRT	SLC7A5	10
+hsa04512	ECM-receptor interaction	0.5217323731386994	Medullo	SLC1A5	15
+hsa00380	Tryptophan metabolism	0.5222613486981558	EPN	SLC1A5	10
+hsa04724	Glutamatergic synapse	0.5229164492277076	EPN	FOLH1	40
+hsa00970	Aminoacyl-tRNA biosynthesis	0.5244977632903333	Medullo	SLC1A5	15
+hsa00563	Glycosylphosphatidylinositol(GPI)-anchor biosynthesis	0.5269903640924186	Medullo	FOLH1	30
+hsa00350	Tyrosine metabolism	0.5290210217673699	Medullo	FOLH1	30
+hsa00860	Porphyrin and chlorophyll metabolism	0.5296112892892193	ATRT	SLC7A5	10
+hsa04512	ECM-receptor interaction	0.5299818309090487	EPN	FOLH1	40
+hsa01230	Biosynthesis of amino acids	0.5301436465738146	ATRT	SLC7A5	10
+hsa03008	Ribosome biogenesis in eukaryotes	0.531159676939819	Medullo	FOLH1	30
+hsa00480	Glutathione metabolism	0.5314183335089666	EPN	FOLH1	40
+hsa04621	NOD-like receptor signaling pathway	0.5319230272058946	EPN	SLC1A5	10
+hsa04612	Antigen processing and presentation	0.5366198362748782	EPN	SLC1A5	10
+hsa04024	cAMP signaling pathway	0.5375778563980613	ATRT	SLC7A5	10
+hsa04918	Thyroid hormone synthesis	0.5375791043999641	EPN	FOLH1	40
+hsa00900	Terpenoid backbone biosynthesis	0.5377071315607092	EPN	FOLH1	40
+hsa04961	Endocrine and other factor-regulated calcium reabsorption	0.5392801843569812	ATRT	SLC7A5	10
+hsa04670	Leukocyte transendothelial migration	0.5400597846324329	ATRT	SLC7A5	10
+hsa04610	Complement and coagulation cascades	0.5402565553900662	Medullo	FOLH1	30
+hsa00514	Other types of O-glycan biosynthesis	0.5406780406323939	Medullo	FOLH1	30
+hsa04921	Oxytocin signaling pathway	0.5413531166089787	EPN	SLC1A5	10
+hsa04310	Wnt signaling pathway	0.5419278004223209	EPN	SLC1A5	10
+hsa04978	Mineral absorption	0.5419988974018999	Medullo	FOLH1	30
+hsa04720	Long-term potentiation	0.544249364211479	EPN	FOLH1	40
+hsa01210	2-Oxocarboxylic acid metabolism	0.5446885023185459	Medullo	FOLH1	30
+hsa00250	Alanine, aspartate and glutamate metabolism	0.5453426594786005	Medullo	SLC1A5	15
+hsa04971	Gastric acid secretion	0.5454570814640973	ATRT	SLC7A5	10
+hsa04670	Leukocyte transendothelial migration	0.5463778721838826	EPN	SLC1A5	10
+hsa04750	Inflammatory mediator regulation of TRP channels	0.5483958311393542	ATRT	SLC7A5	10
+hsa03430	Mismatch repair	0.5497520874266217	Medullo	FOLH1	30
+hsa04145	Phagosome	0.5512221350233173	EPN	SLC1A5	10
+hsa04140	Regulation of autophagy	0.5518487980041422	EPN	FOLH1	40
+hsa04668	TNF signaling pathway	0.5535037921770478	EPN	SLC1A5	10
+hsa00052	Galactose metabolism	0.5538655080488936	Medullo	SLC1A5	15
+hsa00563	Glycosylphosphatidylinositol(GPI)-anchor biosynthesis	0.5539178538231404	EPN	FOLH1	40
+hsa04260	Cardiac muscle contraction	0.5552751952954951	EPN	FOLH1	40
+hsa00830	Retinol metabolism	0.5576215170471972	EPN	SLC1A5	10
+hsa04621	NOD-like receptor signaling pathway	0.5581230233414833	ATRT	SLC7A5	10
+hsa03450	Non-homologous end-joining	0.5616486754907719	EPN	SLC1A5	10
+hsa03060	Protein export	0.5632540611989731	Medullo	FOLH1	30
+hsa00830	Retinol metabolism	0.5642616873618369	ATRT	SLC7A5	10
+hsa00130	Ubiquinone and other terpenoid-quinone biosynthesis	0.5667370237029612	EPN	SLC1A5	10
+hsa04640	Hematopoietic cell lineage	0.5708969887233257	Medullo	FOLH1	30
+hsa04670	Leukocyte transendothelial migration	0.5717071513869623	EPN	FOLH1	40
+hsa00511	Other glycan degradation	0.5723780368060691	ATRT	SLC7A5	10
+hsa04623	Cytosolic DNA-sensing pathway	0.5746296886756268	ATRT	SLC7A5	10
+hsa04550	Signaling pathways regulating pluripotency of stem cells	0.5774396171222622	ATRT	SLC7A5	10
+hsa03013	RNA transport	0.5784680405136686	EPN	SLC1A5	10
+hsa04912	GnRH signaling pathway	0.5786354620250473	EPN	SLC1A5	10
+hsa01210	2-Oxocarboxylic acid metabolism	0.5797349086385101	ATRT	SLC7A5	10
+hsa04066	HIF-1 signaling pathway	0.5832373802672992	Medullo	FOLH1	30
+hsa00410	beta-Alanine metabolism	0.5840322756930192	ATRT	SLC7A5	10
+hsa04620	Toll-like receptor signaling pathway	0.5856699930337153	EPN	SLC1A5	10
+hsa00790	Folate biosynthesis	0.5871823074510809	Medullo	SLC1A5	15
+hsa03020	RNA polymerase	0.5884069973102688	EPN	FOLH1	40
+hsa04060	Cytokine-cytokine receptor interaction	0.5914637779366216	Medullo	SLC1A5	15
+hsa00250	Alanine, aspartate and glutamate metabolism	0.591620412716362	ATRT	SLC7A5	10
+hsa00380	Tryptophan metabolism	0.5932319966543709	ATRT	SLC7A5	10
+hsa04320	Dorso-ventral axis formation	0.5933015402814188	Medullo	SLC1A5	15
+hsa04012	ErbB signaling pathway	0.5939614354051508	ATRT	SLC7A5	10
+hsa03430	Mismatch repair	0.594460710303186	ATRT	SLC7A5	10
+hsa04612	Antigen processing and presentation	0.5946211546756834	Medullo	SLC1A5	15
+hsa00120	Primary bile acid biosynthesis	0.5956661461958581	Medullo	SLC1A5	15
+hsa04611	Platelet activation	0.5958844006860783	EPN	SLC1A5	10
+hsa04916	Melanogenesis	0.5993154407991665	EPN	SLC1A5	10
+hsa03440	Homologous recombination	0.6004350202007406	EPN	SLC1A5	10
+hsa00350	Tyrosine metabolism	0.6015811171330445	ATRT	SLC7A5	10
+hsa00520	Amino sugar and nucleotide sugar metabolism	0.6017940785123637	ATRT	SLC7A5	10
+hsa00130	Ubiquinone and other terpenoid-quinone biosynthesis	0.6037921431481361	Medullo	FOLH1	30
+hsa00040	Pentose and glucuronate interconversions	0.6040779753623268	Medullo	FOLH1	30
+hsa04064	NF-kappa B signaling pathway	0.6080833837729137	Medullo	SLC1A5	15
+hsa00140	Steroid hormone biosynthesis	0.6081986774896789	ATRT	SLC7A5	10
+hsa00531	Glycosaminoglycan degradation	0.6093246310819258	Medullo	FOLH1	30
+hsa03460	Fanconi anemia pathway	0.6094062417518414	EPN	FOLH1	40
+hsa03460	Fanconi anemia pathway	0.6108261321155763	Medullo	FOLH1	30
+hsa04914	Progesterone-mediated oocyte maturation	0.613640345292533	EPN	FOLH1	40
+hsa04380	Osteoclast differentiation	0.617807222106465	ATRT	SLC7A5	10
+hsa00230	Purine metabolism	0.6178348911022892	Medullo	FOLH1	30
+hsa04015	Rap1 signaling pathway	0.6180672637835001	Medullo	FOLH1	30
+hsa04918	Thyroid hormone synthesis	0.6201994706199685	EPN	SLC1A5	10
+hsa03010	Ribosome	0.6204057227761162	Medullo	FOLH1	30
+hsa00340	Histidine metabolism	0.6226161004648276	EPN	FOLH1	40
+hsa00020	Citrate cycle (TCA cycle)	0.6227012204509652	Medullo	SLC1A5	15
+hsa04068	FoxO signaling pathway	0.6243274235748979	Medullo	FOLH1	30
+hsa04672	Intestinal immune network for IgA production	0.6267511340987918	Medullo	FOLH1	30
+hsa00630	Glyoxylate and dicarboxylate metabolism	0.6302773333523517	Medullo	FOLH1	30
+hsa04660	T cell receptor signaling pathway	0.6315438792017944	ATRT	SLC7A5	10
+hsa04010	MAPK signaling pathway	0.6327922098751444	ATRT	SLC7A5	10
+hsa00592	alpha-Linolenic acid metabolism	0.6331440884264583	EPN	SLC1A5	10
+hsa04071	Sphingolipid signaling pathway	0.6337568739137178	ATRT	SLC7A5	10
+hsa04962	Vasopressin-regulated water reabsorption	0.6359772249888922	ATRT	SLC7A5	10
+hsa04916	Melanogenesis	0.6364218448514132	ATRT	SLC7A5	10
+hsa04640	Hematopoietic cell lineage	0.6376021957967919	ATRT	SLC7A5	10
+hsa04020	Calcium signaling pathway	0.6379671701486067	Medullo	SLC1A5	15
+hsa04920	Adipocytokine signaling pathway	0.638060380172539	Medullo	FOLH1	30
+hsa04912	GnRH signaling pathway	0.6402318815344221	Medullo	FOLH1	30
+hsa04260	Cardiac muscle contraction	0.6428103856285536	ATRT	SLC7A5	10
+hsa04973	Carbohydrate digestion and absorption	0.6431531825755323	Medullo	SLC1A5	15
+hsa04974	Protein digestion and absorption	0.6436374783629442	Medullo	FOLH1	30
+hsa04064	NF-kappa B signaling pathway	0.6437994442961397	Medullo	FOLH1	30
+hsa04917	Prolactin signaling pathway	0.6446519766743901	ATRT	SLC7A5	10
+hsa04070	Phosphatidylinositol signaling system	0.6446692791152129	ATRT	SLC7A5	10
+hsa04380	Osteoclast differentiation	0.6472238972878999	EPN	FOLH1	40
+hsa03018	RNA degradation	0.6472695223350906	ATRT	SLC7A5	10
+hsa04320	Dorso-ventral axis formation	0.647273117645253	ATRT	SLC7A5	10
+hsa00020	Citrate cycle (TCA cycle)	0.6474600968881798	ATRT	SLC7A5	10
+hsa04922	Glucagon signaling pathway	0.6495660668897059	ATRT	SLC7A5	10
+hsa00250	Alanine, aspartate and glutamate metabolism	0.649916901557112	Medullo	FOLH1	30
+hsa03013	RNA transport	0.6503690907830091	Medullo	FOLH1	30
+hsa00340	Histidine metabolism	0.6505429683107213	EPN	SLC1A5	10
+hsa04114	Oocyte meiosis	0.6511471523111745	EPN	SLC1A5	10
+hsa00340	Histidine metabolism	0.6513495370764993	ATRT	SLC7A5	10
+hsa04974	Protein digestion and absorption	0.6546338545791845	ATRT	SLC7A5	10
+hsa04530	Tight junction	0.6652138018867533	ATRT	SLC7A5	10
+hsa04022	cGMP-PKG signaling pathway	0.6665296452025642	EPN	FOLH1	40
+hsa00450	Selenocompound metabolism	0.6684157424721578	EPN	FOLH1	40
+hsa00520	Amino sugar and nucleotide sugar metabolism	0.6701210254437794	Medullo	FOLH1	30
+hsa00980	Metabolism of xenobiotics by cytochrome P450	0.671796591869325	EPN	FOLH1	40
+hsa04914	Progesterone-mediated oocyte maturation	0.6726802406643468	Medullo	FOLH1	30
+hsa03410	Base excision repair	0.6764774879913587	EPN	SLC1A5	10
+hsa00900	Terpenoid backbone biosynthesis	0.6767300487802848	EPN	SLC1A5	10
+hsa04390	Hippo signaling pathway	0.6851078816307522	ATRT	SLC7A5	10
+hsa00830	Retinol metabolism	0.6852837049942594	Medullo	FOLH1	30
+hsa04144	Endocytosis	0.6854916341408044	EPN	FOLH1	40
+hsa03060	Protein export	0.6883209379099662	ATRT	SLC7A5	10
+hsa00190	Oxidative phosphorylation	0.689197811830238	Medullo	SLC1A5	15
+hsa04730	Long-term depression	0.691001644398556	Medullo	FOLH1	30
+hsa00240	Pyrimidine metabolism	0.6913113944055301	Medullo	FOLH1	30
+hsa04270	Vascular smooth muscle contraction	0.6923201599503044	Medullo	FOLH1	30
+hsa00410	beta-Alanine metabolism	0.6927786438093546	EPN	SLC1A5	10
+hsa04620	Toll-like receptor signaling pathway	0.6997094266145021	Medullo	FOLH1	30
+hsa04510	Focal adhesion	0.70335645979222	EPN	SLC1A5	10
+hsa04146	Peroxisome	0.7042534539999434	EPN	FOLH1	40
+hsa04514	Cell adhesion molecules (CAMs)	0.7042545073655084	EPN	FOLH1	40
+hsa04970	Salivary secretion	0.7077703195255455	ATRT	SLC7A5	10
+hsa00140	Steroid hormone biosynthesis	0.7084371578309707	EPN	SLC1A5	10
+hsa03430	Mismatch repair	0.7114674188016443	EPN	SLC1A5	10
+hsa00100	Steroid biosynthesis	0.7131159966053577	EPN	SLC1A5	10
+hsa00920	Sulfur metabolism	0.7131843871468626	EPN	FOLH1	40
+hsa00350	Tyrosine metabolism	0.7174813312406401	Medullo	SLC1A5	15
+hsa04114	Oocyte meiosis	0.7184956399568185	EPN	FOLH1	40
+hsa00030	Pentose phosphate pathway	0.7187248309501632	EPN	FOLH1	40
+hsa00051	Fructose and mannose metabolism	0.7187922547898915	EPN	SLC1A5	10
+hsa00072	Synthesis and degradation of ketone bodies	0.7197083679073026	Medullo	FOLH1	30
+hsa00500	Starch and sucrose metabolism	0.7198960832516513	Medullo	FOLH1	30
+hsa04130	SNARE interactions in vesicular transport	0.7251288003250322	ATRT	SLC7A5	10
+hsa04610	Complement and coagulation cascades	0.7265485861283874	EPN	SLC1A5	10
+hsa00534	Glycosaminoglycan biosynthesis - heparan sulfate / heparin	0.7272176832623956	EPN	SLC1A5	10
+hsa04961	Endocrine and other factor-regulated calcium reabsorption	0.727674864177186	Medullo	SLC1A5	15
+hsa04660	T cell receptor signaling pathway	0.7279671898537592	EPN	SLC1A5	10
+hsa04010	MAPK signaling pathway	0.7284589363842653	Medullo	FOLH1	30
+hsa04066	HIF-1 signaling pathway	0.7291307443684876	ATRT	SLC7A5	10
+hsa04340	Hedgehog signaling pathway	0.7314626232255019	ATRT	SLC7A5	10
+hsa00740	Riboflavin metabolism	0.7316325070958116	Medullo	FOLH1	30
+hsa00100	Steroid biosynthesis	0.733781128041839	Medullo	FOLH1	30
+hsa04550	Signaling pathways regulating pluripotency of stem cells	0.7346355854022419	Medullo	FOLH1	30
+hsa00130	Ubiquinone and other terpenoid-quinone biosynthesis	0.7378167391225567	ATRT	SLC7A5	10
+hsa00190	Oxidative phosphorylation	0.7388188751592146	EPN	FOLH1	40
+hsa00512	Mucin type O-Glycan biosynthesis	0.7413105012676162	EPN	FOLH1	40
+hsa00860	Porphyrin and chlorophyll metabolism	0.7417418272737932	Medullo	FOLH1	30
+hsa00100	Steroid biosynthesis	0.7443619208737817	EPN	FOLH1	40
+hsa04919	Thyroid hormone signaling pathway	0.7467787999871276	ATRT	SLC7A5	10
+hsa03050	Proteasome	0.7481325876094237	ATRT	SLC7A5	10
+hsa00601	Glycosphingolipid biosynthesis - lacto and neolacto series	0.7481619811812811	ATRT	SLC7A5	10
+hsa04514	Cell adhesion molecules (CAMs)	0.7484991289727122	Medullo	SLC1A5	15
+hsa00250	Alanine, aspartate and glutamate metabolism	0.749032589902451	EPN	FOLH1	40
+hsa00564	Glycerophospholipid metabolism	0.7491272547998706	EPN	SLC1A5	10
+hsa04915	Estrogen signaling pathway	0.749620838235982	EPN	FOLH1	40
+hsa04630	Jak-STAT signaling pathway	0.7509984599855477	Medullo	SLC1A5	15
+hsa00591	Linoleic acid metabolism	0.7510122629957563	EPN	FOLH1	40
+hsa00072	Synthesis and degradation of ketone bodies	0.7515434771366716	ATRT	SLC7A5	10
+hsa00650	Butanoate metabolism	0.7524184222106178	EPN	SLC1A5	10
+hsa04614	Renin-angiotensin system	0.7527399993766692	EPN	SLC1A5	10
+hsa00790	Folate biosynthesis	0.7542854445835265	Medullo	FOLH1	30
+hsa00920	Sulfur metabolism	0.7550236662106549	ATRT	SLC7A5	10
+hsa00410	beta-Alanine metabolism	0.7556965097223125	Medullo	FOLH1	30
+hsa00983	Drug metabolism - other enzymes	0.7595033640550136	ATRT	SLC7A5	10
+hsa04662	B cell receptor signaling pathway	0.7614523180565707	ATRT	SLC7A5	10
+hsa04068	FoxO signaling pathway	0.7674945557812094	ATRT	SLC7A5	10
+hsa04320	Dorso-ventral axis formation	0.7685561127064109	EPN	FOLH1	40
+hsa04650	Natural killer cell mediated cytotoxicity	0.7694947283979673	Medullo	FOLH1	30
+hsa00512	Mucin type O-Glycan biosynthesis	0.7699597590594843	Medullo	FOLH1	30
+hsa00600	Sphingolipid metabolism	0.7779710849069061	EPN	SLC1A5	10
+hsa03010	Ribosome	0.7781384796819132	ATRT	SLC7A5	10
+hsa04650	Natural killer cell mediated cytotoxicity	0.7792581541597583	ATRT	SLC7A5	10
+hsa00604	Glycosphingolipid biosynthesis - ganglio series	0.7811136974620956	ATRT	SLC7A5	10
+hsa03420	Nucleotide excision repair	0.7815091087518747	Medullo	FOLH1	30
+hsa00604	Glycosphingolipid biosynthesis - ganglio series	0.7847353685155487	Medullo	SLC1A5	15
+hsa04722	Neurotrophin signaling pathway	0.7853632954220651	ATRT	SLC7A5	10
+hsa04520	Adherens junction	0.7860585668724014	EPN	FOLH1	40
+hsa04976	Bile secretion	0.7876692095351985	ATRT	SLC7A5	10
+hsa04728	Dopaminergic synapse	0.7881062620546098	EPN	SLC1A5	10
+hsa04610	Complement and coagulation cascades	0.788639730487442	Medullo	SLC1A5	15
+hsa04620	Toll-like receptor signaling pathway	0.7893079720496348	ATRT	SLC7A5	10
+hsa04668	TNF signaling pathway	0.7917173975269484	ATRT	SLC7A5	10
+hsa04810	Regulation of actin cytoskeleton	0.7919206046082503	ATRT	SLC7A5	10
+hsa00740	Riboflavin metabolism	0.7926896907532883	Medullo	SLC1A5	15
+hsa04114	Oocyte meiosis	0.7995434962031642	Medullo	FOLH1	30
+hsa04610	Complement and coagulation cascades	0.8008073589730527	EPN	FOLH1	40
+hsa04360	Axon guidance	0.8033120821990313	ATRT	SLC7A5	10
+hsa00310	Lysine degradation	0.8039021217445996	EPN	SLC1A5	10
+hsa04152	AMPK signaling pathway	0.8092250527099105	ATRT	SLC7A5	10
+hsa04024	cAMP signaling pathway	0.8104895257997805	Medullo	SLC1A5	15
+hsa00603	Glycosphingolipid biosynthesis - globo series	0.8120930582867123	Medullo	FOLH1	30
+hsa04060	Cytokine-cytokine receptor interaction	0.8149086096070183	ATRT	SLC7A5	10
+hsa04360	Axon guidance	0.8158268599725942	Medullo	FOLH1	30
+hsa04723	Retrograde endocannabinoid signaling	0.8184559227933815	Medullo	SLC1A5	15
+hsa00620	Pyruvate metabolism	0.8196231536721847	EPN	SLC1A5	10
+hsa00592	alpha-Linolenic acid metabolism	0.8204604370940106	EPN	FOLH1	40
+hsa00565	Ether lipid metabolism	0.8207315447423197	Medullo	FOLH1	30
+hsa04514	Cell adhesion molecules (CAMs)	0.820808829708269	EPN	SLC1A5	10
+hsa04520	Adherens junction	0.8222484069773196	ATRT	SLC7A5	10
+hsa04664	Fc epsilon RI signaling pathway	0.8273757614133372	EPN	SLC1A5	10
+hsa00983	Drug metabolism - other enzymes	0.8278867839574882	EPN	FOLH1	40
+hsa00630	Glyoxylate and dicarboxylate metabolism	0.8295340302749505	Medullo	SLC1A5	15
+hsa04920	Adipocytokine signaling pathway	0.8301859691499918	EPN	SLC1A5	10
+hsa04512	ECM-receptor interaction	0.8331608448902532	Medullo	FOLH1	30
+hsa03015	mRNA surveillance pathway	0.8341959387046268	ATRT	SLC7A5	10
+hsa00564	Glycerophospholipid metabolism	0.8350558444323213	ATRT	SLC7A5	10
+hsa04976	Bile secretion	0.837272682814575	Medullo	SLC1A5	15
+hsa04710	Circadian rhythm	0.8377256758112344	Medullo	FOLH1	30
+hsa03460	Fanconi anemia pathway	0.8386873648927697	EPN	SLC1A5	10
+hsa00480	Glutathione metabolism	0.8426602831506553	Medullo	FOLH1	30
+hsa04810	Regulation of actin cytoskeleton	0.8432623797962147	Medullo	FOLH1	30
+hsa04978	Mineral absorption	0.8442401435467427	ATRT	SLC7A5	10
+hsa03320	PPAR signaling pathway	0.8479490525424971	ATRT	SLC7A5	10
+hsa00020	Citrate cycle (TCA cycle)	0.8498061558390494	Medullo	FOLH1	30
+hsa00240	Pyrimidine metabolism	0.8507822458538506	ATRT	SLC7A5	10
+hsa04724	Glutamatergic synapse	0.8534103057589408	Medullo	SLC1A5	15
+hsa00450	Selenocompound metabolism	0.8540303096928594	ATRT	SLC7A5	10
+hsa04974	Protein digestion and absorption	0.8545292497975517	EPN	FOLH1	40
+hsa04720	Long-term potentiation	0.8582882807879405	ATRT	SLC7A5	10
+hsa04640	Hematopoietic cell lineage	0.8676099856195627	EPN	SLC1A5	10
+hsa04151	PI3K-Akt signaling pathway	0.8678449118929593	EPN	SLC1A5	10
+hsa00310	Lysine degradation	0.8704468047207237	Medullo	SLC1A5	15
+hsa04022	cGMP-PKG signaling pathway	0.8709876681205466	ATRT	SLC7A5	10
+hsa00450	Selenocompound metabolism	0.8724128610744276	EPN	SLC1A5	10
+hsa00531	Glycosaminoglycan degradation	0.8726860466210464	EPN	SLC1A5	10
+hsa04062	Chemokine signaling pathway	0.875041095644302	Medullo	FOLH1	30
+hsa00630	Glyoxylate and dicarboxylate metabolism	0.8757948797110738	ATRT	SLC7A5	10
+hsa04978	Mineral absorption	0.8777131850970065	EPN	FOLH1	40
+hsa04915	Estrogen signaling pathway	0.8785207492706434	Medullo	FOLH1	30
+hsa04115	p53 signaling pathway	0.8814724764765385	ATRT	SLC7A5	10
+hsa00250	Alanine, aspartate and glutamate metabolism	0.8817493530003041	EPN	SLC1A5	10
+hsa04723	Retrograde endocannabinoid signaling	0.883873795085246	EPN	SLC1A5	10
+hsa03040	Spliceosome	0.8844367554237	EPN	SLC1A5	10
+hsa04270	Vascular smooth muscle contraction	0.8897892907369696	Medullo	SLC1A5	15
+hsa00532	Glycosaminoglycan biosynthesis - chondroitin sulfate / dermatan sulfate	0.8955299166338009	EPN	SLC1A5	10
+hsa04064	NF-kappa B signaling pathway	0.8959338017202167	ATRT	SLC7A5	10
+hsa04110	Cell cycle	0.8965824211413272	ATRT	SLC7A5	10
+hsa00730	Thiamine metabolism	0.8969085980629632	EPN	SLC1A5	10
+hsa01212	Fatty acid metabolism	0.9046682480012371	EPN	SLC1A5	10
+hsa00040	Pentose and glucuronate interconversions	0.9057439279820999	ATRT	SLC7A5	10
+hsa03420	Nucleotide excision repair	0.9059829175314	EPN	SLC1A5	10
+hsa04720	Long-term potentiation	0.9088155978538109	Medullo	FOLH1	30
+hsa04071	Sphingolipid signaling pathway	0.914312939941701	EPN	SLC1A5	10
+hsa04630	Jak-STAT signaling pathway	0.9148422878867359	Medullo	FOLH1	30
+hsa03020	RNA polymerase	0.9151573592875265	Medullo	SLC1A5	15
+hsa00980	Metabolism of xenobiotics by cytochrome P450	0.9159381544718973	Medullo	FOLH1	30
+hsa04024	cAMP signaling pathway	0.9187129538684783	Medullo	FOLH1	30
+hsa00564	Glycerophospholipid metabolism	0.9195225975004985	Medullo	FOLH1	30
+hsa04110	Cell cycle	0.9220321770927258	EPN	SLC1A5	10
+hsa00480	Glutathione metabolism	0.9226592025465137	ATRT	SLC7A5	10
+hsa00983	Drug metabolism - other enzymes	0.9237853193759356	EPN	SLC1A5	10
+hsa00630	Glyoxylate and dicarboxylate metabolism	0.9246121448751569	EPN	FOLH1	40
+hsa04972	Pancreatic secretion	0.9261767886375387	EPN	FOLH1	40
+hsa04150	mTOR signaling pathway	0.9263093009344623	EPN	FOLH1	40
+hsa04540	Gap junction	0.9280642966881553	EPN	FOLH1	40
+hsa03022	Basal transcription factors	0.9293094186019998	EPN	SLC1A5	10
+hsa01230	Biosynthesis of amino acids	0.9301797676060936	EPN	FOLH1	40
+hsa04152	AMPK signaling pathway	0.930425645740777	EPN	SLC1A5	10
+hsa03460	Fanconi anemia pathway	0.9310971800776262	ATRT	SLC7A5	10
+hsa00563	Glycosylphosphatidylinositol(GPI)-anchor biosynthesis	0.9333733655751687	ATRT	SLC7A5	10
+hsa04261	Adrenergic signaling in cardiomyocytes	0.9353178001919826	ATRT	SLC7A5	10
+hsa04910	Insulin signaling pathway	0.9362123174125512	ATRT	SLC7A5	10
+hsa04060	Cytokine-cytokine receptor interaction	0.9371515667793868	Medullo	FOLH1	30
+hsa01230	Biosynthesis of amino acids	0.9390960476602671	Medullo	FOLH1	30
+hsa04913	Ovarian steroidogenesis	0.9392801448448735	EPN	SLC1A5	10
+hsa02010	ABC transporters	0.9395486273535671	Medullo	FOLH1	30
+hsa04350	TGF-beta signaling pathway	0.9413001881084803	EPN	SLC1A5	10
+hsa00983	Drug metabolism - other enzymes	0.9424556047362587	Medullo	FOLH1	30
+hsa04630	Jak-STAT signaling pathway	0.9424828707695185	ATRT	SLC7A5	10
+hsa00020	Citrate cycle (TCA cycle)	0.9441325960908364	EPN	FOLH1	40
+hsa00563	Glycosylphosphatidylinositol(GPI)-anchor biosynthesis	0.9447948010842642	EPN	SLC1A5	10
+hsa04672	Intestinal immune network for IgA production	0.9453590236460326	EPN	FOLH1	40
+hsa00565	Ether lipid metabolism	0.9456487296016021	EPN	FOLH1	40
+hsa00561	Glycerolipid metabolism	0.9490071016961643	Medullo	FOLH1	30
+hsa04540	Gap junction	0.9497634289843746	Medullo	FOLH1	30
+hsa04915	Estrogen signaling pathway	0.9528830517854876	ATRT	SLC7A5	10
+hsa04014	Ras signaling pathway	0.9532182954831876	Medullo	FOLH1	30
+hsa04726	Serotonergic synapse	0.9543737222051893	EPN	SLC1A5	10
+hsa00330	Arginine and proline metabolism	0.954925005893881	EPN	SLC1A5	10
+hsa04071	Sphingolipid signaling pathway	0.9558296943882287	Medullo	FOLH1	30
+hsa04918	Thyroid hormone synthesis	0.9564207050455327	Medullo	SLC1A5	15
+hsa04512	ECM-receptor interaction	0.95720684051005	ATRT	SLC7A5	10
+hsa04730	Long-term depression	0.9577000021410089	Medullo	SLC1A5	15
+hsa04622	RIG-I-like receptor signaling pathway	0.9578738962271245	ATRT	SLC7A5	10
+hsa04210	Apoptosis	0.9580520614712132	Medullo	FOLH1	30
+hsa00650	Butanoate metabolism	0.9612277926681939	Medullo	FOLH1	30
+hsa04390	Hippo signaling pathway	0.9616531391613183	Medullo	FOLH1	30
+hsa04911	Insulin secretion	0.9634769708639218	ATRT	SLC7A5	10
+hsa03030	DNA replication	0.963512291681319	EPN	SLC1A5	10
+hsa04910	Insulin signaling pathway	0.9666479839043484	EPN	SLC1A5	10
+hsa01230	Biosynthesis of amino acids	0.9666926287488266	EPN	SLC1A5	10
+hsa04020	Calcium signaling pathway	0.9675651935211833	EPN	SLC1A5	10
+hsa04670	Leukocyte transendothelial migration	0.968490851155378	Medullo	SLC1A5	15
+hsa04650	Natural killer cell mediated cytotoxicity	0.9704322358071784	EPN	FOLH1	40
+hsa03013	RNA transport	0.9706669292782946	ATRT	SLC7A5	10
+hsa04151	PI3K-Akt signaling pathway	0.9778358357552486	EPN	FOLH1	40
+hsa00230	Purine metabolism	0.9789096449862366	ATRT	SLC7A5	10
+hsa00591	Linoleic acid metabolism	0.9868053141043064	EPN	SLC1A5	10
+hsa04380	Osteoclast differentiation	0.9899761375529952	Medullo	FOLH1	30
+hsa03008	Ribosome biogenesis in eukaryotes	0.9906670285769213	EPN	FOLH1	40
+hsa03050	Proteasome	0.9925944430968867	Medullo	SLC1A5	15
+hsa04068	FoxO signaling pathway	0.9952028733959832	EPN	FOLH1	40
+hsa04062	Chemokine signaling pathway	0.9952382176759325	EPN	SLC1A5	10
+hsa04914	Progesterone-mediated oocyte maturation	0.9981720304285164	EPN	SLC1A5	10
+hsa04145	Phagosome	0.998764983416181	Medullo	FOLH1	30

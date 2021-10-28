@@ -298,7 +298,8 @@ for (i in 1:nrow(cg_gene_interest)){
   # annotate gene and cancer group to the result
   ssgsea_results <- ssgsea_results %>% 
     mutate(cancer_group = cg_interest) %>% 
-    mutate(gene_parsed_by = gene_interest) 
+    mutate(gene_parsed_by = gene_interest)%>%
+    mutate(percentile = quantile_interest)
   # combine them to a combined tsv file
   combined_results <- rbind(combined_results, ssgsea_results)
 }

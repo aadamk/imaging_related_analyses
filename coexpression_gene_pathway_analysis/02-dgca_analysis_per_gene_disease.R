@@ -172,20 +172,20 @@ for(i in 1:nrow(cg_gene_interest)){
   design_matrix <- makeDesign(as.vector(bs_id_quantile_df$group))
   
   # define directory for the heatmap
-  pdf(file = file.path(plots_dir, paste0(cg_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_interest, "_plot.pdf" )))
   ddcor_res_100 <- ddcorAll(inputMat =as.matrix(eoi_coding_each_filtered),
                            design = design_matrix,
                            compare = c("upper", "lower"),
                            adjust = "none",
-                           heatmapPlot = T,
+                           heatmapPlot = F,
                            nPerm = 0,
                            corrType = "spearman",
                            # specific filtering parameter for heatmap
                            filterCentralPercentile = 0.75, 
                            filterDispersionPercentile = 0.75,
                            nPairs=100)
-  dev.off()
-
+  ddcor_res_100 %>%
+    readr::write_tsv(file.path(score_results_dir, paste0(cg_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_interest, "_dgca_100_scores.tsv.gz" )))
+  
   # write out all the results
   ddcor_res_all <- ddcorAll(inputMat =as.matrix(eoi_coding_each_filtered),
                             design = design_matrix,
@@ -199,7 +199,7 @@ for(i in 1:nrow(cg_gene_interest)){
                             filterDispersionPercentile = 0.3)
 
   ddcor_res_all %>%
-    readr::write_tsv(file.path(score_results_dir, paste0(cg_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_interest, "_dgca_scores.tsv.gz" )))
+    readr::write_tsv(file.path(score_results_dir, paste0(cg_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_interest, "_dgca_full_scores.tsv.gz" )))
   
   # ################# run the analysis for gene of interest 
   # if(!gene_interest %in% rownames(eoi_coding_each_filtered)){
@@ -250,7 +250,7 @@ for(i in 1:nrow(cg_gene_interest)){
   # combined %>% 
   #   mutate(cancer_group = cg_interest) %>% 
   #   mutate(gene_parsed_by = gene_interest) %>% 
-  #   mutate(quantile = quantile_interest) %>% 
+  #   mutate(percentile = quantile_interest) %>% 
   #   readr::write_tsv(file.path(go_term_results_dir, paste0(cg_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_interest, "_combined_GO_by_dgca.tsv" )))
   # 
   # combined_results <- bind_rows(combined_results, combined )

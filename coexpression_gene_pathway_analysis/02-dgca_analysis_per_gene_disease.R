@@ -214,13 +214,13 @@ for(i in 1:nrow(cg_gene_interest)){
   
   
   # write out all the results
-  eoi_coding_each_filtered_all <- filterGenes(expression_of_interest_coding_each, 
+  eoi_coding_each_filtered_all <- filterGenes(expression_of_interest_coding_each,
                                               filterTypes = c("central", "dispersion"),
                                               filterDispersionType = "cv",
                                               filterDispersionPercentile = 0.25,
                                               filterDispersionType = 0.25,
                                               sequential= TRUE)
-  
+
   ddcor_res_all <- ddcorAll(inputMat =as.matrix(eoi_coding_each_filtered_all),
                             design = design_matrix,
                             compare = c("upper", "lower"),
@@ -232,71 +232,71 @@ for(i in 1:nrow(cg_gene_interest)){
   ddcor_res_all %>%
     readr::write_tsv(file.path(score_results_dir, paste0(cg_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_interest, "_dgca_scores.tsv.gz" )))
   
-  # ################# run the analysis for gene of interest 
-  # # filter lowly expressed genes by DGCA
-  # eoi_coding_each_filtered <- filterGenes(expression_of_interest_coding_each, 
-  #                                         filterTypes = c("central", "dispersion"),
-  #                                         filterDispersionType = "cv", 
-  #                                         filterDispersionPercentile = 0.2,
-  #                                         sequential= TRUE)
-  #
-  # if(!gene_interest %in% rownames(eoi_coding_each_filtered)){
-  #   gene_rescue <- expression_of_interest_coding_each[gene_interest,]
-  #   eoi_coding_each_filtered <- bind_rows(eoi_coding_each_filtered, gene_rescue)
-  # }
-  #   
-  # ddcor_res_goi <- ddcorAll(inputMat =as.matrix(eoi_coding_each_filtered), 
-  #                           design = design_matrix, 
-  #                           compare = c("upper", "lower"), 
-  #                           adjust = "none", 
-  #                           heatmapPlot = FALSE, 
-  #                           nPerm = 0, 
-  #                           corrType = "spearman", 
-  #                           splitSet = gene_interest)
-  # 
-  # # Generate GO results of enriched differential correlations by pathway - 
-  # ddcorGO_res <-ddcorGO(ddcor_res_goi, 
-  #                       universe = rownames(eoi_coding_each_filtered), 
-  #                       gene_ontology = "all", 
-  #                       HGNC_clean = TRUE, 
-  #                       HGNC_switch = TRUE, 
-  #                       annotation = "org.Hs.eg.db", 
-  #                       calculateVariance = TRUE)
-  # # write out results as RDS
-  # ddcorGO_res %>% 
-  #   saveRDS(file.path(go_term_results_dir, paste0(cg_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_interest, "_GO_by_dgca.rds" )))
-  # 
-  # # extract only GO term results 
-  # gain_bp <- ddcorGO_res[[3]][[1]] %>% as.data.frame() %>% dplyr::mutate(change_dir = "gain_of_correlation_genes") %>%
-  #   dplyr::rename(GOID = GOBPID) %>% filter(Pvalue < 0.05)
-  # gain_mf <- ddcorGO_res[[3]][[2]] %>% as.data.frame() %>% dplyr::mutate(change_dir = "gain_of_correlation_genes") %>%
-  #   dplyr::rename(GOID = GOMFID) %>%  filter(Pvalue < 0.05)
-  # gain_cc <- ddcorGO_res[[3]][[3]] %>% as.data.frame() %>% dplyr::mutate(change_dir = "gain_of_correlation_genes") %>%
-  #   dplyr::rename(GOID = GOCCID) %>% filter(Pvalue < 0.05)
-  # 
-  # loss_bp <- ddcorGO_res[[4]][[1]] %>% as.data.frame() %>% dplyr::mutate(change_dir = "loss_of_correlation_genes") %>%
-  #   dplyr::rename(GOID = GOBPID) %>% filter(Pvalue < 0.05)
-  # loss_mf <- ddcorGO_res[[4]][[2]] %>% as.data.frame() %>% dplyr::mutate(change_dir = "loss_of_correlation_genes") %>%
-  #   dplyr::rename(GOID = GOMFID) %>% filter(Pvalue < 0.05)
-  # loss_cc <- ddcorGO_res[[4]][[3]] %>% as.data.frame() %>% dplyr::mutate(change_dir = "loss_of_correlation_genes") %>%
-  #   dplyr::rename(GOID = GOCCID) %>% filter(Pvalue < 0.05)
-  # 
-  #   
-  # # combine only GO term results and write out as one file 
-  # combined <- bind_rows(gain_bp, gain_mf, gain_cc, loss_bp, loss_mf, loss_cc) 
-  # 
-  # combined %>% 
-  #   mutate(cancer_group = cg_interest) %>% 
-  #   mutate(gene_parsed_by = gene_interest) %>% 
-  #   mutate(percentile = quantile_interest) %>% 
-  #   readr::write_tsv(file.path(go_term_results_dir, paste0(cg_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_interest, "_combined_GO_by_dgca.tsv" )))
-  # 
-  # combined_results <- bind_rows(combined_results, combined )
+  ################# run the analysis for gene of interest
+  # filter lowly expressed genes by DGCA
+  eoi_coding_each_filtered <- filterGenes(expression_of_interest_coding_each,
+                                          filterTypes = c("central", "dispersion"),
+                                          filterDispersionType = "cv",
+                                          filterDispersionPercentile = 0.2,
+                                          sequential= TRUE)
+
+  if(!gene_interest %in% rownames(eoi_coding_each_filtered)){
+    gene_rescue <- expression_of_interest_coding_each[gene_interest,]
+    eoi_coding_each_filtered <- bind_rows(eoi_coding_each_filtered, gene_rescue)
+  }
+
+  ddcor_res_goi <- ddcorAll(inputMat =as.matrix(eoi_coding_each_filtered),
+                            design = design_matrix,
+                            compare = c("upper", "lower"),
+                            adjust = "none",
+                            heatmapPlot = FALSE,
+                            nPerm = 0,
+                            corrType = "spearman",
+                            splitSet = gene_interest)
+
+  # Generate GO results of enriched differential correlations by pathway -
+  ddcorGO_res <-ddcorGO(ddcor_res_goi,
+                        universe = rownames(eoi_coding_each_filtered),
+                        gene_ontology = "all",
+                        HGNC_clean = TRUE,
+                        HGNC_switch = TRUE,
+                        annotation = "org.Hs.eg.db",
+                        calculateVariance = TRUE)
+  # write out results as RDS
+  ddcorGO_res %>%
+    saveRDS(file.path(go_term_results_dir, paste0(cg_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_interest, "_GO_by_dgca.rds" )))
+
+  # extract only GO term results
+  gain_bp <- ddcorGO_res[[3]][[1]] %>% as.data.frame() %>% dplyr::mutate(change_dir = "gain_of_correlation_genes") %>%
+    dplyr::rename(GOID = GOBPID) %>% filter(Pvalue < 0.05)
+  gain_mf <- ddcorGO_res[[3]][[2]] %>% as.data.frame() %>% dplyr::mutate(change_dir = "gain_of_correlation_genes") %>%
+    dplyr::rename(GOID = GOMFID) %>%  filter(Pvalue < 0.05)
+  gain_cc <- ddcorGO_res[[3]][[3]] %>% as.data.frame() %>% dplyr::mutate(change_dir = "gain_of_correlation_genes") %>%
+    dplyr::rename(GOID = GOCCID) %>% filter(Pvalue < 0.05)
+
+  loss_bp <- ddcorGO_res[[4]][[1]] %>% as.data.frame() %>% dplyr::mutate(change_dir = "loss_of_correlation_genes") %>%
+    dplyr::rename(GOID = GOBPID) %>% filter(Pvalue < 0.05)
+  loss_mf <- ddcorGO_res[[4]][[2]] %>% as.data.frame() %>% dplyr::mutate(change_dir = "loss_of_correlation_genes") %>%
+    dplyr::rename(GOID = GOMFID) %>% filter(Pvalue < 0.05)
+  loss_cc <- ddcorGO_res[[4]][[3]] %>% as.data.frame() %>% dplyr::mutate(change_dir = "loss_of_correlation_genes") %>%
+    dplyr::rename(GOID = GOCCID) %>% filter(Pvalue < 0.05)
+
+
+  # combine only GO term results and write out as one file
+  combined <- bind_rows(gain_bp, gain_mf, gain_cc, loss_bp, loss_mf, loss_cc)
+
+  combined %>%
+    mutate(cancer_group = cg_interest) %>%
+    mutate(gene_parsed_by = gene_interest) %>%
+    mutate(percentile = quantile_interest) %>%
+    readr::write_tsv(file.path(go_term_results_dir, paste0(cg_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_interest, "_combined_GO_by_dgca.tsv" )))
+
+  combined_results <- bind_rows(combined_results, combined )
 }
 
-# # write out combined GO term results
-# combined_results %>% 
-#   readr::write_tsv(file.path(go_term_results_dir, opt$outfile))
+# write out combined GO term results
+combined_results %>%
+  readr::write_tsv(file.path(go_term_results_dir, opt$outfile))
 
 
 

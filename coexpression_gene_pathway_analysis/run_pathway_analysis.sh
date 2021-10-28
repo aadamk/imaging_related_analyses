@@ -26,14 +26,14 @@ ssgsea_pval="${results_dir}/ssgsea_pval/combined_ssgsea_pval.tsv"
 dcga_go_out="${results_dir}/dgca_go_term/combined_dgca_go_term_pval.tsv"
 gscna_pval="${results_dir}/gsnca_pval/combined_gscna_pathway_analysis.tsv"
 
-# # Run GSNCA analysis per cancer group of interest
-# Rscript --vanilla 01-gsnca_analysis_per_gene_disease.R \
-# --histology $histology_file \
-# --expression $expression_file \
-# --cg_gene_interest $cg_gene_interest \
-# --short_long_match $short_long_match \
-# --gtf_file $gtf_file \
-# --outfile $gscna_pva
+# Run GSNCA analysis per cancer group of interest
+Rscript --vanilla 01-gsnca_analysis_per_gene_disease.R \
+--histology $histology_file \
+--expression $expression_file \
+--cg_gene_interest $cg_gene_interest \
+--short_long_match $short_long_match \
+--gtf_file $gtf_file \
+--outfile $gscna_pva
 
 # Use DGCA to calculte co expression changes
 Rscript --vanilla 02-dgca_analysis_per_gene_disease.R \
@@ -45,21 +45,20 @@ Rscript --vanilla 02-dgca_analysis_per_gene_disease.R \
 --outfile $dcga_go_out
 
 
-# # Calculate ssGSEA scores per cancer group of interest
-# Rscript --vanilla 03-ssgsea_analysis_per_gene_disease.R \
-# --histology $histology_file \
-# --expression $expression_file \
-# --cg_gene_interest $cg_gene_interest \
-# --short_long_match $short_long_match \
-# --gtf_file $gtf_file \
-# --out_file_score $ssgsea_score \
-# --out_file_pval $ssgsea_pval
+# Calculate ssGSEA scores per cancer group of interest
+Rscript --vanilla 03-ssgsea_analysis_per_gene_disease.R \
+--histology $histology_file \
+--expression $expression_file \
+--cg_gene_interest $cg_gene_interest \
+--short_long_match $short_long_match \
+--gtf_file $gtf_file \
+--out_file_score $ssgsea_score \
+--out_file_pval $ssgsea_pval
 
 
-# # Generate heatmap for the top 20 most altered pathways 
-# Rscript --vanilla 04-barplot_altered_pathways.R \
-# --cg_gene_interest $cg_gene_interest \
-# --ssgsea $ssgsea_pval \
-# --gsnca $gscna_pval \
-# --dgca $dcga_go_out
+# Generate heatmap for the top 20 most altered pathways
+Rscript --vanilla 04-barplot_altered_pathways.R \
+--cg_gene_interest $cg_gene_interest \
+--ssgsea $ssgsea_pval \
+--gsnca $gscna_pval
 

@@ -5,6 +5,7 @@
 suppressPackageStartupMessages(library("optparse"))
 suppressPackageStartupMessages(library("dplyr"))
 suppressPackageStartupMessages(library("ggplot2"))
+suppressPackageStartupMessages(library("stringr"))
 
 #### Parse command line options ------------------------------------------------
 option_list <- list(

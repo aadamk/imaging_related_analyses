@@ -25,22 +25,22 @@ ssgsea_score="${results_dir}/ssgsea_scores/combined_ssgsea_scores.tsv"
 ssgsea_pval="${results_dir}/ssgsea_pval/combined_ssgsea_pval.tsv"
 dcga_go_out="${results_dir}/dgca_go_term/combined_dgca_go_term_pval.tsv"
 
-# Run GSNCA analysis per cancer group of interest
-Rscript --vanilla 01-gsnca_analysis_per_gene_disease.R \
---histology $histology_file \
---expression $expression_file \
---cg_gene_interest $cg_gene_interest \
---short_long_match $short_long_match \
---gtf_file $gtf_file
-
-# # Use DGCA to calculte co expression changes
-# Rscript --vanilla 02-dgca_analysis_per_gene_disease.R \
+# # Run GSNCA analysis per cancer group of interest
+# Rscript --vanilla 01-gsnca_analysis_per_gene_disease.R \
 # --histology $histology_file \
 # --expression $expression_file \
 # --cg_gene_interest $cg_gene_interest \
 # --short_long_match $short_long_match \
-# --gtf_file $gtf_file \
-# --outfile $dcga_go_out
+# --gtf_file $gtf_file
+
+# Use DGCA to calculte co expression changes
+Rscript --vanilla 02-dgca_analysis_per_gene_disease.R \
+--histology $histology_file \
+--expression $expression_file \
+--cg_gene_interest $cg_gene_interest \
+--short_long_match $short_long_match \
+--gtf_file $gtf_file \
+--outfile $dcga_go_out
 
 
 # # Calculate SSGSEA scores per cancer group of interest

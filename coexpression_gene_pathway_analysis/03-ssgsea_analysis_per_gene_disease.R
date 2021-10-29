@@ -8,6 +8,7 @@ suppressPackageStartupMessages(library("GSVA"))
 suppressPackageStartupMessages(library("org.Hs.eg.db"))
 suppressPackageStartupMessages(library("BiocParallel"))
 suppressPackageStartupMessages(library("EGSEA"))
+suppressPackageStartupMessages(library("limma"))
 
 #### Parse command line options ------------------------------------------------
 option_list <- list(
@@ -153,7 +154,7 @@ names(pathway_list) <- pathway_names
 
 ################## Run GSVA scores for each gene, cancer group combination
 ssgsea_scores_df_tidy <- data.frame()
-
+combined_results <- data.frame()
 for(i in 1:nrow(cg_gene_interest)){
   # find the cancer group of interest
   cg_interest <- cg_gene_interest[i,1] %>% 
@@ -189,8 +190,8 @@ for(i in 1:nrow(cg_gene_interest)){
   bs_id_quantile_df <- expression_of_goi %>%
     tibble::rownames_to_column("Kids_First_Biospecimen_ID") %>% 
     mutate(group = case_when(
-      gene_interest >= upper_quantile ~"1", 
-      gene_interest <= lower_quantile ~"2",
+      gene_interest >= upper_quantile ~"upper", 
+      gene_interest <= lower_quantile ~"lower",
       TRUE ~ "middle"
     )) %>% 
     filter(group != "middle") %>%
@@ -209,103 +210,77 @@ for(i in 1:nrow(cg_gene_interest)){
                                  pathway_list,
                                  method = "ssgsea",
                                  min.sz=5, 
-                                 max.sz=500,## Arguments from K. Rathi
+                                 max.sz=500,## Arguments from OMPARE
                                  parallel.sz = 8, # For the bigger dataset, this ensures this won't crash due to memory problems
                                  mx.diff = TRUE,
                                  BPPARAM=SerialParam(progressbar=T))        ## Setting this argument to TRUE computes Gaussian-distributed scores (bimodal score distribution if FALSE)
   
+  # arrange the group assignment matrix
+  bs_id_quantile_df <- bs_id_quantile_df %>%
+    tibble::rownames_to_column("Kids_First_Biospecimen_ID") %>% 
+    arrange(Kids_First_Biospecimen_ID) 
+  arranged_sample_id <- bs_id_quantile_df %>%
+    pull(Kids_First_Biospecimen_ID)
+  
+  # arrange the expression matrix to match design matrix
+  ssgsea_scores_each <- ssgsea_scores_each %>%
+    as.data.frame() %>%
+    dplyr::select(all_of(arranged_sample_id))
+  
+  bs_id_quantile_df$group <- as.factor(bs_id_quantile_df$group)
+  bs_id_quantile_df$group <- relevel(bs_id_quantile_df$group, "lower")
+  
+  # build model matrix
+  mod <- model.matrix(~ bs_id_quantile_df$group)
+  fit <- lmFit(as.matrix(ssgsea_scores_each), mod)
+  fit <- eBayes(fit)
+  tt <- topTable(fit, coef=2, n=Inf) 
+  
+  # generate results with directions
+  ssgsea_results <- tt %>% 
+    dplyr::mutate(direction = ifelse((logFC>0), "up", "down")) %>%
+    tibble::rownames_to_column("pathway") %>%
+    left_join(kegg_build_anno) %>%
+    dplyr::select(pathway, description, Type, logFC, P.Value, adj.P.Val, direction) %>%
+    readr::write_tsv(file.path(pval_results_dir, paste0(cg_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_interest, "_ssgsea_pval.tsv" )))
+  
+  ssgsea_results <- ssgsea_results %>% 
+    dplyr::mutate(cancer_group = cg_interest) %>%
+    dplyr::mutate(gene_parsed_by = gene_interest) %>% 
+    dplyr::mutate(percentile = quantile_interest) 
+  
+  combined_results <- bind_rows(combined_results, ssgsea_results)
+  
   ### Clean scoring into tidy format
   ssgsea_scores_each_df <- as.data.frame(ssgsea_scores_each) %>%
-    rownames_to_column(var = "pathway") 
-  
+    rownames_to_column(var = "pathway")
+
   #first/last_bs needed for use in gather (we are not on tidyr1.0)
   first_bs <- head(colnames(ssgsea_scores_each), n=1)
   last_bs  <- tail(colnames(ssgsea_scores_each), n=1)
 
   ssgsea_scores_each_df_tidy <- ssgsea_scores_each_df %>%
     tidyr::gather(Kids_First_Biospecimen_ID, ssgsea_score, !!first_bs : !!last_bs) %>%
-    dplyr::select(Kids_First_Biospecimen_ID, pathway, ssgsea_score)  %>% 
+    dplyr::select(Kids_First_Biospecimen_ID, pathway, ssgsea_score)  %>%
     dplyr::left_join(kegg_build_anno) %>%
-    dplyr::mutate(cancer_group = cg_interest) %>% 
+    dplyr::mutate(cancer_group = cg_interest) %>%
     dplyr::mutate(gene_parsed_by = gene_interest)
-  
+
   # add group number fo the final table as well
-  bs_id_quantile_df <- bs_id_quantile_df %>% tibble::rownames_to_column("Kids_First_Biospecimen_ID")
   ssgsea_scores_each_df_tidy <- ssgsea_scores_each_df_tidy %>%
     dplyr::left_join(bs_id_quantile_df)
   # write out individual scores
-  ssgsea_scores_each_df_tidy %>% 
-    arrange(ssgsea_score, descending = F) %>% 
+  ssgsea_scores_each_df_tidy %>%
+    arrange(ssgsea_score, descending = F) %>%
     readr::write_tsv(file.path(scores_results_dir, paste0(cg_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_interest, "_ssgsea_scores.tsv")))
-  
+
   # merge into a combined file
   ssgsea_scores_df_tidy <-  bind_rows(ssgsea_scores_df_tidy , ssgsea_scores_each_df_tidy)
 }
 
 # write out results
 readr::write_tsv(ssgsea_scores_df_tidy, outfile_score)
-
-########## Calculate t test statistics for scores 
-combined_results <- data.frame()
-for (i in 1:nrow(cg_gene_interest)){
-  # find the cancer group of interest
-  cg_interest <- cg_gene_interest[i,1] %>% 
-    pull(short_name)
-  # find the gene of interest
-  gene_interest <- cg_gene_interest[i,2] %>% 
-    pull(gene_of_interest)
-  # get the quantile of interest 
-  quantile_interest <- cg_gene_interest[i,3] %>% as.character()
-  
-  ssgsea_score_each <- ssgsea_scores_df_tidy %>% 
-    filter(cancer_group == cg_interest) %>% 
-    filter(gene_parsed_by == gene_interest) 
-  
-  # gather list of each pathway 
-  pathway_list <- ssgsea_score_each %>% 
-    pull(pathway) %>% unique
-  
-  ssgsea_results <- data.frame(matrix(ncol = 3, nrow = 0))
-  colnames(ssgsea_results) <- c("pathway_id", "description","pval")
-  for(j in 1:length(pathway_list)){
-    pathway_interest <- pathway_list[j]
-    
-    # get description of pathway
-    description <- ssgsea_score_each %>%  filter(pathway == pathway_interest) %>% 
-      pull(description) %>% unique()
-    
-    # filter to contain only pathway of interest
-    ssgsea_score_each_per_pathway <- ssgsea_score_each %>% 
-      filter(pathway == pathway_interest)
-    # group1 scores
-    group1 <- ssgsea_score_each_per_pathway %>% filter(group == "1") %>% 
-      pull(ssgsea_score)
-    # group2 scores
-    group2 <- ssgsea_score_each_per_pathway %>% filter(group == "2") %>% 
-      pull(ssgsea_score)
-    
-    # compute t.test of the two
-    res <- t.test(group1, group2)$p.value
-    ssgsea_results[j,1] <- pathway_interest
-    ssgsea_results[j,2] <- description
-    ssgsea_results[j,3] <- res
-    
-    # write out individual file
-    ssgsea_results %>% 
-      arrange(pval, descending = F) %>%
-      readr::write_tsv(file.path(pval_results_dir, paste0(cg_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_interest, "_ssgsea_pval.tsv" )))
-  }
-  # annotate gene and cancer group to the result
-  ssgsea_results <- ssgsea_results %>% 
-    mutate(cancer_group = cg_interest) %>% 
-    mutate(gene_parsed_by = gene_interest)%>%
-    mutate(percentile = quantile_interest)
-  # combine them to a combined tsv file
-  combined_results <- rbind(combined_results, ssgsea_results)
-}
-
 # write out combined results
 combined_results %>%
-  arrange(pval, descending = F) %>%
   readr::write_tsv(outfile_pval)
 

@@ -40,7 +40,7 @@ pathway_barplots <- function(dat, xlab, ylab, top = 20, title){
                        fill = log_score)) + 
     geom_bar(stat="identity") + coord_flip() + theme_bw() +
     xlab("") + 
-    ylab("-log10 Adj. P-Value") + 
+    ylab("-log10 P-Value") + 
     theme(plot.margin = unit(c(1, 1, 1, 1), "cm")) + 
     ggtitle(title) +
     scale_x_discrete(labels = function(x) str_wrap(x, width = 50)) +
@@ -81,19 +81,32 @@ for (i in 1:nrow(cg_gene_interest)){
   ssgsea_results_each <- ssgsea_results %>%
     dplyr::filter(cancer_group == cg_interest) %>%
     dplyr::filter(gene_parsed_by == gene_interest) %>%
-    dplyr::filter(percentile == quantile_interest)
+    dplyr::filter(percentile == quantile_interest) %>%
+    dplyr::filter(P.Value<0.05)
 
-  if(length(ssgsea_results_each)>1){
+  if(nrow(ssgsea_results_each)>1){
     # define directory
     plots_dir_ssgsea <- file.path(plots_dir, "ssgsea_pathway_barplot")
     if(!dir.exists(plots_dir_ssgsea )) {dir.create(plots_dir_ssgsea)}
+    
+    ssgsea_results_each <- ssgsea_results_each %>% 
+      mutate(log_score = (-1)*log10(P.Value)) %>%
+      arrange(log_score) %>%
+      slice_head(n=25)
+    ssgsea_results_each$description <- factor(ssgsea_results_each$description, levels = ssgsea_results_each$description)
 
     # plots barplot
     pdf(file = file.path(plots_dir_ssgsea, paste0(cg_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_interest, "_pathway_barplot.pdf" )))
-    p<-pathway_barplots(dat = ssgsea_results_each,
-                  xlab = "description", ylab = "pval",
-                  top = 20,
-                  title = paste0("Diff. Expr. Pathways by ssGSEA in ", cg_interest, "\n parsed by ", quantile_interest, " quantile ", gene_interest))
+    p <- ggplot(ssgsea_results_each, aes(x = description, 
+                                         y = log_score,
+                                         fill = direction)) + 
+      geom_bar(stat="identity") + coord_flip() + theme_bw() +
+      xlab("") + 
+      ylab("-log10 P-Value") + 
+      scale_fill_manual(name = "Direction", values = c("down" = "forest green", "up" = "red")) +
+      theme(plot.margin = unit(c(1, 1, 1, 1), "cm")) + 
+      ggtitle(paste0("Diff. Expr. Pathways by ssGSEA in \n", cg_interest, " parsed by ", quantile_interest, " quantile \n", gene_interest))
+    
     print(p)
     dev.off()
   }
@@ -103,9 +116,10 @@ for (i in 1:nrow(cg_gene_interest)){
   gsnca_results_each <- gsnca_results %>%
     dplyr::filter(cancer_group == cg_interest) %>%
     dplyr::filter(gene_parsed_by == gene_interest) %>%
-    dplyr::filter(percentile == quantile_interest)
+    dplyr::filter(percentile == quantile_interest) %>%
+    dplyr::filter(pvalue<0.05)
 
-  if(length(gsnca_results_each)>1){
+  if(nrow(gsnca_results_each)>1){
     # define directory
     plots_dir_gsnca <- file.path(plots_dir, "gsnca_pathway_barplot")
     if(!dir.exists(plots_dir_gsnca )) {dir.create(plots_dir_gsnca)}
@@ -119,53 +133,55 @@ for (i in 1:nrow(cg_gene_interest)){
     print(p)
     dev.off()
   }
-  
+
   ############ plot DGCA results
-  # filter DGCA results 
-  dgca_results_each <- dgca_results %>% 
+  # filter DGCA results
+  dgca_results_each <- dgca_results %>%
     dplyr::filter(cancer_group == cg_interest) %>%
     dplyr::filter(gene_parsed_by == gene_interest) %>%
-    dplyr::filter(percentile == quantile_interest) 
-  
+    dplyr::filter(percentile == quantile_interest)
+
   ontology_list <- dgca_results %>% pull(Ontology) %>% unique()
-  
+
   for (j in 1:length(ontology_list)) {
     ontology_interest <- ontology_list[j]
     dgca_bp_gain <- dgca_results_each %>%
       filter(change_dir == "gain_of_correlation_genes") %>%
-      filter(Ontology == ontology_interest)
-    
+      filter(Ontology == ontology_interest) %>%
+      filter(Pvalue <0.05)
+
     dgca_bp_loss <- dgca_results_each %>%
       filter(change_dir == "loss_of_correlation_genes") %>%
-      filter(Ontology == ontology_interest)
-    
+      filter(Ontology == ontology_interest) %>%
+      filter(Pvalue <0.05)
+
     # plot for gain of correlation
     if(nrow(dgca_bp_gain)>1){
       # define directory
       plots_dir_dgca <- file.path(plots_dir, "dgca_pathway_barplot", "gain_corr")
       if(!dir.exists(plots_dir_dgca )) {dir.create(plots_dir_dgca, recursive=TRUE)}
-      
+
       # plots barplot
       pdf(file = file.path(plots_dir_dgca, paste0(cg_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_interest, "_gain_corr_", ontology_interest, "_pathway_barplot.pdf" )))
-      p<-pathway_barplots(dat = dgca_bp_gain, 
+      p<-pathway_barplots(dat = dgca_bp_gain,
                           xlab = "Term", ylab = "Pvalue",
-                          top = 20, 
+                          top = 20,
                           title = paste0("Gain of Diff. Expr. Pathways by DGCA in \n", cg_interest, " parsed by ", quantile_interest, " quantile ", gene_interest))
       print(p)
       dev.off()
     }
-    
+
     # plot for loss of correlation
     if(nrow(dgca_bp_loss)>1){
       # define directory
       plots_dir_dgca <- file.path(plots_dir, "dgca_pathway_barplot", "loss_corr")
       if(!dir.exists(plots_dir_dgca )) {dir.create(plots_dir_dgca, recursive=TRUE)}
-      
+
       # plots barplot
       pdf(file = file.path(plots_dir_dgca, paste0(cg_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_interest, "_loss_corr_", ontology_interest, "_pathway_barplot.pdf" )))
-      p<-pathway_barplots(dat = dgca_bp_loss, 
+      p<-pathway_barplots(dat = dgca_bp_loss,
                           xlab = "Term", ylab = "Pvalue",
-                          top = 20, 
+                          top = 20,
                           title = paste0("Loss of Diff. Expr. Pathways by DGCA in \n", cg_interest, " parsed by ", quantile_interest, " quantile ", gene_interest))
       print(p)
       dev.off()

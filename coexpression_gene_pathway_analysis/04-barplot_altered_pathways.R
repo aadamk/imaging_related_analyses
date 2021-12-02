@@ -20,7 +20,7 @@ option_list <- list(
 )
 opt <- parse_args(OptionParser(option_list=option_list,add_help_option = FALSE))
 
-#### function to create drug barplots -------------------------------------------
+#### function to create barplots -------------------------------------------
 pathway_barplots <- function(dat, xlab, ylab, top = 20, title){
   dat <- dat %>%
     dplyr::select(xlab, ylab) %>%

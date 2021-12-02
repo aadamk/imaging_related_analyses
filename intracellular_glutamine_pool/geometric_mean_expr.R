@@ -1,9 +1,7 @@
 # Author: Run Jin
-# Calculate geometric mean of all markers within 
+# Calculate geometric mean of all markers within the manually curated pathways
 suppressPackageStartupMessages(library("optparse"))
 suppressPackageStartupMessages(library("tidyverse"))
-# devtools::install_github("zhangyuqing/sva-devel")
-suppressPackageStartupMessages(library(sva))
 
 #### Parse command line options ------------------------------------------------
 option_list <- list(
@@ -26,11 +24,6 @@ analysis_dir <- file.path(root_dir, "intracellular_glutamine_pool")
 results_dir <- file.path(analysis_dir, "results")
 if(!dir.exists(results_dir)){
   dir.create(results_dir, recursive=TRUE)
-}
-
-plots_dir <- file.path(analysis_dir, "plots")
-if(!dir.exists(plots_dir)){
-  dir.create(plots_dir, recursive=TRUE)
 }
 
 #### Read in files necessary for analyses --------------------------------------

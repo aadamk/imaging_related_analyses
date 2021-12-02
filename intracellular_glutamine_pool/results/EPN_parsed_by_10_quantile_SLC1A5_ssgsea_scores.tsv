@@ -1,0 +1,127 @@
+Kids_First_Biospecimen_ID	pathway	ssgsea_score	cancer_group	gene_parsed_by	group	harmonized_diagnosis	short_name
+BS_0BXY0F9N	Asparagine synthesis from glutamine	-0.4712021715292271	EPN	SLC1A5	low	Ependymoma	EPN
+BS_SAA624A4	Purine de novo synthesis from glutamine	-0.4712021715292271	EPN	SLC1A5	low	Ependymoma	EPN
+BS_TNRHHYNC	Asparagine synthesis from glutamine	-0.4712021715292271	EPN	SLC1A5	low	Ependymoma	EPN
+BS_1J2WQ08M	Purine de novo synthesis from glutamine	-0.4442763331561284	EPN	SLC1A5	high	Ependymoma	EPN
+BS_3X9WMZGJ	Asparagine synthesis from glutamine	-0.4442763331561284	EPN	SLC1A5	low	Ependymoma	EPN
+BS_Q5WZYWCT	Purine de novo synthesis from glutamine	-0.4442763331561284	EPN	SLC1A5	low	Ependymoma	EPN
+BS_V4W81SFC	Asparagine synthesis from glutamine	-0.4442763331561284	EPN	SLC1A5	high	Ependymoma, Supratentorial, YAP1 fusion positive	EPN
+BS_WYERXS4G	Purine de novo synthesis from glutamine	-0.4442763331561284	EPN	SLC1A5	high	Ependymoma, Supratentorial, YAP1 fusion positive	EPN
+BS_VJ2S5DVS	UDP-GlcNAc synthesis from glutamine	-0.4294451946667861	EPN	SLC1A5	low	Ependymoma	EPN
+BS_07ANYSYQ	Purine de novo synthesis from glutamine	-0.4173504947830297	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_CXVJK2FY	Purine de novo synthesis from glutamine	-0.4173504947830297	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_P78SMRBS	Asparagine synthesis from glutamine	-0.4173504947830297	EPN	SLC1A5	low	Ependymoma	EPN
+BS_Q5WZYWCT	Asparagine synthesis from glutamine	-0.4173504947830297	EPN	SLC1A5	low	Ependymoma	EPN
+BS_SAA624A4	Asparagine synthesis from glutamine	-0.4173504947830297	EPN	SLC1A5	low	Ependymoma	EPN
+BS_TNRHHYNC	Purine de novo synthesis from glutamine	-0.4173504947830297	EPN	SLC1A5	low	Ependymoma	EPN
+BS_V4W81SFC	Purine de novo synthesis from glutamine	-0.4173504947830297	EPN	SLC1A5	high	Ependymoma, Supratentorial, YAP1 fusion positive	EPN
+BS_3X9WMZGJ	Purine de novo synthesis from glutamine	-0.39042465640993107	EPN	SLC1A5	low	Ependymoma	EPN
+BS_C05FKR8X	Asparagine synthesis from glutamine	-0.39042465640993107	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_KBT7MQ6H	Purine de novo synthesis from glutamine	-0.39042465640993107	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_P78SMRBS	Purine de novo synthesis from glutamine	-0.39042465640993107	EPN	SLC1A5	low	Ependymoma	EPN
+BS_VJ2S5DVS	Purine de novo synthesis from glutamine	-0.39042465640993107	EPN	SLC1A5	low	Ependymoma	EPN
+BS_0BXY0F9N	Purine de novo synthesis from glutamine	-0.36349881803683237	EPN	SLC1A5	low	Ependymoma	EPN
+BS_1J2WQ08M	Asparagine synthesis from glutamine	-0.36349881803683237	EPN	SLC1A5	high	Ependymoma	EPN
+BS_WYERXS4G	Asparagine synthesis from glutamine	-0.36349881803683237	EPN	SLC1A5	high	Ependymoma, Supratentorial, YAP1 fusion positive	EPN
+BS_C05FKR8X	Purine de novo synthesis from glutamine	-0.3365729796637337	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_Q5WZYWCT	Pyrimidine de novo synthesis from glutamine	-0.3365729796637337	EPN	SLC1A5	low	Ependymoma	EPN
+BS_VJ2S5DVS	Asparagine synthesis from glutamine	-0.3365729796637337	EPN	SLC1A5	low	Ependymoma	EPN
+BS_0BXY0F9N	Glutamate synthesis	-0.33349617060670667	EPN	SLC1A5	low	Ependymoma	EPN
+BS_P78SMRBS	Glutamate synthesis	-0.33110727287568914	EPN	SLC1A5	low	Ependymoma	EPN
+BS_SAA624A4	Glutamate synthesis	-0.3290184762029214	EPN	SLC1A5	low	Ependymoma	EPN
+BS_3X9WMZGJ	UDP-GlcNAc synthesis from glutamine	-0.3288754162995034	EPN	SLC1A5	low	Ependymoma	EPN
+BS_TNRHHYNC	UDP-GlcNAc synthesis from glutamine	-0.32802016103059856	EPN	SLC1A5	low	Ependymoma	EPN
+BS_3X9WMZGJ	Glutamate synthesis	-0.32581948495801694	EPN	SLC1A5	low	Ependymoma	EPN
+BS_C05FKR8X	UDP-GlcNAc synthesis from glutamine	-0.321068379568002	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_Q5WZYWCT	Glutamate synthesis	-0.31588861788935	EPN	SLC1A5	low	Ependymoma	EPN
+BS_WYERXS4G	Glutamate synthesis	-0.3135594367427677	EPN	SLC1A5	high	Ependymoma, Supratentorial, YAP1 fusion positive	EPN
+BS_CXVJK2FY	Asparagine synthesis from glutamine	-0.309647141290635	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_07ANYSYQ	Glutamate synthesis	-0.30202374797426623	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_07ANYSYQ	UDP-GlcNAc synthesis from glutamine	-0.2947712506232709	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_V4W81SFC	UDP-GlcNAc synthesis from glutamine	-0.28632806761562263	EPN	SLC1A5	high	Ependymoma, Supratentorial, YAP1 fusion positive	EPN
+BS_KBT7MQ6H	UDP-GlcNAc synthesis from glutamine	-0.2801273463488907	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_CXVJK2FY	UDP-GlcNAc synthesis from glutamine	-0.2727167304439723	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_TNRHHYNC	Glutamate synthesis	-0.2703488594792963	EPN	SLC1A5	low	Ependymoma	EPN
+BS_1J2WQ08M	GSH synthesis from glutamate	-0.2603377044457725	EPN	SLC1A5	high	Ependymoma	EPN
+BS_V4W81SFC	Glutamate synthesis	-0.2558355270327997	EPN	SLC1A5	high	Ependymoma, Supratentorial, YAP1 fusion positive	EPN
+BS_KBT7MQ6H	Glutamate synthesis	-0.25216708085912154	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_CXVJK2FY	Glutamate synthesis	-0.2493536421551477	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_CXVJK2FY	GSH synthesis from glutamate	-0.24651877618673315	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_VJ2S5DVS	GSH synthesis from glutamate	-0.24553660797031454	EPN	SLC1A5	low	Ependymoma	EPN
+BS_Q5WZYWCT	UDP-GlcNAc synthesis from glutamine	-0.24404545653956414	EPN	SLC1A5	low	Ependymoma	EPN
+BS_SAA624A4	UDP-GlcNAc synthesis from glutamine	-0.2343414528343419	EPN	SLC1A5	low	Ependymoma	EPN
+BS_07ANYSYQ	Pyrimidine de novo synthesis from glutamine	-0.2288696261713389	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_1J2WQ08M	Glutamate synthesis	-0.222123403814725	EPN	SLC1A5	high	Ependymoma	EPN
+BS_V4W81SFC	GSH synthesis from glutamate	-0.21911647347659366	EPN	SLC1A5	high	Ependymoma, Supratentorial, YAP1 fusion positive	EPN
+BS_P78SMRBS	UDP-GlcNAc synthesis from glutamine	-0.21311406414729997	EPN	SLC1A5	low	Ependymoma	EPN
+BS_1J2WQ08M	UDP-GlcNAc synthesis from glutamine	-0.21031021742038797	EPN	SLC1A5	high	Ependymoma	EPN
+BS_KBT7MQ6H	Pyrimidine de novo synthesis from glutamine	-0.2019437877982402	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_WYERXS4G	Pyrimidine de novo synthesis from glutamine	-0.2019437877982402	EPN	SLC1A5	high	Ependymoma, Supratentorial, YAP1 fusion positive	EPN
+BS_WYERXS4G	UDP-GlcNAc synthesis from glutamine	-0.2002454353687816	EPN	SLC1A5	high	Ependymoma, Supratentorial, YAP1 fusion positive	EPN
+BS_C05FKR8X	Glutamate synthesis	-0.19205453063078032	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_KBT7MQ6H	GSH synthesis from glutamate	-0.19186332354230687	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_07ANYSYQ	GSH synthesis from glutamate	-0.18573922976231297	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_SAA624A4	Pyrimidine de novo synthesis from glutamine	-0.17501794942514154	EPN	SLC1A5	low	Ependymoma	EPN
+BS_TNRHHYNC	Pyrimidine de novo synthesis from glutamine	-0.17501794942514154	EPN	SLC1A5	low	Ependymoma	EPN
+BS_V4W81SFC	Pyrimidine de novo synthesis from glutamine	-0.17501794942514154	EPN	SLC1A5	high	Ependymoma, Supratentorial, YAP1 fusion positive	EPN
+BS_P78SMRBS	GSH synthesis from glutamate	-0.14630234880172935	EPN	SLC1A5	low	Ependymoma	EPN
+BS_0BXY0F9N	UDP-GlcNAc synthesis from glutamine	-0.1450860060990942	EPN	SLC1A5	low	Ependymoma	EPN
+BS_VJ2S5DVS	Glutamate synthesis	-0.14361100064981575	EPN	SLC1A5	low	Ependymoma	EPN
+BS_C05FKR8X	GSH synthesis from glutamate	-0.12640679338693728	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_TNRHHYNC	GSH synthesis from glutamate	-0.12640679338693728	EPN	SLC1A5	low	Ependymoma	EPN
+BS_SAA624A4	Proline synthesis from glutamine	-0.12312261304930175	EPN	SLC1A5	low	Ependymoma	EPN
+BS_0BXY0F9N	Pyrimidine de novo synthesis from glutamine	-0.12116627267894416	EPN	SLC1A5	low	Ependymoma	EPN
+BS_WYERXS4G	Proline synthesis from glutamine	-0.112298016859173	EPN	SLC1A5	high	Ependymoma, Supratentorial, YAP1 fusion positive	EPN
+BS_SAA624A4	GSH synthesis from glutamate	-0.10767555744939343	EPN	SLC1A5	low	Ependymoma	EPN
+BS_P78SMRBS	Proline synthesis from glutamine	-0.10674219697711988	EPN	SLC1A5	low	Ependymoma	EPN
+BS_0BXY0F9N	GSH synthesis from glutamate	-0.09994599617417693	EPN	SLC1A5	low	Ependymoma	EPN
+BS_07ANYSYQ	Asparagine synthesis from glutamine	-0.09424043430584546	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_P78SMRBS	Pyrimidine de novo synthesis from glutamine	-0.09424043430584546	EPN	SLC1A5	low	Ependymoma	EPN
+BS_WYERXS4G	GSH synthesis from glutamate	-0.09407953880959537	EPN	SLC1A5	high	Ependymoma, Supratentorial, YAP1 fusion positive	EPN
+BS_Q5WZYWCT	GSH synthesis from glutamate	-0.0833430937804582	EPN	SLC1A5	low	Ependymoma	EPN
+BS_1J2WQ08M	Pyrimidine de novo synthesis from glutamine	-0.06731459593274677	EPN	SLC1A5	high	Ependymoma	EPN
+BS_KBT7MQ6H	Asparagine synthesis from glutamine	-0.06731459593274677	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_1J2WQ08M	Serine synthesis from glutamine	-0.04294486246110117	EPN	SLC1A5	high	Ependymoma	EPN
+BS_3X9WMZGJ	Pyrimidine de novo synthesis from glutamine	-0.04038875755964808	EPN	SLC1A5	low	Ependymoma	EPN
+BS_C05FKR8X	Pyrimidine de novo synthesis from glutamine	-0.04038875755964808	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_CXVJK2FY	Pyrimidine de novo synthesis from glutamine	-0.04038875755964808	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_TNRHHYNC	Proline synthesis from glutamine	-0.034035342478631214	EPN	SLC1A5	low	Ependymoma	EPN
+BS_3X9WMZGJ	GSH synthesis from glutamate	-0.031737780610653854	EPN	SLC1A5	low	Ependymoma	EPN
+BS_1J2WQ08M	Proline synthesis from glutamine	-0.013971718073941588	EPN	SLC1A5	high	Ependymoma	EPN
+BS_0BXY0F9N	Proline synthesis from glutamine	-0.002118256388122156	EPN	SLC1A5	low	Ependymoma	EPN
+BS_Q5WZYWCT	Proline synthesis from glutamine	0.029828570187995885	EPN	SLC1A5	low	Ependymoma	EPN
+BS_07ANYSYQ	Proline synthesis from glutamine	0.03527227817324577	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_VJ2S5DVS	Proline synthesis from glutamine	0.03564265809798505	EPN	SLC1A5	low	Ependymoma	EPN
+BS_V4W81SFC	Serine synthesis from glutamine	0.04652636872300729	EPN	SLC1A5	high	Ependymoma, Supratentorial, YAP1 fusion positive	EPN
+BS_V4W81SFC	Proline synthesis from glutamine	0.05535676581298513	EPN	SLC1A5	high	Ependymoma, Supratentorial, YAP1 fusion positive	EPN
+BS_KBT7MQ6H	Serine synthesis from glutamine	0.05555934229665909	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_3X9WMZGJ	Proline synthesis from glutamine	0.05854220478847773	EPN	SLC1A5	low	Ependymoma	EPN
+BS_CXVJK2FY	Serine synthesis from glutamine	0.062287135220761104	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_VJ2S5DVS	Pyrimidine de novo synthesis from glutamine	0.06731459593274677	EPN	SLC1A5	low	Ependymoma	EPN
+BS_TNRHHYNC	Serine synthesis from glutamine	0.07114356088929231	EPN	SLC1A5	low	Ependymoma	EPN
+BS_07ANYSYQ	Serine synthesis from glutamine	0.07117140743882824	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_CXVJK2FY	Proline synthesis from glutamine	0.11245830098195267	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_0BXY0F9N	Serine synthesis from glutamine	0.1393021450079533	EPN	SLC1A5	low	Ependymoma	EPN
+BS_SAA624A4	Serine synthesis from glutamine	0.1393021450079533	EPN	SLC1A5	low	Ependymoma	EPN
+BS_P78SMRBS	Serine synthesis from glutamine	0.17062404923532762	EPN	SLC1A5	low	Ependymoma	EPN
+BS_VJ2S5DVS	Serine synthesis from glutamine	0.19436100990195085	EPN	SLC1A5	low	Ependymoma	EPN
+BS_KBT7MQ6H	Proline synthesis from glutamine	0.20885592565489655	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_C05FKR8X	Proline synthesis from glutamine	0.220656154869954	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_C05FKR8X	Serine synthesis from glutamine	0.23522424465657307	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_WYERXS4G	Serine synthesis from glutamine	0.25800384048838	EPN	SLC1A5	high	Ependymoma, Supratentorial, YAP1 fusion positive	EPN
+BS_Q5WZYWCT	Serine synthesis from glutamine	0.2711608009053867	EPN	SLC1A5	low	Ependymoma	EPN
+BS_3X9WMZGJ	Serine synthesis from glutamine	0.300898017872986	EPN	SLC1A5	low	Ependymoma	EPN
+BS_C05FKR8X	Oxidative phosphorylation	0.3732606511816924	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_KBT7MQ6H	Oxidative phosphorylation	0.43164141283882523	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_3X9WMZGJ	Oxidative phosphorylation	0.4396636933480281	EPN	SLC1A5	low	Ependymoma	EPN
+BS_Q5WZYWCT	Oxidative phosphorylation	0.4397208084091679	EPN	SLC1A5	low	Ependymoma	EPN
+BS_0BXY0F9N	Oxidative phosphorylation	0.4444034442872193	EPN	SLC1A5	low	Ependymoma	EPN
+BS_WYERXS4G	Oxidative phosphorylation	0.45371896008258183	EPN	SLC1A5	high	Ependymoma, Supratentorial, YAP1 fusion positive	EPN
+BS_VJ2S5DVS	Oxidative phosphorylation	0.47508698919835823	EPN	SLC1A5	low	Ependymoma	EPN
+BS_CXVJK2FY	Oxidative phosphorylation	0.4821360996329603	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_P78SMRBS	Oxidative phosphorylation	0.49987151849839984	EPN	SLC1A5	low	Ependymoma	EPN
+BS_07ANYSYQ	Oxidative phosphorylation	0.5009187037577534	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_V4W81SFC	Oxidative phosphorylation	0.5107318310896528	EPN	SLC1A5	high	Ependymoma, Supratentorial, YAP1 fusion positive	EPN
+BS_1J2WQ08M	Oxidative phosphorylation	0.5133495386880048	EPN	SLC1A5	high	Ependymoma	EPN
+BS_SAA624A4	Oxidative phosphorylation	0.5157545256651946	EPN	SLC1A5	low	Ependymoma	EPN
+BS_TNRHHYNC	Oxidative phosphorylation	0.5287978284707728	EPN	SLC1A5	low	Ependymoma	EPN

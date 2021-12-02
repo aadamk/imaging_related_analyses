@@ -21,13 +21,14 @@ expression_file="${data_dir}/gene-expression-rsem-tpm-collapsed.rds"
 count_file="${data_dir}/gene-counts-rsem-expected_count-collapsed.rds"
 short_long_match="${data_dir}/short_long_match.tsv"
 cg_gene_interest="${data_dir}/cg_gene_interest_sub.tsv"
+pathway_file="${data_dir}/pathway_of_interest.tsv"
 gtf_file="${ref_dir}/gencode.v27.primary_assembly.annotation.gtf.gz"
 
 # Run GSNCA analysis per cancer group of interest
 Rscript --vanilla geometric_mean_expr.R \
 --histology $histology_file \
---count $count_file \
+--expression $expression_file \
 --cg_gene_interest $cg_gene_interest \
 --short_long_match $short_long_match \
---gtf_file $gtf_file 
+--pathway $pathway_file
 

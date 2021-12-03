@@ -2,6 +2,7 @@
 # Calculate geometric mean of all markers within the manually curated pathways
 suppressPackageStartupMessages(library("optparse"))
 suppressPackageStartupMessages(library("tidyverse"))
+suppressPackageStartupMessages(library("optparse"))
 
 #### Parse command line options ------------------------------------------------
 option_list <- list(

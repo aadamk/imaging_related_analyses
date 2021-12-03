@@ -88,6 +88,7 @@ BS_CXVJK2FY	Pyrimidine de novo synthesis from glutamine	-0.04038875755964808	EPN
 BS_TNRHHYNC	Proline synthesis from glutamine	-0.034035342478631214	EPN	SLC1A5	low	Ependymoma	EPN
 BS_3X9WMZGJ	GSH synthesis from glutamate	-0.031737780610653854	EPN	SLC1A5	low	Ependymoma	EPN
 BS_1J2WQ08M	Proline synthesis from glutamine	-0.013971718073941588	EPN	SLC1A5	high	Ependymoma	EPN
+BS_VJ2S5DVS	Combined pathways	-0.010570465890958121	EPN	SLC1A5	low	Ependymoma	EPN
 BS_0BXY0F9N	Proline synthesis from glutamine	-0.002118256388122156	EPN	SLC1A5	low	Ependymoma	EPN
 BS_Q5WZYWCT	Proline synthesis from glutamine	0.029828570187995885	EPN	SLC1A5	low	Ependymoma	EPN
 BS_07ANYSYQ	Proline synthesis from glutamine	0.03527227817324577	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
@@ -100,18 +101,31 @@ BS_CXVJK2FY	Serine synthesis from glutamine	0.062287135220761104	EPN	SLC1A5	high
 BS_VJ2S5DVS	Pyrimidine de novo synthesis from glutamine	0.06731459593274677	EPN	SLC1A5	low	Ependymoma	EPN
 BS_TNRHHYNC	Serine synthesis from glutamine	0.07114356088929231	EPN	SLC1A5	low	Ependymoma	EPN
 BS_07ANYSYQ	Serine synthesis from glutamine	0.07117140743882824	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_3X9WMZGJ	Combined pathways	0.09180178773282652	EPN	SLC1A5	low	Ependymoma	EPN
+BS_C05FKR8X	Combined pathways	0.09180178773282652	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_CXVJK2FY	Combined pathways	0.09180178773282652	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
 BS_CXVJK2FY	Proline synthesis from glutamine	0.11245830098195267	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_1J2WQ08M	Combined pathways	0.11865856190087536	EPN	SLC1A5	high	Ependymoma	EPN
 BS_0BXY0F9N	Serine synthesis from glutamine	0.1393021450079533	EPN	SLC1A5	low	Ependymoma	EPN
 BS_SAA624A4	Serine synthesis from glutamine	0.1393021450079533	EPN	SLC1A5	low	Ependymoma	EPN
+BS_P78SMRBS	Combined pathways	0.14309249333966564	EPN	SLC1A5	low	Ependymoma	EPN
+BS_0BXY0F9N	Combined pathways	0.1687681259530692	EPN	SLC1A5	low	Ependymoma	EPN
 BS_P78SMRBS	Serine synthesis from glutamine	0.17062404923532762	EPN	SLC1A5	low	Ependymoma	EPN
 BS_VJ2S5DVS	Serine synthesis from glutamine	0.19436100990195085	EPN	SLC1A5	low	Ependymoma	EPN
 BS_KBT7MQ6H	Proline synthesis from glutamine	0.20885592565489655	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_TNRHHYNC	Combined pathways	0.22018793272883316	EPN	SLC1A5	low	Ependymoma	EPN
+BS_V4W81SFC	Combined pathways	0.22018793272883316	EPN	SLC1A5	high	Ependymoma, Supratentorial, YAP1 fusion positive	EPN
 BS_C05FKR8X	Proline synthesis from glutamine	0.220656154869954	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_SAA624A4	Combined pathways	0.2208211681695223	EPN	SLC1A5	low	Ependymoma	EPN
 BS_C05FKR8X	Serine synthesis from glutamine	0.23522424465657307	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_KBT7MQ6H	Combined pathways	0.2459361286120019	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_WYERXS4G	Combined pathways	0.2459361286120019	EPN	SLC1A5	high	Ependymoma, Supratentorial, YAP1 fusion positive	EPN
 BS_WYERXS4G	Serine synthesis from glutamine	0.25800384048838	EPN	SLC1A5	high	Ependymoma, Supratentorial, YAP1 fusion positive	EPN
 BS_Q5WZYWCT	Serine synthesis from glutamine	0.2711608009053867	EPN	SLC1A5	low	Ependymoma	EPN
+BS_07ANYSYQ	Combined pathways	0.2717131713091099	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
 BS_3X9WMZGJ	Serine synthesis from glutamine	0.300898017872986	EPN	SLC1A5	low	Ependymoma	EPN
 BS_C05FKR8X	Oxidative phosphorylation	0.3732606511816924	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
+BS_Q5WZYWCT	Combined pathways	0.37595968353646064	EPN	SLC1A5	low	Ependymoma	EPN
 BS_KBT7MQ6H	Oxidative phosphorylation	0.43164141283882523	EPN	SLC1A5	high	Ependymoma, Supratentorial, RELA fusion positive	EPN
 BS_3X9WMZGJ	Oxidative phosphorylation	0.4396636933480281	EPN	SLC1A5	low	Ependymoma	EPN
 BS_Q5WZYWCT	Oxidative phosphorylation	0.4397208084091679	EPN	SLC1A5	low	Ependymoma	EPN

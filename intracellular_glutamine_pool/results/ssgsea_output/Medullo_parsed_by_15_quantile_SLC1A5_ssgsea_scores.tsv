@@ -179,6 +179,7 @@ BS_J71N7D09	Pyrimidine de novo synthesis from glutamine	-0.0998796169139758	Medu
 BS_JZRM1S3T	Pyrimidine de novo synthesis from glutamine	-0.0998796169139758	Medullo	SLC1A5	high	Medulloblastoma, WNT-activated	Medullo
 BS_M15PW2N0	Asparagine synthesis from glutamine	-0.0998796169139758	Medullo	SLC1A5	high	Medulloblastoma, SHH-activated	Medullo
 BS_3NWQXPQV	Glutamate synthesis	-0.09292167593566328	Medullo	SLC1A5	low	Medulloblastoma, group 4	Medullo
+BS_3V3KE3VT	Combined pathways	-0.09116115616416391	Medullo	SLC1A5	high	Medulloblastoma, SHH-activated	Medullo
 BS_RD4D5F9F	Proline synthesis from glutamine	-0.08410546169067144	Medullo	SLC1A5	high	Medulloblastoma, SHH-activated	Medullo
 BS_A87NPZAP	Proline synthesis from glutamine	-0.07948442079308302	Medullo	SLC1A5	low	Medulloblastoma, group 4	Medullo
 BS_ZV68CES9	GSH synthesis from glutamate	-0.07481032944804909	Medullo	SLC1A5	high	Medulloblastoma, group 3	Medullo
@@ -203,6 +204,8 @@ BS_J8G4SH4Z	Pyrimidine de novo synthesis from glutamine	-0.04280555010598966	Med
 BS_RD4D5F9F	Pyrimidine de novo synthesis from glutamine	-0.04280555010598966	Medullo	SLC1A5	high	Medulloblastoma, SHH-activated	Medullo
 BS_Z45HD492	Asparagine synthesis from glutamine	-0.04280555010598966	Medullo	SLC1A5	high	Medulloblastoma, group 3	Medullo
 BS_V9HVBBDW	Proline synthesis from glutamine	-0.04182426733172162	Medullo	SLC1A5	high	Medulloblastoma, group 3	Medullo
+BS_A87NPZAP	Combined pathways	-0.0382870469178828	Medullo	SLC1A5	low	Medulloblastoma, group 4	Medullo
+BS_FKDQJJB5	Combined pathways	-0.0382870469178828	Medullo	SLC1A5	high	Medulloblastoma	Medullo
 BS_J8G4SH4Z	Proline synthesis from glutamine	-0.03775788149545137	Medullo	SLC1A5	low	Medulloblastoma, group 4	Medullo
 BS_BPWEFR89	Serine synthesis from glutamine	-0.03453053292347781	Medullo	SLC1A5	high	Medulloblastoma, SHH-activated	Medullo
 BS_ZV68CES9	Proline synthesis from glutamine	-0.031049051217222037	Medullo	SLC1A5	high	Medulloblastoma, group 3	Medullo
@@ -226,6 +229,7 @@ BS_A87NPZAP	Asparagine synthesis from glutamine	0.014268516701996586	Medullo	SLC
 BS_HTEPAKCM	Pyrimidine de novo synthesis from glutamine	0.014268516701996586	Medullo	SLC1A5	low	Medulloblastoma, group 4	Medullo
 BS_V72H4RQS	Pyrimidine de novo synthesis from glutamine	0.014268516701996586	Medullo	SLC1A5	high	Medulloblastoma	Medullo
 BS_H4B5Y6S0	Proline synthesis from glutamine	0.01537892929178663	Medullo	SLC1A5	low	Medulloblastoma, group 4	Medullo
+BS_3NWQXPQV	Combined pathways	0.015940896518898573	Medullo	SLC1A5	low	Medulloblastoma, group 4	Medullo
 BS_HE57E1RP	Proline synthesis from glutamine	0.02343153120900136	Medullo	SLC1A5	high	Medulloblastoma	Medullo
 BS_4PH1MBGR	Proline synthesis from glutamine	0.027141513796241145	Medullo	SLC1A5	low	Medulloblastoma, group 4	Medullo
 BS_HZE3KYZ1	Proline synthesis from glutamine	0.030184825809123926	Medullo	SLC1A5	low	Medulloblastoma, group 4	Medullo
@@ -235,13 +239,24 @@ BS_3NWQXPQV	Pyrimidine de novo synthesis from glutamine	0.04280555010598966	Medu
 BS_HE57E1RP	Asparagine synthesis from glutamine	0.04280555010598966	Medullo	SLC1A5	high	Medulloblastoma	Medullo
 BS_J8G4SH4Z	Asparagine synthesis from glutamine	0.04280555010598966	Medullo	SLC1A5	low	Medulloblastoma, group 4	Medullo
 BS_ZV68CES9	Asparagine synthesis from glutamine	0.04280555010598966	Medullo	SLC1A5	high	Medulloblastoma, group 3	Medullo
+BS_V72H4RQS	Combined pathways	0.04301193151518405	Medullo	SLC1A5	high	Medulloblastoma	Medullo
+BS_HTEPAKCM	Combined pathways	0.044309377149106995	Medullo	SLC1A5	low	Medulloblastoma, group 4	Medullo
 BS_FKDQJJB5	Proline synthesis from glutamine	0.04770186880027214	Medullo	SLC1A5	high	Medulloblastoma	Medullo
+BS_BPWEFR89	Combined pathways	0.07014447789320313	Medullo	SLC1A5	high	Medulloblastoma, SHH-activated	Medullo
+BS_HE57E1RP	Combined pathways	0.07014447789320313	Medullo	SLC1A5	high	Medulloblastoma	Medullo
+BS_VPBMDMQX	Combined pathways	0.07014447789320313	Medullo	SLC1A5	high	Medulloblastoma, SHH-activated	Medullo
 BS_4PH1MBGR	Asparagine synthesis from glutamine	0.07134258350998272	Medullo	SLC1A5	low	Medulloblastoma, group 4	Medullo
 BS_7XQRH69M	Asparagine synthesis from glutamine	0.07134258350998272	Medullo	SLC1A5	high	Medulloblastoma, SHH-activated	Medullo
 BS_JTMXAMB7	Asparagine synthesis from glutamine	0.07134258350998272	Medullo	SLC1A5	high	Medulloblastoma, WNT-activated	Medullo
 BS_QPPPGYP4	Asparagine synthesis from glutamine	0.07134258350998272	Medullo	SLC1A5	low	Medulloblastoma, group 4	Medullo
 BS_JTMXAMB7	Proline synthesis from glutamine	0.08990478985356118	Medullo	SLC1A5	high	Medulloblastoma, WNT-activated	Medullo
 BS_5VQP0E6K	Proline synthesis from glutamine	0.09706144274281354	Medullo	SLC1A5	high	Medulloblastoma, WNT-activated	Medullo
+BS_5PJCHF6V	Combined pathways	0.09729504599921078	Medullo	SLC1A5	low	Medulloblastoma, group 4	Medullo
+BS_5VQP0E6K	Combined pathways	0.09729504599921078	Medullo	SLC1A5	high	Medulloblastoma, WNT-activated	Medullo
+BS_HD4EJYE3	Combined pathways	0.09729504599921078	Medullo	SLC1A5	low	Medulloblastoma, group 4	Medullo
+BS_J8G4SH4Z	Combined pathways	0.09729504599921078	Medullo	SLC1A5	low	Medulloblastoma, group 4	Medullo
+BS_RD4D5F9F	Combined pathways	0.09729504599921078	Medullo	SLC1A5	high	Medulloblastoma, SHH-activated	Medullo
+BS_CHDGRYHJ	Combined pathways	0.09850542269225222	Medullo	SLC1A5	low	Medulloblastoma, group 3	Medullo
 BS_A87NPZAP	Pyrimidine de novo synthesis from glutamine	0.0998796169139758	Medullo	SLC1A5	low	Medulloblastoma, group 4	Medullo
 BS_BPWEFR89	Asparagine synthesis from glutamine	0.0998796169139758	Medullo	SLC1A5	high	Medulloblastoma, SHH-activated	Medullo
 BS_CHDGRYHJ	Asparagine synthesis from glutamine	0.0998796169139758	Medullo	SLC1A5	low	Medulloblastoma, group 3	Medullo
@@ -249,12 +264,29 @@ BS_FKDQJJB5	Pyrimidine de novo synthesis from glutamine	0.0998796169139758	Medul
 BS_J71N7D09	Asparagine synthesis from glutamine	0.0998796169139758	Medullo	SLC1A5	low	Medulloblastoma	Medullo
 BS_JZRM1S3T	Proline synthesis from glutamine	0.10775115274511297	Medullo	SLC1A5	high	Medulloblastoma, WNT-activated	Medullo
 BS_3V3KE3VT	Serine synthesis from glutamine	0.11842460854870174	Medullo	SLC1A5	high	Medulloblastoma, SHH-activated	Medullo
+BS_HZE3KYZ1	Combined pathways	0.12446476065592894	Medullo	SLC1A5	low	Medulloblastoma, group 4	Medullo
+BS_V9HVBBDW	Combined pathways	0.12446476065592894	Medullo	SLC1A5	high	Medulloblastoma, group 3	Medullo
+BS_ZV68CES9	Combined pathways	0.12446476065592894	Medullo	SLC1A5	high	Medulloblastoma, group 3	Medullo
+BS_1TWCV047	Combined pathways	0.15165489763818868	Medullo	SLC1A5	low	Medulloblastoma	Medullo
+BS_4PH1MBGR	Combined pathways	0.15165489763818868	Medullo	SLC1A5	low	Medulloblastoma, group 4	Medullo
+BS_J71N7D09	Combined pathways	0.15165489763818868	Medullo	SLC1A5	low	Medulloblastoma	Medullo
+BS_JZRM1S3T	Combined pathways	0.15165489763818868	Medullo	SLC1A5	high	Medulloblastoma, WNT-activated	Medullo
 BS_JTMXAMB7	Serine synthesis from glutamine	0.15338237023811066	Medullo	SLC1A5	high	Medulloblastoma, WNT-activated	Medullo
 BS_3V3KE3VT	Pyrimidine de novo synthesis from glutamine	0.15695368372196195	Medullo	SLC1A5	high	Medulloblastoma, SHH-activated	Medullo
 BS_HZE3KYZ1	Asparagine synthesis from glutamine	0.15695368372196195	Medullo	SLC1A5	low	Medulloblastoma, group 4	Medullo
+BS_DFWFBYSN	Combined pathways	0.17886691515848213	Medullo	SLC1A5	low	Medulloblastoma, group 4	Medullo
+BS_M15PW2N0	Combined pathways	0.17939309220940255	Medullo	SLC1A5	high	Medulloblastoma, SHH-activated	Medullo
 BS_81SP2HX4	Asparagine synthesis from glutamine	0.18549071712595502	Medullo	SLC1A5	high	Medulloblastoma, SHH-activated	Medullo
+BS_7XQRH69M	Combined pathways	0.20610249448236914	Medullo	SLC1A5	high	Medulloblastoma, SHH-activated	Medullo
+BS_81SP2HX4	Combined pathways	0.20610249448236914	Medullo	SLC1A5	high	Medulloblastoma, SHH-activated	Medullo
+BS_BSV07M7Z	Combined pathways	0.20610249448236914	Medullo	SLC1A5	low	Medulloblastoma, group 4	Medullo
+BS_QPPPGYP4	Combined pathways	0.20610249448236914	Medullo	SLC1A5	low	Medulloblastoma, group 4	Medullo
+BS_Z45HD492	Combined pathways	0.20610249448236914	Medullo	SLC1A5	high	Medulloblastoma, group 3	Medullo
+BS_H4B5Y6S0	Combined pathways	0.20612414750414884	Medullo	SLC1A5	low	Medulloblastoma, group 4	Medullo
+BS_2SFTWNVE	Combined pathways	0.20648751569719587	Medullo	SLC1A5	low	Medulloblastoma	Medullo
 BS_1TWCV047	Asparagine synthesis from glutamine	0.21402775052994819	Medullo	SLC1A5	low	Medulloblastoma	Medullo
 BS_H4B5Y6S0	Asparagine synthesis from glutamine	0.21402775052994819	Medullo	SLC1A5	low	Medulloblastoma, group 4	Medullo
+BS_JTMXAMB7	Combined pathways	0.23418591619513968	Medullo	SLC1A5	high	Medulloblastoma, WNT-activated	Medullo
 BS_J71N7D09	Oxidative phosphorylation	0.43827934028342624	Medullo	SLC1A5	low	Medulloblastoma	Medullo
 BS_3V3KE3VT	Oxidative phosphorylation	0.4898016121294615	Medullo	SLC1A5	high	Medulloblastoma, SHH-activated	Medullo
 BS_JTMXAMB7	Oxidative phosphorylation	0.49179239027897015	Medullo	SLC1A5	high	Medulloblastoma, WNT-activated	Medullo

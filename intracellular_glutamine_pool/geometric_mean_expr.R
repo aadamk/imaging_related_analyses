@@ -24,12 +24,12 @@ opt <- parse_args(OptionParser(option_list=option_list,add_help_option = FALSE))
 #### Define Directories --------------------------------------------------------
 root_dir <- rprojroot::find_root(rprojroot::has_dir(".git"))
 analysis_dir <- file.path(root_dir, "intracellular_glutamine_pool")
-results_dir <- file.path(analysis_dir, "results")
+results_dir <- file.path(analysis_dir, "results", "geomean_output")
 if(!dir.exists(results_dir)){
   dir.create(results_dir, recursive=TRUE)
 }
 
-plots_dir <- file.path(analysis_dir, "plots")
+plots_dir <- file.path(analysis_dir, "plots", "geo_boxplot")
 if(!dir.exists(plots_dir)){
   dir.create(plots_dir, recursive=TRUE)
 }

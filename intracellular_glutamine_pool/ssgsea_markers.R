@@ -25,45 +25,15 @@ opt <- parse_args(OptionParser(option_list=option_list,add_help_option = FALSE))
 #### Define Directories --------------------------------------------------------
 root_dir <- rprojroot::find_root(rprojroot::has_dir(".git"))
 analysis_dir <- file.path(root_dir, "intracellular_glutamine_pool")
-results_dir <- file.path(analysis_dir, "results")
+results_dir <- file.path(analysis_dir, "results", "ssgsea_output")
 if(!dir.exists(results_dir)){
   dir.create(results_dir, recursive=TRUE)
 }
 
-plots_dir <- file.path(analysis_dir, "plots")
+plots_dir <- file.path(analysis_dir, "plots", "pathway_barplot")
 if(!dir.exists(plots_dir)){
   dir.create(plots_dir, recursive=TRUE)
 }
-
-#### function to create barplots -------------------------------------------
-pathway_barplots <- function(dat, xlab, ylab, top = 20, title){
-  dat <- dat %>%
-    dplyr::select(xlab, ylab) %>%
-    unique() %>%
-    filter(get(ylab) != 0) %>%
-    arrange(get(ylab), descending = FALSE) %>%
-    slice_head(n = top) %>%
-    as.data.frame()
-  
-  dat <- dat %>% 
-    mutate(log_score = (-1)*log10(get(ylab))) %>%
-    arrange(log_score, descending = TRUE)
-  dat[,xlab] <- factor(dat[,xlab], levels = unique(dat[,xlab]))
-  
-  p <- ggplot(dat, aes(x = get(xlab), 
-                       y = log_score,
-                       fill = log_score)) + 
-    geom_bar(stat="identity") + coord_flip() + theme_bw() +
-    xlab("") + 
-    ylab("-log10 P-Value") + 
-    theme(plot.margin = unit(c(1, 1, 1, 1), "cm")) + 
-    ggtitle(title) +
-    scale_x_discrete(labels = function(x) str_wrap(x, width = 50)) +
-    guides(fill = "none")
-  
-  return(p)
-}
-
 
 #### Read in files necessary for analyses --------------------------------------
 # histology file
@@ -142,8 +112,7 @@ for(i in 1:nrow(cg_gene_interest)){
   expression_of_interest <- expression_data %>% 
     dplyr::select(bs_id_quantile_df$Kids_First_Biospecimen_ID) 
   
-  #### Calculate geometric mean for markers of interest --------------------------------
-  # get pathway list
+  #### Calculate geometric mean for all markers as well
   pathway_list <- pathway_df$genes %>%
     str_split(",") 
   names(pathway_list) <- pathway_df$pathway

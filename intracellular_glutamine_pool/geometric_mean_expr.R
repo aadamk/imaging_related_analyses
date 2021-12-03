@@ -3,6 +3,8 @@
 suppressPackageStartupMessages(library("optparse"))
 suppressPackageStartupMessages(library("tidyverse"))
 suppressPackageStartupMessages(library("optparse"))
+library(ggplot2)
+library(ggpubr)
 
 #### Parse command line options ------------------------------------------------
 option_list <- list(
@@ -25,6 +27,11 @@ analysis_dir <- file.path(root_dir, "intracellular_glutamine_pool")
 results_dir <- file.path(analysis_dir, "results")
 if(!dir.exists(results_dir)){
   dir.create(results_dir, recursive=TRUE)
+}
+
+plots_dir <- file.path(analysis_dir, "plots")
+if(!dir.exists(plots_dir)){
+  dir.create(plots_dir, recursive=TRUE)
 }
 
 #### Read in files necessary for analyses --------------------------------------
@@ -121,6 +128,15 @@ for(i in 1:nrow(cg_gene_interest)){
     left_join(bs_id_quantile_df) %>% 
     readr::write_tsv(file.path(results_dir, 
                                paste0("geometric_mean_of_markers_parsed_by_", gene_of_interest, "_in_", short_name_interest, ".tsv")))
+  
+  # plot out the results as jittered box plots
+  pdf(file = file.path(plots_dir, paste0(short_name_interest, "_parsed_by_", quantile_interest, "_quantile_", gene_of_interest, "_geomean_boxplot.pdf" )))
+  p <- ggplot(geometric_mean, aes(x=group, y = geometric_mean, color=group)) + 
+    geom_boxplot() + 
+    geom_point(position="jitter") + 
+    stat_compare_means(method = "t.test")
+  print(p)
+  dev.off()
   
   # get t.test results
   high_exp <- geometric_mean %>% filter(group=="high") %>% dplyr::select(geometric_mean)

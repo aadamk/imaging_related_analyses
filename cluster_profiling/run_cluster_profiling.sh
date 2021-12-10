@@ -16,18 +16,19 @@ input_dir="input"
 ref_dir="../references"
 results_dir="results"
 
-# Define files used
+# Define files used - data files
 histology_file="${data_dir}/histologies.tsv"
 count_file="${data_dir}/gene-counts-rsem-expected_count-collapsed.rds"
-short_long_match="${data_dir}/short_long_match.tsv"
+cc_data_match="${input_dir}/cc_data_match.tsv"
 
+# references file 
+short_long_match="${data_dir}/short_long_match.tsv"
 gtf_file="${ref_dir}/gencode.v27.primary_assembly.annotation.gtf.gz"
 gmt_file="${ref_dir}/c2.cp.kegg.v7.4.symbols.gmt"
 
+# pathways of interest
 pathway_file="${data_dir}/all_meta_pathways.tsv"
 pathway_file_sub="${data_dir}/pathway_of_interest.tsv"
-
-cc_data_match="${input_dir}/cc_data_match.tsv"
 
 
 # Run cluster on each cancer group of interest
@@ -52,3 +53,5 @@ Rscript --vanilla 03-network_analysis.R \
 --short_long_match $short_long_match \
 --gtf_file $gtf_file \
 --gmt_file $gmt_file
+
+

@@ -22,6 +22,7 @@ count_file="${data_dir}/gene-counts-rsem-expected_count-collapsed.rds"
 short_long_match="${data_dir}/short_long_match.tsv"
 gtf_file="${ref_dir}/gencode.v27.primary_assembly.annotation.gtf.gz"
 pathway_file="${data_dir}/all_meta_pathways.tsv"
+pathway_file_sub="${data_dir}/pathway_of_interest.tsv"
 
 cc_data_match="${input_dir}/cc_data_match.tsv"
 
@@ -38,8 +39,6 @@ Rscript --vanilla 01-consensus_clustering.R \
 Rscript --vanilla 02-network-analysis.R \
 --histology $histology_file \
 --cc_data_match $cc_data_match \
---short_long_match $short_long_match \
---gtf_file $gtf_file \
---pathways $pathway_file
+--pathways $pathway_file_sub
 
 

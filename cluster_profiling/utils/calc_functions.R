@@ -85,3 +85,19 @@ compute.v.test <- function(x, clustering_col){
   }
   return(out)
 }
+
+###### function that does zscore transformation 
+zscore_transform <- function(df){
+  df_log <- log2(df+1)
+  # calculate mean
+  matrix_means <-rowMeans(df_log, na.rm = TRUE)
+  # calculate sd
+  matrix_sd <- apply(df_log, 1, sd, na.rm = TRUE)
+  # subtract mean
+  df_log_minus_mean <- sweep(df_log, 1, matrix_means, FUN = "-")
+  # divide by SD remove NAs and Inf values from zscore for genes with 0 in normData
+  df_zscored <- sweep(df_log_minus_mean, 1,matrix_sd, FUN = "/") %>% 
+    na_if(Inf) %>% na.omit()
+  
+  return(df_zscored)
+}

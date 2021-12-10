@@ -19,6 +19,8 @@ results_dir="results"
 # Define files used - data files
 histology_file="${data_dir}/histologies.tsv"
 count_file="${data_dir}/gene-counts-rsem-expected_count-collapsed.rds"
+
+# Results file - this file is generated after manually reviewing results from 01
 cc_data_match="${input_dir}/cc_data_match.tsv"
 
 # references file 

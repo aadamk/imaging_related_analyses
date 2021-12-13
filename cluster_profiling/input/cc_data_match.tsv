@@ -1,4 +1,4 @@
 cancer_group 	distance_param 	cluster_param	cluster_n
-EPN	euclidean	km	5
-HGG	euclidean	km	5
-Medullo	euclidean	km	5
+EPN	euclidean	pam	3
+HGG	euclidean	km	4
+Medullo	euclidean	pam	4

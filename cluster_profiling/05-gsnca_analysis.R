@@ -3,6 +3,7 @@
 suppressPackageStartupMessages({
   library("optparse")
   library("tidyverse")
+  library("CEMiTool")
 })
 
 #### Parse command line options ------------------------------------------------
@@ -57,7 +58,7 @@ expression_df_coding <- expression_df[rownames(expression_df) %in% gencode_gtf$g
 
 # read in the GMT file and generate list for analysis 
 c2_cp_kegg <- read_gmt(gmt_file)
-c2_cp_kegg_list <- base::split(c2_cp_kegg$gene, list(c2_cp_kegg$term))
+c2_cp_kegg$term <- as.character(c2_cp_kegg$term)
 
 # now perform analysis for each disease of interest 
 for(j in 1:length(cg_list)){
@@ -101,14 +102,14 @@ for(j in 1:length(cg_list)){
         dplyr::select(cluster_anno_each$Kids_First_Biospecimen_ID)
       
       # run the analysis 
-      gsnca_analysis_plot <- gsnca_analysis_plot(tpm_matrix = as.matrix(expression_coding_cg_filtered_each), 
-                                                 cluster_anno = cluster_anno_each, 
-                                                 pathway_df = c2_cp_kegg, 
-                                                 comparison = paste0("cluster", p, "_vs_cluster", q),
-                                                 output_file_dir = results_dir, 
-                                                 output_plot_dir = plots_dir_specific, 
-                                                 top_bar=20, 
-                                                 top_net=5)
+      gsnca_analysis_plot(tpm_matrix = as.matrix(expression_coding_cg_filtered_each), 
+                           cluster_anno = cluster_anno_each, 
+                           pathway_df = c2_cp_kegg, 
+                           comparison = paste0("cluster", p, "_vs_cluster", q),
+                           output_file_dir = results_dir, 
+                           output_plot_dir = plots_dir_specific, 
+                           top_bar=20, 
+                           top_net=5)
       
     }
   }

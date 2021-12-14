@@ -84,7 +84,7 @@ pathway_barplots <- function(dat, title){
 gsnca_analysis_plot <- function(tpm_matrix, cluster_anno, pathway_df, comparison, output_file_dir, output_plot_dir, top_bar=20, top_net=5){
   # get the list of pathways 
   pathway_list <- pathway_df %>%
-    pull(term) %>% unique()
+    pull(term) %>% unique() 
   
   # define matrix to store results
   gsnca_results <- data.frame(matrix(ncol = 3, nrow = 0))
@@ -104,7 +104,7 @@ gsnca_analysis_plot <- function(tpm_matrix, cluster_anno, pathway_df, comparison
     tpm_matrix_per_pathway <- tpm_matrix[row.names(tpm_matrix) %in% genes_in_pathway,] 
     
     # run GSNCA test on filtered 
-    result_pval<-GSNCAtest(object=as.matrix(tpm_matrix), 
+    result_pval<-GSNCAtest(object=as.matrix(tpm_matrix_per_pathway), 
                            # since the matrix is selected by order of row, the group will match
                            group=cluster_anno$group, 
                            nperm=500, 
@@ -143,13 +143,13 @@ gsnca_analysis_plot <- function(tpm_matrix, cluster_anno, pathway_df, comparison
   pdf(file = file.path(output_plot_dir, paste0(cg_of_interest, "_", comparison, "_KEGG_GSNCA_plots.pdf")))
   
   #### For pathways with top 5 pval, we plot out the network plots for them
-  for(j in 1:nrow(gsnca_top_net)){
+  for(k in 1:nrow(gsnca_top_net)){
     # gather genes in the pathway of interest 
-    pathway_network <- gsnca_top_net[j,1]
+    pathway_network <- gsnca_top_net[k,1]
     # find genes in pathway of interest
     genes_in_network_pahtway <- pathway_df %>% 
-      filter(pathway == pathway_network) %>% 
-      pull(symbol) %>% unique()
+      filter(term == pathway_network) %>% 
+      pull(gene) %>% unique()
     
     # filter to genes in target pathway
     tpm_matrix_per_network_pathway <- tpm_matrix[row.names(tpm_matrix) %in% genes_in_network_pahtway,]

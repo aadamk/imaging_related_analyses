@@ -85,6 +85,7 @@ for(i in 1:length(cg_list)){
                                   method = "ssgsea",
                                   parallel.sz = 8, # For the bigger dataset, this ensures this won't crash due to memory problems
                                   mx.diff = TRUE,
+                                  ssgsea.norm = F,
                                   BPPARAM=SerialParam(progressbar=T)) %>%
       as.data.frame()
     

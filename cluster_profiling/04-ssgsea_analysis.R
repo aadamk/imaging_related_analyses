@@ -136,7 +136,7 @@ for(i in 1:length(cg_list)){
   pheatmap::pheatmap(as.matrix(gsea_combined),
                      annotation_col = cluster_anno,
                      annotation_row = pathway_anno, 
-                     cluster_rows=TRUE,
+                     cluster_rows=FALSE,
                      cluster_cols=FALSE,
                      color = colorRampPalette(c("blue", "white", "red"))(100),
                      width = 12,

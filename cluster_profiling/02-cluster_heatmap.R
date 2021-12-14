@@ -82,6 +82,38 @@ for (i in 1:nrow(cc_data_match)){
                             "transformed_diptest_coding_goi_filtered_counts.rds")
   filtered_count <- readRDS(input_count)
   
+  #################### calculate v test for GOI + 1k dip test features
+  # annotate cluster information
+  filtered_count_cluster_all <- filtered_count %>%
+    t() %>% 
+    as.data.frame() %>%
+    tibble::rownames_to_column('sample') %>%
+    tidyr::gather(gene_symbol, gene_count, -sample) %>%
+    dplyr::left_join(cluster_info) 
+  
+  # gather information about genes and their count number
+  filtered_count_cluster_all <- filtered_count_cluster_all %>%
+    dplyr::group_by(cluster_assigned, gene_symbol) %>%
+    dplyr::mutate(cluster_gene_mean_score = mean(gene_count)) %>% # mean of gene count per cluster 
+    ungroup() %>%
+    dplyr::group_by(gene_symbol) %>%
+    dplyr::mutate(gene_mean_score = mean(gene_count),
+                  gene_variance = var(gene_count)) # global mean & variance per gene count
+  
+  # apply v.test function per gene
+  vtest_output_all <- plyr::ddply(.data = filtered_count_cluster_all, 
+                                  .variables = "gene_symbol", 
+                                  .fun = function(x) compute.v.test(x, clustering_col = "cluster_assigned"))
+  
+  vtest_output_all <- vtest_output_all %>%
+    dplyr::rename("geneSymbol" = "gene_symbol", "vtest_score" = "v_score") %>% 
+    readr::write_tsv(file.path(results_dir_vtest, paste0(cg_of_interest, "_", 
+                                                         distance_param, "_", 
+                                                         cluster_param, "_k", 
+                                                         cluster_n, 
+                                                         "_cluster_all.tsv")))
+  
+  #################### calculate v test for GOI in metabolic pathways only 
   # filter to genes of interest
   filtered_count_interest <- filtered_count[rownames(filtered_count) %in% genes_in_pathways,]
   # annotate cluster information
@@ -92,14 +124,9 @@ for (i in 1:nrow(cc_data_match)){
     tidyr::gather(gene_symbol, gene_count, -sample) %>%
     dplyr::left_join(cluster_info) 
   
-  # gather information about 
-  filtered_count_cluster <- filtered_count_cluster %>%
-    dplyr::group_by(cluster_assigned, gene_symbol) %>%
-    dplyr::mutate(cluster_gene_mean_score = mean(gene_count)) %>% # mean of gene count per cluster 
-    ungroup() %>%
-    dplyr::group_by(gene_symbol) %>%
-    dplyr::mutate(gene_mean_score = mean(gene_count),
-                  gene_variance = var(gene_count)) # global mean & variance per gene count
+  # gather information about genes and their count number
+  filtered_count_cluster <- filtered_count_cluster_all %>%
+    dplyr::filter(gene_symbol %in%  genes_in_pathways) 
   
   # apply v.test function per gene
   vtest_output <- plyr::ddply(.data = filtered_count_cluster, 
@@ -112,7 +139,7 @@ for (i in 1:nrow(cc_data_match)){
                                                           distance_param, "_", 
                                                           cluster_param, "_k", 
                                                           cluster_n, 
-                                                          "_cluster_info.tsv")))
+                                                          "_cluster_goi_only.tsv")))
   
   ############################### plot heatmap with consensus clustering results
   # take log and then zscore of the matrix for better visualization

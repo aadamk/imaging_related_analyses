@@ -112,6 +112,11 @@ for(i in 1:length(cg_list)){
                                                          blind = TRUE,
                                                          fitType="parametric") %>%
     as.data.frame()
+  
+  # save the VST transformed protein-coding 
+  saveRDS(count_transformed, 
+          file.path(results_dir_specific, "transformed_all_coding_counts.rds"))
+  
   # filter by diptest
   diptest_gene_list <- get_gene_list_by_diptest(count_transformed, 
                                                 min_n=1000)

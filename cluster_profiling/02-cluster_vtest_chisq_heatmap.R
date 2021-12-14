@@ -3,6 +3,7 @@
 suppressPackageStartupMessages({
   library("optparse")
   library("tidyverse")
+  library("broom")
 })
 
 #### Parse command line options ------------------------------------------------
@@ -29,6 +30,11 @@ if(!dir.exists(results_dir_vtest)){
 results_dir_cluster <- file.path(analysis_dir, "results", "cluster_anno")
 if(!dir.exists(results_dir_cluster)){
   dir.create(results_dir_cluster, recursive=TRUE)
+}
+
+results_dir_chisq <- file.path(analysis_dir, "results", "chisq_test")
+if(!dir.exists(results_dir_chisq)){
+  dir.create(results_dir_chisq, recursive=TRUE)
 }
 
 heatmap_dir <- file.path(analysis_dir, "plots", "cluster_heatmap")
@@ -187,5 +193,14 @@ for (i in 1:nrow(cc_data_match)){
                                                               cluster_param, "_k", 
                                                               cluster_n, 
                                                               "_cluster_heatmap.pdf")))
+  
+  ######## perform chisq test for harmonized diagnosis and cluster assigned 
+  # chisq test
+  chisq_results <- tidy(chisq.test(as.factor(cluster_anno$harmonized_diagnosis), 
+                                   as.factor(cluster_anno$cluster_assigned))) %>%
+    as.data.frame() %>% 
+    dplyr::mutate(compare = "harmonized_diagnosis_vs_cluster") %>% 
+    readr::write_tsv(file.path(results_dir_chisq, paste0(cg_of_interest, 
+                                                         "_chisq_results.tsv")))
 }
 

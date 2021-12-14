@@ -44,7 +44,7 @@ Rscript --vanilla 01-consensus_clustering.R \
 --pathways $pathway_file
 
 # Generate heatmap from results from `01-consensus_clustering.R`
-Rscript --vanilla 02-cluster_heatmap.R \
+Rscript --vanilla 02-cluster_vtest_chisq_heatmap.R \
 --histology $histology_file \
 --cc_data_match $cc_data_match \
 --pathways $pathway_file_sub

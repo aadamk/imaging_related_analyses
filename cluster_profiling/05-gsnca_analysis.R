@@ -70,6 +70,11 @@ for(j in 1:length(cg_list)){
     dir.create(plots_dir_specific, recursive=TRUE)
   }
   
+  results_dir_specific <- file.path(results_dir, cg_of_interest)
+  if(!dir.exists(results_dir_specific)){
+    dir.create(results_dir_specific, recursive=TRUE)
+  }
+  
   # read in the cluster annotation file 
   cluster_anno_file <- list.files(anno_input_dir, pattern = cg_of_interest, full.names = TRUE)
   cluster_anno <- readr::read_tsv(cluster_anno_file) 
@@ -106,7 +111,7 @@ for(j in 1:length(cg_list)){
                            cluster_anno = cluster_anno_each, 
                            pathway_df = c2_cp_kegg, 
                            comparison = paste0("cluster", p, "_vs_cluster", q),
-                           output_file_dir = results_dir, 
+                           output_file_dir = results_dir_specific, 
                            output_plot_dir = plots_dir_specific, 
                            top_bar=20, 
                            top_net=5)

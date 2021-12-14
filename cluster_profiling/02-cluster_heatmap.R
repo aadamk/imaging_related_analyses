@@ -31,7 +31,7 @@ if(!dir.exists(results_dir_cluster)){
   dir.create(results_dir_cluster, recursive=TRUE)
 }
 
-heatmap_dir <- file.path(analysis_dir, "plots", "heatmap")
+heatmap_dir <- file.path(analysis_dir, "plots", "cluster_heatmap")
 if(!dir.exists(heatmap_dir)){
   dir.create(heatmap_dir, recursive=TRUE)
 }

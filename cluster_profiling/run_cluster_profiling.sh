@@ -56,4 +56,8 @@ Rscript --vanilla 03-network_analysis.R \
 --gtf_file $gtf_file \
 --gmt_file $gmt_file
 
+# Run ssGSEA analysis on each cancer group and clusters
+Rscript --vanilla 04-ssgsea_analysis.R \
+--cg_interest "HGG,Medullo,EPN" \
+--gmt_file $gmt_file
 

@@ -12,8 +12,6 @@ option_list <- list(
               help="gene count data from OpenPedCan RNA samples (.rds) "),
   make_option(c("-l","--cg_interest"),type="character",
               help="comma separated list of cancer groups of interest"),
-  make_option(c("-m","--short_long_match"),type="character",
-              help="match between long and short names (.tsv)"),
   make_option(c("-g","--gtf_file"),type="character",
               help="GTF file of the Gencode V27 primary assembly file"),
   make_option(c("-t","--gmt_file"),type="character",
@@ -41,14 +39,8 @@ if(!dir.exists(plots_dir)){
 source(file.path(analysis_dir, "utils", "run_cemitools.R"))
 
 #### Read in files necessary for analyses --------------------------------------
-# histology file
-histology_df <- readr::read_tsv(opt$histology, guess_max=100000)
-
 # gene expected count file
 count_matrix <- readRDS(opt$count)
-
-# file matching short and long histology
-short_long_match <- readr::read_tsv(opt$short_long_match)
 
 # Gencode27 GTF file loading
 gtf <- opt$gtf_file

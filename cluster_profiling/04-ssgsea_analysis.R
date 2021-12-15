@@ -88,9 +88,9 @@ for(i in 1:length(cg_list)){
   # get list of clusters
   cluster_list <- cluster_anno %>% pull(cluster_assigned) %>% unique()
   
-  # read in vst count file 
+  # read in vst count file
   vst_count_file <- readRDS(file.path(count_input_dir, cg_of_interest, "transformed_all_coding_counts.rds"))
-  
+
   # filter the count matrix to contain only samples of interest
   count_matrix_coding_cg <- count_matrix_coding %>%
     dplyr::select(cluster_anno$Kids_First_Biospecimen_ID)
@@ -126,8 +126,8 @@ for(i in 1:length(cg_list)){
 
   ssgsea_analysis(normalized_count = tpm_df_coding_cg_log2,
                   normalized_method = "log2_tpm")
-  
+
   ssgsea_analysis(normalized_count = vst_count_file,
                   normalized_method = "vst_count")
-  
+
 }

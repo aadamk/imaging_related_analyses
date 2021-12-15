@@ -108,25 +108,36 @@ ssgsea_analysis <- function(normalized_count,
                      filename = file.path(plots_dir_each,
                                           paste0("ssgsea_scores_in_", cg_of_interest, "_by_cluster_heatmap.pdf")))
   
-  # ######## run contrast fit using the combined gsea scores
-  # # build model matrix
-  # fit_contrast <- lmFit(as.matrix(gsea_combined), mod)
-  # 
-  # # get all combinations
-  # for(p in 1:(cluster_n - 1)){
-  #   for(q in (p+1):cluster_n){
-  #     group1_cluster <- p
-  #     group2_cluster <- q
-  #     
-  #   }
-  # }
-  # 
-  # contrasts <- makeContrasts(cluster1-cluster2, cluster1-cluster3, cluster2-cluster3, levels=colnames(design)) 
-  # fit_contrast <- contrasts.fit(fit_contrast, contrasts)
-  # fit_contrast <- eBayes(fit_contrast)
-  # 
-  # ## write out toptable for contrast fit 
-  # topTable(fit_contrast, coef=2, n=Inf) %>%
-  #   readr::write_tsv(file.path(results_dir_each,
-  #                              paste0("contrast_fit_results_in_", cg_of_interest, ".tsv")))
+  ######## run contrast fit using the combined gsea scores for deseq only 
+  if(normalized_method == "deseq2"){
+    # define contrasts
+    cluster_n <- length(unique(anno_file$cluster_assigned))
+    contrasts <- c()
+    # get all combinations
+    for(p in 1:(cluster_n - 1)){
+      for(q in (p+1):cluster_n){
+        contrasts <- c(contrasts, paste0("cluster", p, "-cluster", q))
+      }
+    }
+    
+    # define column names
+    column_names <- c()
+    for(m in 1:cluster_n){
+      column_names <- c(column_names, paste0("cluster", m))
+    }
+    
+    # build model matrix
+    mod <- model.matrix(~ factor(anno_file$cluster_assigned))
+    colnames(mod) <- column_names
+    fit_contrast <- lmFit(as.matrix(gsea_combined), mod)
+    
+    contrasts <- makeContrasts(contrasts=contrasts, levels=column_names)
+    fit_contrast <- contrasts.fit(fit_contrast, contrasts)
+    fit_contrast <- eBayes(fit_contrast)
+    
+    ## write out toptable for contrast fit
+    topTable(fit_contrast, coef=2, n=Inf) %>%
+      readr::write_tsv(file.path(results_dir_each,
+                                 paste0("contrast_fit_results_in_", cg_of_interest, ".tsv")))
+  }
 }

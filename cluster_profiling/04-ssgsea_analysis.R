@@ -1,5 +1,5 @@
 # Author: Run Jin
-# Run ssGSEA analysis and perform differential pathway analysis 
+# Run ssGSEA analysis and perform differentially 
 suppressPackageStartupMessages({
   library("optparse")
   library("tidyverse")
@@ -8,6 +8,7 @@ suppressPackageStartupMessages({
   library("limma")
   library("edgeR")
   library("DESeq2")
+  library("rtracklayer")
 })
 
 #### Parse command line options ------------------------------------------------
@@ -45,8 +46,8 @@ if(!dir.exists(plots_dir)){
 source(file.path(analysis_dir, "utils", "perform_ssgsea.R"))
 
 #### Read in files necessary for analyses --------------------------------------
-# gene expected count file
-count_matrix <- readRDS(opt$count)
+# # gene expected count file
+# count_matrix <- readRDS(opt$count)
 # gene expected count file
 tpm_df <- readRDS(opt$expression)
 
@@ -61,21 +62,20 @@ gencode_gtf <- gencode_gtf %>%
   filter(gene_type == "protein_coding") %>%
   unique()
 
-# filter expression count file to contain only protein coding gene
-count_matrix_coding <- count_matrix[rownames(count_matrix) %in% gencode_gtf$gene_name,]
+# # filter expression count file to contain only protein coding gene
+# count_matrix_coding <- count_matrix[rownames(count_matrix) %in% gencode_gtf$gene_name,]
 # filter expression count file to contain only protein coding gene
 tpm_df_coding <- tpm_df[rownames(tpm_df) %in% gencode_gtf$gene_name,]
 
+# read in the GMT file and generate list for analysis 
+c2_cp_kegg <- read_gmt(gmt_file)
+c2_cp_kegg_list <- base::split(c2_cp_kegg$gene, list(c2_cp_kegg$term))
+
 # now perform analysis for each disease of interest 
 for(i in 1:length(cg_list)){
-  # read in the GMT file and generate list for analysis 
-  c2_cp_kegg <- read_gmt(gmt_file)
-  c2_cp_kegg_list <- base::split(c2_cp_kegg$gene, list(c2_cp_kegg$term))
-  
   cg_of_interest <- cg_list[i]
-
+  
   # define disease and cluster specific output 
-  plots_dir <- plots_dir
   results_dir_specific <- file.path(results_dir, cg_of_interest)
   if(!dir.exists(results_dir_specific)){
     dir.create(results_dir_specific, recursive=TRUE)
@@ -87,40 +87,40 @@ for(i in 1:length(cg_list)){
   # get list of clusters
   cluster_list <- cluster_anno %>% pull(cluster_assigned) %>% unique()
   
-  # filter the count matrix to contain only samples of interest
-  count_matrix_coding_cg <- count_matrix_coding %>%
-    dplyr::select(cluster_anno$Kids_First_Biospecimen_ID)
+  # # filter the count matrix to contain only samples of interest
+  # count_matrix_coding_cg <- count_matrix_coding %>%
+  #   dplyr::select(cluster_anno$Kids_First_Biospecimen_ID)
   # filter the TPM to contain only samples of interest
   tpm_df_coding_cg <- tpm_df_coding %>%
     dplyr::select(cluster_anno$Kids_First_Biospecimen_ID)
   
   ############### Try out different normalization method
-  # first is TMM calculated by edgeR
-  group <- factor(rep(c(1), times = length(colnames(count_matrix_coding_cg)))) # give them the same group for all genes
-  count_matrix_coding_cg_dge <- DGEList(counts = count_matrix_coding_cg, group = group)
+  # # first is TMM calculated by edgeR
+  # group <- factor(rep(c(1), times = length(colnames(count_matrix_coding_cg)))) # give them the same group for all genes
+  # count_matrix_coding_cg_dge <- DGEList(counts = count_matrix_coding_cg, group = group)
+  # 
+  # # compute the normalization factors (TMM) for scaling by library size
+  # count_matrix_coding_cg_dge_tmm <- calcNormFactors(count_matrix_coding_cg_dge, method = "TMM")
+  # count_matrix_coding_cg_dge_tmm <- cpm(count_matrix_coding_cg_dge_tmm)
+  # 
+  # # second is DESeq2 normalized count 
+  # dds <- DESeqDataSetFromMatrix(countData = round(count_matrix_coding_cg), 
+  #                               colData = cluster_anno,
+  #                               design = ~1 )
+  # count_matrix_coding_cg_dge_deseq2 <- estimateSizeFactors(dds)
+  # count_matrix_coding_cg_dge_deseq2 <- counts(count_matrix_coding_cg_dge_deseq2, normalized=T)
   
-  # compute the normalization factors (TMM) for scaling by library size
-  count_matrix_coding_cg_dge_tmm <- calcNormFactors(count_matrix_coding_cg_dge, method = "TMM")
-  count_matrix_coding_cg_dge_tmm <- cpm(count_matrix_coding_cg_dge_tmm)
-  
-  # second is DESeq2 normalized count 
-  dds <- DESeqDataSetFromMatrix(countData = round(count_matrix_coding_cg), 
-                                colData = cluster_anno,
-                                design = ~1 )
-  count_matrix_coding_cg_dge_deseq2 <- estimateSizeFactors(dds)
-  count_matrix_coding_cg_dge_deseq2 <- counts(count_matrix_coding_cg_dge_deseq2, normalized=T)
-  
-  # third is log TPM 
+  # third is log TPM
   tpm_df_coding_cg_log2 <- log2(tpm_df_coding_cg + 1)
   
-  ####### run the analysis for each normalized matrix
-  ssgsea_analysis(normalized_count = count_matrix_coding_cg_dge_tmm, 
-                  normalized_method = "edgeR_tmm")
+  # ####### run the analysis for each normalized matrix
+  # ssgsea_analysis(normalized_count = count_matrix_coding_cg_dge_tmm, 
+  #                 normalized_method = "edgeR_tmm")
+  # 
+  # ssgsea_analysis(normalized_count = count_matrix_coding_cg_dge_deseq2, 
+  #                 normalized_method = "deseq2")
   
-  ssgsea_analysis(normalized_count = count_matrix_coding_cg_dge_deseq2, 
-                  normalized_method = "deseq2")
-  
-  ssgsea_analysis(normalized_count = tpm_df_coding_cg_log2, 
+  ssgsea_analysis(normalized_count = tpm_df_coding_cg_log2,
                   normalized_method = "log2_tpm")
   
 }

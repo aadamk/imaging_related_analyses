@@ -59,6 +59,9 @@ Rscript --vanilla 03-network_analysis.R \
 # Run ssGSEA analysis on each cancer group and clusters
 Rscript --vanilla 04-ssgsea_analysis.R \
 --cg_interest "HGG,Medullo,EPN" \
+--count $count_file \
+--expression $tpm_file \
+--gtf_file $gtf_file \
 --gmt_file $gmt_file
 
 # Run GSNCA analysis on each cancer group and clusters

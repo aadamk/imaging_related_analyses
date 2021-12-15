@@ -1,6 +1,6 @@
 # function to perform ssgsea analysis and output plots
 ssgsea_analysis <- function(normalized_count, 
-                            normalized_method,
+                            normalized_method, 
                             pathway_df = c2_cp_kegg, 
                             pathway_list = c2_cp_kegg_list, 
                             anno_file = cluster_anno, 

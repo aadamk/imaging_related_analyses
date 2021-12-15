@@ -231,7 +231,7 @@ for(i in 1:nrow(cg_gene_interest)){
   bs_id_quantile_df$group <- relevel(bs_id_quantile_df$group, "lower")
   
   # build model matrix
-  mod <- model.matrix(~ bs_id_quantile_df$group)
+  mod <- model.matrix(~ factor(bs_id_quantile_df$group))
   fit <- lmFit(as.matrix(ssgsea_scores_each), mod)
   fit <- eBayes(fit)
   tt <- topTable(fit, coef=2, n=Inf) 

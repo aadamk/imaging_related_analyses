@@ -60,7 +60,7 @@ ssgsea_analysis <- function(normalized_count,
   
   ######## run differential gene expression using the combined gsea scores
   # build model matrix
-  mod <- model.matrix(~ anno_file$cluster_assigned)
+  mod <- model.matrix(~ factor(anno_file$cluster_assigned))
   fit <- lmFit(as.matrix(gsea_combined), mod)
   fit <- eBayes(fit)
   tt <- topTable(fit, coef=2, n=Inf) 
@@ -107,4 +107,26 @@ ssgsea_analysis <- function(normalized_count,
                      show_rownames = T,
                      filename = file.path(plots_dir_each,
                                           paste0("ssgsea_scores_in_", cg_of_interest, "_by_cluster_heatmap.pdf")))
+  
+  # ######## run contrast fit using the combined gsea scores
+  # # build model matrix
+  # fit_contrast <- lmFit(as.matrix(gsea_combined), mod)
+  # 
+  # # get all combinations
+  # for(p in 1:(cluster_n - 1)){
+  #   for(q in (p+1):cluster_n){
+  #     group1_cluster <- p
+  #     group2_cluster <- q
+  #     
+  #   }
+  # }
+  # 
+  # contrasts <- makeContrasts(cluster1-cluster2, cluster1-cluster3, cluster2-cluster3, levels=colnames(design)) 
+  # fit_contrast <- contrasts.fit(fit_contrast, contrasts)
+  # fit_contrast <- eBayes(fit_contrast)
+  # 
+  # ## write out toptable for contrast fit 
+  # topTable(fit_contrast, coef=2, n=Inf) %>%
+  #   readr::write_tsv(file.path(results_dir_each,
+  #                              paste0("contrast_fit_results_in_", cg_of_interest, ".tsv")))
 }

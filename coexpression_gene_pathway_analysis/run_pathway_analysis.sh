@@ -33,7 +33,7 @@ Rscript --vanilla 01-gsnca_analysis_per_gene_disease.R \
 --cg_gene_interest $cg_gene_interest \
 --short_long_match $short_long_match \
 --gtf_file $gtf_file \
---outfile $gscna_pva
+--outfile $gscna_pval
 
 # Use DGCA to calculte co expression changes
 Rscript --vanilla 02-dgca_analysis_per_gene_disease.R \

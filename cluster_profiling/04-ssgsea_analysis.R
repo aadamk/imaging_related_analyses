@@ -1,11 +1,13 @@
 # Author: Run Jin
-# Run ssGSEA analysis and perform differentially 
+# Run ssGSEA analysis and perform differential pathway analysis 
 suppressPackageStartupMessages({
   library("optparse")
   library("tidyverse")
   library("CEMiTool")
   library("BiocParallel")
   library("limma")
+  library("edgeR")
+  library("DESeq2")
 })
 
 #### Parse command line options ------------------------------------------------
@@ -13,7 +15,13 @@ option_list <- list(
   make_option(c("-l","--cg_interest"),type="character",
               help="comma separated list of cancer groups of interest"),
   make_option(c("-t","--gmt_file"),type="character",
-              help="gmt file containing the pathway of interest")
+              help="gmt file containing the pathway of interest"),
+  make_option(c("-c","--count"),type="character",
+              help="gene count data from OpenPedCan RNA samples (.rds) "),
+  make_option(c("-e","--expression"),type="character",
+              help="gene expression TPM data from OpenPedCan RNA samples (.rds) "),
+  make_option(c("-g","--gtf_file"),type="character",
+              help="GTF file of the Gencode V27 primary assembly file")
 )
 opt <- parse_args(OptionParser(option_list=option_list,add_help_option = FALSE))
 cg_list <-unlist(strsplit(opt$cg_interest,","))
@@ -23,7 +31,6 @@ gmt_file <- opt$gmt_file
 root_dir <- rprojroot::find_root(rprojroot::has_dir(".git"))
 analysis_dir <- file.path(root_dir, "cluster_profiling")
 anno_input_dir <- file.path(analysis_dir, "results", "cluster_anno")
-count_input_dir <- file.path(analysis_dir, "results", "clustering")
 
 results_dir <- file.path(analysis_dir, "results", "ssgsea")
 if(!dir.exists(results_dir)){
@@ -35,16 +42,40 @@ if(!dir.exists(plots_dir)){
   dir.create(plots_dir, recursive=TRUE)
 }
 
+source(file.path(analysis_dir, "utils", "perform_ssgsea.R"))
+
 #### Read in files necessary for analyses --------------------------------------
-# read in the GMT file and generate list for analysis 
-c2_cp_kegg <- read_gmt(gmt_file)
-c2_cp_kegg_list <- base::split(c2_cp_kegg$gene, list(c2_cp_kegg$term))
+# gene expected count file
+count_matrix <- readRDS(opt$count)
+# gene expected count file
+tpm_df <- readRDS(opt$expression)
+
+# Gencode27 GTF file loading
+gtf <- opt$gtf_file
+
+# read gtf and filter to protein coding 
+gencode_gtf <- rtracklayer::import(con = gtf)
+gencode_gtf <- as.data.frame(gencode_gtf)
+gencode_gtf <- gencode_gtf %>%
+  dplyr::select(gene_id, gene_name, gene_type) %>%
+  filter(gene_type == "protein_coding") %>%
+  unique()
+
+# filter expression count file to contain only protein coding gene
+count_matrix_coding <- count_matrix[rownames(count_matrix) %in% gencode_gtf$gene_name,]
+# filter expression count file to contain only protein coding gene
+tpm_df_coding <- tpm_df[rownames(tpm_df) %in% gencode_gtf$gene_name,]
 
 # now perform analysis for each disease of interest 
 for(i in 1:length(cg_list)){
-  cg_of_interest <- cg_list[i]
+  # read in the GMT file and generate list for analysis 
+  c2_cp_kegg <- read_gmt(gmt_file)
+  c2_cp_kegg_list <- base::split(c2_cp_kegg$gene, list(c2_cp_kegg$term))
   
+  cg_of_interest <- cg_list[i]
+
   # define disease and cluster specific output 
+  plots_dir <- plots_dir
   results_dir_specific <- file.path(results_dir, cg_of_interest)
   if(!dir.exists(results_dir_specific)){
     dir.create(results_dir_specific, recursive=TRUE)
@@ -56,96 +87,40 @@ for(i in 1:length(cg_list)){
   # get list of clusters
   cluster_list <- cluster_anno %>% pull(cluster_assigned) %>% unique()
   
-  # read in the VST transformed protein coding file 
-  count_file <- readRDS(file.path(count_input_dir, cg_of_interest, "transformed_all_coding_counts.rds"))
-  # log transform for the analysis 
-  count_log2_matrix <- log2(count_file + 1)
+  # filter the count matrix to contain only samples of interest
+  count_matrix_coding_cg <- count_matrix_coding %>%
+    dplyr::select(cluster_anno$Kids_First_Biospecimen_ID)
+  # filter the TPM to contain only samples of interest
+  tpm_df_coding_cg <- tpm_df_coding %>%
+    dplyr::select(cluster_anno$Kids_First_Biospecimen_ID)
   
-  # define dataframe for writing out results - rownames is pathway name
-  gsea_combined <- c2_cp_kegg$term %>% unique() %>% as.data.frame() 
-  colnames(gsea_combined) <- "term"
-  gsea_combined <- gsea_combined %>% 
-    tibble::column_to_rownames("term")
+  ############### Try out different normalization method
+  # first is TMM calculated by edgeR
+  group <- factor(rep(c(1), times = length(colnames(count_matrix_coding_cg)))) # give them the same group for all genes
+  count_matrix_coding_cg_dge <- DGEList(counts = count_matrix_coding_cg, group = group)
   
-  # run ssGSEA analysis on each cluster 
-  for(j in 1:length(cluster_list)){
-    # get samples in cluster
-    cluster_of_interest <- cluster_list[j]
-    samples_in_cluster <- cluster_anno %>% 
-      dplyr::filter(cluster_assigned == cluster_of_interest) %>% 
-      pull(Kids_First_Biospecimen_ID) 
-    
-    # filter expression matrix to contain only those samples
-    count_log2_matrix_each_cluster <- count_log2_matrix %>% 
-      dplyr::select(all_of(samples_in_cluster))
-    
-    # ssGSEA analysis
-    gsea_scores_df <- GSVA::gsva(as.matrix (count_log2_matrix_each_cluster),
-                                  c2_cp_kegg_list,
-                                  method = "ssgsea",
-                                  parallel.sz = 8, # For the bigger dataset, this ensures this won't crash due to memory problems
-                                  mx.diff = TRUE,
-                                  ssgsea.norm = F,
-                                  BPPARAM=SerialParam(progressbar=T)) %>%
-      as.data.frame()
-    
-    # write out the results 
-    gsea_scores_df %>%
-      tibble::rownames_to_column("pathway_description") %>% 
-      readr::write_tsv(file.path(results_dir_specific, paste0("ssgsea_scores_in_", cg_of_interest, "_cluster_", cluster_of_interest, ".tsv")))
-    
-    # combine results from each cluster 
-    gsea_combined <- cbind(gsea_combined, gsea_scores_df)
-  }
+  # compute the normalization factors (TMM) for scaling by library size
+  count_matrix_coding_cg_dge_tmm <- calcNormFactors(count_matrix_coding_cg_dge, method = "TMM")
+  count_matrix_coding_cg_dge_tmm <- cpm(count_matrix_coding_cg_dge_tmm)
   
-  ######## run differential gene expression using the combined gsea scores
-  # build model matrix
-  mod <- model.matrix(~ cluster_anno$cluster_assigned)
-  fit <- lmFit(as.matrix(gsea_combined), mod)
-  fit <- eBayes(fit)
-  tt <- topTable(fit, coef=2, n=Inf) 
+  # second is DESeq2 normalized count 
+  dds <- DESeqDataSetFromMatrix(countData = round(count_matrix_coding_cg), 
+                                colData = cluster_anno,
+                                design = ~1 )
+  count_matrix_coding_cg_dge_deseq2 <- estimateSizeFactors(dds)
+  count_matrix_coding_cg_dge_deseq2 <- counts(count_matrix_coding_cg_dge_deseq2, normalized=T)
   
-  # generate results with directions
-  ssgsea_pathway_results <- tt %>% 
-    dplyr::mutate(direction = ifelse((logFC>0), "up", "down")) %>%
-    tibble::rownames_to_column("pathway") %>%
-    dplyr::select(pathway, logFC, P.Value, adj.P.Val, direction) %>%
-    dplyr::filter(adj.P.Val < 0.01) %>%
-    dplyr::arrange(adj.P.Val) %>% 
-    readr::write_tsv(file.path(results_dir_specific, paste0("enriched_pathway_in_", cg_of_interest, ".tsv")))
-
-  ######## generate heatmap using the combined GSEA scores
-  # get annotation file to have sample name as rownames
-  cluster_anno <- cluster_anno %>%
-    arrange(cluster_assigned, harmonized_diagnosis) %>% 
-    tibble::column_to_rownames("Kids_First_Biospecimen_ID")
+  # third is log TPM 
+  tpm_df_coding_cg_log2 <- log2(tpm_df_coding_cg + 1)
   
-  # filter to pathways with sig (adj.p < 0.01)
-  gsea_combined <- gsea_combined[rownames(gsea_combined) %in% ssgsea_pathway_results$pathway,]
+  ####### run the analysis for each normalized matrix
+  ssgsea_analysis(normalized_count = count_matrix_coding_cg_dge_tmm, 
+                  normalized_method = "edgeR_tmm")
   
-  # get annotation row
-  pathway_anno <- ssgsea_pathway_results %>%
-    dplyr::select(pathway, adj.P.Val, direction) %>%
-    tibble::column_to_rownames("pathway")
+  ssgsea_analysis(normalized_count = count_matrix_coding_cg_dge_deseq2, 
+                  normalized_method = "deseq2")
   
-  # arrange the GSEA score in the same order 
-  gsea_combined <- gsea_combined %>%
-    dplyr::select(rownames(cluster_anno))
-  
-  # output heatmap
-  pheatmap::pheatmap(as.matrix(gsea_combined),
-                     annotation_col = cluster_anno,
-                     annotation_row = pathway_anno, 
-                     cluster_rows=FALSE,
-                     cluster_cols=FALSE,
-                     color = colorRampPalette(c("blue", "white", "red"))(100),
-                     width = 12,
-                     height = 8,
-                     show_colnames = F,
-                     fontsize_row = 6,
-                     show_rownames = T,
-                     filename = file.path(plots_dir, paste0("ssgsea_scores_in_", 
-                                                            cg_of_interest, 
-                                                            "_by_cluster_heatmap.pdf")))
+  ssgsea_analysis(normalized_count = tpm_df_coding_cg_log2, 
+                  normalized_method = "log2_tpm")
   
 }

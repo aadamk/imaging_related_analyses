@@ -9,6 +9,7 @@ suppressPackageStartupMessages({
   library("edgeR")
   library("DESeq2")
   library("rtracklayer")
+  library("GSVA")
 })
 
 #### Parse command line options ------------------------------------------------
@@ -81,6 +82,10 @@ for(i in 1:length(cg_list)){
   if(!dir.exists(results_dir_specific)){
     dir.create(results_dir_specific, recursive=TRUE)
   }
+  plots_dir_specific <- file.path(plots_dir, cg_of_interest)
+  if(!dir.exists(plots_dir_specific)){
+    dir.create(plots_dir_specific, recursive=TRUE)
+  }
   
   # read in the cluster annotation file 
   cluster_anno_file <- list.files(anno_input_dir, pattern = cg_of_interest, full.names = TRUE)
@@ -117,7 +122,7 @@ for(i in 1:length(cg_list)){
   # third is log TPM
   tpm_df_coding_cg_log2 <- log2(tpm_df_coding_cg + 1)
   
-  ####### run the analysis for each normalized matrix
+  ###### run the analysis for each normalized matrix
   ssgsea_analysis(normalized_count = count_matrix_coding_cg_dge_tmm,
                   normalized_method = "edgeR_tmm")
 

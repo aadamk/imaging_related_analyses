@@ -154,7 +154,7 @@ for(i in 1:length(cg_list)){
                                                           clusterAlg = "km",
                                                           plot = "pdf",
                                                           reps = 100, maxK = 10, pItem = 0.8,
-                                                          title = file.path(plots_dir_specific, "euclidea_km"),
+                                                          title = file.path(plots_dir_specific, "euclidean_km"),
                                                           seed = 123)
   # save the plots for manual inspection
   save(result_CC, file = file.path(results_dir_specific, "euclidean_km_CC.Rdata"))

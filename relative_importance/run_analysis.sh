@@ -21,5 +21,12 @@ cancer_group_list="LGG,HGG,EPN,Medullo"
 Rscript --vanilla 01-mboost_survival.R \
 --histology $histology_file \
 --expression $expression_file \
---cancer_groups $cancer_group_list \
+--cg_interest $cancer_group_list \
+--short_long_match $short_long_match 
+
+# Calculate ssGSEA scores per cancer group of interest
+Rscript --vanilla 02-ssgsea_analysis.R \
+--histology $histology_file \
+--expression $expression_file \
+--cg_interest $cancer_group_list \
 --short_long_match $short_long_match 

@@ -1,0 +1,33 @@
+
+	 Generalized Linear Models Fitted via Gradient Boosting
+
+Call:
+glmboost.formula(formula = as.formula(paste0("Surv(combined_data$OS_days, censored_os) ~ ",     gene_variables)), data = combined_data, family = Loglog(),     center = TRUE, control = boost_control(mstop = 500))
+
+
+	 Negative Log Logistic Likelihood 
+
+Loss function:  
+
+Number of boosting iterations: mstop = 500 
+Step size:  0.1 
+Offset:  8.241375 
+
+Coefficients: 
+  (Intercept)       SLC38A2        SLC3A2        SLC1A5        SLC7A8        SLC7A2       SLC38A1 
+  0.254013219  -0.016723241  -0.004304757  -0.045563275   0.120958653  -0.300065895  -0.008929122 
+       SLC7A1        SLC7A6       SLC38A5       SLC43A2        SLC7A7       SLC38A3       SLC38A4 
+ -0.076329535  -0.057322336  -0.003241690   0.059136226   0.314261507   0.092359334  -0.517604074 
+      SLC6A12       SLC36A2      SLC16A10        SLC7A9       SLC6A15        SLC7A3       SLC6A18 
+ -0.404395273 -21.594441122  -0.184886035   0.404127324   0.032328413   0.563011591  -4.579298617 
+attr(,"offset")
+[1] 8.241375
+
+Selection frequencies:
+     SLC7A8      SLC7A7      SLC7A3     SLC38A3      SLC7A2     SLC6A12      SLC1A5 (Intercept) 
+      0.110       0.080       0.074       0.072       0.064       0.064       0.060       0.058 
+    SLC43A2     SLC6A15      SLC7A1      SLC7A6     SLC38A1     SLC38A2    SLC16A10     SLC36A2 
+      0.058       0.058       0.054       0.042       0.040       0.038       0.038       0.022 
+    SLC6A18      SLC7A9     SLC38A5      SLC3A2     SLC38A4 
+      0.022       0.018       0.014       0.008       0.006 
+

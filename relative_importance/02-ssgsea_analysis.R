@@ -7,6 +7,7 @@ suppressPackageStartupMessages({
   library("GSVA")
   library("EGSEA")
   library("org.Hs.eg.db")
+  library("GGally")
 })
 
 #### Parse command line options ------------------------------------------------
@@ -27,8 +28,14 @@ cg_list <-unlist(strsplit(opt$cg_interest,","))
 root_dir <- rprojroot::find_root(rprojroot::has_dir(".git"))
 analysis_dir <- file.path(root_dir, "relative_importance")
 results_dir <- file.path(analysis_dir, "results", "ssgsea")
+
 if(!dir.exists(results_dir)){
   dir.create(results_dir, recursive=TRUE)
+}
+
+plots_dir <- file.path(analysis_dir, "plots", "ssgsea")
+if(!dir.exists(plots_dir)){
+  dir.create(plots_dir, recursive=TRUE)
 }
 
 #### Read in files necessary for analyses --------------------------------------
@@ -117,4 +124,6 @@ for (i in 1:length(cg_list)){
   # save the results 
   ssgsea_scores_each %>% 
     readr::write_tsv(file.path(results_dir, paste0("ssgsea_scores_per_", x, ".tsv")))
+  
+  
 }

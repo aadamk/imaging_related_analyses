@@ -125,5 +125,25 @@ for (i in 1:length(cg_list)){
   ssgsea_scores_each %>% 
     readr::write_tsv(file.path(results_dir, paste0("ssgsea_scores_per_", x, ".tsv")))
   
+  # re-organize the dataframe to make the legends more 
+  p <- ssgsea_scores_each  %>%
+    dplyr::mutate(short_name = case_when(
+      pathway_name == "REACTOME_TRIGLYCERIDE_BIOSYNTHESIS" ~ "triglyceride",
+      pathway_name == "REACTOME_FATTY_ACYL_COA_BIOSYNTHESIS" ~ "fatty acid coA",
+      pathway_name == "REACTOME_AMINO_ACID_TRANSPORT_ACROSS_THE_PLASMA_MEMBRANE" ~ "AA transport",
+      pathway_name == "REACTOME_SLC_MEDIATED_TRANSMEMBRANE_TRANSPORT" ~ "SLC transport",
+      pathway_name == "REACTOME_AMINO_ACID_AND_OLIGOPEPTIDE_SLC_TRANSPORTERS" ~ "SLC oligopep.",
+      pathway_name == "REACTOME_METABOLISM_OF_LIPIDS_AND_LIPOPROTEINS" ~ "meta. lipids",
+      pathway_name == "REACTOME_FATTY_ACID_TRIACYLGLYCEROL_AND_KETONE_BODY_METABOLISM" ~ "trigcr&ketone"
+    )) %>% 
+    dplyr::select(-c("pathway_name")) %>% 
+    tibble::column_to_rownames("short_name") %>% 
+    t() %>% 
+    as.data.frame() %>% 
+    ggpairs()
   
+  # save the plots
+  pdf(file.path(plots_dir, paste0("ssgsea_correlation_", x, ".pdf")))
+  print(p)
+  dev.off()
 }

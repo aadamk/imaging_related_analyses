@@ -37,6 +37,8 @@ if(!dir.exists(plots_dir)){
   dir.create(plots_dir, recursive=TRUE)
 }
 
+source(file.path(analysis_dir, utils, rf_survival_anaysis.R))
+
 #### Read in files necessary for analyses -----------------------------------
 histology_df <- readr::read_tsv(opt$histology, guess_max=100000)
 expression_data <- readRDS(opt$expression)
@@ -57,10 +59,7 @@ histology_df <- histology_df %>%
   # keep only unique Kids First Participant 
   dplyr::distinct(Kids_First_Participant_ID, .keep_all = TRUE) %>% 
   dplyr::filter(!is.na(OS_status)) %>%
-  dplyr::mutate(os_status_level = case_when(
-    OS_status == "LIVING" ~ 0,
-    OS_status == "DECEASED" ~ 1)) %>%
-  dplyr::mutate(PFS_status = if_else(PFS_days < OS_days, 1, 0)) 
+  dplyr::mutate(PFS_status = if_else(PFS_days < OS_days, "DECEASED", "LIVING")) 
 
 ####### filter gene expression to contain genes of interest 
 ## Entrez IDs for SLC1A5 and ACLY
@@ -79,3 +78,58 @@ expression_data <- expression_data %>%
   tibble::column_to_rownames("gene_symbol") %>% 
   # also filter to contain only samples in all cancer groups of interest 
   dplyr::select(histology_df$Kids_First_Biospecimen_ID)
+
+####### do the analysis on all the cancer group of interest ----------------------------------
+for (i in 1:length(cg_list)){
+  # find the cancer group of interest 
+  x <- cg_list[i]
+  
+  # match the long name to the short name
+  long_name <- short_long_match %>% filter(short_name == x) %>%
+    pull(long_name) 
+  
+  # filter to the cohort of interest
+  cohort_df <- histology_df %>% dplyr::filter(cancer_group %in% long_name) %>%
+    dplyr::select(Kids_First_Biospecimen_ID, os_status_level, OS_days, PFS_status, PFS_days) 
+  
+  # get biospecimen ID's for samples 
+  cohort_bsid <- cohort_df %>% pull(Kids_First_Biospecimen_ID) %>% unique()
+  
+  # find the tpm of target genes for these samples 
+  expression_data_of_interest <- expression_data %>%
+    dplyr::select(all_of(cohort_bsid)) %>% 
+    t() %>%
+    as.data.frame() %>% 
+    tibble::rownames_to_column("Kids_First_Biospecimen_ID")
+  
+  # combine histology info with expression 
+  combined_data <- cohort_df %>% 
+    left_join(expression_data_of_interest) 
+  
+  # generate gene variables
+  gene_variables <- rownames(expression_data) 
+  
+  if(x == "LGG"){
+    rf_survival_analysis(combined_data,
+                         ind_var = gene_variables,
+                         parse_perc = 0.5,
+                         metadata_sample_col = "Kids_First_Biospecimen_ID",
+                         metadata_indep_col = "Kids_First_Participant_ID",
+                         os_days_col = "PFS_days",
+                         os_status_col = "PFS_status",
+                         results_dir,
+                         plots_dir)
+  }
+  
+  if(x != "LGG"){
+    rf_survival_analysis(combined_data,
+                         ind_var = gene_variables,
+                         parse_perc = 0.5,
+                         metadata_sample_col = "Kids_First_Biospecimen_ID",
+                         metadata_indep_col = "Kids_First_Participant_ID",
+                         os_days_col = "OS_days",
+                         os_status_col = "OS_status",
+                         results_dir,
+                         plots_dir)
+  }
+}

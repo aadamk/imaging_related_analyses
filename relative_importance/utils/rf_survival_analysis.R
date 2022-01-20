@@ -18,11 +18,7 @@ suppressPackageStartupMessages({
 #' @author Adam Kraya and Run Jin
 #'
 #' @param metadata metadata file containing survival information and covariates of interest
-#' @param cluster_anno two column cluster annotation file with one column specifying sample
-#' and the second column specifying cluster assigned
 #' @param ind_var independent variables to run survival analysis on - can be continuous or categorical
-#' @param ind_var_cat categorical variables within the `ind_var` offered 
-#' This needs to be specified for plotting purposes
 #' @param parse_perc parsing ratio for training and testing set 
 #' E.g., 0.6 means 60% going to training and 40% as testing - default is 0.5 
 #' @param metadata_sample_col column name of the column (in metadata) that specifies sample names 
@@ -40,17 +36,13 @@ suppressPackageStartupMessages({
 #' 
 #'
 #' @examples rf_survival_analysis(metadata = metadata,
-#'                                cluster_anno = cluster_anno,
 #'                                ind_var= c("broad_histology", "CNS_region"),
-#'                                ind_var_cat= c("broad_histology", "CNS_region"),
 #'                                results_dir = "results_test",
 #'                                plots_dir= "plots_test")
 #'
 #' @export
 rf_survival_analysis <- function(metadata,
-                                 cluster_anno,
                                  ind_var,
-                                 ind_var_cat,
                                  parse_perc = 0.5,
                                  metadata_sample_col = "Kids_First_Biospecimen_ID",
                                  metadata_indep_col = "Kids_First_Participant_ID",
@@ -68,11 +60,6 @@ rf_survival_analysis <- function(metadata,
   # Get logical vector indicating which are in metadata
   if(!all(needed_cols %in% colnames(metadata))){
     stop("Error: Provided column names for OS status and OS days are not present in metadata. Please check.")
-  }
-  if (!is.null(cluster_anno)){
-    if(ncol(cluster_anno) !=2){
-      stop("Error: Please specify cluster annotation file with two columns - one for sample and one for cluster assigned. ")
-    }
   }
   
   # make directory
@@ -105,13 +92,6 @@ rf_survival_analysis <- function(metadata,
       dplyr::rename(sample = !!metadata_sample_col) 
   }
   
-  if(!is.null(cluster_anno)){
-    # modify the colnames of the annotation data for easier transformation later on
-    colnames(cluster_anno) <- c("sample", "cluster_assigned")
-    metadata <- metadata %>% 
-      dplyr::left_join(cluster_anno)
-  }
-  
   # Reformat as a numeric variable where 0 = LIVING and 1 = DECEASED.
   metadata <- metadata %>%
     dplyr::mutate(OS_status_recode = case_when(
@@ -119,15 +99,8 @@ rf_survival_analysis <- function(metadata,
       OS_status == "DECEASED" ~ 1
     ))
   
-  # add cluster in if they are desired
-  if(!is.null(cluster_anno)){
-    ind_var <- c(ind_var, "cluster_assigned")
-    ind_var_cat <- c(ind_var_cat, "cluster_assigned")
-  }
-  
   # format input data to be compatible with the functions below 
   input_data <- metadata %>%
-    dplyr::mutate_at(vars(ind_var_cat), as.factor) %>%
     dplyr::filter(!is.na(OS_days))
   
   # Set formula for rfsrc

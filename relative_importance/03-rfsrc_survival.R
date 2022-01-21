@@ -26,6 +26,7 @@ cg_list <-unlist(strsplit(opt$cg_interest,","))
 
 #### Define Directories --------------------------------------------------------
 root_dir <- rprojroot::find_root(rprojroot::has_dir(".git"))
+
 analysis_dir <- file.path(root_dir, "relative_importance")
 results_dir <- file.path(analysis_dir, "results", "rfsrc")
 if(!dir.exists(results_dir)){
@@ -37,7 +38,7 @@ if(!dir.exists(plots_dir)){
   dir.create(plots_dir, recursive=TRUE)
 }
 
-source(file.path(analysis_dir, utils, rf_survival_anaysis.R))
+source(file.path(analysis_dir, "utils", "rf_survival_analysis.R"))
 
 #### Read in files necessary for analyses -----------------------------------
 histology_df <- readr::read_tsv(opt$histology, guess_max=100000)
@@ -90,7 +91,7 @@ for (i in 1:length(cg_list)){
   
   # filter to the cohort of interest
   cohort_df <- histology_df %>% dplyr::filter(cancer_group %in% long_name) %>%
-    dplyr::select(Kids_First_Biospecimen_ID, os_status_level, OS_days, PFS_status, PFS_days) 
+    dplyr::select(Kids_First_Biospecimen_ID, Kids_First_Participant_ID, OS_status, OS_days, PFS_status, PFS_days) 
   
   # get biospecimen ID's for samples 
   cohort_bsid <- cohort_df %>% pull(Kids_First_Biospecimen_ID) %>% unique()
@@ -109,8 +110,12 @@ for (i in 1:length(cg_list)){
   # generate gene variables
   gene_variables <- rownames(expression_data) 
   
+  # if the cohort is LGG - we will need to use PFS days and PFS status to build model 
   if(x == "LGG"){
-    rf_survival_analysis(combined_data,
+    combined_data_input <- combined_data %>%
+      dplyr::select(-c("OS_days", "OS_status"))
+    
+    rf_survival_analysis(combined_data_input,
                          ind_var = gene_variables,
                          parse_perc = 0.5,
                          metadata_sample_col = "Kids_First_Biospecimen_ID",
@@ -121,8 +126,12 @@ for (i in 1:length(cg_list)){
                          plots_dir)
   }
   
+  # if the cohort is NOT LGG - we will need to use OS days and OS status to build model 
   if(x != "LGG"){
-    rf_survival_analysis(combined_data,
+    combined_data_input <- combined_data %>%
+      dplyr::select(-c("PFS_days", "PFS_status"))
+    
+    rf_survival_analysis(combined_data_input,
                          ind_var = gene_variables,
                          parse_perc = 0.5,
                          metadata_sample_col = "Kids_First_Biospecimen_ID",

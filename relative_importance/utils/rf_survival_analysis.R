@@ -49,7 +49,9 @@ rf_survival_analysis <- function(metadata,
                                  os_days_col = "OS_days",
                                  os_status_col = "OS_status",
                                  results_dir,
-                                 plots_dir){
+                                 plots_dir,
+                                 height = 8,
+                                 width = 10){
   
   if (is.null(ind_var)) {
     stop("Error: No variable has been supplied to test with using the `ind_var` argument. ")

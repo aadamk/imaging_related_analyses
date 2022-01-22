@@ -1,0 +1,2 @@
+error_lrs_min	mtry_of_lrs_min	ntree_of_lrs_min	nodesize_of_lrs_min	nsplit_of_lrs_min	error_brier_min	mtry_of_brier_min	ntree_of_brier_min	nodesize_of_brier_min	nsplit_of_brier_min
+0.22847533632286995	4	100	5	1	0.20933295964125562	7	1200	5	1

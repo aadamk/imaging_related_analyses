@@ -85,6 +85,17 @@ for (i in 1:length(cg_list)){
   # find the cancer group of interest 
   x <- cg_list[i]
   
+  # define cancer group specific results and plots folder 
+  results_dir_cg <- file.path(results_dir, x)
+  if(!dir.exists(results_dir_cg)){
+    dir.create(results_dir_cg)
+  }
+  
+  plots_dir_cg <- file.path(plots_dir, x)
+  if(!dir.exists(plots_dir_cg)){
+    dir.create(plots_dir_cg)
+  }
+  
   # match the long name to the short name
   long_name <- short_long_match %>% filter(short_name == x) %>%
     pull(long_name) 
@@ -122,8 +133,8 @@ for (i in 1:length(cg_list)){
                          metadata_indep_col = "Kids_First_Participant_ID",
                          os_days_col = "PFS_days",
                          os_status_col = "PFS_status",
-                         results_dir,
-                         plots_dir)
+                         results_dir_cg,
+                         plots_dir_cg)
   }
   
   # if the cohort is NOT LGG - we will need to use OS days and OS status to build model 
@@ -138,7 +149,10 @@ for (i in 1:length(cg_list)){
                          metadata_indep_col = "Kids_First_Participant_ID",
                          os_days_col = "OS_days",
                          os_status_col = "OS_status",
-                         results_dir,
-                         plots_dir)
+                         results_dir_cg,
+                         plots_dir_cg)
   }
 }
+
+### Now draw representative trees
+

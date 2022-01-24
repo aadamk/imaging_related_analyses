@@ -155,4 +155,89 @@ for (i in 1:length(cg_list)){
 }
 
 ### Now draw representative trees
+for (i in 1:length(cg_list)){
+  # find the cancer group of interest 
+  x <- cg_list[i]
+  
+  # define cancer group specific results and plots folder 
+  results_dir_cg <- file.path(results_dir, x)
+  if(!dir.exists(results_dir_cg)){
+    dir.create(results_dir_cg)
+  }
+  
+  plots_dir_cg <- file.path(plots_dir, x)
+  if(!dir.exists(plots_dir_cg)){
+    dir.create(plots_dir_cg)
+  }
+  
+  # match the long name to the short name
+  long_name <- short_long_match %>% filter(short_name == x) %>%
+    pull(long_name) 
+  
+  # filter to the cohort of interest
+  cohort_df <- histology_df %>% dplyr::filter(cancer_group %in% long_name) %>%
+    dplyr::select(Kids_First_Biospecimen_ID, Kids_First_Participant_ID, OS_status, OS_days, PFS_status, PFS_days) 
+  
+  # get biospecimen ID's for samples 
+  cohort_bsid <- cohort_df %>% pull(Kids_First_Biospecimen_ID) %>% unique()
+  
+  # find the tpm of target genes for these samples 
+  expression_data_of_interest <- expression_data %>%
+    dplyr::select(all_of(cohort_bsid)) %>% 
+    t() %>%
+    as.data.frame() %>% 
+    tibble::rownames_to_column("Kids_First_Biospecimen_ID")
+  
+  # combine histology info with expression 
+  combined_data <- cohort_df %>% 
+    left_join(expression_data_of_interest) 
+  
+  # generate gene variables
+  gene_variables <- rownames(expression_data) 
+  
+  # read in the results for the case 
+  rsfrc_grid_optimal <- readr::read_tsv(file.path(results_dir_cg, "rfsrc_error_brier_lrs_results.tsv"))
+  
+  # get the optimal parameters for logrankscore method 
+  mtry_min_lrs <- rsfrc_grid_optimal[1,2]
+  ntree_min_lrs <- rsfrc_grid_optimal[1,3]
+  node_min_lrs <- rsfrc_grid_optimal[1,4]
+  nspilt_min_lrs <- rsfrc_grid_optimal[1,5]
+  
+  # run the model with the optimal paratmer 
+  rfsrc_pbc_lrs_rf <- randomForestSRC::rfsrc(rfsrc.formula,
+                                             data = as.data.frame(data.train),
+                                             mtry=mtry_min_lrs,
+                                             ntree=ntree_min_lrs,
+                                             nodesize=node_min_lrs,
+                                             nsplit=nspilt_min_lrs,
+                                             splitrule = "logrankscore",
+                                             na.action = "na.impute",
+                                             tree.err = TRUE,
+                                             importance = TRUE,
+                                             forest=T)
+  
+  
+  # get the optimal parameters for brier method 
+  mtry_min_brier <- rsfrc_grid_optimal[1,7]
+  ntree_min_brier <- rsfrc_grid_optimal[1,8]
+  node_min_brier <- rsfrc_grid_optimal[1,9]
+  nspilt_min_brier <- rsfrc_grid_optimal[1,10]
+  
+  # run the model with the optimal paratmer 
+  rfsrc_pbc_brier_rf <- randomForestSRC::rfsrc(rfsrc.formula, 
+                                               data = as.data.frame(data.train), 
+                                               mtry=mtry_min_brier, 
+                                               ntree=ntree_min_brier, 
+                                               nodesize=node_min_brier,
+                                               nsplit=nspilt_min_brier,
+                                               splitrule = "bs.gradient",
+                                               na.action = "na.impute", 
+                                               tree.err = TRUE,
+                                               importance = TRUE,
+                                               forest=T)
+  
 
+  
+  
+}

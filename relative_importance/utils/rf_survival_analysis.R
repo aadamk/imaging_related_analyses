@@ -248,6 +248,9 @@ rf_survival_analysis <- function(metadata,
     dev.off()
   })
   
+  # save the model output
+  rfsrc_pbc_brier_rf %>% save.RDS(file.path(results_dir, "rfsrc_optimal_brier_output.RDS"))
+  
   # plots the results to see how it looks - logrankscore as splitrule
   # fit the model using the optimal mtry and ntree
   rfsrc_pbc_lrs_rf <- randomForestSRC::rfsrc(rfsrc.formula,
@@ -273,6 +276,9 @@ rf_survival_analysis <- function(metadata,
     print(plot(ggRandomForests::gg_vimp(rfsrc_pbc_lrs_rf)))
     dev.off()
   })
+  
+  # save the model output
+  rfsrc_pbc_lrs_rf %>% save.RDS(file.path(results_dir, "rfsrc_optimal_lrs_output.RDS"))
 
   ################ Test the model - and output C index for different time points
   # filter the test set to contain only entries that do not have NA in any covariate

@@ -242,7 +242,7 @@ for (i in 1:length(cg_list)){
   
   # save the model output
   rfsrc_pbc_lrs_rf %>% 
-    saveRDS(file.path(results_dir, "rfsrc_optimal_lrs_output_full_data.RDS"))
+    saveRDS(file.path(results_dir_cg, "rfsrc_optimal_lrs_output_full_data.RDS"))
   
   # get the optimal parameters for brier method 
   mtry_min_brier <- rsfrc_grid_optimal[[1,7]]
@@ -265,7 +265,6 @@ for (i in 1:length(cg_list)){
   
   # save the model output
   rfsrc_pbc_brier_rf %>% 
-    saveRDS(file.path(results_dir, "rfsrc_optimal_brier_output_full_data.RDS"))
+    saveRDS(file.path(results_dir_cg, "rfsrc_optimal_brier_output_full_data.RDS"))
   
-
 }

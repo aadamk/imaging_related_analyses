@@ -190,23 +190,46 @@ for (i in 1:length(cg_list)){
   
   # combine histology info with expression 
   combined_data <- cohort_df %>% 
-    left_join(expression_data_of_interest) 
-  
+    left_join(expression_data_of_interest) %>%
+    # modify the dataframe to match
+    dplyr::mutate(OS_status_recode = case_when(
+      OS_status == "LIVING" ~ 0,
+      OS_status == "DECEASED" ~ 1
+    )) %>% 
+    dplyr::mutate(PFS_status_recode = case_when(
+      PFS_status == "LIVING" ~ 0,
+      PFS_status == "DECEASED" ~ 1
+    ))
+ 
   # generate gene variables
   gene_variables <- rownames(expression_data) 
   
   # read in the results for the case 
   rsfrc_grid_optimal <- readr::read_tsv(file.path(results_dir_cg, "rfsrc_error_brier_lrs_results.tsv"))
   
+  if(x == "LGG"){
+    # piece together a model
+    rfsrc.formula <- paste0("Surv(PFS_days, PFS_status_recode)", " ~ ",
+                            paste0(gene_variables, collapse = " + "),
+                            sep = "")
+    rfsrc.formula <- as.formula(rfsrc.formula)
+  } else{
+    # piece together a model
+    rfsrc.formula <- paste0("Surv(OS_days, OS_status_recode)", " ~ ",
+                            paste0(gene_variables, collapse = " + "),
+                            sep = "")
+    rfsrc.formula <- as.formula(rfsrc.formula)
+  }
+  
   # get the optimal parameters for logrankscore method 
-  mtry_min_lrs <- rsfrc_grid_optimal[1,2]
-  ntree_min_lrs <- rsfrc_grid_optimal[1,3]
-  node_min_lrs <- rsfrc_grid_optimal[1,4]
-  nspilt_min_lrs <- rsfrc_grid_optimal[1,5]
+  mtry_min_lrs <- rsfrc_grid_optimal[[1,2]]
+  ntree_min_lrs <- rsfrc_grid_optimal[[1,3]]
+  node_min_lrs <- rsfrc_grid_optimal[[1,4]]
+  nspilt_min_lrs <- rsfrc_grid_optimal[[1,5]]
   
   # run the model with the optimal paratmer 
   rfsrc_pbc_lrs_rf <- randomForestSRC::rfsrc(rfsrc.formula,
-                                             data = as.data.frame(data.train),
+                                             data = as.data.frame(combined_data),
                                              mtry=mtry_min_lrs,
                                              ntree=ntree_min_lrs,
                                              nodesize=node_min_lrs,
@@ -217,16 +240,19 @@ for (i in 1:length(cg_list)){
                                              importance = TRUE,
                                              forest=T)
   
+  # save the model output
+  rfsrc_pbc_lrs_rf %>% 
+    saveRDS(file.path(results_dir, "rfsrc_optimal_lrs_output_full_data.RDS"))
   
   # get the optimal parameters for brier method 
-  mtry_min_brier <- rsfrc_grid_optimal[1,7]
-  ntree_min_brier <- rsfrc_grid_optimal[1,8]
-  node_min_brier <- rsfrc_grid_optimal[1,9]
-  nspilt_min_brier <- rsfrc_grid_optimal[1,10]
+  mtry_min_brier <- rsfrc_grid_optimal[[1,7]]
+  ntree_min_brier <- rsfrc_grid_optimal[[1,8]]
+  node_min_brier <- rsfrc_grid_optimal[[1,9]]
+  nspilt_min_brier <- rsfrc_grid_optimal[[1,10]]
   
   # run the model with the optimal paratmer 
   rfsrc_pbc_brier_rf <- randomForestSRC::rfsrc(rfsrc.formula, 
-                                               data = as.data.frame(data.train), 
+                                               data = as.data.frame(combined_data), 
                                                mtry=mtry_min_brier, 
                                                ntree=ntree_min_brier, 
                                                nodesize=node_min_brier,
@@ -237,7 +263,9 @@ for (i in 1:length(cg_list)){
                                                importance = TRUE,
                                                forest=T)
   
+  # save the model output
+  rfsrc_pbc_brier_rf %>% 
+    saveRDS(file.path(results_dir, "rfsrc_optimal_brier_output_full_data.RDS"))
+  
 
-  
-  
 }

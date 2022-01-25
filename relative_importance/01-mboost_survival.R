@@ -27,9 +27,14 @@ cg_list <-unlist(strsplit(opt$cg_interest,","))
 #### Define Directories --------------------------------------------------------
 root_dir <- rprojroot::find_root(rprojroot::has_dir(".git"))
 analysis_dir <- file.path(root_dir, "relative_importance")
-results_dir <- file.path(analysis_dir, "results", "mboost")
-if(!dir.exists(results_dir)){
-  dir.create(results_dir, recursive=TRUE)
+results_dir_sum <- file.path(analysis_dir, "results", "mboost", "model_summary")
+if(!dir.exists(results_dir_sum)){
+  dir.create(results_dir_sum, recursive=TRUE)
+}
+
+results_dir_pred <- file.path(analysis_dir, "results", "mboost", "predicted_scores")
+if(!dir.exists(results_dir_pred)){
+  dir.create(results_dir_pred, recursive=TRUE)
 }
 
 plots_dir <- file.path(analysis_dir, "plots", "mboost")
@@ -124,7 +129,16 @@ for (i in 1:length(cg_list)){
     # determine cross-validated optimal mstop parameter
     cvm.coxph = cvrisk(glm_fit_coxph)
     invisible(glm_fit_coxph[mstop(cvm.coxph)])
-    sink(file = file.path(results_dir, paste0("coxph_os_summary_in_", x, ".txt")))
+    
+    # write out the predicted results for later analysis 
+    pred_result <- glm_fit_coxph$predict() %>% as.data.frame() 
+    colnames(pred_result) <- "predicted_score"
+    pred_result %>% 
+      tibble::rownames_to_column("Kids_First_Biospecimen_ID") %>%
+      readr::write_tsv(file.path(results_dir_pred, paste0("coxph_pfs_pred_risk_in_", x, ".tsv")))
+      
+    # write out the formula summary
+    sink(file = file.path(results_dir_sum, paste0("coxph_pfs_summary_in_", x, ".txt")))
     print(summary(glm_fit_coxph))
     print(paste0('Log-Likelihood: ', glm_fit_coxph$logLik()))
     sink()
@@ -144,7 +158,15 @@ for (i in 1:length(cg_list)){
     # determine cross-validated optimal mstop parameter
     cvm.log = cvrisk(glm_fit_loglog)
     invisible(glm_fit_loglog[mstop(cvm.log)])
-    sink(file = file.path(results_dir, paste0("loglog_pfs_summary_in_", x, ".txt")))
+    
+    # write out the predicted results for later analysis 
+    pred_result <- glm_fit_loglog$predict() %>% as.data.frame() 
+    colnames(pred_result) <- "predicted_score"
+    pred_result %>% 
+      tibble::rownames_to_column("Kids_First_Biospecimen_ID") %>%
+      readr::write_tsv(file.path(results_dir_pred, paste0("loglog_pfs_pred_risk_in_", x, ".tsv")))
+    
+    sink(file = file.path(results_dir_sum, paste0("loglog_pfs_summary_in_", x, ".txt")))
     print(summary(glm_fit_loglog))
     print(paste0('Log-Likelihood: ', glm_fit_loglog$logLik()))
     sink()
@@ -214,7 +236,15 @@ for (i in 1:length(cg_list)){
     # determine cross-validated optimal mstop parameter
     cvm.coxph = cvrisk(glm_fit_coxph)
     invisible(glm_fit_coxph[mstop(cvm.coxph)])
-    sink(file = file.path(results_dir, paste0("coxph_os_summary_in_", x, ".txt")))
+    
+    # write out the predicted results for later analysis 
+    pred_result <- glm_fit_coxph$predict() %>% as.data.frame() 
+    colnames(pred_result) <- "predicted_score"
+    pred_result %>% 
+      tibble::rownames_to_column("Kids_First_Biospecimen_ID") %>%
+      readr::write_tsv(file.path(results_dir_pred, paste0("coxph_os_pred_risk_in_", x, ".tsv")))
+    
+    sink(file = file.path(results_dir_sum, paste0("coxph_os_summary_in_", x, ".txt")))
     print(summary(glm_fit_coxph))
     print(paste0('Log-Likelihood: ', glm_fit_coxph$logLik()))
     sink()
@@ -236,7 +266,15 @@ for (i in 1:length(cg_list)){
     # determine cross-validated optimal mstop parameter
     cvm.log = cvrisk(glm_fit_loglog)
     invisible(glm_fit_loglog[mstop(cvm.log)])
-    sink(file = file.path(results_dir, paste0("loglog_os_summary_in_", x, ".txt")))
+    
+    # write out the predicted results for later analysis 
+    pred_result <- glm_fit_loglog$predict() %>% as.data.frame() 
+    colnames(pred_result) <- "predicted_score"
+    pred_result %>% 
+      tibble::rownames_to_column("Kids_First_Biospecimen_ID") %>%
+      readr::write_tsv(file.path(results_dir_pred, paste0("loglog_os_pred_risk_in_", x, ".tsv")))
+    
+    sink(file = file.path(results_dir_sum, paste0("loglog_os_summary_in_", x, ".txt")))
     print(summary(glm_fit_loglog))
     print(paste0('Log-Likelihood: ', glm_fit_loglog$logLik()))
     sink()

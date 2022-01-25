@@ -26,7 +26,6 @@ cg_list <-unlist(strsplit(opt$cg_interest,","))
 
 #### Define Directories --------------------------------------------------------
 root_dir <- rprojroot::find_root(rprojroot::has_dir(".git"))
-
 analysis_dir <- file.path(root_dir, "relative_importance")
 results_dir <- file.path(analysis_dir, "results", "rfsrc")
 if(!dir.exists(results_dir)){
@@ -212,13 +211,11 @@ for (i in 1:length(cg_list)){
     rfsrc.formula <- paste0("Surv(PFS_days, PFS_status_recode)", " ~ ",
                             paste0(gene_variables, collapse = " + "),
                             sep = "")
-    rfsrc.formula <- as.formula(rfsrc.formula)
   } else{
     # piece together a model
     rfsrc.formula <- paste0("Surv(OS_days, OS_status_recode)", " ~ ",
                             paste0(gene_variables, collapse = " + "),
                             sep = "")
-    rfsrc.formula <- as.formula(rfsrc.formula)
   }
   
   # get the optimal parameters for logrankscore method 
@@ -228,17 +225,14 @@ for (i in 1:length(cg_list)){
   nspilt_min_lrs <- rsfrc_grid_optimal[[1,5]]
   
   # run the model with the optimal paratmer 
-  rfsrc_pbc_lrs_rf <- randomForestSRC::rfsrc(rfsrc.formula,
-                                             data = as.data.frame(combined_data),
+  rfsrc_pbc_lrs_rf <- randomForestSRC::rfsrc(as.formula(rfsrc.formula),
+                                             data = combined_data,
                                              mtry=mtry_min_lrs,
                                              ntree=ntree_min_lrs,
                                              nodesize=node_min_lrs,
                                              nsplit=nspilt_min_lrs,
                                              splitrule = "logrankscore",
-                                             na.action = "na.impute",
-                                             tree.err = TRUE,
-                                             importance = TRUE,
-                                             forest=T)
+                                             tree.err = TRUE)
   
   # save the model output
   rfsrc_pbc_lrs_rf %>% 
@@ -251,17 +245,14 @@ for (i in 1:length(cg_list)){
   nspilt_min_brier <- rsfrc_grid_optimal[[1,10]]
   
   # run the model with the optimal paratmer 
-  rfsrc_pbc_brier_rf <- randomForestSRC::rfsrc(rfsrc.formula, 
-                                               data = as.data.frame(combined_data), 
+  rfsrc_pbc_brier_rf <- randomForestSRC::rfsrc(as.formula(rfsrc.formula), 
+                                               data = combined_data, 
                                                mtry=mtry_min_brier, 
                                                ntree=ntree_min_brier, 
                                                nodesize=node_min_brier,
                                                nsplit=nspilt_min_brier,
                                                splitrule = "bs.gradient",
-                                               na.action = "na.impute", 
-                                               tree.err = TRUE,
-                                               importance = TRUE,
-                                               forest=T)
+                                               tree.err = TRUE)
   
   # save the model output
   rfsrc_pbc_brier_rf %>% 

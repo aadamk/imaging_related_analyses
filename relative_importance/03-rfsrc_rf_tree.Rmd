@@ -1,0 +1,59 @@
+---
+title: "Display Forest Tree"
+output:
+  pdf_document: default
+  html_notebook: default
+---
+
+### set up libraries
+```{r}
+suppressPackageStartupMessages({
+  library("tidyverse")
+  library("randomForestSRC")
+})
+```
+
+### Define the directories
+```{r}
+root_dir <- rprojroot::find_root(rprojroot::has_dir(".git"))
+analysis_dir <- file.path(root_dir, "relative_importance")
+
+results_dir <- file.path(analysis_dir, "results", "rfsrc")
+if(!dir.exists(results_dir)){
+  dir.create(results_dir, recursive=TRUE)
+}
+```
+
+### Find the cancer groups 
+```{r}
+### Find the CG list 
+cg_list <- c("HGG", "LGG", "EPN", "Medullo")
+
+### Now draw representative trees
+for (i in 1:length(cg_list)){
+  # find the cancer group of interest 
+  x <- cg_list[i]
+  
+  # find the CG group
+  results_dir_cg <- file.path(results_dir, x)
+  # get the model output
+  rfsrc_pbc_lrs_rf <-
+    readRDS(file.path(results_dir_cg, "rfsrc_optimal_lrs_output_full_data.RDS"))
+  
+  # print out the figures
+  for (j in 1:10){
+    print(plot(get.tree(rfsrc_pbc_lrs_rf,j)))
+  }
+  
+  # get the model output
+  rfsrc_pbc_brier_rf <-
+    readRDS(file.path(results_dir_cg, "rfsrc_optimal_brier_output_full_data.RDS"))
+  # print out the figures
+  for (m in 1:10 ){
+    print(plot(get.tree(rfsrc_pbc_brier_rf,j)))
+  }
+  
+}
+```
+
+

@@ -121,68 +121,88 @@ for (i in 1:length(cg_list)){
                               family = CoxPH(), 
                               center = TRUE,
                               control =  boost_control(mstop = 500))
-    sink(file = file.path(results_dir, paste0("coxph_pfs_summary_in_", x, ".txt")))
+    # determine cross-validated optimal mstop parameter
+    cvm.coxph = cvrisk(glm_fit_coxph)
+    invisible(glm_fit_coxph[mstop(cvm.coxph)])
+    sink(file = file.path(results_dir, paste0("coxph_os_summary_in_", x, ".txt")))
     print(summary(glm_fit_coxph))
+    print(paste0('Log-Likelihood: ', glm_fit_coxph$logLik()))
     sink()
+    
+    # plot out the results
+    pdf(file.path(plots_dir, paste0("mstop_diagnostics", x, ".pdf")))
+    p <- plot(cvm.coxph)
+    print(p)
+    dev.off()
     
     # perform glmboost with Loglog
     glm_fit_loglog <- glmboost(as.formula(paste0("Surv(combined_data$PFS_days, censored_pfs) ~ ", gene_variables)),
-                              data = combined_data, 
-                              family = Loglog(), 
-                              center = TRUE,
-                              control =  boost_control(mstop = 500))
+                               data = combined_data, 
+                               family = Loglog(), 
+                               center = TRUE,
+                               control =  boost_control(mstop = 500))
+    # determine cross-validated optimal mstop parameter
+    cvm.log = cvrisk(glm_fit_loglog)
+    invisible(glm_fit_loglog[mstop(cvm.log)])
     sink(file = file.path(results_dir, paste0("loglog_pfs_summary_in_", x, ".txt")))
     print(summary(glm_fit_loglog))
+    print(paste0('Log-Likelihood: ', glm_fit_loglog$logLik()))
     sink()
     
-    ########## perform glmboost --------------------
-    # calculate IPC weights
-    iw <- IPCweights(Surv(combined_data$PFS_days, censored_pfs))
-    
-    # filter columns that are not used in the model fitting
-    filtered <- combined_data %>% 
-      dplyr::select(-c("PFS_status", "os_status_level", "OS_days"))
-    
-    # fit a weighted linear model by boosting with componentwise linear weighted least squares 
-    filtered_surv <- glmboost(log(PFS_days) ~ ., 
-                              data = filtered,
-                              weights = iw, 
-                              center = TRUE, 
-                              control = boost_control(mstop = 500))
-    # find the optimal mstop 
-    mstop(aic <- AIC(filtered_surv))
-    filtered_surv <- filtered_surv[mstop(aic)]
-    
-    # run prediction 
-    predicted <- predict(filtered_surv) %>% 
-      as.data.frame() %>%
-      dplyr::rename(predict_log_days = V1) %>%
-      tibble::rownames_to_column("Kids_First_Biospecimen_ID") 
-    
-    # combine the weight 
-    names(iw) <- rownames(combined_data)
-    weight_df <- as.data.frame(iw) %>% 
-      tibble::rownames_to_column("Kids_First_Biospecimen_ID") 
-    colnames(weight_df) <- c("Kids_First_Biospecimen_ID", "IPC_weight") 
-    
-    # compare with original data
-    combined_predicted_ori <- combined_data %>%
-      tibble::rownames_to_column("Kids_First_Biospecimen_ID") %>% 
-      dplyr::select(Kids_First_Biospecimen_ID, PFS_days) %>% 
-      left_join(weight_df) %>%
-      left_join(predicted) %>%
-      dplyr::mutate(ori_log_days = log(PFS_days))
-    
     # plot out the results
-    pdf(file.path(plots_dir, paste0("correlation_plots_by_pfs_in_", x, ".pdf")))
-    p <- ggplot(combined_predicted_ori, aes(x=ori_log_days, y=predict_log_days)) +
-          geom_point(aes(size = IPC_weight))
+    pdf(file.path(plots_dir, paste0("mstop_diagnostics", x, ".pdf")))
+    p <- plot(cvm.log)
     print(p)
     dev.off()
+    
+    ########## perform glmboost --------------------
+    # # calculate IPC weights
+    # iw <- IPCweights(Surv(combined_data$PFS_days, censored_pfs))
+    # 
+    # # filter columns that are not used in the model fitting
+    # filtered <- combined_data %>% 
+    #   dplyr::select(-c("PFS_status", "os_status_level", "OS_days"))
+    # 
+    # # fit a weighted linear model by boosting with componentwise linear weighted least squares 
+    # filtered_surv <- glmboost(log(PFS_days) ~ ., 
+    #                           data = filtered,
+    #                           weights = iw, 
+    #                           center = TRUE, 
+    #                           control = boost_control(mstop = 500))
+    # # find the optimal mstop 
+    # mstop(aic <- AIC(filtered_surv))
+    # filtered_surv <- filtered_surv[mstop(aic)]
+    # 
+    # # run prediction 
+    # predicted <- predict(filtered_surv) %>% 
+    #   as.data.frame() %>%
+    #   dplyr::rename(predict_log_days = V1) %>%
+    #   tibble::rownames_to_column("Kids_First_Biospecimen_ID") 
+    # 
+    # # combine the weight 
+    # names(iw) <- rownames(combined_data)
+    # weight_df <- as.data.frame(iw) %>% 
+    #   tibble::rownames_to_column("Kids_First_Biospecimen_ID") 
+    # colnames(weight_df) <- c("Kids_First_Biospecimen_ID", "IPC_weight") 
+    # 
+    # # compare with original data
+    # combined_predicted_ori <- combined_data %>%
+    #   tibble::rownames_to_column("Kids_First_Biospecimen_ID") %>% 
+    #   dplyr::select(Kids_First_Biospecimen_ID, PFS_days) %>% 
+    #   left_join(weight_df) %>%
+    #   left_join(predicted) %>%
+    #   dplyr::mutate(ori_log_days = log(PFS_days))
+    # 
+    # # plot out the results
+    # pdf(file.path(plots_dir, paste0("correlation_plots_by_pfs_in_", x, ".pdf")))
+    # p <- ggplot(combined_predicted_ori, aes(x=ori_log_days, y=predict_log_days)) +
+    #       geom_point(aes(size = IPC_weight))
+    # print(p)
+    # dev.off()
   }
   
   if(x != "LGG"){
-    # generate T/F vector for PFS status 
+    # generate T/F vector for OS status 
     censored_os <- combined_data$os_status_level == "1"
     
     ########## perform glmboost --------------------
@@ -190,10 +210,20 @@ for (i in 1:length(cg_list)){
                               data = combined_data, 
                               family = CoxPH(), 
                               center = TRUE,
-                              control =  boost_control(mstop = 500))
+                              control =  boost_control(mstop = 1000))
+    # determine cross-validated optimal mstop parameter
+    cvm.coxph = cvrisk(glm_fit_coxph)
+    invisible(glm_fit_coxph[mstop(cvm.coxph)])
     sink(file = file.path(results_dir, paste0("coxph_os_summary_in_", x, ".txt")))
     print(summary(glm_fit_coxph))
+    print(paste0('Log-Likelihood: ', glm_fit_coxph$logLik()))
     sink()
+    
+    # plot out the results
+    pdf(file.path(plots_dir, paste0("mstop_diagnostics", x, ".pdf")))
+    p <- plot(cvm.coxph)
+    print(p)
+    dev.off()
     
     # perform glmboost with Loglog
     glm_fit_loglog <- glmboost(as.formula(paste0("Surv(combined_data$OS_days, censored_os) ~ ", gene_variables)),
@@ -201,54 +231,66 @@ for (i in 1:length(cg_list)){
                                family = Loglog(), 
                                center = TRUE,
                                control =  boost_control(mstop = 500))
+    
+    
+    # determine cross-validated optimal mstop parameter
+    cvm.log = cvrisk(glm_fit_loglog)
+    invisible(glm_fit_loglog[mstop(cvm.log)])
     sink(file = file.path(results_dir, paste0("loglog_os_summary_in_", x, ".txt")))
     print(summary(glm_fit_loglog))
+    print(paste0('Log-Likelihood: ', glm_fit_loglog$logLik()))
     sink()
     
-    ########## perform glmboost --------------------
-    # calculate IPC weights
-    iw <- IPCweights(Surv(combined_data$OS_days, censored_os))
-    
-    # filter columns that are not used in the model fitting
-    filtered <- combined_data %>% 
-      dplyr::select(-c("PFS_status", "os_status_level", "PFS_days"))
-    
-    # fit a weighted linear model by boosting with componentwise linear weighted least squares 
-    filtered_surv <- glmboost(log(OS_days) ~ ., 
-                              data = filtered,
-                              weights = iw, 
-                              center = TRUE, 
-                              control = boost_control(mstop = 500))
-    # find the optimal mstop 
-    mstop(aic <- AIC(filtered_surv))
-    filtered_surv <- filtered_surv[mstop(aic)]
-    
-    # run prediction 
-    predicted <- predict(filtered_surv) %>% 
-      as.data.frame() %>%
-      dplyr::rename(predict_log_days = V1) %>%
-      tibble::rownames_to_column("Kids_First_Biospecimen_ID") 
-    
-    # combine the weight 
-    names(iw) <- rownames(combined_data)
-    weight_df <- as.data.frame(iw) %>% 
-      tibble::rownames_to_column("Kids_First_Biospecimen_ID") 
-    colnames(weight_df) <- c("Kids_First_Biospecimen_ID", "IPC_weight") 
-    
-    # compare with original data
-    combined_predicted_ori <- combined_data %>%
-      tibble::rownames_to_column("Kids_First_Biospecimen_ID") %>% 
-      dplyr::select(Kids_First_Biospecimen_ID, OS_days) %>% 
-      left_join(weight_df) %>%
-      left_join(predicted) %>%
-      dplyr::mutate(ori_log_days = log(OS_days))
-    
     # plot out the results
-    pdf(file.path(plots_dir, paste0("correlation_plots_by_os_in_", x, ".pdf")))
-    p <- ggplot(combined_predicted_ori, aes(x=ori_log_days, y=predict_log_days)) +
-      geom_point(aes(size = IPC_weight))
+    pdf(file.path(plots_dir, paste0("mstop_diagnostics", x, ".pdf")))
+    p <- plot(cvm.log)
     print(p)
     dev.off()
+    
+    # ########## perform glmboost --------------------
+    # # calculate IPC weights
+    # iw <- IPCweights(Surv(combined_data$OS_days, censored_os))
+    # 
+    # # filter columns that are not used in the model fitting
+    # filtered <- combined_data %>% 
+    #   dplyr::select(-c("PFS_status", "os_status_level", "PFS_days"))
+    # 
+    # # fit a weighted linear model by boosting with componentwise linear weighted least squares 
+    # filtered_surv <- glmboost(log(OS_days) ~ ., 
+    #                           data = filtered,
+    #                           weights = iw, 
+    #                           center = TRUE, 
+    #                           control = boost_control(mstop = 500))
+    # # find the optimal mstop 
+    # mstop(aic <- AIC(filtered_surv))
+    # filtered_surv <- filtered_surv[mstop(aic)]
+    # 
+    # # run prediction 
+    # predicted <- predict(filtered_surv) %>% 
+    #   as.data.frame() %>%
+    #   dplyr::rename(predict_log_days = V1) %>%
+    #   tibble::rownames_to_column("Kids_First_Biospecimen_ID") 
+    # 
+    # # combine the weight 
+    # names(iw) <- rownames(combined_data)
+    # weight_df <- as.data.frame(iw) %>% 
+    #   tibble::rownames_to_column("Kids_First_Biospecimen_ID") 
+    # colnames(weight_df) <- c("Kids_First_Biospecimen_ID", "IPC_weight") 
+    # 
+    # # compare with original data
+    # combined_predicted_ori <- combined_data %>%
+    #   tibble::rownames_to_column("Kids_First_Biospecimen_ID") %>% 
+    #   dplyr::select(Kids_First_Biospecimen_ID, OS_days) %>% 
+    #   left_join(weight_df) %>%
+    #   left_join(predicted) %>%
+    #   dplyr::mutate(ori_log_days = log(OS_days))
+    
+    # # plot out the results
+    # pdf(file.path(plots_dir, paste0("correlation_plots_by_os_in_", x, ".pdf")))
+    # p <- ggplot(combined_predicted_ori, aes(x=ori_log_days, y=predict_log_days)) +
+    #   geom_point(aes(size = IPC_weight))
+    # print(p)
+    # dev.off()
   }
 }
 

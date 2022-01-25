@@ -1,0 +1,26 @@
+
+	 Generalized Linear Models Fitted via Gradient Boosting
+
+Call:
+glmboost.formula(formula = as.formula(paste0("Surv(combined_data$PFS_days, censored_pfs) ~ ",     gene_variables)), data = combined_data, family = CoxPH(),     center = TRUE, control = boost_control(mstop = 500))
+
+
+	 Cox Partial Likelihood 
+
+Loss function:  
+
+Number of boosting iterations: mstop = 5 
+Step size:  0.1 
+Offset:  0 
+
+Coefficients: 
+ (Intercept)      SLC7A11      SLC6A20 
+-0.004907374 -0.002897214  0.022307477 
+attr(,"offset")
+[1] 0
+
+Selection frequencies:
+SLC6A20 SLC7A11 
+    0.8     0.2 
+
+[1] "Log-Likelihood: -181.775615508224"

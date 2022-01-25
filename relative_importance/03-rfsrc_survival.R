@@ -32,9 +32,19 @@ if(!dir.exists(results_dir)){
   dir.create(results_dir, recursive=TRUE)
 }
 
+results_dir_exp <- file.path(analysis_dir, "results", "expression_sub")
+if(!dir.exists(results_dir_exp)){
+  dir.create(results_dir_exp, recursive=TRUE)
+}
+
 plots_dir <- file.path(analysis_dir, "plots", "rfsrc")
 if(!dir.exists(plots_dir)){
   dir.create(plots_dir, recursive=TRUE)
+}
+
+plots_dir_party <- file.path(analysis_dir, "plots", "rf_party")
+if(!dir.exists(plots_dir_party)){
+  dir.create(plots_dir_party, recursive=TRUE)
 }
 
 source(file.path(analysis_dir, "utils", "rf_survival_analysis.R"))
@@ -78,6 +88,11 @@ expression_data <- expression_data %>%
   tibble::column_to_rownames("gene_symbol") %>% 
   # also filter to contain only samples in all cancer groups of interest 
   dplyr::select(histology_df$Kids_First_Biospecimen_ID)
+
+# output the results for easier access later on
+expression_data %>% 
+  saveRDS(file.path(results_dir_exp, "expression_data_filtered_all_cg.rds"))
+  
 
 ####### do the analysis on all the cancer group of interest ----------------------------------
 for (i in 1:length(cg_list)){
@@ -200,6 +215,10 @@ for (i in 1:length(cg_list)){
       PFS_status == "DECEASED" ~ 1
     ))
  
+  # write out results 
+  combined_data %>% 
+    write_tsv(file.path(results_dir_exp, paste0("meta_exp_combined_data_in_", x, ".tsv")))
+  
   # generate gene variables
   gene_variables <- rownames(expression_data) 
   

@@ -240,6 +240,7 @@ for (i in 1:length(cg_list)){
     # write out the predicted results for later analysis 
     pred_result <- glm_fit_coxph$predict() %>% as.data.frame() 
     colnames(pred_result) <- "predicted_score"
+    rownames(pred_result) <- glm_fit_coxph[["rownames"]]
     pred_result %>% 
       tibble::rownames_to_column("Kids_First_Biospecimen_ID") %>%
       readr::write_tsv(file.path(results_dir_pred, paste0("coxph_os_pred_risk_in_", x, ".tsv")))
@@ -270,6 +271,7 @@ for (i in 1:length(cg_list)){
     # write out the predicted results for later analysis 
     pred_result <- glm_fit_loglog$predict() %>% as.data.frame() 
     colnames(pred_result) <- "predicted_score"
+    rownames(pred_result) <- glm_fit_loglog[["rownames"]]
     pred_result %>% 
       tibble::rownames_to_column("Kids_First_Biospecimen_ID") %>%
       readr::write_tsv(file.path(results_dir_pred, paste0("loglog_os_pred_risk_in_", x, ".tsv")))

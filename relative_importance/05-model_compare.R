@@ -8,8 +8,6 @@ suppressPackageStartupMessages({
 
 #### Parse command line options ------------------------------------------------
 option_list <- list(
-  make_option(c("-h", "--histology"),type="character",
-              help="histology file for all OpenPedCan samples (.tsv) "),
   make_option(c("-l","--cg_interest"),type="character",
               help="comma separated list of cancer groups of interest"))
 opt <- parse_args(OptionParser(option_list=option_list,add_help_option = FALSE))

@@ -41,9 +41,9 @@ for (i in 1:length(cg_list)){
   ########### prepare the formula and data based on which cancer group we are looking at
   if(x == "LGG"){
     # piece together a model
-    rfsrc.formula <- paste0("Surv(PFS_days, PFS_status_recode)", " ~ ",
-                            paste0(gene_variables, collapse = " + "),
-                            sep = "")
+    survival.formula <- paste0("Surv(PFS_days, PFS_status_recode)", " ~ ",
+                                paste0(gene_variables, collapse = " + "),
+                                sep = "")
     # make the combined data compatible with the analysis 
     combined_data_sub <- meta_exp_combined %>% 
       dplyr::select(-c("Kids_First_Biospecimen_ID", "Kids_First_Participant_ID", 
@@ -52,9 +52,9 @@ for (i in 1:length(cg_list)){
   
   } else{
     # piece together a model
-    rfsrc.formula <- paste0("Surv(OS_days, OS_status_recode)", " ~ ",
-                            paste0(gene_variables, collapse = " + "),
-                            sep = "")
+    survival.formula <- paste0("Surv(OS_days, OS_status_recode)", " ~ ",
+                                paste0(gene_variables, collapse = " + "),
+                                sep = "")
     # make the combined data compatible with the analysis 
     combined_data_sub <- meta_exp_combined %>% 
       dplyr::select(-c("Kids_First_Biospecimen_ID", "Kids_First_Participant_ID", 
@@ -69,13 +69,13 @@ for (i in 1:length(cg_list)){
                                   minbucket = 5,
                                   stump = FALSE,
                                   maxsurrogate = 0,
-                                  mtry = mtry_optimal, 
+                                  mtry = 0, 
                                   savesplitstats = TRUE, 
                                   maxdepth = 0, 
                                   remove_weights = FALSE)
   
   # get the results
-  ctree_results <- ctree(as.formula(rfsrc.formula), 
+  ctree_results <- ctree(as.formula(survival.formula), 
                          combined_data_sub, 
                          subset = NULL,
                          weights = NULL,
@@ -85,7 +85,7 @@ for (i in 1:length(cg_list)){
                          scores = NULL)
   
   # plot the tree and save the plot 
-  pdf(file.path(plots_dir, paste0("rf_party_plot_in_", x, "_with_", j, "_optimal_params.pdf")))
+  pdf(file.path(plots_dir, paste0("rf_party_plot_in_", x, ".pdf")))
   plot(ctree_results)
   dev.off()
 

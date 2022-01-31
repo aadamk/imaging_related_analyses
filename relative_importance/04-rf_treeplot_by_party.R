@@ -25,22 +25,11 @@ if(!dir.exists(plots_dir)){
   dir.create(plots_dir, recursive=TRUE)
 }
 
-param_input_dir <- file.path(analysis_dir, "results", "rfsrc")
 meta_exp_input_dir <- opt$path_to_meta
 
 # run the tree generation function for all cancer groups 
 for (i in 1:length(cg_list)){
   x <- cg_list[i]
-  
-  # read in the results for the cg of interest 
-  rsfrc_grid_optimal <- readr::read_tsv(file.path(param_input_dir, x, "rfsrc_error_brier_lrs_results.tsv"))
-  
-  # get the optimal parameters for brier method 
-  mtry_optimal_lrs <- rsfrc_grid_optimal[[1,2]]
-  node_optimal_lrs <- rsfrc_grid_optimal[[1,4]]
-  
-  mtry_optimal_brier <- rsfrc_grid_optimal[[1,7]]
-  node_optimal_brier <- rsfrc_grid_optimal[[1,9]]
   
   # read in the combined data with metadata + gene expression 
   meta_exp_combined <- readr::read_tsv(file.path(meta_exp_input_dir, 
@@ -72,44 +61,32 @@ for (i in 1:length(cg_list)){
                        "PFS_status_recode", "PFS_days", "OS_status")) %>% 
       dplyr::filter(!is.na(OS_days))
   }
+    
+  ####### run the analysis with optimal parameter
+  ctree_ctrl_obj <- ctree_control(teststat = "max",
+                                  testtype = "Teststatistic",
+                                  mincriterion = 0.95,
+                                  minbucket = 5,
+                                  stump = FALSE,
+                                  maxsurrogate = 0,
+                                  mtry = mtry_optimal, 
+                                  savesplitstats = TRUE, 
+                                  maxdepth = 0, 
+                                  remove_weights = FALSE)
   
-  # run analysis with either lrs or brier optimal parameters
-  for(j in c("lrs", "brier")){
-    
-    # define parameters that we are looking at 
-    if (j == "lrs"){
-      node_optimal = node_optimal_lrs
-      mtry_optimal = mtry_optimal_lrs
-    } else {
-      node_optimal = node_optimal_brier
-      mtry_optimal = mtry_optimal_brier
-    }
-    
-    ####### run the analysis with optimal parameter
-    ctree_ctrl_obj <- ctree_control(teststat = "max",
-                                    testtype = "Teststatistic",
-                                    mincriterion = 0.95,
-                                    minbucket = node_optimal,
-                                    stump = FALSE,
-                                    maxsurrogate = 0,
-                                    mtry = mtry_optimal, 
-                                    savesplitstats = TRUE, 
-                                    maxdepth = 0, 
-                                    remove_weights = FALSE)
-    
-    # get the results
-    ctree_results <- ctree(as.formula(rfsrc.formula), 
-                           combined_data_sub, 
-                           subset = NULL,
-                           weights = NULL,
-                           controls = ctree_ctrl_obj, 
-                           xtrafo = ptrafo, 
-                           ytrafo = ptrafo,
-                           scores = NULL)
-    
-    # plot the tree and save the plot 
-    pdf(file.path(plots_dir, paste0("rf_party_plot_in_", x, "_with_", j, "_optimal_params.pdf")))
-    plot(ctree_results)
-    dev.off()
-  }
+  # get the results
+  ctree_results <- ctree(as.formula(rfsrc.formula), 
+                         combined_data_sub, 
+                         subset = NULL,
+                         weights = NULL,
+                         controls = ctree_ctrl_obj, 
+                         xtrafo = ptrafo, 
+                         ytrafo = ptrafo,
+                         scores = NULL)
+  
+  # plot the tree and save the plot 
+  pdf(file.path(plots_dir, paste0("rf_party_plot_in_", x, "_with_", j, "_optimal_params.pdf")))
+  plot(ctree_results)
+  dev.off()
+
 }

@@ -26,8 +26,8 @@ if(!dir.exists(plots_dir)){
 }
 
 results_dir <- file.path(analysis_dir, "results", "rf_party")
-if(!dir.exists(plots_dir)){
-  dir.create(plots_dir, recursive=TRUE)
+if(!dir.exists(results_dir)){
+  dir.create(results_dir, recursive=TRUE)
 }
 
 meta_exp_input_dir <- opt$path_to_meta
@@ -75,7 +75,7 @@ for (i in 1:length(cg_list)){
   colnames(cforest_tune_df) <- c("c_index", "somer_dxy", "mtry", "ntree", "mincriterion")
   
   # find the best parameters for cforest
-  for(m in 1:length(gene_variables)){
+  for(m in 28:length(gene_variables)){
     for(n in seq(from = 100, to = 2000, by = 100)){
       for(j in seq(from = 0.5, to = 1, by = 0.05)){
         
@@ -132,14 +132,14 @@ for (i in 1:length(cg_list)){
   
   # find the optimal parameter
   # select the mtry, ntree and mincriterion value with the highest c index
-  cindex_max <- min(cforest_tune_df$c_index)
+  cindex_max <- max(cforest_tune_df$c_index)
   mtry_max<- cforest_tune_df[cforest_tune_df$c_index == cindex_max, "mtry"]
-  mincri_max<- cforest_tune_df[cforest_tune_df$c_index == cindex_max, "nodesize"]
+  mincri_max<- cforest_tune_df[cforest_tune_df$c_index == cindex_max, "mincriterion"]
   
   ####### run the analysis with optimal parameter
   ctree_ctrl_obj <- ctree_control(teststat = "max",
                                   testtype = "Teststatistic",
-                                  mincriterion = c_index,
+                                  mincriterion = mincri_max,
                                   minbucket = 5,
                                   stump = FALSE,
                                   maxsurrogate = 0,

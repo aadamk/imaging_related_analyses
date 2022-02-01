@@ -51,7 +51,7 @@ for (i in 1:length(cg_list)){
                                 sep = "")
     # make the combined data compatible with the analysis 
     combined_data_sub <- meta_exp_combined %>% 
-      dplyr::select(-c("Kids_First_Participant_ID", 
+      dplyr::select(-c("Kids_First_Participant_ID", "OS_status",
                        "OS_status_recode", "OS_days", "PFS_status")) %>% 
       dplyr::filter(!is.na(PFS_days)) %>%
       tibble::column_to_rownames("Kids_First_Biospecimen_ID")
@@ -63,7 +63,7 @@ for (i in 1:length(cg_list)){
                                 sep = "")
     # make the combined data compatible with the analysis 
     combined_data_sub <- meta_exp_combined %>% 
-      dplyr::select(-c("Kids_First_Participant_ID", 
+      dplyr::select(-c("Kids_First_Participant_ID", "PFS_status",
                        "PFS_status_recode", "PFS_days", "OS_status")) %>% 
       dplyr::filter(!is.na(OS_days)) %>%
       tibble::column_to_rownames("Kids_First_Biospecimen_ID")
@@ -71,8 +71,8 @@ for (i in 1:length(cg_list)){
   
   # run the grid search of mtry and ntree and find the optimal setting
   k=1
-  cforest_tune_df <- data.frame(matrix(ncol = 4, nrow = 0))
-  colnames(cforest_tune_df) <- c("c_index", "mtry", "ntree", "mincriterion")
+  cforest_tune_df <- data.frame(matrix(ncol = 5, nrow = 0))
+  colnames(cforest_tune_df) <- c("c_index", "somer_dxy", "mtry", "ntree", "mincriterion")
   
   # find the best parameters for cforest
   for(m in 1:length(gene_variables)){
@@ -101,20 +101,25 @@ for (i in 1:length(cg_list)){
         
         # run cindex
         if(x == "LGG"){
-          harrelC1 <- rcorr.cens(predict(cforest_fit),
-                                 with(combined_data_sub,
-                                      Surv(PFS_days,PFS_status_recode)))
+          if(sum(is.finite(predict(cforest_fit)))==nrow(combined_data_sub)){
+            cor_index <- rcorr.cens(predict(cforest_fit),
+                                   with(combined_data_sub,
+                                        Surv(PFS_days,PFS_status_recode)))
+          }
         } else {
-          harrelC1 <- rcorr.cens(predict(cforest_fit),
-                                 with(combined_data_sub,
-                                      Surv(OS_days,OS_status_recode)))
+          if(sum(is.finite(predict(cforest_fit)))==nrow(combined_data_sub)){
+            cor_index <- rcorr.cens(predict(cforest_fit),
+                                   with(combined_data_sub,
+                                        Surv(OS_days,OS_status_recode)))
+          }
         }
         
         # store the results
-        cforest_tune_df[k,1] <- harrelC1[["C Index"]] %>% as.numeric()
-        cforest_tune_df[k,2] <- m
-        cforest_tune_df[k,3] <- n
-        cforest_tune_df[k,4] <- j
+        cforest_tune_df[k,1] <- cor_index[["C Index"]] %>% as.numeric()
+        cforest_tune_df[k,2] <- cor_index[["Dxy"]] %>% as.numeric()
+        cforest_tune_df[k,3] <- m
+        cforest_tune_df[k,4] <- n
+        cforest_tune_df[k,5] <- j
         k <- k+1
       }
     }

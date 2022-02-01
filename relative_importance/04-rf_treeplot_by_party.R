@@ -4,6 +4,7 @@ suppressPackageStartupMessages({
   library("optparse")
   library("tidyverse")
   library("party")
+  library("Hmisc")
 })
 
 #### Parse command line options ------------------------------------------------

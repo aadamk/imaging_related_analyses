@@ -153,7 +153,7 @@ for (i in 1:length(cg_list)){
     sink()
     
     # plot out the results
-    pdf(file.path(plots_dir, paste0("mstop_diagnostics", x, ".pdf")))
+    pdf(file.path(plots_dir, paste0("mstop_diagnostics_coxph_in_", x, ".pdf")))
     p <- plot(cvm.coxph)
     print(p)
     dev.off()
@@ -185,7 +185,7 @@ for (i in 1:length(cg_list)){
     sink()
     
     # plot out the results
-    pdf(file.path(plots_dir, paste0("mstop_diagnostics", x, ".pdf")))
+    pdf(file.path(plots_dir, paste0("mstop_diagnostics_loglog_in_", x, ".pdf")))
     p <- plot(cvm.log)
     print(p)
     dev.off()
@@ -303,7 +303,7 @@ for (i in 1:length(cg_list)){
     sink()
     
     # plot out the results
-    pdf(file.path(plots_dir, paste0("mstop_diagnostics", x, ".pdf")))
+    pdf(file.path(plots_dir, paste0("mstop_diagnostics_loglog_in_", x, ".pdf")))
     p <- plot(cvm.log)
     print(p)
     dev.off()

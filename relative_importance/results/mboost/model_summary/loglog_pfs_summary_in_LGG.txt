@@ -9,13 +9,13 @@ glmboost.formula(formula = as.formula(paste0("Surv(combined_data$PFS_days, censo
 
 Loss function:  
 
-Number of boosting iterations: mstop = 1 
+Number of boosting iterations: mstop = 3 
 Step size:  0.1 
 Offset:  8.096138 
 
 Coefficients: 
- (Intercept)      SLC6A20 
- 0.003958131 -0.005722048 
+(Intercept)     SLC6A20 
+ 0.01154718 -0.01669312 
 attr(,"offset")
 [1] 8.096138
 
@@ -23,4 +23,4 @@ Selection frequencies:
 SLC6A20 
       1 
 
-[1] "Log-Likelihood: -121.032296821819"
+[1] "Log-Likelihood: -120.677617068221"

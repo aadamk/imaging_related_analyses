@@ -76,7 +76,7 @@ for (i in 1:length(cg_list)){
   colnames(cforest_tune_df) <- c("c_index", "somer_dxy", "mtry", "ntree", "mincriterion")
   
   # find the best parameters for cforest
-  for(m in 28:length(gene_variables)){
+  for(m in 1:length(gene_variables)){
     for(n in seq(from = 100, to = 2000, by = 100)){
       for(j in seq(from = 0.5, to = 1, by = 0.05)){
         

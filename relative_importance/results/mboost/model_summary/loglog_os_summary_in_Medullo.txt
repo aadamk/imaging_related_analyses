@@ -9,13 +9,13 @@ glmboost.formula(formula = as.formula(paste0("Surv(combined_data$OS_days, censor
 
 Loss function:  
 
-Number of boosting iterations: mstop = 6 
+Number of boosting iterations: mstop = 1 
 Step size:  0.1 
 Offset:  8.241375 
 
 Coefficients: 
-(Intercept)      SLC1A5 
- 0.10181979 -0.01182715 
+ (Intercept)       SLC1A5 
+ 0.017807208 -0.002068444 
 attr(,"offset")
 [1] 8.241375
 
@@ -23,4 +23,4 @@ Selection frequencies:
 SLC1A5 
      1 
 
-[1] "Log-Likelihood: -77.8749373218013"
+[1] "Log-Likelihood: -79.0256607097268"

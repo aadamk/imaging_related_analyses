@@ -4,6 +4,8 @@ suppressPackageStartupMessages({
   library("optparse")
   library("tidyverse")
   library("DescTools")
+  library("pec")
+  library("riskRegression")
 })
 
 #### Parse command line options ------------------------------------------------
@@ -20,7 +22,7 @@ mboost_input_dir <- file.path(analysis_dir, "results", "mboost", "predicted_scor
 rfsrc_input_dir <- file.path(analysis_dir, "results", "rfsrc")
 meta_combined_input_dir <- file.path(analysis_dir, "results", "expression_sub")
 
-results_dir <- file.path("results", "somers_delta")
+results_dir <- file.path(analysis_dir, "results", "model_method_comparison")
 if(!dir.exists(results_dir)){
   dir.create(results_dir)
 }

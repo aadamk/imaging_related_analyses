@@ -37,6 +37,11 @@ if(!dir.exists(results_dir_pred)){
   dir.create(results_dir_pred, recursive=TRUE)
 }
 
+results_dir_fit <- file.path(analysis_dir, "results", "mboost", "model_fit")
+if(!dir.exists(results_dir_fit)){
+  dir.create(results_dir_fit, recursive=TRUE)
+}
+
 plots_dir <- file.path(analysis_dir, "plots", "mboost")
 if(!dir.exists(plots_dir)){
   dir.create(plots_dir, recursive=TRUE)
@@ -130,6 +135,10 @@ for (i in 1:length(cg_list)){
     cvm.coxph = cvrisk(glm_fit_coxph)
     invisible(glm_fit_coxph[mstop(cvm.coxph)])
     
+    # save the fit results
+    glm_fit_coxph %>% 
+      saveRDS(file.path(results_dir_fit,  paste0("coxph_pfs_model_fit_in_", x, ".rds")))
+    
     # write out the predicted results for later analysis 
     pred_result <- glm_fit_coxph$predict() %>% as.data.frame() 
     colnames(pred_result) <- "predicted_score"
@@ -158,6 +167,10 @@ for (i in 1:length(cg_list)){
     # determine cross-validated optimal mstop parameter
     cvm.log = cvrisk(glm_fit_loglog)
     invisible(glm_fit_loglog[mstop(cvm.log)])
+    
+    # save the fit results
+    glm_fit_loglog %>% 
+      saveRDS(file.path(results_dir_fit,  paste0("loglog_pfs_model_fit_in_", x, ".rds")))
     
     # write out the predicted results for later analysis 
     pred_result <- glm_fit_loglog$predict() %>% as.data.frame() 
@@ -237,6 +250,10 @@ for (i in 1:length(cg_list)){
     cvm.coxph = cvrisk(glm_fit_coxph)
     invisible(glm_fit_coxph[mstop(cvm.coxph)])
     
+    # save the fit results
+    glm_fit_coxph%>% 
+      saveRDS(file.path(results_dir_fit,  paste0("coxph_os_model_fit_in_", x, ".rds")))
+    
     # write out the predicted results for later analysis 
     pred_result <- glm_fit_coxph$predict() %>% as.data.frame() 
     colnames(pred_result) <- "predicted_score"
@@ -267,6 +284,10 @@ for (i in 1:length(cg_list)){
     # determine cross-validated optimal mstop parameter
     cvm.log = cvrisk(glm_fit_loglog)
     invisible(glm_fit_loglog[mstop(cvm.log)])
+    
+    # save the fit results
+    glm_fit_loglog %>% 
+      saveRDS(file.path(results_dir_fit,  paste0("loglog_os_model_fit_in_", x, ".rds")))
     
     # write out the predicted results for later analysis 
     pred_result <- glm_fit_loglog$predict() %>% as.data.frame() 

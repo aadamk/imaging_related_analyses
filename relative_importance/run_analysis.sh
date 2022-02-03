@@ -16,7 +16,7 @@ meta_dir="results/expression_sub"
 histology_file="${data_dir}/histologies.tsv"
 expression_file="${data_dir}/gene-expression-rsem-tpm-collapsed.rds"
 short_long_match="${data_dir}/short_long_match.tsv"
-cancer_group_list="HGG,EPN,Medullo"
+cancer_group_list="LGG,HGG,EPN,Medullo"
 
 # # Run CoxPH survival analysis for all genes of interest in all cancer group of interest
 # Rscript --vanilla 01-mboost_survival.R \
@@ -38,13 +38,13 @@ cancer_group_list="HGG,EPN,Medullo"
 # --expression $expression_file \
 # --cg_interest $cancer_group_list \
 # --short_long_match $short_long_match
+# 
+# # Output tree plot using party for all cancer group of interest
+# Rscript --vanilla 04-rf_treeplot_by_party.R \
+# --cg_interest $cancer_group_list \
+# --path_to_meta $meta_dir
 
 # Output tree plot using party for all cancer group of interest
-Rscript --vanilla 04-rf_treeplot_by_party.R \
---cg_interest $cancer_group_list \
---path_to_meta $meta_dir
-
-# # Output tree plot using party for all cancer group of interest
-# Rscript --vanilla 05-model_compare.R \
-# --cg_interest $cancer_group_list 
+Rscript --vanilla 05-model_compare.R \
+--cg_interest $cancer_group_list 
 

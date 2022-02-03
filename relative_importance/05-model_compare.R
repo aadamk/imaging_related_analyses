@@ -22,6 +22,8 @@ root_dir <- rprojroot::find_root(rprojroot::has_dir(".git"))
 analysis_dir <- file.path(root_dir, "relative_importance")
 mboost_input_dir <- file.path(analysis_dir, "results", "mboost", "model_fit")
 rfsrc_input_dir <- file.path(analysis_dir, "results", "rfsrc")
+cforest_input_dir <- file.path(analysis_dir, "results", "rf_party")
+
 meta_combined_input_dir <- file.path(analysis_dir, "results", "expression_sub")
 
 results_dir <- file.path(analysis_dir, "results", "model_method_comparison")
@@ -50,6 +52,16 @@ for (i in 1:length(cg_list)){
   brier_rfsrc_fit <- readRDS(file.path(rfsrc_input_dir, x, "rfsrc_optimal_brier_output_full_data.RDS"))
   lrs_rfsrc_fit <- readRDS(file.path(rfsrc_input_dir, x, "rfsrc_optimal_lrs_output_full_data.RDS"))
   
+  # relevant results from cforest models
+  cforest_grid <- readr::read_tsv(file.path(cforest_input_dir, 
+                                            paste0("rfparty_hyperparam_grid_results_for_", x, ".tsv")))
+  # select the mtry, ntree and mincriterion value with the highest c index
+  cindex_max <- max(cforest_grid$c_index)
+  mtry_max<- cforest_grid[cforest_grid$c_index == cindex_max, "mtry"] %>%
+    pull(mtry) %>% unique() %>% sample(1)
+  ntree_max <- cforest_grid[cforest_grid$c_index == cindex_max, "ntree"] %>% 
+    pull(ntree) %>% unique() %>% sample(1)
+  
   # read in mboost results 
   if(x == "LGG"){
     mboost_coxph <- readRDS(file.path(mboost_input_dir, paste0("coxph_pfs_model_fit_in_", x, ".rds"))) 
@@ -59,20 +71,19 @@ for (i in 1:length(cg_list)){
     mboost_loglog <- readRDS(file.path(mboost_input_dir, paste0("loglog_os_model_fit_in_", x, ".rds"))) 
   }
   
-  # extract variates for coxph
+  # extract variates for coxph from mboost coxph model
   coxph_variates <- coef(mboost_coxph) %>% 
     as.data.frame() %>%
     rownames()
   # extract only the relevant covariates
   coxph_variates <- coxph_variates[2:length(coxph_variates)]
   
-  # extract variates for coxph
+  # extract variates for coxph from mboost loglog model
   loglog_variates <- coef(mboost_loglog) %>% 
     as.data.frame() %>%
     rownames()
   # extract only the relevant covariates
   loglog_variates <- loglog_variates[2:length(loglog_variates)]
-  
   
   # piece together a model
   if(x == "LGG"){
@@ -95,6 +106,7 @@ for (i in 1:length(cg_list)){
                        "OS_status_recode", "OS_days", "PFS_status")) %>% 
       dplyr::filter(!is.na(PFS_days)) %>%
       tibble::column_to_rownames("Kids_First_Biospecimen_ID")
+    
   } else {
     # model based on OS days and status
     coxph.formula <- paste0("Surv(OS_days, OS_status_recode)", " ~ ",
@@ -128,11 +140,18 @@ for (i in 1:length(cg_list)){
                                x = TRUE,
                                y = TRUE)
   
+  # build a cforest with the best model
+  fit.cforest <- pec::pecCforest(as.formula(total.formula), 
+                                 data = combined_data_sub, 
+                                 control = party::cforest_classical(ntree = ntree_max,
+                                                                    mtry = mtry_max))
+  
   # generate an overall pec model
   pec <- pec::pec(object = list("CoxPH_mboost" = coxph_mboost_model, 
                                 "Loglog_mboost" = loglog_mboost_model,
                                 "rfsrc_lrs" = lrs_rfsrc_fit, 
-                                "rfsrc_brier" = brier_rfsrc_fit),
+                                "rfsrc_brier" = brier_rfsrc_fit,
+                                "cforst" = fit.cforest),
                  formula = as.formula(total.formula), 
                  data = combined_data_sub, 
                  exact = TRUE,

@@ -7,6 +7,7 @@ suppressPackageStartupMessages({
   library("pec")
   library("riskRegression")
   library("survival")
+  library("glmnet")
 })
 
 #### Parse command line options ------------------------------------------------

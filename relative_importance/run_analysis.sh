@@ -46,5 +46,5 @@ Rscript --vanilla 04-rf_treeplot_by_party.R \
 
 # Output tree plot using party for all cancer group of interest
 Rscript --vanilla 05-model_compare.R \
---cg_interest $cancer_group_list 
+--cg_interest $cancer_group_list
 

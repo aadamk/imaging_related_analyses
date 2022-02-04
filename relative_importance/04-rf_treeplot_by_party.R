@@ -109,7 +109,7 @@ for (i in 1:length(cg_list)){
           } else {
             cor_index <- rcorr.cens(predict(cforest_fit, type = 'response', OOB = T),
                                     with(combined_data_sub,
-                                         Surv(PFS_days,PFS_status_recode)))
+                                         Surv(OS_days,OS_status_recode)))
           }
         }
         

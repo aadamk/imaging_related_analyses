@@ -164,35 +164,40 @@ for (i in 1:length(cg_list)){
                                  control = party::cforest_classical(ntree = ntree_max,
                                                                     mtry = mtry_max))
   
-  # # generate a glmnet fit for loglog mboost results 
+  # # generate a glmnet fit for loglog mboost results
   # # first a matrix with only covariates of interest
   # combined_data_sub_glmnet <- combined_data_sub %>%
   #   dplyr::select(all_of(loglog_variates)) %>%
   #   as.matrix
   # 
-  # # generate another matrix with status and time 
+  # # generate another matrix with status and time and extract time and status as vector
   # if(x == "LGG"){
   #   time_status_matrix <- combined_data_sub %>% dplyr::select("PFS_days", "PFS_status_recode") %>%
-  #     dplyr::rename(time = PFS_days, 
-  #                   status = PFS_status_recode) %>%
-  #     as.matrix()
+  #     dplyr::rename(time = PFS_days,
+  #                   status = PFS_status_recode) 
   # } else {
   #   time_status_matrix <- combined_data_sub %>% dplyr::select("OS_days", "OS_status_recode") %>%
-  #     dplyr::rename(time = OS_days, 
-  #                   status = OS_status_recode) %>%
-  #     as.matrix()
+  #     dplyr::rename(time = OS_days,
+  #                   status = OS_status_recode) 
   # }
+  # # find the time and status 
+  # time <- time_status_matrix$time
+  # status <- time_status_matrix$status
   # 
   # # fit the model
-  # coxlasso <- glmnet(x = combined_data_sub_glmnet,
-  #                    y = time_status_matrix,
-  #                    family = 'cox')
+  # coxlasso_model <- glmnet(x = combined_data_sub_glmnet,
+  #                          y = survival::Surv(time, status),
+  #                          family = 'cox')
+  # 
+  # fit_coxlasso <- survfit(coxlasso_model, 
+  #                         x = combined_data_sub_glmnet,
+  #                         y = survival::Surv(time, status))
   
   ##################### Generate final output using pec package
   # generate an overall pec model
   pec <- pec::pec(object = list("CoxPH_mboost" = coxph_mboost_model, 
                                 "Loglog_mboost" = loglog_mboost_model,
-            #                    "Loglog_mboost_glmnet" = coxlasso, 
+                                # "Loglog_mboost_glmnet" = fit_coxlasso, 
                                 "rfsrc_lrs" = lrs_rfsrc_fit, 
                                 "rfsrc_brier" = brier_rfsrc_fit,
                                 "cforst" = fit.cforest),

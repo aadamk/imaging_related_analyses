@@ -47,10 +47,26 @@ for (i in 1:length(cg_list)){
   # get the gene variables 
   gene_variables <- meta_combined[, 7:37] %>% colnames()
   
+  ############################### handle rfsrc
   # relevant results from rfsrc models
+  rsfrc_grid_optimal <- readr::read_tsv(file.path(rfsrc_input_dir, x, "rfsrc_error_brier_lrs_results.tsv"))
+  
   brier_rfsrc_fit <- readRDS(file.path(rfsrc_input_dir, x, "rfsrc_optimal_brier_output_full_data.RDS"))
   lrs_rfsrc_fit <- readRDS(file.path(rfsrc_input_dir, x, "rfsrc_optimal_lrs_output_full_data.RDS"))
+
+  # get the optimal parameters for logrankscore method 
+  mtry_min_lrs <- rsfrc_grid_optimal[[1,2]]
+  ntree_min_lrs <- rsfrc_grid_optimal[[1,3]]
+  node_min_lrs <- rsfrc_grid_optimal[[1,4]]
+  nspilt_min_lrs <- rsfrc_grid_optimal[[1,5]]
   
+  # get the optimal parameters for brier method 
+  mtry_min_brier <- rsfrc_grid_optimal[[1,7]]
+  ntree_min_brier <- rsfrc_grid_optimal[[1,8]]
+  node_min_brier <- rsfrc_grid_optimal[[1,9]]
+  nspilt_min_brier <- rsfrc_grid_optimal[[1,10]]
+  
+  ############################### read in cforest parameters
   # relevant results from cforest models
   cforest_grid <- readr::read_tsv(file.path(cforest_input_dir, 
                                             paste0("rfparty_hyperparam_grid_results_for_", x, ".tsv")))
@@ -61,6 +77,7 @@ for (i in 1:length(cg_list)){
   ntree_max <- cforest_grid[cforest_grid$c_index == cindex_max, "ntree"] %>% 
     pull(ntree) %>% unique() %>% sample(1)
   
+  ############################### read in mboost results
   # read in mboost results 
   if(x == "LGG"){
     mboost_coxph <- readRDS(file.path(mboost_input_dir, paste0("coxph_pfs_model_fit_in_", x, ".rds"))) 
@@ -70,6 +87,7 @@ for (i in 1:length(cg_list)){
     mboost_loglog <- readRDS(file.path(mboost_input_dir, paste0("loglog_os_model_fit_in_", x, ".rds"))) 
   }
   
+  ##################### Define formula and subset relevant dataframes for downstream
   # extract variates for coxph from mboost coxph model
   coxph_variates <- coef(mboost_coxph) %>% 
     as.data.frame() %>%
@@ -128,6 +146,7 @@ for (i in 1:length(cg_list)){
       tibble::column_to_rownames("Kids_First_Biospecimen_ID")
   }
   
+  ##################### Run CoxPH, cforest and LASSO cox for final step
   # generate a coxph model based on covaraites of interest
   coxph_mboost_model <- coxph(as.formula(coxph.formula),
                               data = combined_data_sub,
@@ -169,6 +188,7 @@ for (i in 1:length(cg_list)){
   #                    y = time_status_matrix,
   #                    family = 'cox')
   
+  ##################### Generate final output using pec package
   # generate an overall pec model
   pec <- pec::pec(object = list("CoxPH_mboost" = coxph_mboost_model, 
                                 "Loglog_mboost" = loglog_mboost_model,
@@ -179,7 +199,8 @@ for (i in 1:length(cg_list)){
                  formula = as.formula(total.formula), 
                  data = combined_data_sub, 
                  exact = TRUE,
-                 splitMethod = "none")
+                 splitMethod = "BootCv", 
+                 B = 500)
   
   # save the results 
   pec %>%

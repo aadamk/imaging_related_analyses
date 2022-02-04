@@ -101,17 +101,15 @@ for (i in 1:length(cg_list)){
                                scores = NULL)
         
         # run cindex
-        if(x == "LGG"){
-          if(sum(is.finite(predict(cforest_fit)))==nrow(combined_data_sub)){
-            cor_index <- rcorr.cens(predict(cforest_fit),
-                                   with(combined_data_sub,
-                                        Surv(PFS_days,PFS_status_recode)))
-          }
-        } else {
-          if(sum(is.finite(predict(cforest_fit)))==nrow(combined_data_sub)){
-            cor_index <- rcorr.cens(predict(cforest_fit),
-                                   with(combined_data_sub,
-                                        Surv(OS_days,OS_status_recode)))
+        if(sum(is.finite(predict(cforest_fit, type = 'response', OOB = T)))==nrow(combined_data_sub)){
+          if(x == "LGG"){
+            cor_index <- rcorr.cens(predict(cforest_fit, type = 'response', OOB = T),
+                                    with(combined_data_sub,
+                                         Surv(PFS_days,PFS_status_recode)))
+          } else {
+            cor_index <- rcorr.cens(predict(cforest_fit, type = 'response', OOB = T),
+                                    with(combined_data_sub,
+                                         Surv(PFS_days,PFS_status_recode)))
           }
         }
         

@@ -6,7 +6,7 @@ suppressPackageStartupMessages({
   library("DescTools")
   library("survival")
   library("glmnet")
-  library("rjson")
+  library("survminer")
 })
 
 #### Parse command line options ------------------------------------------------
@@ -120,7 +120,10 @@ for (i in 1:length(cg_list)){
     alpha.1se = alphas[ind.lambda1se]
     
     
-    ## IMPORTANT: This can be removed and included in the 05-model_compare.R and fed into pec
+    ## Compute model coefficients with optimal alpha and lambda
+    ## IMPORTANT: this can be re-called in 05-model_compare.R using the optimal alpha and lambda
+    ## that are written to a json file. These models below will be the input for pec. 
+    
     opt.model.min = glmnet(x = as.matrix(combined_data_sub[,gene_variables]),
                            y = survival::Surv(time, status),
                            family = 'cox',
@@ -134,9 +137,37 @@ for (i in 1:length(cg_list)){
                            type.measure = 'deviance',
                            alpha = alpha.1se,
                            lambda = opt.param.lamda1se$lamda.1se[ind.lambda1se])
-
     
-    ## Make json of optimal params
+    
+    ### Model selected variables from elastic net in traditional cox model and plot hazard ratios
+    coef.min = coef(opt.model.min)
+    coef.min.names = coef.min@Dimnames[[1]]
+    coef.min.names = coef.min.names[which(coef(opt.model.min) != 0)]
+    opt.model.min = survival::coxph(formula = as.formula(paste0('Surv(time, status)', ' ~ ',
+                                                                paste0(coef.min.names, collapse = '+'),
+                                                                sep = '')),
+                                    data = combined_data_sub,
+                                    x = T,
+                                    y = T)
+    
+    plot.min = ggforest(opt.model.min, 
+                        data = combined_data_sub)
+    
+    
+    coef.1se = coef(opt.model.1se)
+    coef.1se.names = coef.1se@Dimnames[[1]]
+    coef.1se.names = coef.1se.names[which(coef(opt.model.1se) != 0)]
+    opt.model.1se = survival::coxph(formula = as.formula(paste0('Surv(time, status)', ' ~ ',
+                                                                paste0(coef.1se.names, collapse = '+'),
+                                                                sep = '')),
+                                    data = combined_data_sub,
+                                    x = T,
+                                    y = T)
+    
+    plot.1se = ggforest(opt.model.1se,
+                        data = combined_data_sub)
+    
+    ## Make json of optimal params and write to file for use in 05-model_compare.R
     optimal.params = sprintf('{"lambda.min": "%s", 
                           "alpha.min": "%s", 
                           "lambda.1se": "%s",

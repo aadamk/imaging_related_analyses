@@ -1,4 +1,4 @@
-# Author: Run Jin, Adam Kraya
+# Author: Adam Kraya, Run Jin
 # Compare different modeling methods
 suppressPackageStartupMessages({
   library("optparse")
